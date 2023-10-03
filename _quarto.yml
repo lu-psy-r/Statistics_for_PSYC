@@ -7,6 +7,9 @@ execute:
   
 website:
   title: "Statistics for Psychologists"
+  google-analytics:
+    tracking-id: "G-631SFSCPZB"
+    anonymize-ip: true
   favicon: "Images/favicon.png"
   page-navigation: true
   back-to-top-navigation: true

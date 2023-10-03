@@ -11,9 +11,26 @@ email-obfuscation: javascript
 
 # Welcome
 
-This is filler text introducing students to the course in general. Perhaps what's expected of them, the course aims, and other information of use.
+Welcome to PSYC122!
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in est non nisi eleifend vulputate a et magna. Mauris vulputate felis lacus, ut bibendum lectus sollicitudin vel. Integer vestibulum arcu et risus vestibulum, in ullamcorper magna consectetur. Donec ut tempus enim, at vulputate libero. Integer porta metus eget elit cursus, sit amet hendrerit ipsum facilisis. Maecenas mollis, elit gravida ornare tempus, est lectus mattis velit, et commodo nunc lectus eu enim. Aenean luctus, felis ac sodales accumsan, dolor nunc euismod lorem, vel vulputate ipsum orci quis ipsum. Quisque placerat, velit vitae dictum feugiat, lectus lorem rutrum ligula, at fringilla ex enim consectetur felis. Aliquam erat volutpat. Nunc a nisi eget ex ornare dictum.
+The module will ensure that students develop the necessary skills they require to carry out psychological enquiry through the statistical analysis of data. This module builds on the knowledge acquired in Statistics for Psychologists 1 (PSYC121). Students will receive lectures on statistical analysis techniques in psychological research. Students will receive laboratory classes in which they learn how to handle data and to calculate statistical analyses.
+
+Syllabus Topic Areas
+
+Weeks 11-15: Measures of association:
+
+-	Correlation
+-	Simple regression
+-	Chi-Square
+
+Week 16-20: Putting it all together:
+
+-	Making research flow
+- Keeping your work reproducible
+- From asking questions to presenting insights
+
+
+
 
 # Course Contacts
 
