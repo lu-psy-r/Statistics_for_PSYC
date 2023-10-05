@@ -114,7 +114,7 @@ Next, we've prepared some *instructions* for RStudio to use - this is called a "
 
 You should now see the files extracted in the directory.
 
-{{< include /Includes/_servererror.qmd >}}
+#  dropped this to avoid too but technical in 2023 {{< include /Includes/_servererror.qmd >}}
 
 
 You should now have the script available in RStudio.
