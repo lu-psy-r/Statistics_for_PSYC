@@ -4,13 +4,13 @@ subtitle: Written by John Towse & Tom Beesley
 order: 2
 ---
 
-# Lectures for the new 2023 year 1 students
+# Lectures for week 1
 
 Watch the introduction: Lecture [Part 1](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=be47e4bd-902a-4fcf-90d3-b0920087c849)
 
 Watch Lecture [Part 2](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0183b9bd-765b-475f-b388-adff00952057)
 
-Watch Lecture [Part 3](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a177a0a9-67c5-4700-9a98-b092008e0cfc)
+Watch Lecture [Part 3](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c05d4cbb-cf04-437e-8d98-b0920089f555)
 
 Watch Lecture [Part 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=237ed51b-aa37-4e10-9f3b-b0920091b16b)
 
