@@ -180,4 +180,4 @@ We can also create a "box and whisker plot". Here's a general simple description
 
 ### Additional challenge
 
-In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of the penelope data to the immigration data?
+In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore this variable, create visualisations of the data and its spread. We'llbe looking at a version of this variable in week 3: can you apply the analysis of the penelope data to the immigration data (report descriptive statistics)?
