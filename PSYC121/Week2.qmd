@@ -6,19 +6,19 @@ order: 3
 
 # Week 2 lecture
 
-Watch Lecture Part 1
+Watch Part 1
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=767996fb-a0b7-45bf-871e-b0980098477e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-Watch Lecture Part 2
+Watch Part 2
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4be02439-65f7-4455-ab10-b09900da0c87&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-Watch Lecture Part 3
+Watch Part 3
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=aa38ad8d-4bf9-4ecd-bd99-b09800a13e2e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
@@ -67,11 +67,11 @@ What we can see from this graph is that:
 
 Let's look at (a sample of) the PSYC121 student data collected on guessing the weight of Penelope, and ask whether it resembles the properties of this large dataset.
 
-### Loading the data
+### Step 1. Loading the data
 
 Using the instructions and advice given on Moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](data/Week_2/week_2.zip)
 
-### Using the R script
+### Step 2. Using the R script
 
 Step 1. Download the `week_2.zip` file (If you are using a mac, there is a video guide on Moodle to explain how to download the zip file as is)
 
@@ -106,7 +106,7 @@ The command was also generated
 
 which presents the data in a window of RStudio. Note that "NA" means not available or missing data. Does this file structure make some sense to you?
 
-### Finding the mean and median estimates
+### Step 3. Finding the mean and median estimates
 
 Use the data to answer the following questions...
 
@@ -134,7 +134,7 @@ sd(cows$estimate)
 
 So from this, can you work out what you would do to get the median value (remember from last week how we got the median value?)? Part of the command is given to you, can you change the text so that it works?
 
-### Calculations from a range of columns
+### Step 4. Calculations from a range of columns
 
 We have seen that:
 
@@ -156,7 +156,7 @@ mean(cows$female_estimate, na.rm = TRUE )
 
 Any different? The `na.rm = TRUE` instruction tells RStudio that missing data can be ignored in this mean calculation. (in technical language, `na.rm` is a parameter of the function `mean` that removes the NAs if set to TRUE)
 
-### Simple graphs
+### Step 5. Simple graphs
 
 RStudio can be used to create graphical data plots that can help interpret datasets
 
@@ -178,6 +178,6 @@ We can also create a "box and whisker plot". Here's a general simple description
 
 ![](images/wk2/Box_and_whisker.png)
 
-### Additional challenge
+### Step 6. Putting it all together! Apply your new skils to a different dataset
 
-In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of the penelope data to the immigration data?
+In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore this variable, create visualisations of the data and its spread. We'll be looking at a version of this variable in week 3: can you apply the analysis of the penelope data to the immigration data (report descriptive statistics)? Write some new script lines to investigate this additional dataset, and annotate those new script lines
