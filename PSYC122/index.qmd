@@ -36,6 +36,6 @@ Week 16-20: Putting it all together:
 
 |             | Email Address                                                  |
 |-------------|----------------------------------------------------------------|
-| Tom Beesley | [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) |
-| John Towse  | [j.towse\@lancaster.ac.uk](mailto:j.towse@lancaster.ac.uk)     |
+| Margriet Groen | [m.groen\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) |
+| Rob Davies  | [r.davies1\@lancaster.ac.uk](mailto:j.towse@lancaster.ac.uk)     |
 |             |                                                                |
