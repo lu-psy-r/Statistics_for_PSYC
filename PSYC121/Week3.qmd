@@ -127,7 +127,7 @@ C)  Can you get a breakdown of guess as a function of BOTH UK region AND family 
 
 D)  Can you use the `group by()` command to display salary guesses as a function of where someone lives? Check this gives you the same answer.
 
-### Task 3 - New phone Use data
+### Task 3 - New phone use data
 
 E)  Dataset 3: Use the dataset of phone screen time usage, `screentime2023.csv` to further explore and consolidate the group_by() command (ie we'll drop the aggregate command for this task to focus on group_by()). Use copy and paste to adapt the existing script lines from the above two tasks so that this time you read in and calculate screen time usage as a function of the type of phone. In other words, add line (and comments) to the scripts for this new task.
 
