@@ -140,3 +140,8 @@ Can you find a way to visualise the screentime usage data that you have been wor
 ### Now you're finished ...
 
 Remember to complete your notes in the script, save the script file, and end the server session.
+
+## Post - lab recap: The slides
+
+Want to see the introduction slides used in the Levy lab? They are [available here](data/Week_3/week_3_levylab_slides.pptx)
+

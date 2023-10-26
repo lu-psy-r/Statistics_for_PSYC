@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - 3. DVs and IVs in RStudio</title>
+<title>Statistics for Psychologists - 4. Customisation of graphs, and z-scores</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../PSYC121/Week4.html" rel="next">
-<link href="../PSYC121/Week2.html" rel="prev">
+<link href="../PSYC122/index.html" rel="next">
+<link href="../PSYC121/Week3.html" rel="prev">
 <link href="../Images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -113,7 +113,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC121/index.html">PSYC121</a></li><li class="breadcrumb-item"><a href="../PSYC121/Week3.html">3. DVs and IVs in RStudio</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC121/index.html">PSYC121</a></li><li class="breadcrumb-item"><a href="../PSYC121/Week4.html">4. Customisation of graphs, and z-scores</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -148,13 +148,13 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../PSYC121/Week3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../PSYC121/Week3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">3. DVs and IVs in RStudio</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../PSYC121/Week4.html" class="sidebar-item-text sidebar-link">
+  <a href="../PSYC121/Week4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">4. Customisation of graphs, and z-scores</span></a>
   </div>
 </li>
@@ -177,24 +177,27 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a>
   <ul class="collapse">
   <li><a href="#pre-lab-work" id="toc-pre-lab-work" class="nav-link" data-scroll-target="#pre-lab-work">Pre-lab work</a></li>
-  <li><a href="#r-studio-tasks" id="toc-r-studio-tasks" class="nav-link" data-scroll-target="#r-studio-tasks">R Studio tasks</a>
+  <li><a href="#r-studio-tasks" id="toc-r-studio-tasks" class="nav-link" data-scroll-target="#r-studio-tasks">R Studio tasks</a></li>
+  <li><a href="#section-1---customisation-of-data-plots" id="toc-section-1---customisation-of-data-plots" class="nav-link" data-scroll-target="#section-1---customisation-of-data-plots">Section 1 - Customisation of data plots</a></li>
+  <li><a href="#section-2-z-scores" id="toc-section-2-z-scores" class="nav-link" data-scroll-target="#section-2-z-scores">Section 2: z-scores</a>
   <ul class="collapse">
-  <li><a href="#task-1---more-with-the-penelope22-data" id="toc-task-1---more-with-the-penelope22-data" class="nav-link" data-scroll-target="#task-1---more-with-the-penelope22-data">Task 1 - More with the <code>penelope22</code> data</a></li>
-  <li><a href="#task-3---new-phone-use-data" id="toc-task-3---new-phone-use-data" class="nav-link" data-scroll-target="#task-3---new-phone-use-data">Task 3 - New phone use data</a></li>
-  <li><a href="#task-4---final-challenge-visualisation" id="toc-task-4---final-challenge-visualisation" class="nav-link" data-scroll-target="#task-4---final-challenge-visualisation">Task 4 - Final challenge: visualisation</a></li>
-  <li><a href="#now-youre-finished" id="toc-now-youre-finished" class="nav-link" data-scroll-target="#now-youre-finished">Now you’re finished …</a></li>
+  <li><a href="#z-scores-1" id="toc-z-scores-1" class="nav-link" data-scroll-target="#z-scores-1">z-scores 1</a></li>
+  <li><a href="#z-scores-2-using-z-score-tables" id="toc-z-scores-2-using-z-score-tables" class="nav-link" data-scroll-target="#z-scores-2-using-z-score-tables">z-scores 2 Using z-score tables</a></li>
+  <li><a href="#z-scores-3-applying-z-scores-to-inferential-problems" id="toc-z-scores-3-applying-z-scores-to-inferential-problems" class="nav-link" data-scroll-target="#z-scores-3-applying-z-scores-to-inferential-problems">z-scores 3 Applying z-scores to inferential problems</a></li>
+  <li><a href="#final-z-score-challenge" id="toc-final-z-score-challenge" class="nav-link" data-scroll-target="#final-z-score-challenge">Final z-score challenge</a></li>
+  <li><a href="#rstudio-and-stats-humour" id="toc-rstudio-and-stats-humour" class="nav-link" data-scroll-target="#rstudio-and-stats-humour">RStudio and stats humour</a></li>
+  <li><a href="#extra-external-r-resources" id="toc-extra-external-r-resources" class="nav-link" data-scroll-target="#extra-external-r-resources">Extra external R resources</a></li>
   </ul></li>
-  <li><a href="#post---lab-recap-the-slides" id="toc-post---lab-recap-the-slides" class="nav-link" data-scroll-target="#post---lab-recap-the-slides">Post - lab recap: The slides</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC121/Week3.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC121/Week4.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. DVs and IVs in RStudio</h1>
+<h1 class="title">4. Customisation of graphs, and z-scores</h1>
 <p class="subtitle lead">Written by John Towse &amp; Tom Beesley</p>
 </div>
 
@@ -212,100 +215,101 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 
 <section id="lectures" class="level1">
 <h1>Lectures</h1>
-<p>Note: due to to Uni-based technical issues these are last year’s videos and cannot be edited. They will be updated once system fixes are in place)</p>
 <p>Watch Part 1</p>
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3682fd2c-a4b3-4a56-bf06-b0a0010a09df&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;start=51&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=06e885e1-ae61-48da-a526-b0a700903222&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 <p>Watch Part 2</p>
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1484592f-d70d-44e9-a3d7-b0a000e2a302&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7cb0be2b-960e-49da-8b22-b0a700956f77&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 <p>Watch Lecture Part 3</p>
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0d1c4020-868c-4721-823e-b0a000ead4bc&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d4968f5c-e3c3-4ff9-8de5-b0a70099dbd5&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 <p>Watch Lecture Part 4</p>
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1783efdd-6259-48d2-a160-b0a000eb1c7f&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
-<p>Download the lecture slides <a href="data/Week_3/week 3 slides2023.pptx">here</a></p>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0e49ce6f-fc0f-4c5e-ba3d-b0a7009efa33&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<p>Download the lecture slides <a href="data/Week_4/week4_23_lecture_slides.pptx">here</a></p>
 <section id="pre-lab-work" class="level2">
 <h2 class="anchored" data-anchor-id="pre-lab-work">Pre-lab work</h2>
-<p>Last week we asked you to</p>
 <ul>
-<li>Use a script to run instructions in RStudio</li>
-<li>Put data into RStudio form a data file and explore how to run descriptive stats</li>
+<li><p>Complete materials from sessions in previous week. Consolidate what we have already covered.</p></li>
+<li><p>This week - there’s a new learnr tutorial to follow and help prep for what we are covering: <a href="https://ma-rconnect.lancs.ac.uk/W4LabPrep/" target="_blank">You can find it here</a>.</p></li>
+<li><p>Make sure you have access to the <code>week4.zip</code> file for the RStudio server. <a href="data/Week_4/week_4_2023.zip">You can get the file here</a>.</p></li>
+<li><p>If you create a folder and upload the file into RStudio before the lab class you’ll be even more ready to follow along!</p></li>
 </ul>
-<p>This week - again, there’s a learnr tutorial to follow and help prep for this week’s activities. <a href="https://ma-rconnect.lancs.ac.uk//W3_prelab_23/" target="_blank">You can find it here</a></p>
 </section>
 <section id="r-studio-tasks" class="level2">
 <h2 class="anchored" data-anchor-id="r-studio-tasks">R Studio tasks</h2>
-<p>For the weight of a cow data last week, we provided you with estimates data, and you were able to generate descriptive statistics for the estimates (if not, please go back and work through that part of the week 2 activity again). You also found the weight estimates for the female and non-female guesses, right?</p>
-<p>However, in order to find the estimates separately for gender identity, we needed to have a column for each gender category. Whilst that worked, it could get cumbersome over time always to work with data created like that.</p>
-<p><em>There is a better way…</em></p>
-<section id="task-1---more-with-the-penelope22-data" class="level3">
-<h3 class="anchored" data-anchor-id="task-1---more-with-the-penelope22-data">Task 1 - More with the <code>penelope22</code> data</h3>
-<p>Step 1. Create a project and a folder, and set the working directory. This is covered in the learnr tutorial so head over there if you need reminding.</p>
-<p>Step 2. Bring the <code>week3.zip</code> file into R Studio server. Like last week, upload the zip file, and launch the R script. <a href="data/Week_3/week_3_2023.zip">You can get the file here</a></p>
-<p>Step 3. This week, we again want to explore commands from the tidyverse library (toolkit) which can help us do more powerful things more elegantly. So let’s get R to work again with the tidyverse library by running the code line</p>
+<p>Last week we introduced two different ways to get descriptive information about a variable / column of scores investigated as a function of a separate piece of information. In others words, describe the DV a function of an IV</p>
+<p>Students were generally very good at utilising each of these;</p>
+<p><code>aggregate(x = DV, by = list(IV), FUN = mean)</code></p>
+<p>and</p>
+<p><code>dataframe %&gt;% group_by(IV) %&gt;% summarise(mean_estimate = mean(DV))</code></p>
+<p>This week, we’re focusing on how you can edit or customise a graph to be more useful to a viewer.</p>
+</section>
+<section id="section-1---customisation-of-data-plots" class="level2">
+<h2 class="anchored" data-anchor-id="section-1---customisation-of-data-plots">Section 1 - Customisation of data plots</h2>
+<p>Step 1. Set up a folder for this week in the R Project that you created last week.</p>
+<p>Step 2. Bring the <code>week_4_2023.zip</code> file into R Studio server. Like last week, upload the zip file, and read in the data file. Launch the week_4 R script as before.</p>
+<p>{If you’ve done Step 1 &amp;2 already as a pre-lab preparation, super, pat yourself on the back, skip these steps an move on)}</p>
+<p>Step 3. Once again, we’re gong to be using commands from the tidyverse library (the pipe operator is one example) so we need to ensure that it’s active. Run the command</p>
 <p><code>library(tidyverse)</code></p>
-<p>Step 4. Explore help() commands. R can give you more information about how it works.</p>
-<p>Step 5. Read or load the penelope data into R. That is what line 16 of the code is designed to do</p>
-<p><code>data_object_name &lt;- read_csv("fill in") # use your own dataobject_name and specify the file you want to work with</code></p>
-<p>but note that you will need to edit this line -and ensure you are in the correct working directory- for this to be successful. Then have a look at it using the View() command in the script</p>
-<p>This time, let’s ask for the estimate data arranged by identity:</p>
-<p><code>aggregate(x = *MISSING*$estimate, by = list(*MISSING*$identity), FUN = mean)</code></p>
-<p>First, let’s try this (you will need to use your dataframe/variable name in place of MISSING). What do you get? Does this match what we did last week when we calculated the mean for the <em>female</em> and for the <em>other</em> (i.e., non-female) group?</p>
-<p>Second, let’s look at what is happening here:</p>
-<p><code>aggregate</code> This is a command to call for descriptive statistics</p>
-<p><code>x=</code> This defines what column we are analyzing</p>
-<p><code>by=list</code> Now we tell R how to group the estimate data, and which column does that</p>
-<p><code>FUN=mean</code> Specifies which descriptive function is being asked for Can you explore whether you can call on alternate measures?)</p>
-<section id="group_by" class="level4">
-<h4 class="anchored" data-anchor-id="group_by">group_by()</h4>
-<p>There’s another way that also allows us to group scores by a (nominal) variable. This is explored in the learnr tutorial, which should help you create the command the get weight estimates broken down by gender identity. You need to define the data frame for the estimates data, and the gender IV and the estimates DV</p>
-<p><code>*MISSING* %&gt;% group_by(*MISSING*) %&gt;% summarise(mean_estimate = mean(*MISSING*))</code></p>
-<p>First, try this command and see what you get. If you run this command as entered, it won’t work. So now use your experience at skills from the above and the learnr tutorial to work out what is required.</p>
-<p>Note</p>
-<p><code>%&gt;%</code> This is called a “pipe operator”, basically take the output from the left and feed it into the requests on the right. <code>Summarise</code> Provide summary statistics information for the specified variable as specified (whether mean, median etc)</p>
+<p>Step 4. Read in the datafiles that will be on the server. There’s already a script line for this, you just need to change the file name (and we’ve done this in previous weeks)</p>
+<p>Step 5. We’ve provided a suggestion of how you can complete the visualisation challenge task from week 3.</p>
+<p>Step 6. Customize you graph work. We’ve provided some suggestions about adding titles and labels for your graph. Edit and play with the script lines to make them useful to you and to understand how they work. Note that the <code>ggplot</code> instructions have a similar structure / grammar to the <code>group_by()</code> instructions that we used: piping a data frame to a (here, plotting) function and piping that to an output or summarisation format.</p>
+<ul>
+<li>Try change the text, the colours, and so on of the graphs.</li>
+<li>Add comments for yourself about what the different commands do. The idea is to learn by trying different things out (changing values, taking out elements of the command, putting other is) and record for yourself.</li>
+<li>If you are struggling or not sure, try look at help files.</li>
+</ul>
 </section>
-<section id="the-assignment-operator" class="level4">
-<h4 class="anchored" data-anchor-id="the-assignment-operator">The assignment operator</h4>
-<p>As well as learning about the pipe operator, we want to remind you /draw attention explicitly to another important element of the R command line syntax: the assignment operator. Uing a command such as</p>
-<p><code>cows &lt;- read_csv("penelope22.csv")</code></p>
-<p>looks for the csv datafile called ‘penelope22’, and assign it to an object or variable called ‘cows’</p>
-<p>We could create any object name we wanted (within limits of names already known to RStudio). It isn’t just for reading in data files, we can perform a whole range of functions and assign them to an object.</p>
+<section id="section-2-z-scores" class="level2">
+<h2 class="anchored" data-anchor-id="section-2-z-scores">Section 2: z-scores</h2>
+<blockquote class="blockquote">
+<p>Hint / Reminder: Sketch a normal (z score) distribution and mark the mean/mode, and mark off the relevant parts of the question so you know what you are trying to achieve and how to interpret any calculations you make.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Hint/ Guide 2. For questions 6 &amp; 7, typically in psychology we use the 5% level as a cutoff to decide, in broadly described terms, whether something is extreme or unlikely vs.&nbsp;at least somewhat plausible or likely.</p>
+</blockquote>
+<section id="z-scores-1" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-1">z-scores 1</h3>
+<p>z-score distributions</p>
+<p>Q1. What is the relationship between the sign of a z-score and its position in a distribution?</p>
+<p>Q2. If a distribution has a mean of 100 and a standard deviation of 10, what is the raw score equivalent to a z-score of 1.96?</p>
+<p>Q3. If a distribution has a mean of 157 and a standard deviation of 19, what is the raw score equivalent to a z-score of 1?</p>
 </section>
-<section id="task-2---new-salary-data" class="level4">
-<h4 class="anchored" data-anchor-id="task-2---new-salary-data">Task 2 - New salary data</h4>
-<p>Using aggregate and summarise may not seem like much progress, because they are just replicating what we had already done with mean() is week 2. However (a) this emphasizes that there are often several ways to get at the same thing in R (b) now we know about grouping, about working with 2-dimensional data, we can start to do more efficient and informative things.</p>
-<p>Now, let’s turn to the guesses made about median salary in the UK. We can get the data from the file <code>wages2023.csv</code> (you will need to adapt the code we used above for the weight estimation file so that it will load in the wages data, and in what follows the assumption is your new variable name is called <code>wages</code>)</p>
-<p>Let’s take a peek at the dataset with</p>
-<p><code>glimpse(wages)</code></p>
-<p>Glimpse pretty much does what you might think from the meaning of the word – it just gives us a data sample (handy because this is a much bigger dataset) and shows that we have 3 columns; uk_region (where someone lives, note ‘other’ probably equals Northern Ireland, Europe, China, etc), family_position (age relationship with siblings), and salary (estimate).</p>
-<p>By the way, the govt statistics say the actual median income in 2022 was approx. £32,300 <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/incomeandwealth/bulletins/householddisposableincomeandinequality/financialyearending2022" target="_blank">see this link</a></p>
-<ol type="A">
-<li><p>Writing into your script, use the working “aggregate” commands from task 1 with the penelope weight data to find out the salary guesses as a function of where someone lives? That is, can you adapt that code for this problem? First, make sure you read in the data file into an R object.</p></li>
-<li><p>Can you use the aggregate command to find out salary guess as a function of family relationships? (if you are the youngest child maybe you have older siblings earning money that changes your evaluation?)</p></li>
-<li><p>Can you get a breakdown of guess as a function of BOTH UK region AND family relationship together?</p></li>
-<li><p>Can you use the <code>group by()</code> command to display salary guesses as a function of where someone lives? Check this gives you the same answer.</p></li>
+<section id="z-scores-2-using-z-score-tables" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-2-using-z-score-tables">z-scores 2 Using z-score tables</h3>
+<p>Q4. What proportion of scores lie between the mean and a z-score of 0.5?</p>
+<p>Q5. What is the combined proportion of scores lying between z=-1.2 and z=.85?</p>
+</section>
+<section id="z-scores-3-applying-z-scores-to-inferential-problems" class="level3">
+<h3 class="anchored" data-anchor-id="z-scores-3-applying-z-scores-to-inferential-problems">z-scores 3 Applying z-scores to inferential problems</h3>
+<p>Q6. A Neuropsychologist has presented a test of face recognition to 200 neurotypical participants and finds that the scores are normally distributed with a mean of 85 and the standard deviation of 12. Two brain-damaged patients are also given the test. The one with right hemisphere brain damage scored 58 and the one with left hemisphere damage scored 67.</p>
+<ol type="1">
+<li><p>What is the z score of the right hemisphere patient when compared to the neurotypical group?</p></li>
+<li><p>What proportion of neurotypical participants score lower that this patient?</p></li>
+<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
+<li><p>What is the z score of the left hemisphere patient when compared to the neurotypical group?</p></li>
+<li><p>What proportion of neurotypical participants score lower than this patient?</p></li>
+<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
 </ol>
 </section>
+<section id="final-z-score-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="final-z-score-challenge">Final z-score challenge</h3>
+<p>Come back to this afterwards for some extra practice if you want:</p>
+<p>Q7. Tom Bunion has completed a huge research study and measured the foot size of men and women and found each to be normally distributed. The men have a mean size of 55 with a standard deviation of 5 and the women a mean of 33 and a standard deviation of 5. Joanna Toes has foolishly measured two individuals but forgotten to note their gender. These have foot sizes of 37 and 47. To which gender is each more likely to belong? What evidence is there for this?</p>
 </section>
-<section id="task-3---new-phone-use-data" class="level3">
-<h3 class="anchored" data-anchor-id="task-3---new-phone-use-data">Task 3 - New phone use data</h3>
-<ol start="5" type="A">
-<li><p>Dataset 3: Use the dataset of phone screen time usage, <code>screentime2023.csv</code> to further explore and consolidate the group_by() command (ie we’ll drop the aggregate command for this task to focus on group_by()). Use copy and paste to adapt the existing script lines from the above two tasks so that this time you read in and calculate screen time usage as a function of the type of phone. In other words, add line (and comments) to the scripts for this new task.</p></li>
-<li><p>Use RStudio to figure out the overall mean screen time usage estimate and the standard deviation. Calculate by hand what usage estimate would have a z score of z=-1.5?</p></li>
-</ol>
+<section id="rstudio-and-stats-humour" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio-and-stats-humour">RStudio and stats humour</h3>
+<p>The following are parody music videos about stats. Now that you have a few weeks’ experience with R Studion and also, an introduction to hypothesis testing, you might appreciate the following</p>
+<p>The R Inferno Song (Teenage Dirtbag Parody) filmed largely on campus at Maynooth University, Ireland:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nziSP3vELCk?si=9HG9waQaEagUeCXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+Player"&gt;
+<p>Hypothesis testing and p values (plus bunny rabbits and a dog)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HTdo6xjfFHI?si=Z5Z4W5kggt5Ef0um" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 </section>
-<section id="task-4---final-challenge-visualisation" class="level3">
-<h3 class="anchored" data-anchor-id="task-4---final-challenge-visualisation">Task 4 - Final challenge: visualisation</h3>
-<p>Can you find a way to visualise the screentime usage data that you have been working with above? The script provides two ways to consider doing this - boxplots (which we have looked at in script commands already) and ggplot, which we have spent less time with but is an extremely powerful engine for creating plots. We’ve provided the start of the code in each case, leaving you to work out the specifics. Remember to annotate your creations!</p>
-</section>
-<section id="now-youre-finished" class="level3">
-<h3 class="anchored" data-anchor-id="now-youre-finished">Now you’re finished …</h3>
-<p>Remember to complete your notes in the script, save the script file, and end the server session.</p>
-</section>
-</section>
-<section id="post---lab-recap-the-slides" class="level2">
-<h2 class="anchored" data-anchor-id="post---lab-recap-the-slides">Post - lab recap: The slides</h2>
-<p>Want to see the introduction slides used in the Levy lab? They are <a href="data/Week_3/week_3_levylab_slides.pptx">available here</a></p>
+<section id="extra-external-r-resources" class="level3">
+<h3 class="anchored" data-anchor-id="extra-external-r-resources">Extra external R resources</h3>
+<p>Some students have asked for a pointer to additional R resources so they can structure some time exploring the R system. There are lots, but this is good and very compatible with the teaching we provide: <a href="https://r4ds.hadley.nz" target="_blank">R for data science</a></p>
 
 
+</section>
 </section>
 </section>
 
@@ -545,13 +549,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../PSYC121/Week2.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">2. Descriptive statistics in RStudio</span>
+      <a href="../PSYC121/Week3.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">3. DVs and IVs in RStudio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../PSYC121/Week4.html" class="pagination-link">
-        <span class="nav-page-text">4. Customisation of graphs, and z-scores</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../PSYC122/index.html" class="pagination-link">
+        <span class="nav-page-text">PSYC122</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

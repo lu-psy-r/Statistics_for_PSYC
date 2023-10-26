@@ -180,4 +180,9 @@ We can also create a "box and whisker plot". Here's a general simple description
 
 ### Step 6. Putting it all together! Apply your new skils to a different dataset
 
-In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore this variable, create visualisations of the data and its spread. We'll be looking at a version of this variable in week 3: can you apply the analysis of the penelope data to the immigration data (report descriptive statistics)? Write some new script lines to investigate this additional dataset, and annotate those new script lines
+In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore this variable, create visualisations of the data and its spread. We'll be looking at a version of this variable in week 3: can you apply the analysis of the penelope data to the immigration data (report descriptive statistics)? Write some new script lines to investigate this additional dataset, and annotate those new script lines.
+
+## Post - lab recap: The slides
+
+Want to see the introduction slides that we used in the Levy lab? They are [available here](data/Week_2/week_2_levylab_slides.pptx)
+
