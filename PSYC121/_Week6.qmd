@@ -30,6 +30,35 @@ Download the lecture slides [here](data/Week_6/PSYC121 Week 6.pptx)
 
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
+## Some basic RMarkdown
+
+We introduced you to RMarkdown in Week 4. It's like a .R script, only a bit more fancy! Today we'll introduce a couple more features and use this in our tasks below. 
+
+1. Make sure you have a Week 6 folder
+
+2. Once in that folder in the files pane, click "more" and "set as working directory"
+
+3. Then click the new file button and select "R Markdown"
+
+![](images/wk6/new_rmd.png) 
+4. You'll be asked to name this file. Leave the other options as they are and click OK.
+
+5. When the new R Markdown file appears, try "knitting" it (the icon at the top with the ball of wool). You should get a nice output of the default R Markdown document.
+
+6. Note that in R Markdown documents you can freely type in text in the main body of the file - you did this last week. But see how you can also create a *"code chunk"* within the document. These are places where you put your R code you want to run. In a way, R Markdown files function in the opposite way to .R files: you write normal text in the main part (like you'd do in a word processor), but you create a special bit for your code; in a .R file you write code, and use the "#" to say when you want to write normal text. 
+
+7. Try running the first code chunk (click the green arrow on the right). This will run the code and display the output (in the document and in the console). 
+
+
+## Creating an R Markdown for your lab work
+
+1. Delete all of the script except the first title (## R Markdown)
+
+2. Change this title to something more relevant: (e.g., ## Task 1 - Card Sampling task)
+
+3. Knit your document to check it is still working!
+
+
 ## Card sampling task
 
 ![](images/wk6/cards.jpg)
@@ -38,23 +67,46 @@ In the first task this week we will look at the sampling of events and we will a
 
 Each table has a set of cards. These will be 13 red cards and 13 black cards - please check your set to ensure you have the right number of each colour (it doesn't matter what suit the cards are).
 
-In this task we will be drawing samples from the deck, and trying to tell whether the deck is biased towards red or black. Think of the cards as the population of scores out there in world, and when you can only see back of the cards, that data is unobserved.
+We are going to play a game in which one person chooses a set of these cards and biases the deck towards either red or black. The other members of the table have to try and work out which way the set is biased. To do this, they will draw samples from the deck.
 
-As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to draw a sample. So each time you draw a card, you are observing one data point from the population, and based on a collection of data (the sample) you are going to draw an inference about what is true about the population.
+Think of this as an experiment: there is something real out there in the world in our "population" (the cards). As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to take samples. When you can only see the backs of the cards, that data is unobserved. But as we draw samples, we start to understand how the "world" is - whether it is biased towards red or black. 
+
+So each time you draw a card, you are observing one data point from the population, and based on the data you collect (your samples) you are going to draw an inference about what is true about the population.
 
 ### Set up and instructions:
 
-1.  One person on each table should act as the "world" (the dealer). Congratulations, you are God. That is, this person will determine what is true about the state of things in the world. In this example, that means they control what is contained in the deck of cards. For each experiment, secretly remove some cards from the deck and place those face down. It's important that no one sees what these cards are. For example, you might take out 5 red cards, so that 13 black and 8 red are left; this deck is now biased to black. Or you might take out 3 red and 3 black; this deck is not biased.
+1.  One person on each table should act as the "world" (the person who biases the cards). Congratulations, you are God! This person will determine what is true about the state of things in the world. This means they control what is contained in the deck of cards. 
+2. For each experiment, this person secretly looks at the cards, and removes some cards to use in the experiment. For example, from the set of 26 cards, they might choose to remove 4 black cards. The deck is now biased towards red (13 red; 9 black).
 
-2.  The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black.
+3. It's important that no one sees what the cards are (the ones you've kept, or the ones removed). Shuffle the cards so they are ready to be sampled. 
 
-3.  For each experiment, go through the following steps:
+4.  The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black. 
 
--   The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the "experiment".
+5. Now copy the following text and code to your R Markdown document to record your work:
 
--   The experimenters "pre-register" their sample size. That is, they state how many cards they are going to draw.
+```{r }
+#| eval: False
 
--   Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.
+Experiment 1: the 
+binom.test(7, 10)
+
+```
+
+
+
+### Running each experiment 
+
+Do these steps for each experiment:
+
+1. The "World" removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the chosen cards ready to start the "experiment".
+
+2. The "Experimenters" **pre-register** their sample size. That is, they state how many cards they are going to draw.
+
+3. Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.
+
+
+
+
 
 -   Mark down whether the card was red or black in [your logbook](data/Week_6/Week_6_card_logbook.docx)
 
