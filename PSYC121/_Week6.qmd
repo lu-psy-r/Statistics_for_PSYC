@@ -58,7 +58,6 @@ We introduced you to RMarkdown in Week 4. It's like a .R script, only a bit more
 
 3. Knit your document to check it is still working!
 
-
 ## Card sampling task
 
 ![](images/wk6/cards.jpg)
@@ -84,43 +83,44 @@ So each time you draw a card, you are observing one data point from the populati
 
 5. Now copy the following text and code to your R Markdown document to record your work:
 
-```{r }
-#| eval: False
+````
+### Experiment 1
 
-Experiment 1: the 
-binom.test(7, 10)
+Number of samples:
+Total red cards found:
+Total black cards found:
+Conclusion: 
+The true bias was: 
+
+
+```{{r}}
+
+binom.test(x, n) # x is the number or red or black; n is the sample size
 
 ```
 
-
-
+````
 ### Running each experiment 
 
 Do these steps for each experiment:
 
-1. The "World" removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the chosen cards ready to start the "experiment".
+1. The "World" removes some cards from the full deck (the number and colour of the cards removed is up to them). They shuffle the chosen cards ready to start the "experiment".
 
 2. The "Experimenters" **pre-register** their sample size. That is, they state how many cards they are going to draw.
 
-3. Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.
+3. Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle. 
 
+4. Do step 3 until you have collect the sample size you chose
 
+5. Once you have all the samples, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
 
+6. Change the `binom.test()` code to provide a statistical result. Note the "p value". Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
 
+7. The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test? Feel free to Write a short statement about what you found in this experiment. 
 
--   Mark down whether the card was red or black in [your logbook](data/Week_6/Week_6_card_logbook.docx)
+Repeat all of the above steps (1-5) for a new experiment, **making sure that you try different parameters for the experiment**. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
 
--   The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.
-
--   At the end of each experiment, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
-
--   As a group, use RStudio to run a `binom.test()` to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it's up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
-
--   The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?
-
-4.  Repeat all steps in part 3 again for a new experiment, **making sure that you try different parameters for the experiment**. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
-
-5.  Once you've conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:
+Once you've conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:
 
 -   were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was \> .05)?
 
