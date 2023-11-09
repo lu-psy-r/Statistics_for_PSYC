@@ -2,19 +2,37 @@
 title: 6. Sampling, probability and binomial tests
 subtitle: Written by Tom Beesley & John Towse
 order: 7
+editor_options: 
+  chunk_output_type: console
 ---
 
-# Lectures
+# Week 6 Lecture
 
-Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012874)
+Watch Part 1
 
-Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012875)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5676177e-7dcc-4c30-9e72-b0b500aa82d6" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
 
-Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012876)
+Watch Part 2
 
-Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2012877)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6c7e439-077a-464d-ac43-b0b500aa8285" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
 
-Download the lecture slides [here](data/Week_6/PSYC121 Week 6.pptx)
+Watch Part 3
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c62c74c2-4bb0-4c28-91b0-b0b500aa825d" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 4
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=350fbb75-e55d-47bf-8c41-b0b500aa8218" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Download the lecture slides [here](data/Week_6/PSYC121 wk6_slides_2023.pptx)
 
 ## Reading 
 
@@ -26,9 +44,6 @@ Download the lecture slides [here](data/Week_6/PSYC121 Week 6.pptx)
 
 -   There is a learnr tutorial to complete which will help you to think about **binomial tests**. [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
--   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](data/Week_6/Week_6.zip)
-
--   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
 ## Some basic RMarkdown
 
@@ -129,6 +144,31 @@ Once you've conducted a few experiments, discuss on your table the results you f
 -   were there times when the deck was *not* biased, but the test result suggested it was (p \< .05)? Do you remember what type of error this is called?
 
 ## RStudio tasks
+
+```{r}
+#| eval = true
+#| echo = false
+#| output = false
+
+library(tidyverse)
+
+d_raw <- read_csv("data/Week_6/PSYC121_teaching_data_2023.csv")
+
+# get the relevant risky decision columns and wrangle
+d <- 
+  d_raw %>% 
+  select("gain" = Q16, "loss" = Q17) %>% 
+  dplyr::slice(3:n()) %>% 
+  mutate(across(gain:loss, as.nu))
+
+d
+
+
+
+```
+
+
+
 
 For the second exercise today we will take a look at the phone data again. If you haven't already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).
 
