@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6. Sampling, probability and binomial tests</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="_Week6_files/libs/clipboard/clipboard.min.js"></script>
+<script src="_Week6_files/libs/quarto-html/quarto.js"></script>
+<script src="_Week6_files/libs/quarto-html/popper.min.js"></script>
+<script src="_Week6_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="_Week6_files/libs/quarto-html/anchor.min.js"></script>
+<link href="_Week6_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="_Week6_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="_Week6_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="_Week6_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="_Week6_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">6. Sampling, probability and binomial tests</h1>
+<p class="subtitle lead">Written by Tom Beesley &amp; John Towse</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="week-6-lecture" class="level1">
+<h1>Week 6 Lecture</h1>
+<p>Watch Part 1</p>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5676177e-7dcc-4c30-9e72-b0b500aa82d6" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<p>Watch Part 2</p>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6c7e439-077a-464d-ac43-b0b500aa8285" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<p>Watch Part 3</p>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c62c74c2-4bb0-4c28-91b0-b0b500aa825d" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<p>Watch Part 4</p>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=350fbb75-e55d-47bf-8c41-b0b500aa8218" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<p>Download the lecture slides <a href="data/Week_6/PSYC121%20wk6_slides_2023.pptx">here</a></p>
+<section id="reading" class="level2">
+<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<p><a href="https://modules.lancaster.ac.uk/mod/url/view.php?id=2017199">Chapter 8</a> of Howell</p>
+</section>
+<section id="pre-lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="pre-lab-work">Pre-lab work</h2>
+<ul>
+<li><p>Ensure you have watched the lecture for Week 6.</p></li>
+<li><p>There is a learnr tutorial to complete which will help you to think about <strong>binomial tests</strong>. <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/" target="_blank">You can find it here</a>.</p></li>
+</ul>
+</section>
+<section id="some-basic-rmarkdown" class="level2">
+<h2 class="anchored" data-anchor-id="some-basic-rmarkdown">Some basic RMarkdown</h2>
+<p>We introduced you to RMarkdown in Week 4. It’s like a .R script, only a bit more fancy! Today we’ll introduce a couple more features and use this in our tasks below.</p>
+<ol type="1">
+<li><p>Make sure you have a Week 6 folder</p></li>
+<li><p>Once in that folder in the files pane, click “more” and “set as working directory”</p></li>
+<li><p>Then click the new file button and select “R Markdown”</p></li>
+</ol>
+<p><img src="images/wk6/new_rmd.png" class="img-fluid"> 4. You’ll be asked to name this file. Leave the other options as they are and click OK.</p>
+<ol start="5" type="1">
+<li><p>When the new R Markdown file appears, try “knitting” it (the icon at the top with the ball of wool). You should get a nice output of the default R Markdown document.</p></li>
+<li><p>Note that in R Markdown documents you can freely type in text in the main body of the file - you did this last week. But see how you can also create a <em>“code chunk”</em> within the document. These are places where you put your R code you want to run. In a way, R Markdown files function in the opposite way to .R files: you write normal text in the main part (like you’d do in a word processor), but you create a special bit for your code; in a .R file you write code, and use the “#” to say when you want to write normal text.</p></li>
+<li><p>Try running the first code chunk (click the green arrow on the right). This will run the code and display the output (in the document and in the console).</p></li>
+</ol>
+</section>
+<section id="creating-an-r-markdown-for-your-lab-work" class="level2">
+<h2 class="anchored" data-anchor-id="creating-an-r-markdown-for-your-lab-work">Creating an R Markdown for your lab work</h2>
+<ol type="1">
+<li><p>Delete all of the script except the first title (## R Markdown)</p></li>
+<li><p>Change this title to something more relevant: (e.g., ## Task 1 - Card Sampling task)</p></li>
+<li><p>Knit your document to check it is still working!</p></li>
+</ol>
+</section>
+<section id="card-sampling-task" class="level2">
+<h2 class="anchored" data-anchor-id="card-sampling-task">Card sampling task</h2>
+<p><img src="images/wk6/cards.jpg" class="img-fluid"></p>
+<p>In the first task this week we will look at the sampling of events and we will apply the basic statistical test of the binomial test: <code>binom.test()</code></p>
+<p>Each table has a set of cards. These will be 13 red cards and 13 black cards - please check your set to ensure you have the right number of each colour (it doesn’t matter what suit the cards are).</p>
+<p>We are going to play a game in which one person chooses a set of these cards and biases the deck towards either red or black. The other members of the table have to try and work out which way the set is biased. To do this, they will draw samples from the deck.</p>
+<p>Think of this as an experiment: there is something real out there in the world in our “population” (the cards). As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to take samples. When you can only see the backs of the cards, that data is unobserved. But as we draw samples, we start to understand how the “world” is - whether it is biased towards red or black.</p>
+<p>So each time you draw a card, you are observing one data point from the population, and based on the data you collect (your samples) you are going to draw an inference about what is true about the population.</p>
+<section id="set-up-and-instructions" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-and-instructions">Set up and instructions:</h3>
+<ol type="1">
+<li><p>One person on each table should act as the “world” (the person who biases the cards). Congratulations, you are God! This person will determine what is true about the state of things in the world. This means they control what is contained in the deck of cards.</p></li>
+<li><p>For each experiment, this person secretly looks at the cards, and removes some cards to use in the experiment. For example, from the set of 26 cards, they might choose to remove 4 black cards. The deck is now biased towards red (13 red; 9 black).</p></li>
+<li><p>It’s important that no one sees what the cards are (the ones you’ve kept, or the ones removed). Shuffle the cards so they are ready to be sampled.</p></li>
+<li><p>The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black.</p></li>
+<li><p>Now copy the following text and code to your R Markdown document to record your work:</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Experiment 1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Number of samples:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Total red cards found:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Total black cards found:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Conclusion: </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>The true bias was: </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(x, n) <span class="co"># x is the number or red or black; n is the sample size</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="running-each-experiment" class="level3">
+<h3 class="anchored" data-anchor-id="running-each-experiment">Running each experiment</h3>
+<p>Do these steps for each experiment:</p>
+<ol type="1">
+<li><p>The “World” removes some cards from the full deck (the number and colour of the cards removed is up to them). They shuffle the chosen cards ready to start the “experiment”.</p></li>
+<li><p>The “Experimenters” <strong>pre-register</strong> their sample size. That is, they state how many cards they are going to draw.</p></li>
+<li><p>Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p></li>
+<li><p>Do step 3 until you have collect the sample size you chose</p></li>
+<li><p>Once you have all the samples, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p></li>
+<li><p>Change the <code>binom.test()</code> code to provide a statistical result. Note the “p value”. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p></li>
+<li><p>The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test? Feel free to Write a short statement about what you found in this experiment.</p></li>
+</ol>
+<p>Repeat all of the above steps (1-5) for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p>
+<p>Once you’ve conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:</p>
+<ul>
+<li><p>were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was &gt; .05)?</p></li>
+<li><p>were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p &lt; .05)? Do you remember what this type of error is called?</p></li>
+<li><p>were there times when the deck was <em>not</em> biased, but the test result suggested it was (p &lt; .05)? Do you remember what type of error this is called?</p></li>
+</ul>
+</section>
+</section>
+<section id="rstudio-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-tasks">RStudio tasks</h2>
+</section>
+</section>
+<section id="risky-and-safe-decisions" class="level1">
+<h1>Risky and safe decisions</h1>
+<p>For the second exercise today we will look at data from the survey on “risky and safe decisions”. You may remember that you were asked the following question:</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Gain">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Gain
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagine you are on a game-show and you win £300. The presenter gives you have a choice: receive an additional £100 for sure, or take a gamble offering a 50% chance to gain £200 and a 50% chance to gain nothing. Which would you choose?</p>
+<ul>
+<li><p>receive £100 for sure</p></li>
+<li><p>take the gamble of a 50% chance to gain £200 and a 50% chance to gain nothing</p></li>
+</ul>
+</div>
+</div>
+<p>We then asked you a similar question:</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Loss">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Loss
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagine you are on a different game-show and you win £500. Here you are given a choice between either losing £100 from your winnings for sure, or taking a gamble offering a 50% chance to lose nothing and a 50% chance to lose £200. Which would you choose?</p>
+<ul>
+<li><p>lose £100 for sure</p></li>
+<li><p>take the gamble of a 50% chance to lose nothing and a 50% chance to lose £200</p></li>
+</ul>
+</div>
+</div>
+<section id="read-in-the-csv-data-file" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-the-csv-data-file">Read in the csv data file</h3>
+<p>You should know how to do this by now. But if not, try searching “csv” at the top. Remember that what you name your data set is important for the following commands.</p>
+</section>
+<section id="take-a-look-at-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="take-a-look-at-the-data">Take a look at the data</h3>
+<p>There are lots of ways to get a quick look at the data. Here are a few useful ones (some you’ve come across, some that might be new): <code>glimpse()</code>, <code>summary()</code>, <code>View()</code>, <code>head()</code>.</p>
+</section>
+<section id="create-a-boxplot-of-the-phone-data" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-boxplot-of-the-phone-data">Create a boxplot of the phone data</h3>
+<p>Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.</p>
+</section>
+<section id="create-a-density-plot-andor-histogram-of-the-phone-data" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-density-plot-andor-histogram-of-the-phone-data">Create a density plot and/or histogram of the phone data</h3>
+<p>It’s very easy to convert the boxplot code into either a density plot (<code>geom_density()</code>) or a histogram (<code>geom_histogram()</code>). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?</p>
+</section>
+<section id="plot-the-relationship-between-estimated-and-actual-phone-use" class="level3">
+<h3 class="anchored" data-anchor-id="plot-the-relationship-between-estimated-and-actual-phone-use">Plot the relationship between estimated and actual phone use</h3>
+<p>So far we’ve looked at the phone use estimate and the actual phone use separately. But if people are at all accurate in their estimates, we’d expect these two things to be related (those people who use their phone more probably know they do). Let’s use a scatter plot to see if this relationship exists in our data. In <code>ggplot()</code> we can do with with <code>geom_point()</code>. Each point on the graph needs an x and y value, so with the code you’ve been given, you just need to add in the two variables we want to plot.</p>
+<ul>
+<li>Is there a relationship between these variables?</li>
+<li>How would you describe this relationship in words?</li>
+</ul>
+</section>
+<section id="binomial-test-of-the-accuracy-of-phone-use-estimates" class="level3">
+<h3 class="anchored" data-anchor-id="binomial-test-of-the-accuracy-of-phone-use-estimates">Binomial test of the accuracy of phone use estimates</h3>
+<p>So did people overestimate or underestimate their phone use on average? We have given you a column called <em>accuracy</em> which simply says whether each participant underestimated or overestimated. Add your dataset name to this code to use the <code>count()</code> function to get the total who overestimated and underestimated. With these totals, you have enough information to run a binomial test:</p>
+<ul>
+<li>for this test focus on the totals for “underestimate” and “overestimate” (for simplicity we can ignore people who were “accurate” and the NA values)</li>
+<li>These give you your first two parameters for <code>binom.test()</code></li>
+<li>to get the probability, we consider the null hypothesis</li>
+<li>that is what’s the probability of overestimating or underestimating under the null hypothesis?</li>
+<li>what is the result of the binomial test?</li>
+<li>You can also include the <em>UK_region</em> within your count, and then run binomial tests on these sub-groups. Do you find any interesting reuslts? What issues might we have with running the <code>binom.test()</code> on these sub groups?</li>
+</ul>
+</section>
+<section id="more-things-to-try-with-your-scatter-plot" class="level3">
+<h3 class="anchored" data-anchor-id="more-things-to-try-with-your-scatter-plot">More things to try with your scatter plot</h3>
+<p>We can customise our plot even further:</p>
+<ul>
+<li>Try adding/changing the <code>size =</code> within <code>geom_point()</code> to make the points bigger or smaller (values from .1 to 30)</li>
+<li>Try adding/changing the <code>alpha =</code> within <code>geom_point()</code> to make the points transparent (try values between 0.1 and 1)</li>
+<li>try adding <code>colour =</code> within <code>ggplot(aes( ))</code> to <em>map</em> the colour to the ‘UK_region’ variable.</li>
+<li>you can change the colours used by ggplot by adding <code>+ scale_colour_brewer()</code> to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., <code>scale_colour_brewer(palette = "Set3")</code>)</li>
+</ul>
+<p><img src="images/wk6/brewer_cols.png" class="img-fluid"></p>
+<ul>
+<li>remember you can add labels using <code>+labs()</code></li>
+<li>remember you can set a new theme, such as <code>+ theme_minimal()</code></li>
+</ul>
+</section>
+<section id="week-6-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="week-6-quiz">Week 6 Quiz</h2>
+<p>You can access a set of quiz questions related to this week <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/" target="_blank">here.</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
