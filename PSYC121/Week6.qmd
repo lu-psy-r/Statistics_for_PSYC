@@ -11,26 +11,27 @@ editor_options:
 Watch Part 1
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5676177e-7dcc-4c30-9e72-b0b500aa82d6" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5676177e-7dcc-4c30-9e72-b0b500aa82d6&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 2
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a6c7e439-077a-464d-ac43-b0b500aa8285" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a6c7e439-077a-464d-ac43-b0b500aa8285&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 3
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c62c74c2-4bb0-4c28-91b0-b0b500aa825d" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=c62c74c2-4bb0-4c28-91b0-b0b500aa825d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 4
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=350fbb75-e55d-47bf-8c41-b0b500aa8218" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=350fbb75-e55d-47bf-8c41-b0b500aa8218&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
+
 
 Download the lecture slides [here](data/Week_6/PSYC121 wk6_slides_2023.pptx)
 
@@ -213,7 +214,7 @@ Let's look to see if you showed the same pattern!
 
 2. Create a new code chunk by clicking the "Code" menu, then "Insert Chunk"
 
-3. You can download the data from [this link]("data/Week_6/risky_decisions.csv"), then upload it into the server.
+3. You can download the data from [this link](data/Week_6/risky_decisions.csv), then upload it into the server.
 
 4. Add a `read_csv()` command to read the data into the environment. 
 
