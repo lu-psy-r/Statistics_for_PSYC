@@ -6,7 +6,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Week 6 Lecture
+## Week 6 Lecture
 
 Watch Part 1
 
@@ -40,9 +40,9 @@ Download the lecture slides [here](data/Week_6/PSYC121 wk6_slides_2023.pptx)
 
 ## Pre-lab work
 
--   Ensure you have watched the lecture for Week 6.
+-   Ensure you have watched the above lecture content for Week 6.
 
--   There is a learnr tutorial to complete which will help you to think about **binomial tests**. [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
+-   Complete the short learnr tutorial which will introduce you to running the **binomial tests** in R. [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
 
 ## Some basic RMarkdown
@@ -143,8 +143,6 @@ Once you've conducted a few experiments, discuss on your table the results you f
 
 -   were there times when the deck was *not* biased, but the test result suggested it was (p \< .05)? Do you remember what type of error this is called?
 
-## RStudio tasks
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -166,15 +164,17 @@ risk_dec <- read_csv("data/Week_6/risky_decisions.csv")
 
 count(risk_dec,gain)
 
+binom.test(109,137)
+
 count(risk_dec,loss)
 
-
+binom.test(76,137)
 
 
 
 ```
 
-# Risky and safe decisions
+## Risky and safe decisions
 
 For the second exercise today we will look at data from the survey on "risky and safe decisions". You may remember that you were asked the following question:
 
@@ -196,61 +196,47 @@ Imagine you are on a different game-show and you win £500. Here you are given a
 - take the gamble of a 50% chance to lose nothing and a 50% chance to lose £200
 :::
 
-We've called these "gain" and "loss", because in the first scenario you're being asked about a chance to gain money, while in the second, it's about a chance to lose money. Note that the *"expected utility"*<https://plato.stanford.edu/entries/rationality-normative-utility/> of the choices is equivalent:
+We've called these "gain" and "loss", because in the first scenario you're being asked about a chance to gain money, while in the second, it's about a chance to lose money. Note that the **"expected utility"** of the choices is equivalent:
 
-::: {.callout-note icon=false title=""}
-"The expected utility of an act is a weighted average of the utilities of each of its possible outcomes, where the utility of an outcome measures the extent to which that outcome is preferred, or preferable, to the alternatives. The utility of each outcome is weighted according to the probability that the act will lead to that outcome." 
+::: {.callout-note icon=false appearance="simple"}
+
+"The expected utility of an act is a weighted average of the utilities of each of its possible outcomes, where the utility of an outcome measures the extent to which that outcome is preferred, or preferable, to the alternatives. The utility of each outcome is weighted according to the probability that the act will lead to that outcome." [see here](https://plato.stanford.edu/entries/rationality-normative-utility/)
 :::
 
+That's to say, on average, you'll end up with +£100 for the two cases in the gain scenario, or -£100 for the two cases in the loss scenario.
 
-### Read in the csv data file
+But what do people actually pick? Well people tend to be risk-averse, choosing the safe option overall. But interestingly, the safe option is picked far less when the scenario is presented as a loss. People seem to want to take the risk of potentially not losing anything (but maybe losing more).
 
-You should know how to do this by now. But if not, try searching "csv" at the top. Remember that what you name your data set is important for the following commands.
+Let's look to see if you showed the same pattern!
 
-### Take a look at the data
+1. Create a new section of your markdown, giving it a suitable header
 
-There are lots of ways to get a quick look at the data. Here are a few useful ones (some you've come across, some that might be new): `glimpse()`, `summary()`, `View()`, `head()`.
+2. Create a new code chunk by clicking the "Code" menu, then "Insert Chunk"
 
-### Create a boxplot of the phone data
+3. You can download the data from [this link]("data/Week_6/risky_decisions.csv"), then upload it into the server.
 
-Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.
+4. Add a `read_csv()` command to read the data into the environment. 
 
-### Create a density plot and/or histogram of the phone data
+::: {.callout-important title="Reading CSVs"}
 
-It's very easy to convert the boxplot code into either a density plot (`geom_density()`) or a histogram (`geom_histogram()`). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?
+- Remember to set the working directory so R knows where the file is
+- Remember to assign (<-) to a new data object and give this a sensible name
+:::
 
-### Plot the relationship between estimated and actual phone use
+5. View the data, and see that the columns represent the gain and loss scenarios. The values represent the choices people made. 
 
-So far we've looked at the phone use estimate and the actual phone use separately. But if people are at all accurate in their estimates, we'd expect these two things to be related (those people who use their phone more probably know they do). Let's use a scatter plot to see if this relationship exists in our data. In `ggplot()` we can do with with `geom_point()`. Each point on the graph needs an x and y value, so with the code you've been given, you just need to add in the two variables we want to plot.
+6. Use the `count()` function to count the number of "safe" and "risky" choices that were made for our sample
 
--   Is there a relationship between these variables?
--   How would you describe this relationship in words?
+```{r}
+#| eval: false
+count(my_data_object_name, gain)
+```
 
-### Binomial test of the accuracy of phone use estimates
+7. We can now tell whether, in our sample, people tended to play it safe or take the risky choice. Did the sample have a meaningful bias towards one type of decision? If they didn't we'd expect it to be a 50/50 split between safe and risky (people might make their choice at random). Use the `binom.test()` to look at whether the result would be expected by chance, noting the p value that is found. 
 
-So did people overestimate or underestimate their phone use on average? We have given you a column called *accuracy* which simply says whether each participant underestimated or overestimated. Add your dataset name to this code to use the `count()` function to get the total who overestimated and underestimated. With these totals, you have enough information to run a binomial test:
+8. Write a sentence or two after your code to explain what this result means.
 
--   for this test focus on the totals for "underestimate" and "overestimate" (for simplicity we can ignore people who were "accurate" and the NA values)
--   These give you your first two parameters for `binom.test()`
--   to get the probability, we consider the null hypothesis
--   that is what's the probability of overestimating or underestimating under the null hypothesis?
--   what is the result of the binomial test?
--   You can also include the *UK_region* within your count, and then run binomial tests on these sub-groups. Do you find any interesting reuslts? What issues might we have with running the `binom.test()` on these sub groups?
+9. Repeat for the data from the loss column. Was the p value < .05 here? Again, write a sentence or two to explain what this means. 
 
-### More things to try with your scatter plot
 
-We can customise our plot even further:
 
--   Try adding/changing the `size =` within `geom_point()` to make the points bigger or smaller (values from .1 to 30)
--   Try adding/changing the `alpha =` within `geom_point()` to make the points transparent (try values between 0.1 and 1)
--   try adding `colour =` within `ggplot(aes( ))` to *map* the colour to the 'UK_region' variable.
--   you can change the colours used by ggplot by adding `+ scale_colour_brewer()` to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., `scale_colour_brewer(palette = "Set3")`)
-
-![](images/wk6/brewer_cols.png)
-
--   remember you can add labels using `+labs()`
--   remember you can set a new theme, such as `+ theme_minimal()`
-
-## Week 6 Quiz
-
-You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/){target="_blank"}
