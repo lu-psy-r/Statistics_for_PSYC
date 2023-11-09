@@ -196,7 +196,7 @@ Imagine you are on a different game-show and you win £500. Here you are given a
 - take the gamble of a 50% chance to lose nothing and a 50% chance to lose £200
 :::
 
-We've called these "gain" and "loss", because in the first scenario you're being asked about a chance to gain money, while in the second, it's about a chance to lose money. Note that the [*"expected utility"*](https://plato.stanford.edu/entries/rationality-normative-utility/) of the choices is equivalent:
+We've called these "gain" and "loss", because in the first scenario you're being asked about a chance to gain money, while in the second, it's about a chance to lose money. Note that the *"expected utility"*<https://plato.stanford.edu/entries/rationality-normative-utility/> of the choices is equivalent:
 
 ::: {.callout-note icon=false title=""}
 "The expected utility of an act is a weighted average of the utilities of each of its possible outcomes, where the utility of an outcome measures the extent to which that outcome is preferred, or preferable, to the alternatives. The utility of each outcome is weighted according to the probability that the act will lead to that outcome." 
