@@ -57,6 +57,7 @@ We introduced you to RMarkdown in Week 4. It's like a .R script, only a bit more
 3. Then click the new file button and select "R Markdown"
 
 ![](images/wk6/new_rmd.png) 
+
 4. You'll be asked to name this file. Leave the other options as they are and click OK.
 
 5. When the new R Markdown file appears, try "knitting" it (the icon at the top with the ball of wool). You should get a nice output of the default R Markdown document.
