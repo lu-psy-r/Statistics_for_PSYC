@@ -290,8 +290,27 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <ol start="4" type="1">
 <li><p>You’ll be asked to name this file. Leave the other options as they are and click OK.</p></li>
 <li><p>When the new R Markdown file appears, try “knitting” it (the icon at the top with the ball of wool). You should get a nice output of the default R Markdown document.</p></li>
-<li><p>Note that in R Markdown documents you can freely type in text in the main body of the file - you did this last week. But see how you can also create a <em>“code chunk”</em> within the document. These are places where you put your R code you want to run. In a way, R Markdown files function in the opposite way to .R files: you write normal text in the main part (like you’d do in a word processor), but you create a special bit for your code; in a .R file you write code, and use the “#” to say when you want to write normal text.</p></li>
-<li><p>Try running the first code chunk (click the green arrow on the right). This will run the code and display the output (in the document and in the console).</p></li>
+<li><p>Note that in R Markdown documents you can freely type in text in the main body of the file - you did this last week. But see how you can also create a <em>“code chunk”</em> within the document. These are places where you put your R code you want to run.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled" title=".Rmd and .R differences">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+.Rmd and .R differences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a way, R Markdown files function in the opposite way to .R files:</p>
+<ul>
+<li><p><strong>.Rmd</strong>: you write normal text in the main part (like you’d do in a word processor), but you create a special “code chunk” for your code.</p></li>
+<li><p><strong>.R</strong>: you write code in the main body, and use the “#” to write normal text as a comment</p></li>
+</ul>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Try running the first code chunk (click the green arrow on the right). This will run the code and display the output (in the document and in the console).</li>
 </ol>
 </section>
 <section id="creating-an-r-markdown-for-your-lab-work" class="level2">
@@ -308,8 +327,20 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <p>In the first task this week we will look at the sampling of events and we will apply the basic statistical test of the binomial test: <code>binom.test()</code></p>
 <p>Each table has a set of cards. These will be 13 red cards and 13 black cards - please check your set to ensure you have the right number of each colour (it doesn’t matter what suit the cards are).</p>
 <p>We are going to play a game in which one person chooses a set of these cards and biases the deck towards either red or black. The other members of the table have to try and work out which way the set is biased. To do this, they will draw samples from the deck.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="The Experiment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Experiment
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Think of this as an experiment: there is something real out there in the world in our “population” (the cards). As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to take samples. When you can only see the backs of the cards, that data is unobserved. But as we draw samples, we start to understand how the “world” is - whether it is biased towards red or black.</p>
 <p>So each time you draw a card, you are observing one data point from the population, and based on the data you collect (your samples) you are going to draw an inference about what is true about the population.</p>
+</div>
+</div>
 <section id="set-up-and-instructions" class="level3">
 <h3 class="anchored" data-anchor-id="set-up-and-instructions">Set up and instructions:</h3>
 <ol type="1">
@@ -340,13 +371,29 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <ol type="1">
 <li><p>The “World” removes some cards from the full deck (the number and colour of the cards removed is up to them). They shuffle the chosen cards ready to start the “experiment”.</p></li>
 <li><p>The “Experimenters” <strong>pre-register</strong> their sample size. That is, they state how many cards they are going to draw.</p></li>
-<li><p>Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p></li>
+<li><p>Draw samples one at a time (each experimenter can take one card, to speed things up).</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled" title="Important!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Make sure you replace all the cards each time you draw samples.</strong> The world/dealer should also give the pack a quick shuffle.</p>
+</div>
+</div>
+<ol start="4" type="1">
 <li><p>Do step 3 until you have collect the sample size you chose</p></li>
 <li><p>Once you have all the samples, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p></li>
-<li><p>Change the <code>binom.test()</code> code to provide a statistical result. Note the “p value”. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p></li>
-<li><p>The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test? Feel free to Write a short statement about what you found in this experiment.</p></li>
+<li><p>Change the <code>binom.test()</code> code to provide a statistical result. Note the “p value”. Was this result unusual? How likely were the data given the null hypothesis?</p></li>
+<li><p>The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p></li>
+<li><p>Complete your record log in the .Rmd file. Feel free to Write a short statement about what you found in this experiment.</p></li>
 </ol>
-<p>Repeat all of the above steps (1-5) for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p>
+<p>Repeat all of the above steps (1-8) for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p>
 <p>Once you’ve conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:</p>
 <ul>
 <li><p>were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was &gt; .05)?</p></li>
