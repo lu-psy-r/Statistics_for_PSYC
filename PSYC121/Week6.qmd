@@ -45,6 +45,7 @@ Download the lecture slides [here](data/Week_6/PSYC121 wk6_slides_2023.pptx)
 
 -   Complete the short learnr tutorial which will introduce you to running the **binomial tests** in R. [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
+- [link for the class record of sampling data](https://livelancsac-my.sharepoint.com/:x:/r/personal/beesleyt_lancaster_ac_uk/_layouts/15/Doc.aspx?sourcedoc=%7B60932BC9-9BD4-4DAF-AA64-BF0011A6F1BD%7D&file=PSYC121_Week6_lab.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&login_hint=beesleyt%40lancaster.ac.uk&ct=1699868170425&wdOrigin=OFFICECOM-WEB.MAIN.EDGEWORTH&cid=1a337b32-6b42-4478-b2e6-c266592295db&wdPreviousSessionSrc=HarmonyWeb&wdPreviousSession=411efc32-2cea-4713-9375-3f276715f400)
 
 ## Some basic RMarkdown
 
