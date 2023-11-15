@@ -33,7 +33,7 @@ Watch Part 4
 ```
 
 
-Download the lecture slides [here](data/Week_6/PSYC121 wk6_slides_2023.pptx)
+Download the lecture slides [here](data/Week_6/PSYC121_wk6_slides_2023.pptx)
 
 ## Reading 
 
