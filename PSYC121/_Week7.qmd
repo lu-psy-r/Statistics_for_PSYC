@@ -6,13 +6,30 @@ order: 8
 
 # Lectures
 
-Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016910)
+Watch Part 1
 
-Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016911)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=828612c2-616d-432b-8f58-b0b500aa81f4&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
 
-Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016912)
+Watch Part 2
 
-Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2016913)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=56ec19ce-8c6d-4114-a47a-b0b500aa819a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 3
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e2685a26-dcec-4124-bae3-b0b500aa8176&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 4
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=951454b4-fb08-49b6-9cfd-b0b500aa811b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
 
 Download the lecture slides [here](data/Week_7/PSYC121 Week 7.pptx)
 
@@ -26,25 +43,30 @@ Download the lecture slides [here](data/Week_7/PSYC121 Week 7.pptx)
 library(tidyverse)
 options(scipen = 999) # this stops numbers appearing as scientific notation
 
-load("survey_raw.RData")
 
-# set up the data for Task 3
+d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023_updated.csv")
+
 d <- 
-  data %>% 
-  select(uk_salary, sibling_order, home_location, home_location_in_UK, attention_check = attention_check_2) %>%
+  d_raw %>% 
+  select("sibling_order" = Q6, 
+         "home_location" = Q7, 
+         "home_location_in_UK" = Q8,
+         "attention_check" = Q54,
+         "salary_estimate" = Q13) %>% 
+  dplyr::slice(3:n()) %>% 
   mutate(sibling_order = case_when(str_detect(sibling_order, "oldest") ~ "oldest",
-                                   str_detect(sibling_order, "middle") ~ "middle",
-                                   str_detect(sibling_order, "youngest") ~ "youngest",
-                                   str_detect(sibling_order, "only") ~ "only"),
-         home_location_in_UK = case_when(str_detect(home_location_in_UK, "North West") ~ "NW",
-                                         str_detect(home_location_in_UK, "North East") ~ "NE",
-                                         str_detect(home_location_in_UK, "South West") ~ "SW",
-                                         str_detect(home_location_in_UK, "South East") ~ "SE",
-                                         str_detect(home_location_in_UK, "Midlands") ~ "Midlands",
-                                         str_detect(home_location_in_UK, "Wales") ~ "Wales"),
-         attention_check = case_when(str_detect(attention_check, "strongly dis") ~ "strongly disagree",
-                                     TRUE ~ attention_check)) %>% 
-  write_csv("data/Week_7/salary_data_wk7.csv")
+                                     str_detect(sibling_order, "middle") ~ "middle",
+                                     str_detect(sibling_order, "youngest") ~ "youngest",
+                                     str_detect(sibling_order, "only") ~ "only"),
+           home_location_in_UK = case_when(str_detect(home_location_in_UK, "North West") ~ "NW",
+                                           str_detect(home_location_in_UK, "North East") ~ "NE",
+                                           str_detect(home_location_in_UK, "South West") ~ "SW",
+                                           str_detect(home_location_in_UK, "South East") ~ "SE",
+                                           str_detect(home_location_in_UK, "Midlands") ~ "Midlands",
+                                           str_detect(home_location_in_UK, "Wales") ~ "Wales"),
+           attention_check = case_when(str_detect(attention_check, "strongly agree") ~ "pass",
+                                       .default = "fail")) %>% 
+    write_csv("data/Week_7/salary_data_wk7.csv")
 
 ```
 
