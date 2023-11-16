@@ -2,6 +2,8 @@
 title: 7.Filtering data and testing means (one-sample t-test)
 subtitle: Written by Tom Beesley & John Towse
 order: 8
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Lectures
@@ -66,7 +68,12 @@ d <-
                                            str_detect(home_location_in_UK, "Wales") ~ "Wales"),
            attention_check = case_when(str_detect(attention_check, "strongly agree") ~ "pass",
                                        .default = "fail")) %>% 
+  mutate(salary_estimate = as.numeric(salary_estimate)) %>% 
     write_csv("data/Week_7/salary_data_wk7.csv")
+
+d %>% 
+  ggplot(aes(salary_estimate)) +
+  geom_histogram()
 
 ```
 
@@ -84,59 +91,92 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 # RStudio tasks
 
-### Plotting and filtering
+### Creating a new R Markdown document
 
-1.  Open the Week_7\_script and run the `library`, `options` commands. The `options` command is new. It is very cryptic and you don't need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation. Add a `read_csv()` command to get the data - you've done this every week, so this should be familiar.
+1. Like last week, create a Week 7 folder and a new R Markdown document
 
-2.  Complete the `geom_histogram()` code to plot the distribution of salary data. Try setting `bins=20` within your `geom_histogram()` code. Play around with the number of bins for the histogram.
+2. Delete everything, back to the first title (## R Markdown)
 
-3.  OK - we've got some pretty funky values here! Some people think the average salary is over £400,000!!! Well, maybe they just added too many zeros (let's give them the benefit of the doubt). Quite often when we get our "raw" data, it contains weird values like this that we need to consider removing. Let's run the `arrange()` code now to see what exactly those high values are.
+3. Change the title to *Task 1 - plotting the salary data*
 
-4.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £200,000. Edit the `filter()` command to keep only those estimates that are *below* £200,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
 
-5.  STOP! OK, **this next bit is very important**. If you completed that last step correctly you'll see an output in the console showing a "tibble" (a data frame) which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (row). So the filter command will take out those large estimations, but we haven't actually changed the data object. To do this we need to assign (`<-`)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you've just run, so that the result of your commands will be assigned to the object (you can make this the same object name you've been using -overwrite it-, or call it a new name).
+### Task 1 - Plotting and filtering
 
-6.  When you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that). .
+1. Below the title, insert a code chunk. Click on the menu "Code" -> "Insert Chunk".
 
-7.  And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.
+2. Add in the code `library(tidyverse)`
 
-### One-sample t-test
+3. Next, add a `read_csv()` command to get the data - you've done this every week, so this should be familiar. Remember when reading in the data, you need to assign it to a new data object.
 
-We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let's test that.
+4. Let's draw a histogram of the salary estimates:
 
-8.  First, let's calculate the mean and sd of the column.
+```{r}
+#| eval: false
+name_of_the_data_object %>% 
+  ggplot() +
+  geom_histogram(aes(name_of_the_column), bins = 5)
 
-9.  Now we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with `t.test()`. Edit the code on this line to conduct a one-sample t-test. You need to provide **the sample of data on which you want to conduct the test**, and the **expected mean under the null hypothesis**. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and **note the p value**. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p \< .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a *significant result*.
+```
 
-10. What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.
+5. Once you've got the code to run, you'll realise that the setting `bins = 5` is not a good setting to see the distribution of data. Play around with the number of bins for the histogram until you are happy that you can see the distribution of the scores more clearly. 
+
+6. You will see that we've got some pretty funky values here! Some people think the average salary is over £200,000!!! Well, maybe they just added too many zeros (let's give them the benefit of the doubt). Quite often when we get our "raw" data, it contains extreme values like this, and we need to consider removing them. Let's run the `arrange()` code now to see what exactly those high values are:
+
+```{r}
+#| eval: false
+arrange(name_of_the_data_object, desc(name_of_the_column))
+
+```
+
+7.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £150,000. Edit the `filter()` command to keep only those estimates that are *below* £150,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
+
+```{r}
+#| eval: false
+name_of_the_data_object %>% 
+  filter(*missing*) # add your expression here
+
+```
+
+
+8.  STOP! OK, **this next bit is very important**. If you completed that last step correctly you'll see an output in the console showing a data object which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (rows). So the filter command will take out those large estimations, but we haven't actually changed the data object. To do this we need to assign (`<-`)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you've just run, so that the result of your commands will be assigned to the object (you can make this the same object name you've been using -overwrite it-, or make a new data object, it's up to you).
+
+9.  When you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that). .
+
+10.  And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.
+
+11. It's worth pausing at this point and documenting each of these steps you've done. Between each of your code chunks, you'll want to write a sentence or two, describing the analysis you've done and what it produces. 
+
+### Task 2 - One-sample t-test
+
+We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £34,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let's test that.
+
+1.  First, let's calculate the mean and sd of the column:
+
+```{r}
+#| eval: false
+mean() # hint: object$column
+sd() 
+```
+
+
+2.  Now we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with `t.test()`:
+
+```{r}
+#| eval: false
+
+t.test(x = name_of_the_data_object$name_of_the_column, mu = value_of_expected_mean_under_null_hyp) 
+
+t.test(d$salary_estimate, mu = 34000)
+
+```
+
+Copy the above code into your document and edit it to conduct a one-sample t-test. You need to provide **the sample of data on which you want to conduct the test**, and the **expected mean under the null hypothesis**. Remember our hypothesis stated above is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and **note the p value**. How likely is it that we would see data like this under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p \< .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a *significant result*.
+
+3. What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.
 
 ![](images/wk7/ttable.png)
 
-### Practising filtering
-
-11. Filtering can also be useful for selecting certain sub-sets of our data. In the script we have given you an example of how we select a sub-set of data based on two conditions from two different columns:
-
-`data_set_name %>% filter(home_location_in_UK == "NW" & sibling_order == "oldest")`
-
-We have given you a few different columns to look at and to use in practicing your filter commands:
-
-`sibling_order`: what position in age was the respondent within their siblings `home_location`: UK / Asia / Europe, etc `home_location_in_UK`: NW, NE, etc (NA is non-UK residents) `attention_check`: respondents were asked "click strongly agree to show you are paying attention" - some people failed this!!!
-
-Complete the following filters. We've put in **()** the number of rows you should see in the resulting object
-
-12. Just those people who come from the North East (16 rows)
-
-13. Those people who come from Wales and are the middle child within their siblings (2 rows)
-
-14. Those people passed the attention check, are from the UK, and are an only child (21 rows)
-
-15. Those people who are NOT from the North West; you'll need to use `!=` (84 rows)
-
-16. Those people who failed the attention check (that is, did not say strongly agree) (14 rows)
-
-17. Those people who are from the South East or (`|`) the South West (38 rows)
-
-## Sample size, size of effect, and the one sample t-test
+## Task 3 - Sample size, size of effect, and the one sample t-test
 
 In the lecture this week, Tom used an application to show the process of sampling data. You can access this application at the link below. There are three "parameters" you can change in this:
 
@@ -159,6 +199,43 @@ Things to try:
 4.  Set the mean of the effect to 100 and the sample size to 10. Keep drawing new samples, noting each time the p value. You will evenutally get a p value of \< .05. What type of error is this?
 
 [**Click here for the one-sample t-test application**](https://ma-rconnect.lancs.ac.uk/one_sample_t){target="_blank"}
+
+### Task 4 - Practising filtering
+
+1. Filtering is very useful for selecting certain sub-sets of our data. Here we have given you an example of how we select a sub-set of data based on two conditions from two different columns:
+
+```{r}
+name_of_the_data_object %>% 
+  filter(home_location_in_UK == "NW" & sibling_order == "oldest")
+
+d %>% 
+  filter(home_location_in_UK == "NE")
+
+d %>% 
+  filter(home_location_in_UK == "Wales" & sibling_order)
+```
+
+We have given you a few different columns to look at and to use in practicing your filter commands:
+
+- `sibling_order`: what position in age was the respondent within their siblings 
+- `home_location`: UK / Asia / Europe, etc 
+- `home_location_in_UK`: NW, NE, etc (NA is non-UK residents) 
+- `attention_check`: respondents were asked "click strongly agree to show you are paying attention" - some people failed this!!!
+
+Gain some skills in filtering by trying to complete the following filters. We've put in **()** the number of rows you should see in the resulting object
+
+2. Just those people who come from the North East (16 rows)
+
+3. Those people who come from Wales and are the middle child within their siblings (2 rows)
+
+4. Those people passed the attention check, are from the UK, and are an only child (21 rows)
+
+5. Those people who are NOT from the North West; you'll need to use `!=` (84 rows)
+
+6. Those people who failed the attention check (that is, did not say strongly agree) (14 rows)
+
+7. Those people who are from the South East or (`|`) the South West (38 rows)
+
 
 ## Week 7 Quiz
 
