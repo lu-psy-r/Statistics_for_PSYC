@@ -88,7 +88,7 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 -   Create a folder for Week 7
 
--   Download the [Week_7.zip](data/Week_7/Week_7.zip) and upload it into this new folder in RStudio Server.
+-   Download the [csv file for Week 7](data/Week_7/salary_data_wk7.csv) and upload it into this new folder in RStudio Server.
 
 # RStudio tasks
 
