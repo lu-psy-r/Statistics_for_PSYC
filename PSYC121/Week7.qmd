@@ -11,25 +11,25 @@ editor_options:
 Watch Part 1
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=828612c2-616d-432b-8f58-b0b500aa81f4&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=828612c2-616d-432b-8f58-b0b500aa81f4&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 2
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=56ec19ce-8c6d-4114-a47a-b0b500aa819a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=56ec19ce-8c6d-4114-a47a-b0b500aa819a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 3
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e2685a26-dcec-4124-bae3-b0b500aa8176&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e2685a26-dcec-4124-bae3-b0b500aa8176&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 Watch Part 4
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=951454b4-fb08-49b6-9cfd-b0b500aa811b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=951454b4-fb08-49b6-9cfd-b0b500aa811b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 
