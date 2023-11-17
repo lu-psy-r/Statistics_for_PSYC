@@ -46,7 +46,7 @@ library(tidyverse)
 options(scipen = 999) # this stops numbers appearing as scientific notation
 
 
-d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023_updated.csv")
+d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023.csv")
 
 d <- 
   d_raw %>% 
@@ -69,11 +69,12 @@ d <-
            attention_check = case_when(str_detect(attention_check, "strongly agree") ~ "pass",
                                        .default = "fail")) %>% 
   mutate(salary_estimate = as.numeric(salary_estimate)) %>% 
+  drop_na(salary_estimate) %>% 
     write_csv("data/Week_7/salary_data_wk7.csv")
 
 d %>% 
   ggplot(aes(salary_estimate)) +
-  geom_histogram()
+  geom_histogram(bins = 3)
 
 ```
 
@@ -114,21 +115,22 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 #| eval: false
 name_of_the_data_object %>% 
   ggplot() +
-  geom_histogram(aes(name_of_the_column), bins = 5)
+  geom_histogram(aes(name_of_the_column), bins = 3)
 
 ```
 
-5. Once you've got the code to run, you'll realise that the setting `bins = 5` is not a good setting to see the distribution of data. Play around with the number of bins for the histogram until you are happy that you can see the distribution of the scores more clearly. 
+5. Once you've got the code to run, you'll realise that the setting `bins = 3` is not a good setting to see the distribution of data. Play around with the number of bins for the histogram until you are happy that you can see the distribution of the scores more clearly, including some of the more extreme values. 
 
-6. You will see that we've got some pretty funky values here! Some people think the average salary is over £200,000!!! Well, maybe they just added too many zeros (let's give them the benefit of the doubt). Quite often when we get our "raw" data, it contains extreme values like this, and we need to consider removing them. Let's run the `arrange()` code now to see what exactly those high values are:
+6. You will see that we've got some quite unusual values here. For example, some people think the average salary is less than £10,000 and some people think it's more than £70,000! It's unclear what to make of these values. For example, maybe the £5,000 estimates meant to put £50,000? dQuite often when we get our "raw" data, it contains extreme values like this, and we need to consider removing them. Let's run these two lines of code, using `arrange()`, to see what exactly those high values are:
 
 ```{r}
 #| eval: false
-arrange(name_of_the_data_object, desc(name_of_the_column))
+arrange(name_of_the_data_object, name_of_the_column) # order by lowest first
+arrange(name_of_the_data_object, desc(name_of_the_column)) # order by highest first
 
 ```
 
-7.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £150,000. Edit the `filter()` command to keep only those estimates that are *below* £150,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
+7.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £50,000. Edit the `filter()` command to keep only those estimates that are *below* £150,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
 
 ```{r}
 #| eval: false
@@ -137,18 +139,34 @@ name_of_the_data_object %>%
 
 ```
 
+```{r}
+#| eval: false
+#| include: false
 
-8.  STOP! OK, **this next bit is very important**. If you completed that last step correctly you'll see an output in the console showing a data object which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (rows). So the filter command will take out those large estimations, but we haven't actually changed the data object. To do this we need to assign (`<-`)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you've just run, so that the result of your commands will be assigned to the object (you can make this the same object name you've been using -overwrite it-, or make a new data object, it's up to you).
+d_f <- 
+  d %>% 
+  filter(salary_estimate < 70000 & salary_estimate > 6000)
 
-9.  When you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that). .
 
-10.  And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.
+```
 
-11. It's worth pausing at this point and documenting each of these steps you've done. Between each of your code chunks, you'll want to write a sentence or two, describing the analysis you've done and what it produces. 
+::: {.callout-important icon=true title="Assigning the result!"}
+If you completed that last step correctly you'll see an output in the console (or in your .Rmd) showing a data object which has 136 rows and 5 columns. However, your data object has not actually changed in the environment. This will still be showing as 137 observations (rows). So while the filter command will take out those large estimations, we haven't actually changed the data object at all. To do this we need to assign (`<-`) the result of our filter command to the object. 
+:::
+
+8. Think about what you need to do to assign the result of the filter to a data object. You assign the result to the same object name you've been using (that is, overwrite it), OR you can assign the result to a new data object (e.g., my_object_filtered). It's up to you.
+
+9. We also want to filter out the very low estimates. Let's keep all those values greater than (\>) £6,000 (again, this is arbitrary, but we are just doing this so we can learn how to use `filter()`). You can copy and edit the code above to run another filter command.
+
+10.  When you've done both filter commands, the (new) object should have 130 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that). .
+
+11.  And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.
+
+12. It's worth pausing at this point and documenting each of these steps you've done. Between each of your code chunks, you'll want to write a sentence or two, describing the analysis you've done and what it produces. 
 
 ### Task 2 - One-sample t-test
 
-We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £34,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let's test that.
+We now want to know if the salary estimates are different to the actual average salary in the UK. According to [Statista](https://www.statista.com/statistics/416139/full-time-annual-salary-in-the-uk-by-region/#:~:text=The%20median%20annual%20earnings%20in,pounds%20in%20the%20North%20East.) this is £34,963. Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let's test that.
 
 1.  First, let's calculate the mean and sd of the column:
 
@@ -166,9 +184,19 @@ sd()
 
 t.test(x = name_of_the_data_object$name_of_the_column, mu = value_of_expected_mean_under_null_hyp) 
 
-t.test(d$salary_estimate, mu = 34000)
+```
+
+```{r}
+#| eval: false
+#| include: false
+
+mean(d_f$salary_estimate)
+sd(d_f$salary_estimate)
+
+t.test(d_f$salary_estimate, mu = 34893)
 
 ```
+
 
 Copy the above code into your document and edit it to conduct a one-sample t-test. You need to provide **the sample of data on which you want to conduct the test**, and the **expected mean under the null hypothesis**. Remember our hypothesis stated above is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and **note the p value**. How likely is it that we would see data like this under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p \< .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a *significant result*.
 
@@ -205,14 +233,11 @@ Things to try:
 1. Filtering is very useful for selecting certain sub-sets of our data. Here we have given you an example of how we select a sub-set of data based on two conditions from two different columns:
 
 ```{r}
+#| eval: false
+
 name_of_the_data_object %>% 
   filter(home_location_in_UK == "NW" & sibling_order == "oldest")
 
-d %>% 
-  filter(home_location_in_UK == "NE")
-
-d %>% 
-  filter(home_location_in_UK == "Wales" & sibling_order)
 ```
 
 We have given you a few different columns to look at and to use in practicing your filter commands:
@@ -222,20 +247,45 @@ We have given you a few different columns to look at and to use in practicing yo
 - `home_location_in_UK`: NW, NE, etc (NA is non-UK residents) 
 - `attention_check`: respondents were asked "click strongly agree to show you are paying attention" - some people failed this!!!
 
-Gain some skills in filtering by trying to complete the following filters. We've put in **()** the number of rows you should see in the resulting object
+Gain some skills in filtering by trying to complete the following filters. Use the filtered data object that has 130 rows. We've put in **()** the number of rows you should see in the resulting object, after the filter. 
 
-2. Just those people who come from the North East (16 rows)
+2. Just those people who come from the North East (15 rows)
 
-3. Those people who come from Wales and are the middle child within their siblings (2 rows)
+3. Those people who come from South East and are an only child within their siblings (7 rows)
 
-4. Those people passed the attention check, are from the UK, and are an only child (21 rows)
+4. Those people who failed the attention check (18 rows)
 
-5. Those people who are NOT from the North West; you'll need to use `!=` (84 rows)
+5. Those people passed the attention check, are from the UK, and are the oldest child (33 rows)
 
-6. Those people who failed the attention check (that is, did not say strongly agree) (14 rows)
+6. Those people who are NOT from the North West (hint: you'll need to use `!=`) (68 rows)
 
-7. Those people who are from the South East or (`|`) the South West (38 rows)
+7. Those people who are from the South East or (`|`) the South West (36 rows)
 
+
+
+```{r}
+#| eval: false
+#| include: false
+
+
+d_f %>% 
+  filter(home_location_in_UK == "NE")
+
+d_f %>% 
+  filter(home_location_in_UK == "SE" & sibling_order == "only")
+
+d_f %>% 
+  filter(attention_check == "fail")
+
+d_f %>% 
+  filter(attention_check == "pass" & home_location == "UK" & sibling_order == "oldest")
+
+d_f %>% 
+  filter(home_location_in_UK != "NW")
+
+d_f %>% 
+  filter(home_location_in_UK == "SE" | home_location_in_UK == "SW")
+```
 
 ## Week 7 Quiz
 
