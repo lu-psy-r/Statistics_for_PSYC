@@ -121,7 +121,7 @@ name_of_the_data_object %>%
 
 5. Once you've got the code to run, you'll realise that the setting `bins = 3` is not a good setting to see the distribution of data. Play around with the number of bins for the histogram until you are happy that you can see the distribution of the scores more clearly, including some of the more extreme values. 
 
-6. You will see that we've got some quite unusual values here. For example, some people think the average salary is less than £10,000 and some people think it's more than £70,000! It's unclear what to make of these values. For example, maybe the £5,000 estimates meant to put £50,000? dQuite often when we get our "raw" data, it contains extreme values like this, and we need to consider removing them. Let's run these two lines of code, using `arrange()`, to see what exactly those high values are:
+6. You will see that we've got some quite unusual values here. For example, some people think the average salary is less than £10,000 and some people think it's more than £70,000! It's unclear what to make of these values. For example, maybe the £5,000 estimates meant to put £50,000? Quite often when we get our "raw" data, it contains extreme values like this, and we need to consider removing them. Let's run these two lines of code, using `arrange()`, to see what exactly those high values are:
 
 ```{r}
 #| eval: false
@@ -130,7 +130,7 @@ arrange(name_of_the_data_object, desc(name_of_the_column)) # order by highest fi
 
 ```
 
-7.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £50,000. Edit the `filter()` command to keep only those estimates that are *below* £150,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
+7.  We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. We need to make a decision about what values to exclude. In later labs we'll look at a more systematic process of removing *outliers*, but for now, let's just remove any that are over £50,000. Edit the `filter()` command to keep only those estimates that are *below* £50,000 (\<). Remember that the filter command *keeps* the data that is *TRUE* according to the expression.
 
 ```{r}
 #| eval: false
@@ -145,20 +145,20 @@ name_of_the_data_object %>%
 
 d_f <- 
   d %>% 
-  filter(salary_estimate < 70000 & salary_estimate > 6000)
+  filter(salary_estimate < 50000 & salary_estimate > 6000)
 
 
 ```
 
 ::: {.callout-important icon=true title="Assigning the result!"}
-If you completed that last step correctly you'll see an output in the console (or in your .Rmd) showing a data object which has 136 rows and 5 columns. However, your data object has not actually changed in the environment. This will still be showing as 137 observations (rows). So while the filter command will take out those large estimations, we haven't actually changed the data object at all. To do this we need to assign (`<-`) the result of our filter command to the object. 
+If you completed that last step correctly you'll see an output in the console (or in your .Rmd) showing a data object which has 128 rows and 5 columns. However, your data object has not actually changed in the environment. This will still be showing as 137 observations (rows). So while the filter command will take out those large estimations, we haven't actually changed the data object at all. To do this we need to assign (`<-`) the result of our filter command to the object. 
 :::
 
 8. Think about what you need to do to assign the result of the filter to a data object. You assign the result to the same object name you've been using (that is, overwrite it), OR you can assign the result to a new data object (e.g., my_object_filtered). It's up to you.
 
-9. We also want to filter out the very low estimates. Let's keep all those values greater than (\>) £6,000 (again, this is arbitrary, but we are just doing this so we can learn how to use `filter()`). You can copy and edit the code above to run another filter command.
+9. We also want to filter out the very low estimates. Let's keep all those values greater than (\>) £6,000 (again, this is arbitrary, but we are just doing this so we can learn how to use `filter()`). You can copy and edit the code above to run another filter command.  
 
-10.  When you've done both filter commands, the (new) object should have 130 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that). .
+10.  When you've done both filter commands, the (new) object should have 122 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you're using a new object for the filtered data, you'll need to edit the code to reflect that).
 
 11.  And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.
 
@@ -253,13 +253,13 @@ Gain some skills in filtering by trying to complete the following filters. Use t
 
 3. Those people who come from South East and are an only child within their siblings (7 rows)
 
-4. Those people who failed the attention check (18 rows)
+4. Those people who failed the attention check (17 rows)
 
-5. Those people passed the attention check, are from the UK, and are the oldest child (33 rows)
+5. Those people passed the attention check, are from the UK, and are the oldest child (30 rows)
 
-6. Those people who are NOT from the North West (hint: you'll need to use `!=`) (68 rows)
+6. Those people who are NOT from the North West (hint: you'll need to use `!=`) (64 rows)
 
-7. Those people who are from the South East or (`|`) the South West (36 rows)
+7. Those people who are from the South East or (`|`) the South West (33 rows)
 
 
 
