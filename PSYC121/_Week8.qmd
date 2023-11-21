@@ -53,7 +53,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 ## Pre-lab work: online tutorial
 
-**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_8){target="_blank"} (on campus, or VPN required)
+**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/PSYC121_Week_8/){target="_blank"} (on campus, or VPN required)
 
 **Getting ready for the lab class**
 
