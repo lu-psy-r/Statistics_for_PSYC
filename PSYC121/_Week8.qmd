@@ -2,6 +2,8 @@
 title: 8. Related-samples t-tests, plotting means and SE bars
 subtitle: Written by Tom Beesley & John Towse
 order: 9
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Lectures
@@ -23,28 +25,29 @@ Download the lecture slides [here](data/Week_8/Lecture Week 8.pptx)
 
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
-load("survey_raw.RData")
+
+d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023.csv")
 
 # set up the data for Task 3
-data_proc <- 
-  data %>% 
-  select(contains("stroop")) %>% 
+d <- 
+  d_raw %>% 
+    select("stroop_control" = Q23, 
+         "stroop_compatible" = Q24, 
+         "stroop_incompatible" = Q25) %>%
+  slice(3:n()) %>% 
+  mutate(across(contains("stroop"), as.numeric)) %>% 
+  drop_na() %>% 
   mutate(pID = 1:n()) %>% 
   pivot_longer(cols = contains("stroop"),
                names_to = "condition",
                names_prefix = "stroop_",
                values_to = "time") %>% 
-  mutate(time = round(as.numeric(time),1)) %>% 
-  drop_na()
+  mutate(time = round(time,2)) %>% 
+  group_by(pID) %>% 
+  mutate(avg_time = round(mean(time),2))
+  
 
-write_csv(data_proc, file = "data/Week_7/stroop.csv")
-
-data_proc %>%
-  group_by(condition) %>% 
-  summarise(mean_time = mean(time, na.rm = TRUE)) %>% 
-  ggplot(aes(y = mean_time, x = condition, fill = condition)) +
-    geom_col()
-
+write_csv(d, file = "data/Week_8/stroop.csv")
 
 ```
 
@@ -61,29 +64,118 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 ## RStudio Tasks
 
-### Calculating means and SEs
+### Task 1 - Calculating means and SEs
 
 The "Stroop Effect" is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a "compatible" stimulus like [**GREEN**]{style="color:green"}, and a much more difficult task for an "incompatible" stimulus like [**BLUE**]{style="color:red"}. We can't help but read the text - it has seemingly become an automatic process.
 
 ![](images/wk8/stroop.png) In this task we will calculate the means and standard errors of the means and then we will then plot them using ggplot(). First though, we'll need to inspect the data and maybe do a bit of data wrangling by using our `filter()` command.
 
-1.  Open the script "Week_8\_script.R" (see prep work)
+1.  Create a new R Markdown document. If you're unsure about this step, see the instructions from Week 6 (or 7).
 
-2.  Run the `library` and add a `read_csv` line to read in the data set. Call your data something meaningful (perhaps *data_w8* or *data_stroop* but maybe not *bestest_most_fantastic_data_on_the_stroop_test_eva_init*)
+2.  As usual, add a code chunk with `library(tidyverse)` and a `read_csv` command (see above for the link to the csv). Assign the result to a new data object, and call your data something meaningful (perhaps *data_w8* or *data_stroop* but maybe not *bestest_most_fantastic_data_on_the_stroop_test_eva_init*)
 
-3.  View the data with `View(data)`. You will see that the data are a little different from the data we have worked with previously. We have an *pID* variable, which gives a unique number for each person and each person has 3 rows. This is because the different conditions of the Stroop task reflect a **within-subjects variable** (related samples). For data like this it is often useful to have them arranged in what is referred to as "long format", with multiple rows for each response the participant provides. For the current data that means we have a variable called *condition*, which is our IV, and one called *time* which is our DV.
+3.  View the data with `View(data)`. You will see that the data are a little different from the data we have worked with previously. We have an *pID* variable, which gives a unique number for each person, but each person has 3 rows of data. This is because the different conditions of the Stroop task reflect a **within-subjects variable** (related samples). For data like this it is often useful to have them arranged in what is referred to as **"long format"**, with multiple rows for each response the participant provides. For the current data that means we have a variable called *condition*, which is our IV, and one called *time* which is our DV. We also have a column labelled *avg_time*, which is the average of the 3 time values for each participant (the data is duplicated, which is both normal and necessary with long format data).
 
-4.  Let's look at the distribution of *time* (our DV) as a function of *condition*. Complete the next chunk of code by mapping *x* to *time* and *fill* to *condition* for our `geom_density()` plot. You can play around with the *alpha* parameter, setting it to a value between 0 and 1 - note that this is done OUTSIDE of the `aes()` command.
+4.  Let's look at the distribution of *time* (our DV) as a function of *condition*. Add another chunk of code and include the following code:
 
-5.  We seem to have some outlier values at both the high and the low ends. It's probably best if we remove data for the whole participant if their *average* time is unusual. To do that, we'll need to create a new column. Here we will introduce you to a new function called `mutate()`. This function will create a new variable (column) from an old one. Run this next block of code (you don't need to edit this one) to create the new column, *avg_time*. We are using this in combination with `group_by(pID)` because we want to calculate the average time for each participant. Use `view()` to take a look at the data to check the column has been created correctly.
+```{r}
+#| eval: false
 
-6.  Edit the `geom_histogram()` code to plot the distribution of values in the new *avg_time* column.
+# distribution of times by condition
+your_data_object %>% 
+  ggplot() +
+  geom_density(aes(x = missing_column_name_A, fill = missing_column_name_B), alpha = .8) + # you need to EDIT this for Q4
+  theme_dark()
 
-7.  We now need the filter out the values in our data that we feel are unusual. Like last week, we will do this (for now) in a fairly unprincipled manner, by "eyeballing" the data (next week we'll consider something a bit more "scientific"). Complete the filter command so that it removes both the very low values in the *avg_time* column, and also those that are very high. Because you want to filter out low AND high values, you are using an **AND** expression (**&**). You will therefore need to enter in two numerical values, based on your assessment of the histogram produced for Q6. Note that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object?
 
-8.  Check the new distribution of average times after this filter has been applied to the data.
+```
 
-### Running related samples t-tests
+```{r}
+#| eval: false
+#| include: false
+
+d %>% 
+  ggplot() +
+  geom_density(aes(x = time, fill = condition), alpha = .8) + # you need to EDIT this line
+  theme_dark()
+
+
+```
+
+5. You'll need to "map" *x* to *time* and *fill* to *condition* for our `geom_density()` plot. You can play around with the *alpha* parameter (which sets the transparency of the elements of the graph), setting it to a value between 0 and 1. Note that this is done OUTSIDE of the `aes()` command.
+
+6.  From the density plot, it does seem like we have some outlier values. It's probably best if we remove data for the whole participant if their *average* time is unusual. To do that, we'll look at the data using the *avg_time* column. Add the following code for a `geom_histogram()` to plot the distribution of values in the new *avg_time* column.
+
+```{r}
+#| eval: false
+
+# distribution of average times
+your_data_object %>% 
+  ggplot() +
+  geom_histogram(aes(x = missing_column_name_A), fill = "pink") + # you need to EDIT this line
+  theme_classic()
+
+```
+
+```{r}
+#| eval: false
+#| include: false
+
+# distribution of times by condition
+d %>% 
+  ggplot() +
+  geom_histogram(aes(x = avg_time), fill = "pink", colour = "purple") +
+  theme_classic()
+
+```
+
+7.  Let's use the filter command we learned last week to remove these high values. Like last week, we will do this (for now) in a fairly unprincipled manner, by "eyeballing" the data (next week we'll consider something a bit more "scientific"). Complete the filter command so that it removes the highest values. It's your choice where you set this limit. Add the code below and write an expression to filter out the high values (remember that filter KEEPS the rows which are TRUE for the expression). Also, remember that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object? The final bit of code needs to plot a histogram of the filtered data.
+
+```{r}
+#| eval: false
+
+# filter out the high values
+new_data_object <- # create a new object (or overwrite)
+  your_data_object %>% # original data object 
+  filter(insert_an_expression_here)
+
+# draw a histogram of the filtered data 
+new_data_object %>% 
+  ggplot() +
+  geom_histogram(aes(x = missing_columns_name), 
+                 fill = "pink", # try some different colours?
+                 colour = "purple", # and here?
+                 bins = 3) #  # adjust the bins? 
+# you could also add (+) a theme to this plot! 
+# for a list of themes, type: ?theme_classic
+
+
+```
+
+```{r}
+#| eval: false
+#| include: false
+
+# filter out the high values
+d_f <- # create a new object (or overwrite)
+  d %>% # original data object 
+  filter(avg_time < 12)
+
+# draw a new 
+d_f %>% 
+  ggplot() +
+  geom_histogram(aes(x = avg_time), 
+                 fill = "yellow", 
+                 colour = "black",
+                 bins = 20) +
+  theme_minimal()
+
+
+```
+
+8. Finally, copy the code for the original `geom_density()` plot that you drew in step 4. Paste it, and edit the code so that it now plots the filtered set of data (from step 7). 
+
+### Task 2 - Running related samples t-tests
 
 We have seen in our density plots that the reaction times (DV) look different in the three different Stroop conditions (our IV). But now we need to look at whether there are **statistically significant differences** between the means of the three conditions.
 
@@ -103,7 +195,7 @@ To do this, we will first summarise the mean time taken by each condition in the
 
 6.  With 3 levels to the IV *condition* there are 3 possible comparisons we can make (1 vs. 2; 1 vs. 3; 2 vs. 3). Complete all three tests, by copying and pasting the commands, editing each to make a different filter selection, and then to run the t-test. Write out a report statement (Q5) for each of your comparisons.
 
-### Plotting the means and SEs
+### Task 3 - Plotting the means and SEs
 
 1.  In Task 2 you calculated the means for each condition in the Stroop task. We've seen in lectures that "standard error" provides an estimate of how variable that mean will be across the samples we collect. A very typical way to plot a mean value is to plot it with the standard error of the mean (SEM):
 

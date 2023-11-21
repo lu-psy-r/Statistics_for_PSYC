@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -75,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="pre-lab-work-online-tutorial" class="level2">
 <h2 class="anchored" data-anchor-id="pre-lab-work-online-tutorial">Pre-lab work: online tutorial</h2>
-<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_8" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_Week_8/" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
 <ol type="1">
 <li>Create a folder for Week 8 and download the <a href="data/Week_8/Week_8_v2.zip">Week_8.zip</a> file and upload it into this new folder in RStudio Server.</li>
@@ -88,15 +122,48 @@ ul.task-list li input[type="checkbox"] {
 <p>The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green"><strong>GREEN</strong></span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:red"><strong>BLUE</strong></span>. We can’t help but read the text - it has seemingly become an automatic process.</p>
 <p><img src="images/wk8/stroop.png" class="img-fluid"> In this task we will calculate the means and standard errors of the means and then we will then plot them using ggplot(). First though, we’ll need to inspect the data and maybe do a bit of data wrangling by using our <code>filter()</code> command.</p>
 <ol type="1">
-<li><p>Open the script “Week_8_script.R” (see prep work)</p></li>
-<li><p>Run the <code>library</code> and add a <code>read_csv</code> line to read in the data set. Call your data something meaningful (perhaps <em>data_w8</em> or <em>data_stroop</em> but maybe not <em>bestest_most_fantastic_data_on_the_stroop_test_eva_init</em>)</p></li>
-<li><p>View the data with <code>View(data)</code>. You will see that the data are a little different from the data we have worked with previously. We have an <em>pID</em> variable, which gives a unique number for each person and each person has 3 rows. This is because the different conditions of the Stroop task reflect a <strong>within-subjects variable</strong> (related samples). For data like this it is often useful to have them arranged in what is referred to as “long format”, with multiple rows for each response the participant provides. For the current data that means we have a variable called <em>condition</em>, which is our IV, and one called <em>time</em> which is our DV.</p></li>
-<li><p>Let’s look at the distribution of <em>time</em> (our DV) as a function of <em>condition</em>. Complete the next chunk of code by mapping <em>x</em> to <em>time</em> and <em>fill</em> to <em>condition</em> for our <code>geom_density()</code> plot. You can play around with the <em>alpha</em> parameter, setting it to a value between 0 and 1 - note that this is done OUTSIDE of the <code>aes()</code> command.</p></li>
-<li><p>We seem to have some outlier values at both the high and the low ends. It’s probably best if we remove data for the whole participant if their <em>average</em> time is unusual. To do that, we’ll need to create a new column. Here we will introduce you to a new function called <code>mutate()</code>. This function will create a new variable (column) from an old one. Run this next block of code (you don’t need to edit this one) to create the new column, <em>avg_time</em>. We are using this in combination with <code>group_by(pID)</code> because we want to calculate the average time for each participant. Use <code>view()</code> to take a look at the data to check the column has been created correctly.</p></li>
-<li><p>Edit the <code>geom_histogram()</code> code to plot the distribution of values in the new <em>avg_time</em> column.</p></li>
-<li><p>We now need the filter out the values in our data that we feel are unusual. Like last week, we will do this (for now) in a fairly unprincipled manner, by “eyeballing” the data (next week we’ll consider something a bit more “scientific”). Complete the filter command so that it removes both the very low values in the <em>avg_time</em> column, and also those that are very high. Because you want to filter out low AND high values, you are using an <strong>AND</strong> expression (<strong>&amp;</strong>). You will therefore need to enter in two numerical values, based on your assessment of the histogram produced for Q6. Note that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object?</p></li>
-<li><p>Check the new distribution of average times after this filter has been applied to the data.</p></li>
+<li><p>Create a new R Markdown document. If you’re unsure about this step, see the instructions from Week 6 (or 7).</p></li>
+<li><p>As usual, add a code chunk with <code>library(tidyverse)</code> and a <code>read_csv</code> command (see above for the link to the csv). Assign the result to a new data object, and call your data something meaningful (perhaps <em>data_w8</em> or <em>data_stroop</em> but maybe not <em>bestest_most_fantastic_data_on_the_stroop_test_eva_init</em>)</p></li>
+<li><p>View the data with <code>View(data)</code>. You will see that the data are a little different from the data we have worked with previously. We have an <em>pID</em> variable, which gives a unique number for each person, but each person has 3 rows of data. This is because the different conditions of the Stroop task reflect a <strong>within-subjects variable</strong> (related samples). For data like this it is often useful to have them arranged in what is referred to as <strong>“long format”</strong>, with multiple rows for each response the participant provides. For the current data that means we have a variable called <em>condition</em>, which is our IV, and one called <em>time</em> which is our DV. We also have a column labelled <em>avg_time</em>, which is the average of the 3 time values for each participant (the data is duplicated, which is both normal and necessary with long format data).</p></li>
+<li><p>Let’s look at the distribution of <em>time</em> (our DV) as a function of <em>condition</em>. Add another chunk of code and include the following code:</p></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of times by condition</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>your_data_object <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> missing_column_name_A, <span class="at">fill =</span> missing_column_name_B), <span class="at">alpha =</span> .<span class="dv">8</span>) <span class="sc">+</span> <span class="co"># you need to EDIT this for Q4</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_dark</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="5" type="1">
+<li><p>You’ll need to “map” <em>x</em> to <em>time</em> and <em>fill</em> to <em>condition</em> for our <code>geom_density()</code> plot. You can play around with the <em>alpha</em> parameter (which sets the transparency of the elements of the graph), setting it to a value between 0 and 1. Note that this is done OUTSIDE of the <code>aes()</code> command.</p></li>
+<li><p>From the density plot, it does seem like we have some outlier values. It’s probably best if we remove data for the whole participant if their <em>average</em> time is unusual. To do that, we’ll look at the data using the <em>avg_time</em> column. Add the following code for a <code>geom_histogram()</code> to plot the distribution of values in the new <em>avg_time</em> column.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of average times</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>your_data_object <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> missing_column_name_A), <span class="at">fill =</span> <span class="st">"pink"</span>) <span class="sc">+</span> <span class="co"># you need to EDIT this line</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="7" type="1">
+<li>Let’s use the filter command we learned last week to remove these high values. Like last week, we will do this (for now) in a fairly unprincipled manner, by “eyeballing” the data (next week we’ll consider something a bit more “scientific”). Complete the filter command so that it removes the highest values. It’s your choice where you set this limit. Add the code below and write an expression to filter out the high values (remember that filter KEEPS the rows which are TRUE for the expression). Also, remember that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object? The final bit of code needs to plot a histogram of the filtered data.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter out the high values</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_data_object <span class="ot">&lt;-</span> <span class="co"># create a new object (or overwrite)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  your_data_object <span class="sc">%&gt;%</span> <span class="co"># original data object </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(insert_an_expression_here)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># draw a histogram of the filtered data </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>new_data_object <span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x =</span> missing_columns_name), </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">"pink"</span>, <span class="co"># try some different colours?</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="co"># and here?</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">3</span>) <span class="co">#  # adjust the bins? </span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># you could also add (+) a theme to this plot! </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># for a list of themes, type: ?theme_classic</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="running-related-samples-t-tests" class="level3">
 <h3 class="anchored" data-anchor-id="running-related-samples-t-tests">Running related samples t-tests</h3>
