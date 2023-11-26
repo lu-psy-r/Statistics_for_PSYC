@@ -324,7 +324,7 @@ EXTRA: These next steps can be completed to practice customising your plot
 
 7.  Change the theme of the plot (e.g., `theme_classic()`)
 
-8.  Map the *fill* aesthetic to the variable *stroop_condition*. You can do this for `geom_point` or `geom_errorbar` or both at once by putting it in the `aes()` within the `ggplot()` command.
+8.  Map the *colour* aesthetic to the variable *condition*. You can do this for `geom_point` or `geom_errorbar` or both at once by putting it in the `aes()` within the `ggplot()` command.
 
 9. Try changing your `geom_point()` to `geom_col`.
 
