@@ -91,7 +91,7 @@ The "Stroop Effect" is a classic demonstration of automaticity of behaviour. Par
 
 2.  As usual, add a code chunk with `library(tidyverse)` and a `read_csv` command (see above for the link to the csv). Assign the result to a new data object, and call your data something meaningful (perhaps *data_w8* or *data_stroop* but maybe not *bestest_most_fantastic_data_on_the_stroop_test_eva_init*)
 
-3.  View the data with `View(data)`. You will see that the data are a little different from the data we have worked with previously. We have an *pID* variable, which gives a unique number for each person, but each person has 3 rows of data. This is because the different conditions of the Stroop task reflect a **within-subjects variable** (related samples). For data like this it is often useful to have them arranged in what is referred to as **"long format"**, with multiple rows for each response the participant provides. For the current data that means we have a variable called *condition*, which is our IV, and one called *time* which is our DV. We also have a column labelled *avg_time*, which is the average of the 3 time values for each participant (the data is duplicated, which is both normal and necessary with long format data).
+3.  View the data with `View(data_object_name)`. You will see that the data are a little different from the data we have worked with previously. We have an *pID* variable, which gives a unique number for each person, but each person has 3 rows of data. This is because the different conditions of the Stroop task reflect a **within-subjects variable** (related samples). For data like this it is often useful to have them arranged in what is referred to as **"long format"**, with multiple rows for each response the participant provides. For the current data that means we have a variable called *condition*, which is our IV, and one called *time* which is our DV. We also have a column labelled *avg_time*, which is the average of the 3 time values for each participant (the data is duplicated, which is both normal and necessary with long format data).
 
 4.  Let's look at the distribution of *time* (our DV) as a function of *condition*. Add another chunk of code and include the following code:
 
@@ -146,7 +146,7 @@ d %>%
 
 ```
 
-7.  Let's use the filter command we learned last week to remove these high values. Like last week, we will do this (for now) in a fairly unprincipled manner, by "eyeballing" the data (next week we'll consider something a bit more "scientific"). Complete the filter command so that it removes the highest values. It's your choice where you set this limit. Add the code below and write an expression to filter out the high values (remember that filter KEEPS the rows which are TRUE for the expression). Also, remember that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object? MAke sure you edit the final bit of code to plot a histogram of the *filtered* data.
+7.  Let's use the filter command we learned last week to remove these high values. Like last week, we will do this (for now) in a fairly unprincipled manner, by "eyeballing" the data (next week we'll consider something a bit more "scientific"). Complete the filter command so that it keeps only the responses for people that had an `avg_time` less than 12 seconds. Remember that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object? 
 
 ```{r}
 #| eval: false
@@ -155,6 +155,15 @@ d %>%
 new_data_object <- # create a new object (or overwrite)
   your_data_object %>% # original data object 
   filter(insert_an_expression_here)
+```
+
+::: {.callout-important icon=true title="Check your result!"}
+If you've done this correctly, you should now have a data object that has **360 rows** (data for 120 participants, with 3 responses each). 
+:::
+
+8. Add and edit the following code to plot a histogram of the *filtered* data.
+```{r}
+#| eval: false
 
 # draw a histogram of the filtered data 
 new_data_object %>% 
@@ -190,7 +199,7 @@ d_f %>%
 
 ```
 
-8. Finally, copy the code for the original `geom_density()` plot that you drew in step 4. Paste it, and edit the code so that it now plots the filtered set of data (from step 7) for each of the three conditions in the stroop task. 
+9. Finally, copy the code for the original `geom_density()` plot that you drew in step 4. Paste it, and edit the code so that it now plots the filtered set of data (from step 7) for each of the three conditions in the stroop task. 
 
 ### Task 2 - Running related samples t-tests
 
