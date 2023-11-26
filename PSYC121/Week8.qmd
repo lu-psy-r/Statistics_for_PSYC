@@ -205,7 +205,7 @@ d_f %>%
 
 We have seen in our density plots that the reaction times (DV) look different in the three different Stroop conditions (our IV). But now we need to look at whether there are **statistically significant differences** between the means of the three conditions.
 
-To do this, we will first summarise the mean time taken by each condition in the Stroop task. [Remember from Week 3](#group_by) that we can use `group_by()` and `summarise()` to get summary stats (e.g., mean, sd) at each level of the IV. That's what we want to do now:
+To do this, we will first summarise the mean time taken by each condition in the Stroop task. In Week 3 we learnt how to use `group_by()` and `summarise()` to get summary stats (e.g., mean, sd) at each level of the IV. That's what we want to do now:
 
 1.  Copy the code below into your R Markdown and edit the `group_by()` line to specify the IV and the `summarise()` line to calculate the `mean()` of our DV. If you do this correctly, you'll get three values - a mean value for each level (condition) of our IV. Do these means reflect what you would expect in the Stroop task? Do they match the central tendency of the distributions you plotted?
 
@@ -218,7 +218,12 @@ name_of_data_object %>%
 
 ```
 
-2.  Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test; remember that the data for each level of the IV in this experiment came from the same person. We must use a `filter()` to restrict the data to just two levels of the IV: the *condition* column/variable in the data. This is because a related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).
+::: {.callout-important icon=true title="Check your result!"}
+- You should have 3 values: 4.22, 5.69, 7.28
+- If all of your values are the same, you've analysed the wrong column.
+:::
+
+2.  Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test. We use this test because each level of the IV in this experiment came from the same person. First though, we must use a `filter()` to restrict the data to just two levels of the IV. The IV is the *condition* column/variable in the data. The related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).
 
 3.  Copy the code below into your R Markdown. The filter command is already set up to restrict the data to two of the conditions. Note that the filter uses an "\|" symbol, which means "or", because we want the data that **is the same as** (==) one condition OR **is the same as** (==) the other condition. You'll need to edit the name of the data object to get this to run. 
 
@@ -241,7 +246,12 @@ t.test(data = stroop_comparison, time ~ condition, paired = TRUE)
 
 > "There \[was a / was no\] significant difference between the \[describe the variables that were compared\], t(\[degrees of freedom here\]) = \[t value here\], p \< \[p value here\]."
 
-6.  With 3 levels to the IV *condition* there are 3 possible comparisons we can make (L1 vs. L2; L1 vs. L3; L2 vs. L3). Complete all three tests, by copying the code chunk, editing it to make a different filter selection, and then running the t-test. Write out a reporting statement (Q5) for each of your comparisons.
+6.  With 3 levels to the IV *condition* there are 3 possible comparisons we can make (L1 vs. L2; L1 vs. L3; L2 vs. L3). Complete all three tests, by copying and pasting the code chunk twice more, editing each to make a different filter selection, and then running the t-test. Write out a reporting statement (Q5) for each of your comparisons.
+
+::: {.callout-important icon=true title="Check your result!"}
+- Using the filtered data (360 rows) you should get the following t statistics: -18.257, -11.754, -10.258
+- Remember that it's the magnitude that's important, not whether it's positive or negative. The sign simply depends which way round they are compared in the t calculations (mean_1 - mean_2 or mean_2 - mean_1)
+:::
 
 ### Task 3 - Plotting the means and SEs
 
@@ -254,17 +264,21 @@ t.test(data = stroop_comparison, time ~ condition, paired = TRUE)
 ```{r}
 #| eval: false
 
-name_of_data_object %>%
+stroop_summary <- 
+  name_of_data_object %>%
   group_by(name_of_IV_column) %>% # you need to EDIT this for Q2
   summarise(stroop_mean = mean(name_of_DV_column),
             stroop_SE = sd(name_of_DV_column)/sqrt(n())) # you need to EDIT this for Q1
 
 ```
 
-
 3. Add this code to your document and the correct column (DV) to both the `sd()` and the `mean()` commands. Note that you don't need to put anything in `n()`, as this simply calculates how many rows there are.
 
 4.  View the new summary object you have created. Check that the means and SEs are different for the 3 conditions. If they are the same, you probably summarised the wrong column!
+
+::: {.callout-important icon=true title="Check your result!"}
+- The SE values should be: 0.117, 0.170, 0.208
+:::
 
 5.  We will now plot these 3 mean values in a figure. Let's use `geom_point()` so that our means and SEs look a bit like the figure above. Complete the ggplot command to plot our summarised value called *stroop_mean* (y), as a function of the IV, *condition* (x):
 
@@ -299,6 +313,10 @@ name_of_data_object %>%
 
 ```
 
+::: {.callout-important icon=true title="Check your result!"}
+- The correct result will have 3 points, and an error bar around each mean point. These 3 error bars should all be different sizes (as per the 3 SEs you calculated in steps 2-4)
+:::
+
 
 EXTRA: These next steps can be completed to practice customising your plot
 
@@ -308,9 +326,7 @@ EXTRA: These next steps can be completed to practice customising your plot
 
 8.  Map the *fill* aesthetic to the variable *stroop_condition*. You can do this for `geom_point` or `geom_errorbar` or both at once by putting it in the `aes()` within the `ggplot()` command.
 
-9.  Manually change the colours of the columns with using `scale_fill_brewer()`. Take a look at the Week 6 (6.3.7) for instructions on setting colours.
-
-10. Try changing your `geom_point()` to `geom_col`.
+9. Try changing your `geom_point()` to `geom_col`.
 
 ### Task 4 - Knit the document
 
@@ -320,7 +336,7 @@ Let's try knitting the document. If you've done everything right, then the knitt
 
 - Check all your code blocks run.
 
-- Are there any red cross symbols next to your lines of code? These inidcate a code error and need to be fixed before it will knit. 
+- Are there any red cross symbols next to your lines of code? These indicate a code error and need to be fixed before it will knit. 
 
 When you knit the document, you will probably see the code you have written in the output. You can decide whether you want to present the code or not using the options for each code chunk:
 

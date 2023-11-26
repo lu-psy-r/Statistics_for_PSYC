@@ -366,7 +366,7 @@ Check your result!
 <section id="task-2---running-related-samples-t-tests" class="level3">
 <h3 class="anchored" data-anchor-id="task-2---running-related-samples-t-tests">Task 2 - Running related samples t-tests</h3>
 <p>We have seen in our density plots that the reaction times (DV) look different in the three different Stroop conditions (our IV). But now we need to look at whether there are <strong>statistically significant differences</strong> between the means of the three conditions.</p>
-<p>To do this, we will first summarise the mean time taken by each condition in the Stroop task. <a href="#group_by">Remember from Week 3</a> that we can use <code>group_by()</code> and <code>summarise()</code> to get summary stats (e.g., mean, sd) at each level of the IV. That’s what we want to do now:</p>
+<p>To do this, we will first summarise the mean time taken by each condition in the Stroop task. In Week 3 we learnt how to use <code>group_by()</code> and <code>summarise()</code> to get summary stats (e.g., mean, sd) at each level of the IV. That’s what we want to do now:</p>
 <ol type="1">
 <li>Copy the code below into your R Markdown and edit the <code>group_by()</code> line to specify the IV and the <code>summarise()</code> line to calculate the <code>mean()</code> of our DV. If you do this correctly, you’ll get three values - a mean value for each level (condition) of our IV. Do these means reflect what you would expect in the Stroop task? Do they match the central tendency of the distributions you plotted?</li>
 </ol>
@@ -375,8 +375,24 @@ Check your result!
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name_of_IV_column) <span class="sc">%&gt;%</span> <span class="co"># you need to EDIT this for Q1</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">stroop_mean =</span> <span class="fu">mean</span>(name_of_DV_column)) <span class="co"># you need to EDIT this for Q1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="Check your result!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>You should have 3 values: 4.22, 5.69, 7.28</li>
+<li>If all of your values are the same, you’ve analysed the wrong column.</li>
+</ul>
+</div>
+</div>
 <ol start="2" type="1">
-<li><p>Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test; remember that the data for each level of the IV in this experiment came from the same person. We must use a <code>filter()</code> to restrict the data to just two levels of the IV: the <em>condition</em> column/variable in the data. This is because a related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).</p></li>
+<li><p>Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test. We use this test because each level of the IV in this experiment came from the same person. First though, we must use a <code>filter()</code> to restrict the data to just two levels of the IV. The IV is the <em>condition</em> column/variable in the data. The related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).</p></li>
 <li><p>Copy the code below into your R Markdown. The filter command is already set up to restrict the data to two of the conditions. Note that the filter uses an “|” symbol, which means “or”, because we want the data that <strong>is the same as</strong> (==) one condition OR <strong>is the same as</strong> (==) the other condition. You’ll need to edit the name of the data object to get this to run.</p></li>
 </ol>
 <div class="cell">
@@ -396,8 +412,24 @@ Check your result!
 <p>“There [was a / was no] significant difference between the [describe the variables that were compared], t([degrees of freedom here]) = [t value here], p &lt; [p value here].”</p>
 </blockquote>
 <ol start="6" type="1">
-<li>With 3 levels to the IV <em>condition</em> there are 3 possible comparisons we can make (L1 vs.&nbsp;L2; L1 vs.&nbsp;L3; L2 vs.&nbsp;L3). Complete all three tests, by copying the code chunk, editing it to make a different filter selection, and then running the t-test. Write out a reporting statement (Q5) for each of your comparisons.</li>
+<li>With 3 levels to the IV <em>condition</em> there are 3 possible comparisons we can make (L1 vs.&nbsp;L2; L1 vs.&nbsp;L3; L2 vs.&nbsp;L3). Complete all three tests, by copying and pasting the code chunk twice more, editing each to make a different filter selection, and then running the t-test. Write out a reporting statement (Q5) for each of your comparisons.</li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled" title="Check your result!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Using the filtered data (360 rows) you should get the following t statistics: -18.257, -11.754, -10.258</li>
+<li>Remember that it’s the magnitude that’s important, not whether it’s positive or negative. The sign simply depends which way round they are compared in the t calculations (mean_1 - mean_2 or mean_2 - mean_1)</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="task-3---plotting-the-means-and-ses" class="level3">
 <h3 class="anchored" data-anchor-id="task-3---plotting-the-means-and-ses">Task 3 - Plotting the means and SEs</h3>
@@ -409,15 +441,33 @@ Check your result!
 <li>The code from Task 2, Question 1 will give the mean. We will now add a second line of this code to give the standard error values:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>name_of_data_object <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name_of_IV_column) <span class="sc">%&gt;%</span> <span class="co"># you need to EDIT this for Q2</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">stroop_mean =</span> <span class="fu">mean</span>(name_of_DV_column),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">stroop_SE =</span> <span class="fu">sd</span>(name_of_DV_column)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>())) <span class="co"># you need to EDIT this for Q1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>stroop_summary <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  name_of_data_object <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name_of_IV_column) <span class="sc">%&gt;%</span> <span class="co"># you need to EDIT this for Q2</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">stroop_mean =</span> <span class="fu">mean</span>(name_of_DV_column),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">stroop_SE =</span> <span class="fu">sd</span>(name_of_DV_column)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">n</span>())) <span class="co"># you need to EDIT this for Q1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li><p>Add this code to your document and the correct column (DV) to both the <code>sd()</code> and the <code>mean()</code> commands. Note that you don’t need to put anything in <code>n()</code>, as this simply calculates how many rows there are.</p></li>
 <li><p>View the new summary object you have created. Check that the means and SEs are different for the 3 conditions. If they are the same, you probably summarised the wrong column!</p></li>
-<li><p>We will now plot these 3 mean values in a figure. Let’s use <code>geom_point()</code> so that our means and SEs look a bit like the figure above. Complete the ggplot command to plot our summarised value called <em>stroop_mean</em> (y), as a function of the IV, <em>condition</em> (x):</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled" title="Check your result!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The SE values should be: 0.117, 0.170, 0.208</li>
+</ul>
+</div>
+</div>
+<ol start="5" type="1">
+<li>We will now plot these 3 mean values in a figure. Let’s use <code>geom_point()</code> so that our means and SEs look a bit like the figure above. Complete the ggplot command to plot our summarised value called <em>stroop_mean</em> (y), as a function of the IV, <em>condition</em> (x):</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's first plot the means</span></span>
@@ -450,12 +500,26 @@ Plotting the error bars
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">ymax =</span> missing_equation), <span class="co"># edit this for Q5</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> .<span class="dv">2</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-important callout-titled" title="Check your result!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Check your result!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The correct result will have 3 points, and an error bar around each mean point. These 3 error bars should all be different sizes (as per the 3 SEs you calculated in steps 2-4)</li>
+</ul>
+</div>
+</div>
 <p>EXTRA: These next steps can be completed to practice customising your plot</p>
 <ol start="6" type="1">
 <li><p>Add a <code>labs()</code> layer to the plot to change the axis titles, and the title of the plot.</p></li>
 <li><p>Change the theme of the plot (e.g., <code>theme_void()</code>)</p></li>
 <li><p>Map the <em>fill</em> aesthetic to the variable <em>stroop_condition</em>. You can do this for <code>geom_point</code> or <code>geom_errorbar</code> or both at once by putting it in the <code>aes()</code> within the <code>ggplot()</code> command.</p></li>
-<li><p>Manually change the colours of the columns with using <code>scale_fill_brewer()</code>. Take a look at the Week 6 (6.3.7) for instructions on setting colours.</p></li>
 <li><p>Try changing your <code>geom_point()</code> to <code>geom_col</code>.</p></li>
 </ol>
 </section>
@@ -465,7 +529,7 @@ Plotting the error bars
 <ul>
 <li><p>Did you keep all your code in the code chunks?</p></li>
 <li><p>Check all your code blocks run.</p></li>
-<li><p>Are there any red cross symbols next to your lines of code? These inidcate a code error and need to be fixed before it will knit.</p></li>
+<li><p>Are there any red cross symbols next to your lines of code? These indicate a code error and need to be fixed before it will knit.</p></li>
 </ul>
 <p>When you knit the document, you will probably see the code you have written in the output. You can decide whether you want to present the code or not using the options for each code chunk:</p>
 <p><img src="images/wk8/chunk_options.png" class="img-fluid"></p>
