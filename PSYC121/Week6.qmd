@@ -260,7 +260,7 @@ count(my_data_object_name, gain)
 
 9. Repeat for the data from the loss column. Was the p value < .05 here? Again, write a sentence or two to explain what this means. 
 
-## Week 7 Quiz
+## Week 6 Quiz
 
 You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_Week_6_Quiz/){target="_blank"}
 
