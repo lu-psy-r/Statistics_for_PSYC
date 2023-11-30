@@ -6,13 +6,30 @@ order: 9
 
 # Lectures
 
-Watch Lecture [Part 1](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023089)
+Watch Part 1
 
-Watch Lecture [Part 2](https://modules.lancaster.ac.uk/mod/url/view.php?id=1904989)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6fc1d99-82c9-49d0-a462-b0b500aa7f7b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
 
-Watch Lecture [Part 3](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023091)
+Watch Part 2
 
-Watch Lecture [Part 4](https://modules.lancaster.ac.uk/mod/panopto/view.php?id=2023096)
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=76b6d658-128b-48c5-af04-b0ca010d180c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 3
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1164b9d4-1d9d-4345-b56b-b0b500aa7f30&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 4
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b7d5832a-d88c-46dd-ae3b-b0b500aa7f0d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
 
 Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
 
@@ -24,9 +41,6 @@ Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
 d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023.csv")
-
-
-
 
 # set up the data for Task 3
 data_wk9 <- 
@@ -54,11 +68,11 @@ write_csv(data_wk9, file = "data/Week_7/data_wk9.csv")
 
 **Getting ready for the lab class**
 
-Create a folder for Week 9. and download the [week_9.zip](data/Week_9/week_9.zip) file and upload it into this new folder in RStudio Server.
+Create a folder for Week 9. and download the [Week_9 csv file](data/Week_9/data_wk9.csv) file and upload it into this new folder in RStudio Server.
 
 ## RStudio tasks
 
-### Exploring the data
+### Task 1 - Exploring the data
 
 In this class we will be exploring some data on people's estimations on aspects of the UK population. We asked people 4 different questions:
 
@@ -76,11 +90,11 @@ We also asked a related question about immigration:
 
 2.  Take a look at the summary statistics for all of the columns in our data using `summary()`
 
-3.  At this stage you could try using `ggplot()` with `geom_histogram()` (hint: not sure? look at last week) or `geom_density()` to explore the different columns.
+3.  At this stage you could try using `ggplot()` with `geom_histogram()` or `geom_density()` to explore the different columns. You did this last week, so take a look at the instructions from last week or your .Rmd from last week to remind yourself. 
 
 4.  You may be tempted at this stage to apply the `filter()` commands to remove any outliers. If so, yes, that's entirely sensible. But note that we are going to remove outliers a little further into our tasks after we've first done some visualisation.
 
-### Visualising relationships in the data
+### Task 2 - Visualising relationships in the data
 
 To what extent are people's estimations of these population parameters related? Let's look at this by plotting these data as `geom_point()`:
 

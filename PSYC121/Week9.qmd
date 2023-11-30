@@ -1,0 +1,74 @@
+---
+title: 9. Unrelated-samples t-test and Power
+subtitle: Written by Tom Beesley & John Towse
+order: 9
+---
+
+# Lectures
+
+Watch Part 1
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d6fc1d99-82c9-49d0-a462-b0b500aa7f7b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 2
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=76b6d658-128b-48c5-af04-b0ca010d180c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 3
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1164b9d4-1d9d-4345-b56b-b0b500aa7f30&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+Watch Part 4
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b7d5832a-d88c-46dd-ae3b-b0b500aa7f0d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+
+Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
+
+## Reading
+
+[Chapter 14](https://modules.lancaster.ac.uk/mod/url/view.php?id=2023094) of Howell
+
+
+```{r eval=FALSE, include=FALSE}
+library(tidyverse)
+d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023.csv")
+
+# set up the data for Task 3
+data_wk9 <- 
+  d_raw %>% 
+  dplyr::slice(3:n()) %>% 
+  select("home_location_in_UK" = Q8, 
+         "pop_est_christian" = Q54_1, 
+         "pop_est_muslim" = Q54_2,
+         "pop_est_age" = Q54_3,
+         "pop_est_immigrants" = Q53_1) %>% 
+  mutate(home_location_in_UK = case_when(str_detect(home_location_in_UK, "North West") ~ "North",
+                                         str_detect(home_location_in_UK, "North East") ~ "North",
+                                         str_detect(home_location_in_UK, "South West") ~ "South",
+                                         str_detect(home_location_in_UK, "South East") ~ "South")) %>% 
+  drop_na()
+
+write_csv(data_wk9, file = "data/Week_7/data_wk9.csv")
+
+```
+
+
+## Pre-lab work: online tutorial
+
+**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep){target="_blank"} (on campus, or VPN required)
+
+**Getting ready for the lab class**
+
+Create a folder for Week 9. and download the [Week_9 csv file](data/Week_9/data_wk9.csv) file and upload it into this new folder in RStudio Server.
+
+## RStudio tasks (will be uploaded on Friday)
+
