@@ -23,18 +23,27 @@ Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
 
 ```{r eval=FALSE, include=FALSE}
 library(tidyverse)
-load("survey_raw.RData")
+d_raw <- read_csv("data/Week_7/PSYC121_teaching_data_2023.csv")
 
-colnames(data)
 
+
+
+# set up the data for Task 3
 data_wk9 <- 
-  data %>% 
-  mutate(home_location_in_UK = case_when(str_detect(home_location_in_UK, "North") ~ "North",
-                                         str_detect(home_location_in_UK, "South") ~ "South")) %>% 
-    select(contains("pop"), home_location_in_UK) %>% 
+  d_raw %>% 
+  dplyr::slice(3:n()) %>% 
+  select("home_location_in_UK" = Q8, 
+         "pop_est_christian" = Q54_1, 
+         "pop_est_muslim" = Q54_2,
+         "pop_est_age" = Q54_3,
+         "pop_est_immigrants" = Q53_1) %>% 
+  mutate(home_location_in_UK = case_when(str_detect(home_location_in_UK, "North West") ~ "North",
+                                         str_detect(home_location_in_UK, "North East") ~ "North",
+                                         str_detect(home_location_in_UK, "South West") ~ "South",
+                                         str_detect(home_location_in_UK, "South East") ~ "South")) %>% 
   drop_na()
 
-write_csv(data_wk9, file = "files/Week_9/data_wk9.csv")
+write_csv(data_wk9, file = "data/Week_7/data_wk9.csv")
 
 ```
 
@@ -77,7 +86,7 @@ To what extent are people's estimations of these population parameters related? 
 
 1.  Complete the code to add one numeric column in the data to x and another numeric column to y. You can pick any of the columns you like, but it's important that you understand what research question you are asking with your choice. For example, you might be asking "Do people who estimate there are more Christians in the population also think there are more people over the age of 65?"
 
-2.  Note the general pattern in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernable relationship at all?
+2.  Note the general pattern in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?
 
 3.  Copy the code and edit it to explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing on your table what kind of relationship you can see in the data.
 
