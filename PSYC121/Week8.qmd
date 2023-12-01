@@ -66,6 +66,8 @@ d <-
 
 write_csv(d, file = "data/Week_8/stroop_wk8.csv")
 
+
+
 ```
 
 
