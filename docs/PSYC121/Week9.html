@@ -294,7 +294,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 </section>
 <section id="pre-lab-work-online-tutorial" class="level2">
 <h2 class="anchored" data-anchor-id="pre-lab-work-online-tutorial">Pre-lab work: online tutorial</h2>
-<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_Learnr" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
 <p>Create a folder for Week 9 and download the <a href="data/Week_9/data_wk9.csv">Week_9 csv file</a> file and upload it into this new folder in RStudio Server.</p>
 </section>
@@ -335,11 +335,6 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>()) <span class="sc">+</span> <span class="co"># map two of the columns to x and y</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="co"># you can change the size or colour of the points if you wish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_wk9 <span class="sc">%&gt;%</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> pop_est_muslim, <span class="at">y =</span> pop_est_immigrants)) <span class="sc">+</span> <span class="co"># map two of the columns to x and y</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="co"># you can change the size or colour of the points if you wish</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <ol start="2" type="1">
 <li><p>Consider the graph, noting any general pattern/trend in the data. Is there a <em>postive relationship</em>: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a <em>negative relationship</em>: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?</p></li>
 <li><p>Write a statement after this code chunk to briefly make a comment about any pattern you see in the data (or absence of a pattern).</p></li>
@@ -353,18 +348,18 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li><p>Let’s create a “z-transform column” called <em>z_imm</em> for the estimates of the percentage of immigrants. Complete the code below by changing the data object names and adding the relevant variable (column) name. Note that you may want to assign the result (<code>&lt;-</code>) to a new data object at this point.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use mutate and scale to create z-scores of immigration estimates</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_data_object_name <span class="ot">&lt;-</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  data_object_name <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_imm =</span> <span class="fu">scale</span>(column_name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use mutate and scale to create z-scores of immigration estimates</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>new_data_object_name <span class="ot">&lt;-</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  data_object_name <span class="sc">%&gt;%</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_imm =</span> <span class="fu">scale</span>(column_name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for this new column to check it conforms to what we know about z-scores (e.g., <code>mean()</code> = 0, give or take some rounding, and <code>sd()</code> = 1).</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the mean and sd of the new column</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_object_name<span class="sc">$</span>column_name)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data_object_name<span class="sc">$</span>column_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the mean and sd of the new column</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data_object_name<span class="sc">$</span>column_name)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data_object_name<span class="sc">$</span>column_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>We know from our earlier lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</li>
@@ -374,20 +369,20 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li>Let’s consider an outlier any value that has a z of 2.5 (a conventional cutoff). Plot a histogram of the <em>z_imm</em> column in order to inspect whether there are data that are above 2.5 or below -2.5.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram of the z_imm column</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># eh, what, no code? Come on...you've got this!!! </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># start with the data, pipe, then ggplot</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if you get really stuck, look back at last week</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># histogram of the z_imm column</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># eh, what, no code? Come on...you've got this!!! </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># start with the data, pipe, then ggplot</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># if you get really stuck, look back at last week</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="6" type="1">
 <li>Add a filter command to remove the values in the <em>z_imm</em> column are greater than 2.5 or less than -2.5. That means you’ll need two seperate statements with an &amp; in the middle</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a filter command</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data_object_filtered <span class="ot">&lt;-</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  data_object_name <span class="sc">%&gt;%</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(first_expression_here <span class="sc">&amp;</span> second_expression_here) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a filter command</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data_object_filtered <span class="ot">&lt;-</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  data_object_name <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(first_expression_here <span class="sc">&amp;</span> second_expression_here) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="7" type="1">
 <li>You should have <strong>removed 1 row of data</strong>. Make a note of this in your R markdown document.</li>
@@ -401,28 +396,28 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li>First we will look at the mean population estimations, split by home location. To do this, copy and edit the code below and complete the <code>group_by()</code> and <code>summarise()</code> commands to give the <code>mean()</code> estimates of the <em>proportion of immigrants</em> in the population by home location. You don’t need to edit the <code>N = n()</code> line - this provides the number of participants at each level of the <em>home_location_in_UK</em> variable.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data_object_name <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(column_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_imm_est =</span> complete_this_statement,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sample_size =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summary statistics</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data_object_name <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(column_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_imm_est =</span> complete_this_statement,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sample_size =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li><p>What do the means suggest? Do people in the North and South give different estimations? Write a statement in your .Rmd file to describe the difference.</p></li>
 <li><p>Let’s test if these differences are real. First, it is worth noting that many more respondents originate from the North than from the South (see the <em>N</em> column in the summary). We have unequal sample sizes, and potentially unequal variances. Copy the code below into your .Rmd. The first bit of code runs the <code>var.test()</code> to check if the variances of the two samples are similar (homogeneity of variance). If this test produces a p value less that .05, then the variances in the two samples are unequal. That will have consequences for how we run the <code>t-test()</code> in the next step.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check if variances are unequal (p &lt; .05) - Q3</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(pop_est_immigrants <span class="sc">~</span> home_location_in_UK, <span class="at">data =</span> your_data_object_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check if variances are unequal (p &lt; .05) - Q3</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var.test</span>(pop_est_immigrants <span class="sc">~</span> home_location_in_UK, <span class="at">data =</span> your_data_object_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>Now let’s run the t-test. This week we are comparing data from different samples of participants (those who are from the North and South). We need to tell the t-test that the data are NOT paired (<code>paired = FALSE</code>). The result of the <code>var.test()</code> in the last step will tell you whether the <code>var.equal</code> value should be <code>TRUE</code> or <code>FALSE</code>. Set <code>var.equal = FALSE</code> or <code>var.equal = TRUE</code> depending on whether the variances are equal. When you’re happy with the parameters, run the t-test.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run unrelated samples t-test</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pop_est_immigrants <span class="sc">~</span> home_location_in_UK, <span class="at">data =</span> your_data_object_name, </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> missing_value) <span class="co"># you'll need to set this to TRUE or FALSE depending on what you found in var.test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># run unrelated samples t-test</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pop_est_immigrants <span class="sc">~</span> home_location_in_UK, <span class="at">data =</span> your_data_object_name, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">paired =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> missing_value) <span class="co"># you'll need to set this to TRUE or FALSE depending on what you found in var.test</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li><p>If you’ve done this correctly, you should have a <strong>t-statistic = -2.0735</strong>. Examine the p-value and discuss on your table what this means. Write a line in your .Rmd to formally state the result of the t-test (look at last week for the format). Describe what this result means in your own words.</p></li>
@@ -437,20 +432,20 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li><p>Add the following code into a chunk and run it (edit the data object name) to calculate the <code>cohens_d()</code> effect size, which is reported as <em>effsize</em>. You can ignore any negative sign, taking note of the absolute value.</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here to read in the stroop csv file</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cohens_d</span>(time <span class="sc">~</span> condition, </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> your_stroop_data_object,</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(effectsize)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here to read in the stroop csv file</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cohens_d</span>(time <span class="sc">~</span> condition, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> your_stroop_data_object,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="4" type="1">
 <li>We already know that this large effect size was significant with our large sample of participants. What might we have expected with a much smaller sample size? Copy the code below and use the <code>pwr.t.test()</code> function to add in the effect size that you calculated (Cohen’s d) in step 3. We can set the <em>N</em> to 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect? Discuss with your table, or staff, what this power means.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d =</span> value_from_step_3, <span class="at">n =</span> <span class="dv">20</span>) <span class="co">#Q4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d =</span> value_from_step_3, <span class="at">n =</span> <span class="dv">20</span>) <span class="co">#Q4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="1">
 <li><p>Let’s say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Copy the code you used in step 4, and edit it to run <code>pwr.t.test()</code> to work out the minimum sample size we would need to achieve <strong>power of .8</strong>, with the effect size you calculated in step 3.</p></li>

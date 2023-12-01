@@ -73,7 +73,7 @@ write_csv(data_wk9, file = "data/Week_7/data_wk9.csv")
 
 ## Pre-lab work: online tutorial
 
-**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep){target="_blank"} (on campus, or VPN required)
+**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_9_Learnr){target="_blank"} (on campus, or VPN required)
 
 **Getting ready for the lab class**
 
@@ -128,6 +128,7 @@ data_object_name %>%
 
 ```{r}
 #| eval: false
+#| include: false
 
 data_wk9 %>% 
   ggplot(aes(x = pop_est_muslim, y = pop_est_immigrants)) + # map two of the columns to x and y
