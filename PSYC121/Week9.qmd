@@ -309,7 +309,8 @@ t.test(pop_est_immigrants ~ home_location_in_UK, data = your_data_object_name,
 var.test(pop_est_immigrants ~ home_location_in_UK, data = data_wk9_f)
 
 # run unrelated samples t-test
-t.test(pop_est_immigrants ~ home_location_in_UK, data = data_wk9_f, 
+t.test(pop_est_immigrants ~ home_location_in_UK, 
+       data = data_wk9_f, 
        paired = FALSE, 
        var.equal = TRUE) # you'll need to set this to TRUE or FALSE depending on what you found in var.test
 
