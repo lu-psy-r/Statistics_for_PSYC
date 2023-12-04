@@ -31,7 +31,7 @@ Watch Part 4
 ```
 
 
-Download the lecture slides [here](data/Week_9/Lecture Week 9.pptx)
+Download the lecture slides [here](data/Week_9/Lecture Week 9 vTB.pptx)
 
 ## Reading
 
