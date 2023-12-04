@@ -136,12 +136,11 @@ data_wk9 %>%
 
 ```
 
-
-2.  Consider the graph, noting any general pattern/trend in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?
+2. Consider the graph, noting any general pattern/trend in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?
 
 3. Write a statement after this code chunk to briefly make a comment about any pattern you see in the data (or absence of a pattern). 
 
-4.  Copy this code into new chunks and explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing with people on your table what kind of relationship you can see in the data. Write some comments in your R Markdown document to describe the patterns you are seeing. 
+4. Copy this code into new chunks and explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing with people on your table what kind of relationship you can see in the data. Write some comments in your R Markdown document to describe the patterns you are seeing. 
 
 ### Using z-scores to remove outliers
 
@@ -233,7 +232,7 @@ data_object_filtered <-
 
 ```
 
-7. You should have **removed 1 row of data**. Make a note of this in your R markdown document. 
+7. You should have **removed 3 rows of data**. Make a note of this in your R markdown document. 
 
 ```{r}
 #| eval: false
