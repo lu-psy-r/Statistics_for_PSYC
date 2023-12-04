@@ -101,7 +101,7 @@ We also asked a related question about immigration:
 
 3. You can view the data by clicking on it in the environment. Note that in previous weeks we've used the `view()` command in our scripts (which does the same thing), but that can conflict with knitting the .Rmd file. 
 
-3. Take a look at the summary statistics for all of the columns in our data using `summary(your_data_object_name)`
+4. Take a look at the summary statistics for all of the columns in our data using `summary(your_data_object_name)`
 
 ```{r}
 #| eval: false
@@ -111,11 +111,9 @@ summary(data_wk9)
 
 ```
 
-### Task 2 - Visualising relationships in the data
-
 To what extent are people's estimations of these population parameters related? Let's look at this by plotting these data as `geom_point()`. 
 
-1. Copy the following code. Edit it to map one of the numeric columns in the data to x and another numeric column to y. You can pick any of the columns you like, but it's important that you understand what research question you are asking with your choice. For example, you might be asking "Do people who estimate that there are more Christians in the population also think there are more Muslims in the population?"
+5. Copy the following code. Edit it to map one of the numeric columns in the data to x and another numeric column to y. You can pick any of the columns you like, but it's important that you understand what research question you are asking with your choice. For example, you might be asking "Do people who estimate that there are more Christians in the population also think there are more Muslims in the population?"
 
 ```{r}
 #| eval: false
@@ -136,13 +134,13 @@ data_wk9 %>%
 
 ```
 
-2. Consider the graph, noting any general pattern/trend in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?
+6. Consider the graph, noting any general pattern/trend in the data. Is there a *postive relationship*: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a *negative relationship*: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernible relationship at all?
 
-3. Write a statement after this code chunk to briefly make a comment about any pattern you see in the data (or absence of a pattern). 
+7. Write a statement after this code chunk to briefly make a comment about any pattern you see in the data (or absence of a pattern). 
 
-4. Copy this code into new chunks and explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing with people on your table what kind of relationship you can see in the data. Write some comments in your R Markdown document to describe the patterns you are seeing. 
+8. Copy this code into new chunks and explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing with people on your table what kind of relationship you can see in the data. Write some comments in your R Markdown document to describe the patterns you are seeing. 
 
-### Using z-scores to remove outliers
+### Task 2 - Using z-scores to remove outliers
 
 1.  You may have noticed that there are some fairly extreme values in some of these numeric estimations of the population. As we've discussed in previous weeks, these outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.
 
@@ -220,7 +218,7 @@ data_wk9_z %>%
 ```
 
 
-6.  Add a filter command to remove the values in the *z_imm* column are greater than 2.5 or less than -2.5. That means you'll need two seperate statements with an & in the middle
+6.  Add a filter command to remove the values in the *z_imm* column are greater than 2.5 or less than -2.5. That means you'll need two separate statements with an & in the middle
 
 ```{r}
 #| eval: false
@@ -245,7 +243,7 @@ data_wk9_f <-
 
 ```
 
-## Unrelated samples t-test
+## Task 3 - Unrelated samples t-test
 
 We have also included a categorical variable in our data this week, which is one you have seen before in our analysis classes: the home location in the UK of the respondent, `home_location_in_UK`. For this data object we have included only those responses from those people from the "North" (NW and NE) and those from the "South" (SW and SE). Other respondents from elsewhere have been removed from the data. We can therefore look at whether people's home location determines their population estimations.
 
@@ -319,7 +317,7 @@ t.test(pop_est_immigrants ~ home_location_in_UK,
 
 6.  In that t-test we looked at the *pop_est_immigrants* variable, but we can do this test for all of our population estimates. Copy the code to run another `var.test()` and `t.test()`, for the *pop_est_christian* variable. Document the result of the t-test in your .Rmd and describe the finding. What do these tell us about the relationship between home_location and estimates of the population (if anything)? Feel free to come back to this and run the other two tests on the other population estimations.
 
-## Power and effect size (d) calculations
+## Task 4 - Power and effect size (d) calculations
 
 1.  We saw in last week's lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an **effect size** (*Cohen's d*) for the t-statistic that we observed in that test.
 
