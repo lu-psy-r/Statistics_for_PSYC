@@ -13,9 +13,13 @@ email-obfuscation: javascript
 
 Welcome to PSYC122!
 
-The module will ensure that students develop the necessary skills they require to carry out psychological enquiry through the statistical analysis of data. This module builds on the knowledge acquired in Statistics for Psychologists 1 (PSYC121). Students will receive lectures on statistical analysis techniques in psychological research. Students will receive laboratory classes in which they learn how to handle data and to calculate statistical analyses.
+This module builds on the knowledge and skills acquired in Statistics for Psychologists 1 (PSYC121). You will continue to practise data handling, data processing and data visualisation, using R and R Studio. In addition, you will learn about statistical methods to test whether two (or more) variables are associated and how to implement those methods in R and R Studio. For instance, lets consider the following research question involving two variables (denoted X and Y): Does the rating of an individual's "likability" (Y) have anything to do with physical attractiveness (X)?
 
-Syllabus Topic Areas
+This page gives you access to all the materials that you will need. You will have timetabled lab classes during which you are expected to work through a series of exercises to practise that week's material. Before you come to your lab session, you should watch the lectures for that week, read the relevant book chapter and complete the pre-lab activities. Following all that and to check that you've understood the week's materials, you can complete a quick quiz.
+
+There will be class tests in weeks 15 and 20. These take place, in person, during your regular lab session.
+
+We will cover the following topics:
 
 Weeks 11-15: Measures of association:
 
