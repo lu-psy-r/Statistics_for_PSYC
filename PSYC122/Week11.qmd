@@ -54,10 +54,7 @@ All in this is a clear example of why you should visualise your data and not to 
 
 You might want to re-visit some of the materials that John and Tom provided in PSYC121:
 
--   [Basics of working with RStudio](../PSYC121/Week2.html#pre-lab-work)
--   [Video on how to upload a zip file and import data (3.5 mins)](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=646a4bd4-9b2e-46a1-b2ee-adc100ce507b)
--   [Video on basic operations in RStudio (8 mins)](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=646a4bd4-9b2e-46a1-b2ee-adc100ce507b)
--   [Video on using scripts and using the console (3 mins)](https://web.microsoftstream.com/video/dcf3165c-86e7-4546-96d8-0ca6f56cbd7d)
+-   [Basics of working with RStudio](../PSYC121/Week1.html#task-3---using-rstudio)
 
 #### Create a folder and a Project for Week 11.
 
@@ -99,13 +96,15 @@ Below are scatterplots that show the relationship between 'how much you know abo
 
 **Figure D** ![](images/wk1/lab_act1_d.png)
 
+::: {.callout-note}
+For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense.
+:::
+
 #### Question 2
 
 Suppose it was observed that there is a correlation of r = -.81 between a driver's age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance.
 
 **TRUE or FALSE? Explain why.**
-
-*Note: explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense*).
 
 #### Question 3
 
