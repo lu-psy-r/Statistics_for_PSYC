@@ -223,19 +223,6 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#pre-lab-activity-1-visualing-correlations" id="toc-pre-lab-activity-1-visualing-correlations" class="nav-link" data-scroll-target="#pre-lab-activity-1-visualing-correlations">Pre-lab activity 1: Visualing correlations</a></li>
   <li><a href="#pre-lab-activity-2-guess-the-correlation" id="toc-pre-lab-activity-2-guess-the-correlation" class="nav-link" data-scroll-target="#pre-lab-activity-2-guess-the-correlation">Pre-lab activity 2: Guess the correlation</a></li>
   <li><a href="#pre-lab-activity-3-anscombes-quartet" id="toc-pre-lab-activity-3-anscombes-quartet" class="nav-link" data-scroll-target="#pre-lab-activity-3-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</a></li>
-  <li><a href="#prelab_gettingReady" id="toc-prelab_gettingReady" class="nav-link" data-scroll-target="#prelab_gettingReady">Pre-lab activity 4: Getting ready for the lab class</a></li>
-  </ul></li>
-  <li><a href="#lab-activities" id="toc-lab-activities" class="nav-link" data-scroll-target="#lab-activities">Lab activities</a>
-  <ul class="collapse">
-  <li><a href="#lab-activity-1-interpreting-correlation" id="toc-lab-activity-1-interpreting-correlation" class="nav-link" data-scroll-target="#lab-activity-1-interpreting-correlation">Lab activity 1: Interpreting correlation</a></li>
-  <li><a href="#lab-activity-2-visualising-calculating-and-reporting-correlations" id="toc-lab-activity-2-visualising-calculating-and-reporting-correlations" class="nav-link" data-scroll-target="#lab-activity-2-visualising-calculating-and-reporting-correlations">Lab activity 2: Visualising, calculating and reporting correlations</a></li>
-  <li><a href="#lab-activity-3-more-correlations" id="toc-lab-activity-3-more-correlations" class="nav-link" data-scroll-target="#lab-activity-3-more-correlations">Lab activity 3: More correlations</a></li>
-  </ul></li>
-  <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a>
-  <ul class="collapse">
-  <li><a href="#lab-activity-1-interpreting-correlation-1" id="toc-lab-activity-1-interpreting-correlation-1" class="nav-link" data-scroll-target="#lab-activity-1-interpreting-correlation-1">Lab activity 1: Interpreting correlation</a></li>
-  <li><a href="#lab-activity-2-constructing-scatterplots-and-calculating-correlations" id="toc-lab-activity-2-constructing-scatterplots-and-calculating-correlations" class="nav-link" data-scroll-target="#lab-activity-2-constructing-scatterplots-and-calculating-correlations">Lab activity 2: Constructing scatterplots and calculating correlations</a></li>
-  <li><a href="#lab-activity-3-more-correlations-1" id="toc-lab-activity-3-more-correlations-1" class="nav-link" data-scroll-target="#lab-activity-3-more-correlations-1">Lab activity 3: More correlations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/Week11.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -299,548 +286,212 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <h3 class="anchored" data-anchor-id="pre-lab-activity-3-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</h3>
 <p>Anscombe (1973) showed that four sets of bivariate data (X, Y) that have the exact same means, medians, and relationships can look very different when plotted. You can read more about this <a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet"><strong>here</strong></a>.</p>
 <p>All in this is a clear example of why you should visualise your data and not to rely on just the numbers.</p>
-</section>
-<section id="prelab_gettingReady" class="level3">
-<h3 class="anchored" data-anchor-id="prelab_gettingReady">Pre-lab activity 4: Getting ready for the lab class</h3>
-<section id="remind-yourself-of-the-basics-of-how-to-work-with-rstudio." class="level4">
-<h4 class="anchored" data-anchor-id="remind-yourself-of-the-basics-of-how-to-work-with-rstudio.">Remind yourself of the basics of how to work with RStudio.</h4>
-<p>You might want to re-visit some of the materials that John and Tom provided in PSYC121:</p>
-<ul>
-<li><a href="../PSYC121/Week1.html#task-3---using-rstudio">Basics of working with RStudio</a></li>
-</ul>
-</section>
-<section id="create-a-folder-and-a-project-for-week-11." class="level4">
-<h4 class="anchored" data-anchor-id="create-a-folder-and-a-project-for-week-11.">Create a folder and a Project for Week 11.</h4>
-<p><a href="../PSYC121/Week6.html#creating_project">Click here for the instructions</a> from Week 6 of PSYC121 if you are unsure.</p>
-</section>
-<section id="get-your-files-ready" class="level4">
-<h4 class="anchored" data-anchor-id="get-your-files-ready">Get your files ready</h4>
-<p>Download the <a href="data/week11/122_week11_forStudents.zip">122_week11_forStudents.zip</a> file and upload it into the new folder in RStudio Server you created at the previous step. If you need them, <a href="../PSYC121/Week2.html#uploading_zip">here are the instructions</a> from Week 2 of PSYC121.</p>
-</section>
-</section>
-</section>
-<section id="lab-activities" class="level2">
-<h2 class="anchored" data-anchor-id="lab-activities">Lab activities</h2>
-<p>In this lab, you’ll gain understanding of and practice with:</p>
-<ul>
-<li>constructing and interpreting scatterplots</li>
-<li>running correlation analysis and interpret the results</li>
-<li>reporting the results in APA format</li>
-<li>constructing a correlation matrix in APA format</li>
-<li>when and why to apply correlation analysis to answers questions in psychological science</li>
-</ul>
-<section id="lab-activity-1-interpreting-correlation" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-1-interpreting-correlation">Lab activity 1: Interpreting correlation</h3>
-<section id="question-1" class="level4">
-<h4 class="anchored" data-anchor-id="question-1">Question 1</h4>
-<p>Below are scatterplots that show the relationship between ‘how much you know about correlation and how attractive you appear to members of the opposite (&amp;/or same) sex’. Choose the type of correlation (strength and direction) displayed in each graph using one of the following:</p>
-<ul>
-<li>Perfect positive correlation</li>
-<li>Perfect negative correlation</li>
-<li>Strong positive correlation</li>
-<li>Strong negative correlation</li>
-<li>Moderate positive correlation</li>
-<li>Moderate negative correlation</li>
-<li>Null correlation</li>
-</ul>
-<p><strong>Figure A</strong> <img src="images/wk1/lab_act1_a.png" class="img-fluid"></p>
-<p><strong>Figure B</strong> <img src="images/wk1/lab_act1_b.png" class="img-fluid"></p>
-<p><strong>Figure C</strong> <img src="images/wk1/lab_act1_c.png" class="img-fluid"></p>
-<p><strong>Figure D</strong> <img src="images/wk1/lab_act1_d.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make ‘logical’ sense.</p>
-</div>
-</div>
-</section>
-<section id="question-2" class="level4">
-<h4 class="anchored" data-anchor-id="question-2">Question 2</h4>
-<p>Suppose it was observed that there is a correlation of r = -.81 between a driver’s age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance.</p>
-<p><strong>TRUE or FALSE? Explain why.</strong></p>
-</section>
-<section id="question-3" class="level4">
-<h4 class="anchored" data-anchor-id="question-3">Question 3</h4>
-<p>Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison <em>causes</em> people to become more aggressive.</p>
-<p><strong>TRUE or FALSE? Explain why.</strong></p>
-</section>
-<section id="question-4" class="level4">
-<h4 class="anchored" data-anchor-id="question-4">Question 4</h4>
-<p>A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the ‘greatness’ of your hair explain?</p>
-<ul>
-<li>51%</li>
-<li>70%</li>
-<li>49%</li>
-<li>30%</li>
-<li>Who cares I’ve got great hair.</li>
-</ul>
-<p>What was the reason for your answer?</p>
-<p>What is this ‘new coefficient’ called?</p>
-</section>
-</section>
-<section id="lab-activity-2-visualising-calculating-and-reporting-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-2-visualising-calculating-and-reporting-correlations">Lab activity 2: Visualising, calculating and reporting correlations</h3>
-<p>Going back to the data discussed in Chapter 11 of Miller &amp; Haden, you’ll remember it contains data from 25 8-year-old children on:</p>
-<ul>
-<li>a standardised test of reading ability (Abil)</li>
-<li>intelligence (IQ)</li>
-<li>the number of minutes per week spent reading in the home (Home)</li>
-<li>and the number of minutes per week spent watching TV (TV)</li>
-</ul>
-<p>In the video on ‘How to conduct correlation analysis using R’ we looked at the correlation between reading ability and intelligence. Now, let’s look at the correlation between number of minutes per week spent reading in the home and watching TV.</p>
-<p>The folder you were asked to download under ‘Pre-lab activity 4: Getting ready for the lab class’ contains the datafile (“MillerHadenData.csv”) as well as the R-script from the ‘How to …’ video (122_wk11_howtoExample.R) that you can use here and adapt.</p>
-<ol type="1">
-<li><p>Load the ‘broom’ and the ‘tidyverse’ libraries by running the first two lines of code.</p></li>
-<li><p>Read in the data. You should now see an object with 25 observations and 5 variables in the ‘Environment’. Click on it to view it.</p></li>
-<li><p>Construct a scatterplot of the relationship between ‘Home’ and ‘TV’.</p></li>
-<li><p>What can you tell from the scatterplot about the direction of the relationship?</p></li>
-<li><p>Conduct the correlation analysis.</p></li>
-<li><p>What is the correlation coefficient (Pearson’s r)?</p></li>
-<li><p>What is the p value?</p></li>
-<li><p>Is the correlation significant at the p &lt; .05 level?</p></li>
-<li><p>What are the degrees of freedom you need to report?</p></li>
-<li><p>How much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’? (Hint: you can use the Console in RStudio as a calculator.)</p></li>
-<li><p>Write a few sentences in which you report this result, following APA guidelines.</p></li>
-</ol>
-</section>
-<section id="lab-activity-3-more-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-3-more-correlations">Lab activity 3: More correlations</h3>
-<p>Researchers were interested in the relationship between hazardous alcohol use and impulsivity (making unplanned, rapid decisions without thinking or ‘acting on a whim’). To investigate the relationship, 20 participants completed both the alcohol use disorder identification test (AUDIT; Saunders, Aasland, Babor, de la Fuente, &amp; Grant, 1993) and the Barratt’s Impulsiveness Scale (BIS-11) (Patton, Stanford, &amp; Barratt, 1995). The datafile (“alcoholUse_Impulsivity.csv”) is in the folder you were asked to download under ‘Pre-lab activity 4: Getting ready for the lab class’. Again, the R-script from the ‘How to …’ video (122_wk11_howtoExample.R) is useful here.</p>
-<ol type="1">
-<li><p>Load the ‘broom’ and the ‘tidyverse’ libraries by running the first two lines of code.</p></li>
-<li><p>Read in the data. You should now see an object containing the data in the ‘Environment’. How many variables does it have?</p></li>
-<li><p>Construct a scatterplot of the relationship between ‘Hazardous Alcohol Use’ and ‘Impulsivity’.</p></li>
-<li><p>What can you tell from the scatterplot about the direction of the relationship?</p></li>
-<li><p>Conduct the correlation analysis.</p></li>
-<li><p>What is the correlation coefficient (Pearson’s r)?</p></li>
-<li><p>What is the p value?</p></li>
-<li><p>Is the correlation significant at the p &lt; .05 level?</p></li>
-<li><p>What are the degrees of freedom you need to report?</p></li>
-<li><p>How much variance in ‘impulsivity’ can be accounted for by ‘hazardous alcohol use’? (Hint: you can use the Console in RStudio as a calculator.)</p></li>
-<li><p>Construct a correlation matrix to display the correlation coefficient in a table.</p></li>
-<li><p>Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question —-I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn’t tell us about what could be happening with the variables of interest.</p></li>
-</ol>
-<p><strong>Job completed — Well done!</strong></p>
-</section>
-</section>
-<section id="answers" class="level2">
-<h2 class="anchored" data-anchor-id="answers">Answers</h2>
-<p>When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. <strong>Remember</strong>, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. <strong>Actively engaging</strong> with the material is the way to learn these analysis skills, not by looking at someone else’s completed code…</p>
-<!--The answers to the questions and the script containing the code will be available after the final lab session has taken place.-->
-<section id="lab-activity-1-interpreting-correlation-1" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-1-interpreting-correlation-1">Lab activity 1: Interpreting correlation</h3>
-<ol type="1">
-<li>Scatterplots</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ol type="a">
-<li>strong positive correlation</li>
-<li>null correlation</li>
-<li>moderate positive correlation</li>
-<li>perfect negative correlation</li>
-</ol>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li></li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>FALSE Explanation: The correlation coefficient is negative and therefore infers a negative correlation. As such, older people pay less for car insurance: as age increases, car insurance costs decrease.</p>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li></li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>FALSE Explanation: This is a bit of trick question as it has the sneaky ‘cause’ word in. The correlation coefficient is a positive number, suggesting a positive relationship between length of time in prison and aggression. However, causation cannot be inferred from correlation and therefore we cannot know whether time spent in prison CAUSES aggression, and rather we suggest a relationship between the two: as length of time in prison increases, aggression increases.</p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li></li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>c 49% The ‘coefficient of determination’ or ‘R-squared’ tells us the proportion or variance in one variable that can be predicted if we know the other variable. We can determine this by squaring the <em>r</em>. Therefore, .7<sup>2</sup> = .49, <em>R<sup>2</sup></em> = .49.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="lab-activity-2-constructing-scatterplots-and-calculating-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-2-constructing-scatterplots-and-calculating-correlations">Lab activity 2: Constructing scatterplots and calculating correlations</h3>
-<p>You can download the R-script that contains the code to complete lab activities 2 and 3 here: <a href="data/week11/122_wk11_labActivities2_3.R">122_wk11_labActivities2_3.R</a>.</p>
-<ol type="1">
-<li><p><em>See R script</em></p></li>
-<li><p><em>See R script</em></p></li>
-<li><p><em>See R script</em></p></li>
-<li><p>What can you tell from the scatterplot about the direction of the relationship?</p></li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>There is a negative association between ‘Home’ and ‘TV’. This means that the longer a child spends watching TV, the shorter they will read at home.</p>
-</div>
-</div>
-</div>
-<ol start="5" type="1">
-<li><p>Conduct the correlation analysis. <em>See R script</em></p></li>
-<li><p>What is the correlation coefficient (Pearson’s r)?</p></li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong><em>r</em></strong> <strong>= -.65</strong></p>
-</div>
-</div>
-</div>
-<ol start="7" type="1">
-<li>What is the p value?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong><em>p</em></strong> <strong>&lt; .001</strong></p>
-</div>
-</div>
-</div>
-<ol start="8" type="1">
-<li>Is the correlation significant at the p &lt; .05 level?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Yes, because the p-value is smaller than .005</strong></p>
-</div>
-</div>
-</div>
-<ol start="9" type="1">
-<li>What are the degrees of freedom you need to report?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>23</strong></p>
-</div>
-</div>
-</div>
-<ol start="10" type="1">
-<li>How much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>42%</strong></p>
-</div>
-</div>
-</div>
-<ol start="11" type="1">
-<li>Write a few sentences in which you report this result, following APA guidelines.</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Something along the lines of: A Pearson’s correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, <em>r</em>(23) = -.65, <em>p</em> &lt; .001. As time spent watching TV at home increased, time spent reading at home decreased.</strong></p>
-</div>
-</div>
-</div>
-</section>
-<section id="lab-activity-3-more-correlations-1" class="level3">
-<h3 class="anchored" data-anchor-id="lab-activity-3-more-correlations-1">Lab activity 3: More correlations</h3>
-<ol type="1">
-<li><em>See R script</em></li>
-<li>How many variables does it have?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>3</strong></p>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li><em>See R script</em></li>
-<li>What can you tell from the scatterplot about the direction of the relationship?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>There is a positive association between ‘hazardous alcohol use’ and ‘impulsivity’. This means that as a participant’s score on ‘hazardous alcohol use’ goes up, their score on ‘impulsivity’ also goes up.</strong></p>
-</div>
-</div>
-</div>
-<ol start="5" type="1">
-<li><em>See R script</em></li>
-<li>What is the correlation coefficient (Pearson’s r)?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong><em>r</em></strong> <strong>= .54</strong></p>
-</div>
-</div>
-</div>
-<ol start="7" type="1">
-<li>What is the p value?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong><em>p</em></strong> <strong>= .014</strong></p>
-</div>
-</div>
-</div>
-<ol start="8" type="1">
-<li>Is the correlation significant at the p &lt; .05 level?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Yes</strong></p>
-</div>
-</div>
-</div>
-<ol start="9" type="1">
-<li>What are the degrees of freedom you need to report?</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>18</strong></p>
-</div>
-</div>
-</div>
-<ol start="10" type="1">
-<li>How much variance in ‘impulsivity’ can be accounted for by ‘hazardous alcohol use’? (Hint: you can use the Console in RStudio as a calculator.)</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>29%</strong></p>
-</div>
-</div>
-</div>
-<ol start="11" type="1">
-<li>Construct a correlation matrix to display the correlation coefficient in a table.</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><img src="images/wk1/labAct3_correlationTable.png" class="img-fluid"></p>
-</div>
-</div>
-</div>
-<ol start="12" type="1">
-<li>Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question —-I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn’t tell us about what could be happening with the variables of interest.</li>
-</ol>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>Just really looking for reasoning here.</strong></p>
-<p><strong>Examples:</strong></p>
-<ul>
-<li><strong>Being more impulsive may make people consume more alcohol.</strong></li>
-<li><strong>Consuming more alcohol may make people more impulsive.</strong></li>
-<li><strong>An outgoing personality might influence both your level of impulsivity and you are more likely to be socialising in the pub and consuming alcohol. So the same ‘third factor’ may influence both our variables of interest.</strong></li>
-</ul>
-</div>
-</div>
-</div>
+<!-- ### Pre-lab activity 4: Getting ready for the lab class {#prelab_gettingReady} -->
+<!-- #### Remind yourself of the basics of how to work with RStudio. -->
+<!-- You might want to re-visit some of the materials that John and Tom provided in PSYC121: -->
+<!-- -   [Basics of working with RStudio](../PSYC121/Week1.html#task-3---using-rstudio) -->
+<!-- #### Create a folder and a Project for Week 11. -->
+<!-- [Click here for the instructions](../PSYC121/Week6.html#creating_project) from Week 6 of PSYC121 if you are unsure. -->
+<!-- #### Get your files ready -->
+<!-- Download the [122_week11_forStudents.zip](data/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step. If you need them, [here are the instructions](../PSYC121/Week2.qmd#uploading_zip) from Week 2 of PSYC121. -->
+<!-- ## Lab activities -->
+<!-- In this lab, you'll gain understanding of and practice with: -->
+<!-- -   constructing and interpreting scatterplots -->
+<!-- -   running correlation analysis and interpret the results -->
+<!-- -   reporting the results in APA format -->
+<!-- -   constructing a correlation matrix in APA format -->
+<!-- -   when and why to apply correlation analysis to answers questions in psychological science -->
+<!-- ### Lab activity 1: Interpreting correlation -->
+<!-- #### Question 1 -->
+<!-- Below are scatterplots that show the relationship between 'how much you know about correlation and how attractive you appear to members of the opposite (&/or same) sex'. Choose the type of correlation (strength and direction) displayed in each graph using one of the following: -->
+<!-- -   Perfect positive correlation -->
+<!-- -   Perfect negative correlation -->
+<!-- -   Strong positive correlation -->
+<!-- -   Strong negative correlation -->
+<!-- -   Moderate positive correlation -->
+<!-- -   Moderate negative correlation -->
+<!-- -   Null correlation -->
+<!-- **Figure A** ![](images/wk1/lab_act1_a.png) -->
+<!-- **Figure B** ![](images/wk1/lab_act1_b.png)  -->
+<!-- **Figure C** ![](images/wk1/lab_act1_c.png)  -->
+<!-- **Figure D** ![](images/wk1/lab_act1_d.png) -->
+<!-- ::: {.callout-note} -->
+<!-- For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense. -->
+<!-- ::: -->
+<!-- #### Question 2 -->
+<!-- Suppose it was observed that there is a correlation of r = -.81 between a driver's age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance. -->
+<!-- **TRUE or FALSE? Explain why.** -->
+<!-- #### Question 3 -->
+<!-- Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison *causes* people to become more aggressive. -->
+<!-- **TRUE or FALSE? Explain why.** -->
+<!-- #### Question 4 -->
+<!-- A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the 'greatness' of your hair explain? -->
+<!-- -   51% -->
+<!-- -   70% -->
+<!-- -   49% -->
+<!-- -   30% -->
+<!-- -   Who cares I've got great hair. -->
+<!-- What was the reason for your answer? -->
+<!-- What is this 'new coefficient' called? -->
+<!-- ### Lab activity 2: Visualising, calculating and reporting correlations -->
+<!-- Going back to the data discussed in Chapter 11 of Miller & Haden, you'll remember it contains data from 25 8-year-old children on: -->
+<!-- -   a standardised test of reading ability (Abil) -->
+<!-- -   intelligence (IQ) -->
+<!-- -   the number of minutes per week spent reading in the home (Home) -->
+<!-- -   and the number of minutes per week spent watching TV (TV) -->
+<!-- In the video on 'How to conduct correlation analysis using R' we looked at the correlation between reading ability and intelligence. Now, let's look at the correlation between number of minutes per week spent reading in the home and watching TV. -->
+<!-- The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv") as well as the R-script from the 'How to ...' video (122_wk11_howtoExample.R) that you can use here and adapt. -->
+<!-- 1.  Load the 'broom' and the 'tidyverse' libraries by running the first two lines of code. -->
+<!-- 2.  Read in the data. You should now see an object with 25 observations and 5 variables in the 'Environment'. Click on it to view it. -->
+<!-- 3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. -->
+<!-- 4.  What can you tell from the scatterplot about the direction of the relationship? -->
+<!-- 5.  Conduct the correlation analysis. -->
+<!-- 6.  What is the correlation coefficient (Pearson's r)? -->
+<!-- 7.  What is the p value? -->
+<!-- 8.  Is the correlation significant at the p \< .05 level? -->
+<!-- 9.  What are the degrees of freedom you need to report? -->
+<!-- 10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? (Hint: you can use the Console in RStudio as a calculator.) -->
+<!-- 11. Write a few sentences in which you report this result, following APA guidelines. -->
+<!-- ### Lab activity 3: More correlations -->
+<!-- Researchers were interested in the relationship between hazardous alcohol use and impulsivity (making unplanned, rapid decisions without thinking or 'acting on a whim'). To investigate the relationship, 20 participants completed both the alcohol use disorder identification test (AUDIT; Saunders, Aasland, Babor, de la Fuente, & Grant, 1993) and the Barratt's Impulsiveness Scale (BIS-11) (Patton, Stanford, & Barratt, 1995). The datafile ("alcoholUse_Impulsivity.csv") is in the folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class'. Again, the R-script from the 'How to ...' video (122_wk11_howtoExample.R) is useful here. -->
+<!-- 1.  Load the 'broom' and the 'tidyverse' libraries by running the first two lines of code. -->
+<!-- 2.  Read in the data. You should now see an object containing the data in the 'Environment'. How many variables does it have? -->
+<!-- 3.  Construct a scatterplot of the relationship between 'Hazardous Alcohol Use' and 'Impulsivity'. -->
+<!-- 4.  What can you tell from the scatterplot about the direction of the relationship? -->
+<!-- 5.  Conduct the correlation analysis. -->
+<!-- 6.  What is the correlation coefficient (Pearson's r)? -->
+<!-- 7.  What is the p value? -->
+<!-- 8.  Is the correlation significant at the p \< .05 level? -->
+<!-- 9.  What are the degrees of freedom you need to report? -->
+<!-- 10. How much variance in 'impulsivity' can be accounted for by 'hazardous alcohol use'? (Hint: you can use the Console in RStudio as a calculator.) -->
+
+<!-- 11. Construct a correlation matrix to display the correlation coefficient in a table. -->
+<!-- 12. Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question ----I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn't tell us about what could be happening with the variables of interest. -->
+<!-- **Job completed --- Well done!** -->
+<!-- ## Answers -->
+<!-- When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code... -->
+<!-- <!--The answers to the questions and the script containing the code will be available after the final lab session has taken place.-->
+<p>–&gt;</p>
+<!-- ### Lab activity 1: Interpreting correlation -->
+<!-- 1.  Scatterplots -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- a.  strong positive correlation -->
+<!-- b.  null correlation -->
+<!-- c.  moderate positive correlation -->
+<!-- d.  perfect negative correlation -->
+<!-- ::: -->
+<!-- 2.   -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- FALSE Explanation: The correlation coefficient is negative and therefore infers a negative correlation. As such, older people pay less for car insurance: as age increases, car insurance costs decrease. -->
+<!-- ::: -->
+<!-- 3.   -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- FALSE Explanation: This is a bit of trick question as it has the sneaky 'cause' word in. The correlation coefficient is a positive number, suggesting a positive relationship between length of time in prison and aggression. However, causation cannot be inferred from correlation and therefore we cannot know whether time spent in prison CAUSES aggression, and rather we suggest a relationship between the two: as length of time in prison increases, aggression increases. -->
+<!-- ::: -->
+<!-- 4.   -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- c 49% The 'coefficient of determination' or 'R-squared' tells us the proportion or variance in one variable that can be predicted if we know the other variable. We can determine this by squaring the *r*. Therefore, .7^2^ = .49, *R^2^* = .49. -->
+<!-- ::: -->
+<!-- ### Lab activity 2: Constructing scatterplots and calculating correlations -->
+<!-- You can download the R-script that contains the code to complete lab activities 2 and 3 here: [122_wk11_labActivities2_3.R](data/week11/122_wk11_labActivities2_3.R). -->
+<!-- 1.  *See R script* -->
+<!-- 2.  *See R script* -->
+<!-- 3.  *See R script* -->
+<!-- 4.  What can you tell from the scatterplot about the direction of the relationship?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- There is a negative association between 'Home' and 'TV'. This means that the longer a child spends watching TV, the shorter they will read at home. -->
+<!-- ::: -->
+<!-- 5.  Conduct the correlation analysis. *See R script* -->
+<!-- 6.  What is the correlation coefficient (Pearson's r)?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- ***r*** **= -.65** -->
+<!-- ::: -->
+<!-- 7.  What is the p value?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- ***p*** **\< .001** -->
+<!-- ::: -->
+<!-- 8.  Is the correlation significant at the p \< .05 level?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **Yes, because the p-value is smaller than .005** -->
+<!-- ::: -->
+<!-- 9.  What are the degrees of freedom you need to report?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **23** -->
+<!-- ::: -->
+<!-- 10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **42%** -->
+<!-- ::: -->
+<!-- 11. Write a few sentences in which you report this result, following APA guidelines.  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, *r*(23) = -.65, *p* \< .001. As time spent watching TV at home increased, time spent reading at home decreased.** -->
+<!-- ::: -->
+<!-- ### Lab activity 3: More correlations -->
+<!-- 1.  *See R script* -->
+<!-- 2.  How many variables does it have?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **3** -->
+<!-- ::: -->
+<!-- 3.  *See R script* -->
+<!-- 4.  What can you tell from the scatterplot about the direction of the relationship?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **There is a positive association between 'hazardous alcohol use' and 'impulsivity'. This means that as a participant's score on 'hazardous alcohol use' goes up, their score on 'impulsivity' also goes up.** -->
+<!-- ::: -->
+<!-- 5.  *See R script* -->
+<!-- 6.  What is the correlation coefficient (Pearson's r)?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- ***r*** **= .54** -->
+<!-- ::: -->
+<!-- 7.  What is the p value?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- ***p*** **= .014** -->
+<!-- ::: -->
+<!-- 8.  Is the correlation significant at the p \< .05 level?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **Yes** -->
+<!-- ::: -->
+<!-- 9.  What are the degrees of freedom you need to report?  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **18** -->
+<!-- ::: -->
+<!-- 10. How much variance in 'impulsivity' can be accounted for by 'hazardous alcohol use'? (Hint: you can use the Console in RStudio as a calculator.)  -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **29%** -->
+<!-- ::: -->
+
+<!-- 11. Construct a correlation matrix to display the correlation coefficient in a table. -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+
+<!-- ![](images/wk1/labAct3_correlationTable.png)  -->
+<!-- ::: -->
+<!-- 12. Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question ----I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn't tell us about what could be happening with the variables of interest. -->
+<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **Just really looking for reasoning here.** -->
+<!-- **Examples:** -->
+<!-- -   **Being more impulsive may make people consume more alcohol.** -->
+<!-- -   **Consuming more alcohol may make people more impulsive.** -->
+<!-- -   **An outgoing personality might influence both your level of impulsivity and you are more likely to be socialising in the pub and consuming alcohol. So the same 'third factor' may influence both our variables of interest.** -->
+<!-- ::: -->
 
 
 </section>
