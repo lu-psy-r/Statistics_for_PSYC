@@ -8,7 +8,7 @@ Today we will take a look at correlation as a measure of association between two
 
 ## Lectures {#sec-wk11-theory-lecture}
 
-The lecture material comes in two flavours.
+The lecture material comes in two parts.
 
 1.  **Theory**(~30 minutes) 
 Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video. Finally, if you open the video in 'eStream' by clicking on the green 'e' in the bottom right, you can navigate to separate sections of the video by clicking on the 'chapters' pane. This might be particularly useful if you quickly want to revisit a particular section.
@@ -18,9 +18,14 @@ Watch this part before you complete the reading and the pre-lab activities. The 
 ```
 [Slides](data/week11/stats_correlation_theory_20240103.pdf) [Transcript](data/week11/01statscorrelationtheory20240103.txt)
 
+2.  **How to**(~13 minutes)
+Watch this part after you've completed the pre-lab activities and before you attend the lab session.
 
-2.  **How to**
-This year, short 'how to' videos talking you through different bits and pieces to do with R and R Studio are embedded in the pre-lab and lab activities.
+```{=html}
+<iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=71956&amp;code=e8~FtztV5mEr3G6oMLZUHkFG48cByFRV8&amp;cc=1" frameborder="0" allowfullscreen></iframe>
+```
+[Slides](data/week11/stats_correlation_howto_20240110.pdf)
+[Transcript](data/week11/02statscorrelationhowto20240110.txt)
 
 ## Reading {#sec-wk11-reading}
 
@@ -79,59 +84,59 @@ In this lab, you'll gain understanding of and practice with:
 -   constructing a correlation matrix in APA format
 -   when and why to apply correlation analysis to answers questions in psychological science
 
-The different lab activities will be added very soon.
+### Lab activity 1: Interpreting correlation
 
-<!-- ### Lab activity 1: Interpreting correlation -->
+#### Question 1
 
-<!-- #### Question 1 -->
+Below are scatterplots that show the relationship between 'how much you know about correlation and how attractive you appear to members of the opposite (&/or same) sex'. Choose the type of correlation (strength and direction) displayed in each graph using one of the following:
 
-<!-- Below are scatterplots that show the relationship between 'how much you know about correlation and how attractive you appear to members of the opposite (&/or same) sex'. Choose the type of correlation (strength and direction) displayed in each graph using one of the following: -->
+-   Perfect positive correlation
+-   Perfect negative correlation
+-   Strong positive correlation
+-   Strong negative correlation
+-   Moderate positive correlation
+-   Moderate negative correlation
+-   Null correlation
 
-<!-- -   Perfect positive correlation -->
-<!-- -   Perfect negative correlation -->
-<!-- -   Strong positive correlation -->
-<!-- -   Strong negative correlation -->
-<!-- -   Moderate positive correlation -->
-<!-- -   Moderate negative correlation -->
-<!-- -   Null correlation -->
+**Figure A** ![](images/wk1/lab_act1_a.png)
 
-<!-- **Figure A** ![](images/wk1/lab_act1_a.png) -->
+**Figure B** ![](images/wk1/lab_act1_b.png)
 
-<!-- **Figure B** ![](images/wk1/lab_act1_b.png)  -->
+**Figure C** ![](images/wk1/lab_act1_c.png)
 
-<!-- **Figure C** ![](images/wk1/lab_act1_c.png)  -->
+**Figure D** ![](images/wk1/lab_act1_d.png)
 
-<!-- **Figure D** ![](images/wk1/lab_act1_d.png) -->
+::: {.callout-note}
+For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense.
+:::
 
-<!-- ::: {.callout-note} -->
-<!-- For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense. -->
-<!-- ::: -->
+#### Question 2
 
-<!-- #### Question 2 -->
+Suppose it was observed that there is a correlation of r = -.81 between a driver's age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance.
 
-<!-- Suppose it was observed that there is a correlation of r = -.81 between a driver's age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance. -->
+**TRUE or FALSE? Explain why.**
 
-<!-- **TRUE or FALSE? Explain why.** -->
+#### Question 3
 
-<!-- #### Question 3 -->
+Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison *causes* people to become more aggressive.
 
-<!-- Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison *causes* people to become more aggressive. -->
+**TRUE or FALSE? Explain why.**
 
-<!-- **TRUE or FALSE? Explain why.** -->
+#### Question 4
 
-<!-- #### Question 4 -->
+A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the 'greatness' of your hair explain?
 
-<!-- A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the 'greatness' of your hair explain? -->
+-   51%
+-   70%
+-   49%
+-   30%
+-   Who cares I've got great hair.
 
-<!-- -   51% -->
-<!-- -   70% -->
-<!-- -   49% -->
-<!-- -   30% -->
-<!-- -   Who cares I've got great hair. -->
+What was the reason for your answer?
 
-<!-- What was the reason for your answer? -->
+What is this 'new coefficient' called?
 
-<!-- What is this 'new coefficient' called? -->
+Further lab activities will be added very soon.
 
 <!-- ### Lab activity 2: Visualising, calculating and reporting correlations -->
 

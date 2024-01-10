@@ -225,7 +225,10 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#sec-wk11-prelab-anscombes-quartet" id="toc-sec-wk11-prelab-anscombes-quartet" class="nav-link" data-scroll-target="#sec-wk11-prelab-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</a></li>
   <li><a href="#sec-wk11-prelab-getting-ready" id="toc-sec-wk11-prelab-getting-ready" class="nav-link" data-scroll-target="#sec-wk11-prelab-getting-ready">Pre-lab activity 4: Getting ready for the lab class</a></li>
   </ul></li>
-  <li><a href="#sec-wk11-labactivities" id="toc-sec-wk11-labactivities" class="nav-link" data-scroll-target="#sec-wk11-labactivities">Lab activities</a></li>
+  <li><a href="#sec-wk11-labactivities" id="toc-sec-wk11-labactivities" class="nav-link" data-scroll-target="#sec-wk11-labactivities">Lab activities</a>
+  <ul class="collapse">
+  <li><a href="#lab-activity-1-interpreting-correlation" id="toc-lab-activity-1-interpreting-correlation" class="nav-link" data-scroll-target="#lab-activity-1-interpreting-correlation">Lab activity 1: Interpreting correlation</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/Week11.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -253,15 +256,17 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <p>Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.</p>
 <section id="sec-wk11-theory-lecture" class="level2">
 <h2 class="anchored" data-anchor-id="sec-wk11-theory-lecture">Lectures</h2>
-<p>The lecture material comes in two flavours.</p>
+<p>The lecture material comes in two parts.</p>
 <ol type="1">
 <li><strong>Theory</strong>(~30 minutes) Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video. Finally, if you open the video in ‘eStream’ by clicking on the green ‘e’ in the bottom right, you can navigate to separate sections of the video by clicking on the ‘chapters’ pane. This might be particularly useful if you quickly want to revisit a particular section.</li>
 </ol>
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=71802&amp;code=e0~6wwB9wNEirzQhykLayGTxEAxLB7N9i&amp;cc=1" frameborder="0" allowfullscreen=""></iframe>
 <p><a href="data/week11/stats_correlation_theory_20240103.pdf">Slides</a> <a href="data/week11/01statscorrelationtheory20240103.txt">Transcript</a></p>
 <ol start="2" type="1">
-<li><strong>How to</strong> This year, short ‘how to’ videos talking you through different bits and pieces to do with R and R Studio are embedded in the pre-lab and lab activities.</li>
+<li><strong>How to</strong>(~13 minutes) Watch this part after you’ve completed the pre-lab activities and before you attend the lab session.</li>
 </ol>
+<iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=71956&amp;code=e8~FtztV5mEr3G6oMLZUHkFG48cByFRV8&amp;cc=1" frameborder="0" allowfullscreen=""></iframe>
+<p><a href="data/week11/stats_correlation_howto_20240110.pdf">Slides</a> <a href="data/week11/02statscorrelationhowto20240110.txt">Transcript</a></p>
 </section>
 <section id="sec-wk11-reading" class="level2">
 <h2 class="anchored" data-anchor-id="sec-wk11-reading">Reading</h2>
@@ -313,39 +318,61 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li>constructing a correlation matrix in APA format</li>
 <li>when and why to apply correlation analysis to answers questions in psychological science</li>
 </ul>
-<p>The different lab activities will be added very soon.</p>
-<!-- ### Lab activity 1: Interpreting correlation -->
-<!-- #### Question 1 -->
-<!-- Below are scatterplots that show the relationship between 'how much you know about correlation and how attractive you appear to members of the opposite (&/or same) sex'. Choose the type of correlation (strength and direction) displayed in each graph using one of the following: -->
-<!-- -   Perfect positive correlation -->
-<!-- -   Perfect negative correlation -->
-<!-- -   Strong positive correlation -->
-<!-- -   Strong negative correlation -->
-<!-- -   Moderate positive correlation -->
-<!-- -   Moderate negative correlation -->
-<!-- -   Null correlation -->
-<!-- **Figure A** ![](images/wk1/lab_act1_a.png) -->
-<!-- **Figure B** ![](images/wk1/lab_act1_b.png)  -->
-<!-- **Figure C** ![](images/wk1/lab_act1_c.png)  -->
-<!-- **Figure D** ![](images/wk1/lab_act1_d.png) -->
-<!-- ::: {.callout-note} -->
-<!-- For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make 'logical' sense. -->
-<!-- ::: -->
-<!-- #### Question 2 -->
-<!-- Suppose it was observed that there is a correlation of r = -.81 between a driver's age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance. -->
-<!-- **TRUE or FALSE? Explain why.** -->
-<!-- #### Question 3 -->
-<!-- Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison *causes* people to become more aggressive. -->
-<!-- **TRUE or FALSE? Explain why.** -->
-<!-- #### Question 4 -->
-<!-- A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the 'greatness' of your hair explain? -->
-<!-- -   51% -->
-<!-- -   70% -->
-<!-- -   49% -->
-<!-- -   30% -->
-<!-- -   Who cares I've got great hair. -->
-<!-- What was the reason for your answer? -->
-<!-- What is this 'new coefficient' called? -->
+<section id="lab-activity-1-interpreting-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="lab-activity-1-interpreting-correlation">Lab activity 1: Interpreting correlation</h3>
+<section id="question-1" class="level4">
+<h4 class="anchored" data-anchor-id="question-1">Question 1</h4>
+<p>Below are scatterplots that show the relationship between ‘how much you know about correlation and how attractive you appear to members of the opposite (&amp;/or same) sex’. Choose the type of correlation (strength and direction) displayed in each graph using one of the following:</p>
+<ul>
+<li>Perfect positive correlation</li>
+<li>Perfect negative correlation</li>
+<li>Strong positive correlation</li>
+<li>Strong negative correlation</li>
+<li>Moderate positive correlation</li>
+<li>Moderate negative correlation</li>
+<li>Null correlation</li>
+</ul>
+<p><strong>Figure A</strong> <img src="images/wk1/lab_act1_a.png" class="img-fluid"></p>
+<p><strong>Figure B</strong> <img src="images/wk1/lab_act1_b.png" class="img-fluid"></p>
+<p><strong>Figure C</strong> <img src="images/wk1/lab_act1_c.png" class="img-fluid"></p>
+<p><strong>Figure D</strong> <img src="images/wk1/lab_act1_d.png" class="img-fluid"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For the following questions, explain your chosen answer based on the statistic given, not on why you think the correlation may or may note make ‘logical’ sense.</p>
+</div>
+</div>
+</section>
+<section id="question-2" class="level4">
+<h4 class="anchored" data-anchor-id="question-2">Question 2</h4>
+<p>Suppose it was observed that there is a correlation of r = -.81 between a driver’s age and the cost of car insurance. This correlation would mean that, in general, older people pay more for car insurance.</p>
+<p><strong>TRUE or FALSE? Explain why.</strong></p>
+</section>
+<section id="question-3" class="level4">
+<h4 class="anchored" data-anchor-id="question-3">Question 3</h4>
+<p>Suppose that there is a correlation of r = .87 between the length of time a person is in prison and the amount of aggression the person displays on a psychological inventory administered at release. This means that spending a longer amount of time in prison <em>causes</em> people to become more aggressive.</p>
+<p><strong>TRUE or FALSE? Explain why.</strong></p>
+</section>
+<section id="question-4" class="level4">
+<h4 class="anchored" data-anchor-id="question-4">Question 4</h4>
+<p>A significant correlation was found between having great hair and performance in correlation labs. The correlation coefficient was .7. How much variance in correlation lab performance can the ‘greatness’ of your hair explain?</p>
+<ul>
+<li>51%</li>
+<li>70%</li>
+<li>49%</li>
+<li>30%</li>
+<li>Who cares I’ve got great hair.</li>
+</ul>
+<p>What was the reason for your answer?</p>
+<p>What is this ‘new coefficient’ called?</p>
+<p>Further lab activities will be added very soon.</p>
 <!-- ### Lab activity 2: Visualising, calculating and reporting correlations -->
 <!-- Going back to the data discussed in Chapter 11 of Miller & Haden, you'll remember it contains data from 25 8-year-old children on: -->
 <!-- -   a standardised test of reading ability (Abil) -->
@@ -507,6 +534,8 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <!-- ::: -->
 
 
+</section>
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
