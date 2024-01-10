@@ -6,11 +6,11 @@ order: 2
 
 Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.
 
-## Lectures
+## Lectures {#sec-wk11-theory-lecture}
 
-The lecture material for this week is presented in two parts:
+The lecture material comes in two flavours.
 
-1.  **Theory**(~30 minutes)
+1.  **Theory**(~30 minutes) 
 Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video. Finally, if you open the video in 'eStream' by clicking on the green 'e' in the bottom right, you can navigate to separate sections of the video by clicking on the 'chapters' pane. This might be particularly useful if you quickly want to revisit a particular section.
 
 ```{=html}
@@ -20,9 +20,9 @@ Watch this part before you complete the reading and the pre-lab activities. The 
 
 
 2.  **How to**
-Watch this part either after the 'Theory' part of after you've completed the pre-lab activities 1 to 3. Definitely watch it before you come to your lab session.
+This year, short 'how to' videos talking you through different bits and pieces to do with R and R Studio are embedded in the pre-lab and lab activities.
 
-## Reading
+## Reading {#sec-wk11-reading}
 
 The reading that accompanies the lectures this week and next week is from [**chapter 9 of the core text by Howell (2017)**](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221).
 
@@ -32,7 +32,7 @@ Rougly, **this week** we'll cover the material in sections 9.1 to 9.4, as well a
 
 After having watched the lectures on correlation and read the textbook sections you'll be in a good position to try these activities. Completing them before you attend your lab session will help you to consolidate your learning and help move through the lab activities more smoothly.
 
-### Pre-lab activity 1: Visualing correlations
+### Pre-lab activity 1: Visualing correlations {#sec-wk11-prelab-visualising-correlations}
 
 Have a look at [**this visualisation of correlations**](https://rpsychologist.com/correlation/) by Kristoffer Magnusson.
 
@@ -42,7 +42,7 @@ Each time you change the correlation, pay attention to the shared variance (the 
 
 Also, try setting the correlation to r = .5 and then moving a single dot to see how one data point, a potential outlier, can change the stated correlation value between two variables.
 
-### Pre-lab activity 2: Guess the correlation
+### Pre-lab activity 2: Guess the correlation {#sec-wk11-prelab-guessing-correlations}
 
 Now that you are well versed in interpreting scatterplots (scattergrams) have a go at [**this online app on guessing the correlation**](https://www.rossmanchance.com/applets/GuessCorrelation.html).
 
@@ -50,13 +50,13 @@ This is a very basic app that allows you to see how good you are at recognising 
 
 Is this all just a bit of fun? Well, yes, because stats is actually fun, and no, because it serves a purpose of helping you determine if the correlations you see in your own data are real, and to help you see if correlations in published research match with what you are being told. As you will have seen from the above examples, one data point can lead to a misleading relationship and even what might be considered a medium to strong relationship may actually have only limited relevance in the real world. One only needs to mention Anscombe's Quartet to be reminded of the importance of visualising your data, which leads us to the final pre-lab activity for this week.
 
-### Pre-lab activity 3: Anscombe's quartet
+### Pre-lab activity 3: Anscombe's quartet {#sec-wk11-prelab-anscombes-quartet}
 
 Anscombe (1973) showed that four sets of bivariate data (X, Y) that have the exact same means, medians, and relationships can look very different when plotted. You can read more about this [**here**](https://en.wikipedia.org/wiki/Anscombe%27s_quartet).
 
 All in this is a clear example of why you should visualise your data and not to rely on just the numbers.
 
-<!-- ### Pre-lab activity 4: Getting ready for the lab class {#prelab_gettingReady} -->
+<!-- ### Pre-lab activity 4: Getting ready for the lab class {#sec-wk11-prelab-getting-ready} -->
 
 <!-- #### Remind yourself of the basics of how to work with RStudio. -->
 

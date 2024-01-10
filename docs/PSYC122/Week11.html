@@ -216,13 +216,13 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lectures" id="toc-lectures" class="nav-link active" data-scroll-target="#lectures">Lectures</a></li>
-  <li><a href="#reading" id="toc-reading" class="nav-link" data-scroll-target="#reading">Reading</a></li>
+  <li><a href="#sec-wk11-theory-lecture" id="toc-sec-wk11-theory-lecture" class="nav-link active" data-scroll-target="#sec-wk11-theory-lecture">Lectures</a></li>
+  <li><a href="#sec-wk11-reading" id="toc-sec-wk11-reading" class="nav-link" data-scroll-target="#sec-wk11-reading">Reading</a></li>
   <li><a href="#pre-lab-activities" id="toc-pre-lab-activities" class="nav-link" data-scroll-target="#pre-lab-activities">Pre-lab activities</a>
   <ul class="collapse">
-  <li><a href="#pre-lab-activity-1-visualing-correlations" id="toc-pre-lab-activity-1-visualing-correlations" class="nav-link" data-scroll-target="#pre-lab-activity-1-visualing-correlations">Pre-lab activity 1: Visualing correlations</a></li>
-  <li><a href="#pre-lab-activity-2-guess-the-correlation" id="toc-pre-lab-activity-2-guess-the-correlation" class="nav-link" data-scroll-target="#pre-lab-activity-2-guess-the-correlation">Pre-lab activity 2: Guess the correlation</a></li>
-  <li><a href="#pre-lab-activity-3-anscombes-quartet" id="toc-pre-lab-activity-3-anscombes-quartet" class="nav-link" data-scroll-target="#pre-lab-activity-3-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</a></li>
+  <li><a href="#sec-wk11-prelab-visualising-correlations" id="toc-sec-wk11-prelab-visualising-correlations" class="nav-link" data-scroll-target="#sec-wk11-prelab-visualising-correlations">Pre-lab activity 1: Visualing correlations</a></li>
+  <li><a href="#sec-wk11-prelab-guessing-correlations" id="toc-sec-wk11-prelab-guessing-correlations" class="nav-link" data-scroll-target="#sec-wk11-prelab-guessing-correlations">Pre-lab activity 2: Guess the correlation</a></li>
+  <li><a href="#sec-wk11-prelab-anscombes-quartet" id="toc-sec-wk11-prelab-anscombes-quartet" class="nav-link" data-scroll-target="#sec-wk11-prelab-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/Week11.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -249,44 +249,44 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 </header>
 
 <p>Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.</p>
-<section id="lectures" class="level2">
-<h2 class="anchored" data-anchor-id="lectures">Lectures</h2>
-<p>The lecture material for this week is presented in two parts:</p>
+<section id="sec-wk11-theory-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wk11-theory-lecture">Lectures</h2>
+<p>The lecture material comes in two flavours.</p>
 <ol type="1">
 <li><strong>Theory</strong>(~30 minutes) Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video. Finally, if you open the video in ‘eStream’ by clicking on the green ‘e’ in the bottom right, you can navigate to separate sections of the video by clicking on the ‘chapters’ pane. This might be particularly useful if you quickly want to revisit a particular section.</li>
 </ol>
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=71802&amp;code=e0~6wwB9wNEirzQhykLayGTxEAxLB7N9i&amp;cc=1" frameborder="0" allowfullscreen=""></iframe>
 <p><a href="data/week11/stats_correlation_theory_20240103.pdf">Slides</a> <a href="data/week11/01statscorrelationtheory20240103.txt">Transcript</a></p>
 <ol start="2" type="1">
-<li><strong>How to</strong> Watch this part either after the ‘Theory’ part of after you’ve completed the pre-lab activities 1 to 3. Definitely watch it before you come to your lab session.</li>
+<li><strong>How to</strong> This year, short ‘how to’ videos talking you through different bits and pieces to do with R and R Studio are embedded in the pre-lab and lab activities.</li>
 </ol>
 </section>
-<section id="reading" class="level2">
-<h2 class="anchored" data-anchor-id="reading">Reading</h2>
+<section id="sec-wk11-reading" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wk11-reading">Reading</h2>
 <p>The reading that accompanies the lectures this week and next week is from <a href="https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221"><strong>chapter 9 of the core text by Howell (2017)</strong></a>.</p>
 <p>Rougly, <strong>this week</strong> we’ll cover the material in sections 9.1 to 9.4, as well as sections 9.8 to 9.11 and section 9.15. <strong>Next week,</strong> we’ll cover the material in sections 9.5 to 9.7, and sections 9.12 to 9.13. Even if a section is not mentioned here, all of chapter 9 is relevant.</p>
 </section>
 <section id="pre-lab-activities" class="level2">
 <h2 class="anchored" data-anchor-id="pre-lab-activities">Pre-lab activities</h2>
 <p>After having watched the lectures on correlation and read the textbook sections you’ll be in a good position to try these activities. Completing them before you attend your lab session will help you to consolidate your learning and help move through the lab activities more smoothly.</p>
-<section id="pre-lab-activity-1-visualing-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="pre-lab-activity-1-visualing-correlations">Pre-lab activity 1: Visualing correlations</h3>
+<section id="sec-wk11-prelab-visualising-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="sec-wk11-prelab-visualising-correlations">Pre-lab activity 1: Visualing correlations</h3>
 <p>Have a look at <a href="https://rpsychologist.com/correlation/"><strong>this visualisation of correlations</strong></a> by Kristoffer Magnusson.</p>
 <p>After having read the relevant sections of Howell (2017) Chapter 9, use this visualisation page to visually replicate the scatterplots in Figures 9.1 and 9.2 - use a sample of 100. After that, visually replicate the scatterplots in Figure 9.3.</p>
 <p>Each time you change the correlation, pay attention to the shared variance (the overlap between the two variables) and see how this changes with the changing level of relationship between the two variables. The greater the shared variance, the stronger the relationship.</p>
 <p>Also, try setting the correlation to r = .5 and then moving a single dot to see how one data point, a potential outlier, can change the stated correlation value between two variables.</p>
 </section>
-<section id="pre-lab-activity-2-guess-the-correlation" class="level3">
-<h3 class="anchored" data-anchor-id="pre-lab-activity-2-guess-the-correlation">Pre-lab activity 2: Guess the correlation</h3>
+<section id="sec-wk11-prelab-guessing-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="sec-wk11-prelab-guessing-correlations">Pre-lab activity 2: Guess the correlation</h3>
 <p>Now that you are well versed in interpreting scatterplots (scattergrams) have a go at <a href="https://www.rossmanchance.com/applets/GuessCorrelation.html"><strong>this online app on guessing the correlation</strong></a>.</p>
 <p>This is a very basic app that allows you to see how good you are at recognising different correlation strengths from the scatterplots. We would recommend you click the “Track Performance” tab so you can keep an overview of your overall bias to underestimate or overestimate a correlation.</p>
 <p>Is this all just a bit of fun? Well, yes, because stats is actually fun, and no, because it serves a purpose of helping you determine if the correlations you see in your own data are real, and to help you see if correlations in published research match with what you are being told. As you will have seen from the above examples, one data point can lead to a misleading relationship and even what might be considered a medium to strong relationship may actually have only limited relevance in the real world. One only needs to mention Anscombe’s Quartet to be reminded of the importance of visualising your data, which leads us to the final pre-lab activity for this week.</p>
 </section>
-<section id="pre-lab-activity-3-anscombes-quartet" class="level3">
-<h3 class="anchored" data-anchor-id="pre-lab-activity-3-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</h3>
+<section id="sec-wk11-prelab-anscombes-quartet" class="level3">
+<h3 class="anchored" data-anchor-id="sec-wk11-prelab-anscombes-quartet">Pre-lab activity 3: Anscombe’s quartet</h3>
 <p>Anscombe (1973) showed that four sets of bivariate data (X, Y) that have the exact same means, medians, and relationships can look very different when plotted. You can read more about this <a href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet"><strong>here</strong></a>.</p>
 <p>All in this is a clear example of why you should visualise your data and not to rely on just the numbers.</p>
-<!-- ### Pre-lab activity 4: Getting ready for the lab class {#prelab_gettingReady} -->
+<!-- ### Pre-lab activity 4: Getting ready for the lab class {#sec-wk11-prelab-getting-ready} -->
 <!-- #### Remind yourself of the basics of how to work with RStudio. -->
 <!-- You might want to re-visit some of the materials that John and Tom provided in PSYC121: -->
 <!-- -   [Basics of working with RStudio](../PSYC121/Week1.html#task-3---using-rstudio) -->
