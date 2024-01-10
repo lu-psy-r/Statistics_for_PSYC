@@ -56,31 +56,30 @@ Anscombe (1973) showed that four sets of bivariate data (X, Y) that have the exa
 
 All in this is a clear example of why you should visualise your data and not to rely on just the numbers.
 
-<!-- ### Pre-lab activity 4: Getting ready for the lab class {#sec-wk11-prelab-getting-ready} -->
+### Pre-lab activity 4: Getting ready for the lab class {#sec-wk11-prelab-getting-ready}
 
-<!-- #### Remind yourself of the basics of how to work with RStudio. -->
+#### Remind yourself of the basics of how to work with RStudio and get your files ready
 
-<!-- You might want to re-visit some of the materials that John and Tom provided in PSYC121: -->
+You might want to re-visit the materials that John and Tom provided in PSYC121:
 
-<!-- -   [Basics of working with RStudio](../PSYC121/Week1.html#task-3---using-rstudio) -->
+-   [Basics of working with RStudio](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week1.html#task-3---using-rstudio)
 
-<!-- #### Create a folder and a Project for Week 11. -->
+- Create a folder for Week 11.
 
-<!-- [Click here for the instructions](../PSYC121/Week6.html#creating_project) from Week 6 of PSYC121 if you are unsure. -->
+- Download the [122_week11_forStudents.zip]() file and upload it into the new folder in RStudio Server you created at the previous step. 
 
-<!-- #### Get your files ready -->
+<!-- (data/week11/122_week11_forStudents.zip) -->
+## Lab activities {#sec-wk11-labactivities}
 
-<!-- Download the [122_week11_forStudents.zip](data/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step. If you need them, [here are the instructions](../PSYC121/Week2.qmd#uploading_zip) from Week 2 of PSYC121. -->
+In this lab, you'll gain understanding of and practice with:
 
-<!-- ## Lab activities -->
+-   constructing and interpreting scatterplots
+-   running correlation analysis and interpret the results
+-   reporting the results in APA format
+-   constructing a correlation matrix in APA format
+-   when and why to apply correlation analysis to answers questions in psychological science
 
-<!-- In this lab, you'll gain understanding of and practice with: -->
-
-<!-- -   constructing and interpreting scatterplots -->
-<!-- -   running correlation analysis and interpret the results -->
-<!-- -   reporting the results in APA format -->
-<!-- -   constructing a correlation matrix in APA format -->
-<!-- -   when and why to apply correlation analysis to answers questions in psychological science -->
+The different lab activities will be added very soon.
 
 <!-- ### Lab activity 1: Interpreting correlation -->
 
