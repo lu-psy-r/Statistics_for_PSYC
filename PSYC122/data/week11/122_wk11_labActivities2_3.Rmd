@@ -1,0 +1,33 @@
+---
+title: "122_wk11_labActivities2_3"
+author: "Margriet Groen"
+date: "2024-01-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Lab activity 2 - Miller and Haden data
+
+1. Loading the relevant libraries
+```{r libraries}
+library(broom)
+library(tidyverse)
+```
+2. Read in the data
+```{r libraries}
+mh <- read_csv("MillerHadenData.csv")
+```
+
+3. 
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
