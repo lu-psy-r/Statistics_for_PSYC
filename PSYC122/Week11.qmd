@@ -154,21 +154,24 @@ Going back to the data discussed in the 'How to' video (see @sec-wk11-lectures),
 
 In the video on 'How to conduct correlation analysis using R' we looked at the correlation between reading ability and intelligence. Now, let's look at the correlation between number of minutes per week spent reading in the home and watching TV.
 
-The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv").
+::: {.callout-important} 
+The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv"). Make sure you have set your working directory to this folder by right-clicking on it and selecting 'Set as working directory'.
+:::
 
 1.  Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 
-2.  Add the code to load the 'broom' and the 'tidyverse' libraries.
+2.  Add the code to load the 'broom' and the 'tidyverse' libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
 
 ::: {.callout-tip collapse="true"}
 ## Hint
-Use the `library()`function.
+Use the `library()`function. Remember to put it inside a 'code block' in your R Markdown script by putting it inside two sets of ```.
 :::
 
 ::: {.callout-tip collapse="true"}
-## Expand to see the code
-The code to do this is below. You can copy it by clicking on the clipboard in the top right corner.
+## Code
+The code to do this is below. 
 ```
+# load libraries
 library(broom)
 library(tidyverse)
 ```
@@ -176,11 +179,54 @@ library(tidyverse)
 
 3.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
 
+::: {.callout-tip collapse="true"}
+## Hint
+Use the `read_csv()`function.
+:::
 
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+# read in data
+mh <- read_csv("MillerHadenData.csv")
+```
+:::
 
 4.  Construct a scatterplot of the relationship between 'Home' and 'TV'.
 
-5.  What can you tell from the scatterplot about the direction of the relationship?
+::: {.callout-tip collapse="true"}
+## Hint 1
+Use the `ggplot()`function in combination with `geom_point()` and `geom_smooth()`. Make sure you use clear labels for your axes by using `labs()`.
+:::
+
+::: {.callout-tip collapse="true"}
+## Hint 2
+Below is a template of the code, make sure to add the dataframe and the relevant variables names. Also add clear labels for your axes.
+```
+# plot the relationship between home and TV using a scatterplot and a line of best fit
+ggplot(DATA, aes(x = , y = )) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw() +
+  labs(x = "", y = "")
+```
+:::
+
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+# plot the relationship between home and TV using a scatterplot and a line of best fit
+ggplot(mh, aes(x = Home, y = TV)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw() +
+  labs(x = "Time spend reading at home", y = "Time spend watching TV at home")
+
+```
+:::
+5.  What can you tell from the scatterplot about the direction of the relationship? Write a few sentences in your R Markdown script to 
 
 6.  Conduct the correlation analysis.
 
