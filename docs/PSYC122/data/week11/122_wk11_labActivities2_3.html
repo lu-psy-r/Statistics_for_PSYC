@@ -252,6 +252,12 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
    
   <ul>
   <li><a href="#lab-activity-2---miller-and-haden-data" id="toc-lab-activity-2---miller-and-haden-data" class="nav-link active" data-scroll-target="#lab-activity-2---miller-and-haden-data">Lab activity 2 - Miller and Haden data</a></li>
+  <li><a href="#step-1.-loading-the-relevant-libraries" id="toc-step-1.-loading-the-relevant-libraries" class="nav-link" data-scroll-target="#step-1.-loading-the-relevant-libraries">Step 1. Loading the relevant libraries</a></li>
+  <li><a href="#step-2.-read-in-the-data" id="toc-step-2.-read-in-the-data" class="nav-link" data-scroll-target="#step-2.-read-in-the-data">Step 2. Read in the data</a></li>
+  <li><a href="#step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit." id="toc-step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit." class="nav-link" data-scroll-target="#step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit.">Step 3. Construct a scatterplot of the relationship between ‘Home’ and ‘TV’. Also add a line of best fit.</a></li>
+  <li><a href="#step-4.-conduct-the-correlation-analysis." id="toc-step-4.-conduct-the-correlation-analysis." class="nav-link" data-scroll-target="#step-4.-conduct-the-correlation-analysis.">Step 4. Conduct the correlation analysis.</a></li>
+  <li><a href="#step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv" id="toc-step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv" class="nav-link" data-scroll-target="#step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv">Step 5. Calculate how much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’?</a></li>
+  <li><a href="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." id="toc-step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="nav-link" data-scroll-target="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines.">Step 6. Write a few sentences in which you report this result, following APA guidelines.</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/data/week11/122_wk11_labActivities2_3.Rmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -289,7 +295,9 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 
 <section id="lab-activity-2---miller-and-haden-data" class="level2">
 <h2 class="anchored" data-anchor-id="lab-activity-2---miller-and-haden-data">Lab activity 2 - Miller and Haden data</h2>
-<p>#1. Loading the relevant libraries</p>
+</section>
+<section id="step-1.-loading-the-relevant-libraries" class="level1">
+<h1>Step 1. Loading the relevant libraries</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -306,7 +314,9 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<p>#2. Read in the data</p>
+</section>
+<section id="step-2.-read-in-the-data" class="level1">
+<h1>Step 2. Read in the data</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mh <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"MillerHadenData.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -319,7 +329,9 @@ dbl (5): Participant, Abil, IQ, Home, TV
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
-<p>#3. Construct a scatterplot of the relationship between ‘Home’ and ‘TV’. Also add a line of best fit.</p>
+</section>
+<section id="step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit." class="level1">
+<h1>Step 3. Construct a scatterplot of the relationship between ‘Home’ and ‘TV’. Also add a line of best fit.</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mh, <span class="fu">aes</span>(<span class="at">x =</span> Home, <span class="at">y =</span> TV)) <span class="sc">+</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
@@ -333,6 +345,73 @@ dbl (5): Participant, Abil, IQ, Home, TV
 <p><img src="122_wk11_labActivities2_3_files/figure-html/scatterplot Home and TV-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Question 3a: What can you tell from the scatterplot about the direction of the relationship?</p>
+</section>
+<section id="step-4.-conduct-the-correlation-analysis." class="level1">
+<h1>Step 4. Conduct the correlation analysis.</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(mh<span class="sc">$</span>Home, </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                    mh<span class="sc">$</span>TV, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">"pearson"</span>, </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">alternative =</span> <span class="st">"two.sided"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  estimate statistic  p.value parameter conf.low conf.high method    alternative
+     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;      
+1   -0.648     -4.08 0.000465        23   -0.830    -0.339 Pearson'… two.sided  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(estimate) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>r</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  cor 
+-0.65 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(parameter)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>df 
+23 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pvalue <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p.value) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>pvalue</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p>Question 4a: What is the correlation coefficient (Pearson’s r)?</p>
+<p>Question 4b: What is the p value?</p>
+<p>Question 4c: Is the correlation significant at the p &lt; .05 level?</p>
+<p>Question 4d: What are the degrees of freedom you need to report?</p>
+</section>
+<section id="step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv" class="level1">
+<h1>Step 5. Calculate how much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’?</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rsquared <span class="ot">&lt;-</span> r<span class="sc">*</span>r</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>rsquared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   cor 
+0.4225 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>rsquaredPercent <span class="ot">&lt;-</span> <span class="fu">round</span>(rsquared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>rsquaredPercent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cor 
+ 42 </code></pre>
+</div>
+</div>
+</section>
+<section id="step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="level1">
+<h1>Step 6. Write a few sentences in which you report this result, following APA guidelines.</h1>
 
 
 </section>
