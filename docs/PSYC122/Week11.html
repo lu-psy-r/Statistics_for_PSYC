@@ -216,7 +216,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-wk11-theory-lecture" id="toc-sec-wk11-theory-lecture" class="nav-link active" data-scroll-target="#sec-wk11-theory-lecture">Lectures</a></li>
+  <li><a href="#sec-wk11-lectures" id="toc-sec-wk11-lectures" class="nav-link active" data-scroll-target="#sec-wk11-lectures">Lectures</a></li>
   <li><a href="#sec-wk11-reading" id="toc-sec-wk11-reading" class="nav-link" data-scroll-target="#sec-wk11-reading">Reading</a></li>
   <li><a href="#pre-lab-activities" id="toc-pre-lab-activities" class="nav-link" data-scroll-target="#pre-lab-activities">Pre-lab activities</a>
   <ul class="collapse">
@@ -228,6 +228,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#sec-wk11-labactivities" id="toc-sec-wk11-labactivities" class="nav-link" data-scroll-target="#sec-wk11-labactivities">Lab activities</a>
   <ul class="collapse">
   <li><a href="#lab-activity-1-interpreting-correlation" id="toc-lab-activity-1-interpreting-correlation" class="nav-link" data-scroll-target="#lab-activity-1-interpreting-correlation">Lab activity 1: Interpreting correlation</a></li>
+  <li><a href="#lab-activity-2-visualising-calculating-and-reporting-correlations" id="toc-lab-activity-2-visualising-calculating-and-reporting-correlations" class="nav-link" data-scroll-target="#lab-activity-2-visualising-calculating-and-reporting-correlations">Lab activity 2: Visualising, calculating and reporting correlations</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/Week11.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -238,7 +239,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">1. Week 11 - Correlation</h1>
-<p class="subtitle lead">Written by Margriet Groen</p>
+<p class="subtitle lead">Written by Margriet Groen (some parts are adapted from materials developed by the PsyTeachR team at the University of Glasgow School of Psychology and Neuroscience; see <a href="https://psyteachr.github.io/analysis-v2/correlations.html">here</a>)</p>
 </div>
 
 
@@ -254,8 +255,8 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 </header>
 
 <p>Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.</p>
-<section id="sec-wk11-theory-lecture" class="level2">
-<h2 class="anchored" data-anchor-id="sec-wk11-theory-lecture">Lectures</h2>
+<section id="sec-wk11-lectures" class="level2">
+<h2 class="anchored" data-anchor-id="sec-wk11-lectures">Lectures</h2>
 <p>The lecture material comes in two parts.</p>
 <ol type="1">
 <li><strong>Theory</strong>(~30 minutes) Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video. Finally, if you open the video in ‘eStream’ by clicking on the green ‘e’ in the bottom right, you can navigate to separate sections of the video by clicking on the ‘chapters’ pane. This might be particularly useful if you quickly want to revisit a particular section.</li>
@@ -373,25 +374,82 @@ Note
 <p>What was the reason for your answer?</p>
 <p>What is this ‘new coefficient’ called?</p>
 <p>Further lab activities will be added very soon.</p>
-<!-- ### Lab activity 2: Visualising, calculating and reporting correlations -->
-<!-- Going back to the data discussed in Chapter 11 of Miller & Haden, you'll remember it contains data from 25 8-year-old children on: -->
-<!-- -   a standardised test of reading ability (Abil) -->
-<!-- -   intelligence (IQ) -->
-<!-- -   the number of minutes per week spent reading in the home (Home) -->
-<!-- -   and the number of minutes per week spent watching TV (TV) -->
-<!-- In the video on 'How to conduct correlation analysis using R' we looked at the correlation between reading ability and intelligence. Now, let's look at the correlation between number of minutes per week spent reading in the home and watching TV. -->
-<!-- The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv") as well as the R-script from the 'How to ...' video (122_wk11_howtoExample.R) that you can use here and adapt. -->
-<!-- 1.  Load the 'broom' and the 'tidyverse' libraries by running the first two lines of code. -->
-<!-- 2.  Read in the data. You should now see an object with 25 observations and 5 variables in the 'Environment'. Click on it to view it. -->
-<!-- 3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. -->
-<!-- 4.  What can you tell from the scatterplot about the direction of the relationship? -->
-<!-- 5.  Conduct the correlation analysis. -->
-<!-- 6.  What is the correlation coefficient (Pearson's r)? -->
-<!-- 7.  What is the p value? -->
-<!-- 8.  Is the correlation significant at the p \< .05 level? -->
-<!-- 9.  What are the degrees of freedom you need to report? -->
-<!-- 10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? (Hint: you can use the Console in RStudio as a calculator.) -->
-<!-- 11. Write a few sentences in which you report this result, following APA guidelines. -->
+</section>
+</section>
+<section id="lab-activity-2-visualising-calculating-and-reporting-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="lab-activity-2-visualising-calculating-and-reporting-correlations">Lab activity 2: Visualising, calculating and reporting correlations</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Watch the ‘How to’ video
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you haven’t done so already, this is a good time to watch the ‘How to’ video (here <a href="#sec-wk11-lectures">Section&nbsp;1</a>) on ‘How to conduct a correlation analysis using R’.</p>
+</div>
+</div>
+<p>Going back to the data discussed in the ‘How to’ video (see <a href="#sec-wk11-lectures">Section&nbsp;1</a>), you’ll remember it contains data from 25 8-year-old children on:</p>
+<ul>
+<li>a standardised test of reading ability (Abil)</li>
+<li>intelligence (IQ)</li>
+<li>the number of minutes per week spent reading in the home (Home)</li>
+<li>and the number of minutes per week spent watching TV (TV)</li>
+</ul>
+<p>In the video on ‘How to conduct correlation analysis using R’ we looked at the correlation between reading ability and intelligence. Now, let’s look at the correlation between number of minutes per week spent reading in the home and watching TV.</p>
+<p>The folder you were asked to download under ‘Pre-lab activity 4: Getting ready for the lab class’ contains the datafile (“MillerHadenData.csv”).</p>
+<ol type="1">
+<li><p>Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 (<a href="https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown">here</a>).</p></li>
+<li><p>Add the code to load the ‘broom’ and the ‘tidyverse’ libraries.</p></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>library()</code>function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand to see the code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code to do this is below. You can copy it by clicking on the clipboard in the top right corner.</p>
+<pre><code>library(broom)
+library(tidyverse)</code></pre>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p>Read in the data. You should now see a dataframe with 25 observations and 5 variables in the ‘Environment’. Click on it to view it.</p></li>
+<li><p>Construct a scatterplot of the relationship between ‘Home’ and ‘TV’.</p></li>
+<li><p>What can you tell from the scatterplot about the direction of the relationship?</p></li>
+<li><p>Conduct the correlation analysis.</p></li>
+<li><p>What is the correlation coefficient (Pearson’s r)?</p></li>
+<li><p>What is the p value?</p></li>
+<li><p>Is the correlation significant at the p &lt; .05 level?</p></li>
+<li><p>What are the degrees of freedom you need to report?</p></li>
+<li><p>How much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’? (Hint: you can use the Console in RStudio as a calculator.)</p></li>
+<li><p>Write a few sentences in which you report this result, following APA guidelines.</p></li>
+</ol>
 <!-- ### Lab activity 3: More correlations -->
 <!-- Researchers were interested in the relationship between hazardous alcohol use and impulsivity (making unplanned, rapid decisions without thinking or 'acting on a whim'). To investigate the relationship, 20 participants completed both the alcohol use disorder identification test (AUDIT; Saunders, Aasland, Babor, de la Fuente, & Grant, 1993) and the Barratt's Impulsiveness Scale (BIS-11) (Patton, Stanford, & Barratt, 1995). The datafile ("alcoholUse_Impulsivity.csv") is in the folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class'. Again, the R-script from the 'How to ...' video (122_wk11_howtoExample.R) is useful here. -->
 <!-- 1.  Load the 'broom' and the 'tidyverse' libraries by running the first two lines of code. -->
@@ -534,7 +592,6 @@ Note
 <!-- ::: -->
 
 
-</section>
 </section>
 </section>
 

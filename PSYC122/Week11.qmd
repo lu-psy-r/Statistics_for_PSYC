@@ -1,12 +1,12 @@
 ---
 title: 1. Week 11 - Correlation
-subtitle: Written by Margriet Groen
+subtitle: Written by Margriet Groen (some parts are adapted from materials developed by the PsyTeachR team at the University of Glasgow School of Psychology and Neuroscience; see [here](https://psyteachr.github.io/analysis-v2/correlations.html))
 order: 2
 ---
 
 Today we will take a look at correlation as a measure of association between two numerical variables. We will create scatterplots to visualise correlations, we will run a correlation analysis and we will practise interpreting and reporting the results.
 
-## Lectures {#sec-wk11-theory-lecture}
+## Lectures {#sec-wk11-lectures}
 
 The lecture material comes in two parts.
 
@@ -138,40 +138,63 @@ What is this 'new coefficient' called?
 
 Further lab activities will be added very soon.
 
-<!-- ### Lab activity 2: Visualising, calculating and reporting correlations -->
+### Lab activity 2: Visualising, calculating and reporting correlations
 
-<!-- Going back to the data discussed in Chapter 11 of Miller & Haden, you'll remember it contains data from 25 8-year-old children on: -->
+::: {.callout-important}
+## Watch the 'How to' video
+If you haven't done so already, this is a good time to watch the 'How to' video (here @sec-wk11-lectures) on 'How to conduct a correlation analysis using R'.
+:::
 
-<!-- -   a standardised test of reading ability (Abil) -->
-<!-- -   intelligence (IQ) -->
-<!-- -   the number of minutes per week spent reading in the home (Home) -->
-<!-- -   and the number of minutes per week spent watching TV (TV) -->
+Going back to the data discussed in the 'How to' video (see @sec-wk11-lectures), you'll remember it contains data from 25 8-year-old children on:
 
-<!-- In the video on 'How to conduct correlation analysis using R' we looked at the correlation between reading ability and intelligence. Now, let's look at the correlation between number of minutes per week spent reading in the home and watching TV. -->
+-   a standardised test of reading ability (Abil)
+-   intelligence (IQ)
+-   the number of minutes per week spent reading in the home (Home)
+-   and the number of minutes per week spent watching TV (TV)
 
-<!-- The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv") as well as the R-script from the 'How to ...' video (122_wk11_howtoExample.R) that you can use here and adapt. -->
+In the video on 'How to conduct correlation analysis using R' we looked at the correlation between reading ability and intelligence. Now, let's look at the correlation between number of minutes per week spent reading in the home and watching TV.
 
-<!-- 1.  Load the 'broom' and the 'tidyverse' libraries by running the first two lines of code. -->
+The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv").
 
-<!-- 2.  Read in the data. You should now see an object with 25 observations and 5 variables in the 'Environment'. Click on it to view it. -->
+1.  Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 
-<!-- 3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. -->
+2.  Add the code to load the 'broom' and the 'tidyverse' libraries.
 
-<!-- 4.  What can you tell from the scatterplot about the direction of the relationship? -->
+::: {.callout-tip collapse="true"}
+## Hint
+Use the `library()`function.
+:::
 
-<!-- 5.  Conduct the correlation analysis. -->
+::: {.callout-tip collapse="true"}
+## Expand to see the code
+The code to do this is below. You can copy it by clicking on the clipboard in the top right corner.
+```
+library(broom)
+library(tidyverse)
+```
+:::
 
-<!-- 6.  What is the correlation coefficient (Pearson's r)? -->
+3.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
 
-<!-- 7.  What is the p value? -->
 
-<!-- 8.  Is the correlation significant at the p \< .05 level? -->
 
-<!-- 9.  What are the degrees of freedom you need to report? -->
+4.  Construct a scatterplot of the relationship between 'Home' and 'TV'.
 
-<!-- 10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? (Hint: you can use the Console in RStudio as a calculator.) -->
+5.  What can you tell from the scatterplot about the direction of the relationship?
 
-<!-- 11. Write a few sentences in which you report this result, following APA guidelines. -->
+6.  Conduct the correlation analysis.
+
+7.  What is the correlation coefficient (Pearson's r)?
+
+8.  What is the p value?
+
+9.  Is the correlation significant at the p \< .05 level?
+
+10.  What are the degrees of freedom you need to report?
+
+11. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? (Hint: you can use the Console in RStudio as a calculator.)
+
+12. Write a few sentences in which you report this result, following APA guidelines.
 
 <!-- ### Lab activity 3: More correlations -->
 
