@@ -159,7 +159,7 @@ In the video on 'How to conduct correlation analysis using R' we looked at the c
 The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv"). Make sure you have set your working directory to this folder by right-clicking on it and selecting 'Set as working directory'.
 :::
 
-0.  Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
+Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 
 1.  Add the code to load the 'broom' and the 'tidyverse' libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
 
@@ -183,7 +183,7 @@ library(tidyverse)
 ```
 :::
 
-3.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
+2.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
 
 ::: {.callout-tip collapse="true"}
 ## Hint
@@ -198,7 +198,7 @@ mh <- read_csv("MillerHadenData.csv")
 ```
 :::
 
-4.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit.
+3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit.
 
 ::: {.callout-tip collapse="true"}
 ## Hint 1
@@ -207,7 +207,7 @@ Use the `ggplot()`function in combination with `geom_point()` and `geom_smooth()
 
 ::: {.callout-tip collapse="true"}
 ## Hint 2
-Below is a template of the code, make sure to add the dataframe and the relevant variables names. Also add clear labels for your axes.
+Below is a template of the code, make sure to add the dataframe and the relevant variable names. Also add clear labels for your axes.
 ```
 ggplot(DATA, aes(x = , y = )) + 
   geom_point() +
