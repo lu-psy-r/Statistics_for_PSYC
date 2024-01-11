@@ -11,17 +11,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Lab activity 2 - Miller and Haden data
 
-#1. Loading the relevant libraries
+# Step 1. Loading the relevant libraries
 ```{r libraries}
 library(broom)
 library(tidyverse)
 ```
-#2. Read in the data
+# Step 2. Read in the data
 ```{r read in data}
 mh <- read_csv("MillerHadenData.csv")
 ```
 
-#3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit.
+# Step 3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit.
 
 ```{r scatterplot Home and TV}
 ggplot(mh, aes(x = Home, y = TV)) + 
@@ -32,4 +32,49 @@ ggplot(mh, aes(x = Home, y = TV)) +
 
 ```
 
+Question 3a: What can you tell from the scatterplot about the direction of the relationship?
 
+# Step 4.  Conduct the correlation analysis.
+```{r correlation}
+results <- cor.test(mh$Home, 
+                    mh$TV, 
+                    method = "pearson", 
+                    alternative = "two.sided") %>% 
+  tidy()
+
+results
+```
+```{r pull info}
+r <- results %>%
+  pull(estimate) %>%
+  round(2)
+r
+
+df <- results %>%
+  pull(parameter)
+df
+
+pvalue <- results %>%
+  pull(p.value) %>%
+  round(3)
+pvalue
+```
+
+Question 4a:  What is the correlation coefficient (Pearson's r)?
+
+Question 4b: What is the p value?
+
+Question 4c: Is the correlation significant at the p \< .05 level?
+
+Question 4d: What are the degrees of freedom you need to report?
+
+# Step 5. Calculate how much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?
+
+```{r r-squared}
+rsquared <- r*r
+rsquared
+rsquaredPercent <- round(rsquared * 100, 0)
+rsquaredPercent
+```
+
+# Step 6. Write a few sentences in which you report this result, following APA guidelines.

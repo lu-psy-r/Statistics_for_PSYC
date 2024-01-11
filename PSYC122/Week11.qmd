@@ -161,30 +161,23 @@ The folder you were asked to download under 'Pre-lab activity 4: Getting ready f
 
 Start a new RMarkdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 
-1.  Add the code to load the 'broom' and the 'tidyverse' libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
+Step 1.  Add the code to load the 'broom' and the 'tidyverse' libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
 
 ::: {.callout-tip collapse="true"}
 ## Hint
 Use the `library()`function. Remember to put it inside a 'code chunk' in your R Markdown script.
-
-```{r}
-```
-
 :::
 
 ::: {.callout-tip collapse="true"}
 ## Code
 The code to do this is below. 
 ```
-```{r}
 library(broom)
 library(tidyverse)
 ```
-```
 :::
 
-2.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
-
+Step 2.  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
 ::: {.callout-tip collapse="true"}
 ## Hint
 Use the `read_csv()`function.
@@ -198,7 +191,7 @@ mh <- read_csv("MillerHadenData.csv")
 ```
 :::
 
-3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit.
+Step 3.  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit and make sure you use clear labels for your axes.
 
 ::: {.callout-tip collapse="true"}
 ## Hint 1
@@ -226,13 +219,12 @@ ggplot(mh, aes(x = Home, y = TV)) +
   geom_smooth(method = "lm", se = FALSE) +
   theme_bw() +
   labs(x = "Time spend reading at home", y = "Time spend watching TV at home")
-
 ```
 :::
 
-5.  What can you tell from the scatterplot about the direction of the relationship? Write a few sentences in your R Markdown script to describe the relationship.
+Question 3a:  What can you tell from the scatterplot about the direction of the relationship? Write a few sentences in your R Markdown script to describe the relationship.
 
-6.  Conduct the correlation analysis.
+Step 4.  Conduct the correlation analysis.
 ::: {.callout-tip collapse="true"}
 ## Hint 1
 Use the `ggplot()`function in combination with `geom_point()` and `geom_smooth()`. Make sure you use clear labels for your axes by using `labs()`.
@@ -264,17 +256,27 @@ results
 ```
 :::
 
-7.  What is the correlation coefficient (Pearson's r)?
+Once you've run this code chunk, the output should appear in your R Markdown script and you can answer the questions below using that output. You can also pull out the different pieces of information by using the `pull()` function and round the values using the `round()` function, like this:
 
-8.  What is the p value?
+```{r pull coefficienct}
+r <- results %>%
+  pull(estimate) %>%
+  round(2)
+```
 
-9.  Is the correlation significant at the p \< .05 level?
+Question 4a.  What is the correlation coefficient (Pearson's r)?
 
-10.  What are the degrees of freedom you need to report?
+Question 4b.  What is the p value?
 
-11. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'? (Hint: you can use the Console in RStudio as a calculator.)
+Question 4c.  Is the correlation significant at the p \< .05 level?
 
-12. Write a few sentences in which you report this result, following APA guidelines.
+Question 4d.  What are the degrees of freedom you need to report?
+
+# Step 5. Calculate how much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?
+
+As discussed in the theory lecture, this is referred to as the 'coefficient of determination' or 'R-squared'. To calculate it, you square the value for Pearson's r. To calculate how much variance in one variable is accounted for by the other variable, you multiply it by 100 and round it to 0 decimals.
+
+# Step 6. Write a few sentences in which you report this result, following APA guidelines. 
 
 <!-- ### Lab activity 3: More correlations -->
 
@@ -308,7 +310,7 @@ results
 
 <!-- ## Answers -->
 
-<!-- When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code... -->
+<!-- When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at code written by someone else... -->
 
 <!-- <!--The answers to the questions and the script containing the code will be available after the final lab session has taken place.--> -->
 
@@ -316,7 +318,7 @@ results
 
 <!-- 1.  Scatterplots -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 
 <!-- a.  strong positive correlation -->
@@ -329,84 +331,76 @@ results
 
 <!-- 2.   -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- FALSE Explanation: The correlation coefficient is negative and therefore infers a negative correlation. As such, older people pay less for car insurance: as age increases, car insurance costs decrease. -->
 <!-- ::: -->
 
 <!-- 3.   -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- FALSE Explanation: This is a bit of trick question as it has the sneaky 'cause' word in. The correlation coefficient is a positive number, suggesting a positive relationship between length of time in prison and aggression. However, causation cannot be inferred from correlation and therefore we cannot know whether time spent in prison CAUSES aggression, and rather we suggest a relationship between the two: as length of time in prison increases, aggression increases. -->
 <!-- ::: -->
 
 <!-- 4.   -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- c 49% The 'coefficient of determination' or 'R-squared' tells us the proportion or variance in one variable that can be predicted if we know the other variable. We can determine this by squaring the *r*. Therefore, .7^2^ = .49, *R^2^* = .49. -->
 <!-- ::: -->
 
 <!-- ### Lab activity 2: Constructing scatterplots and calculating correlations -->
 
-<!-- You can download the R-script that contains the code to complete lab activities 2 and 3 here: [122_wk11_labActivities2_3.R](data/week11/122_wk11_labActivities2_3.R). -->
+<!-- You can download the RMd-script that contains the code to complete lab activities 2 and 3 here: [122_wk11_labActivities2_3.Rmd](data/week11/122_wk11_labActivities2_3.Rmd). -->
 
-<!-- 1.  *See R script* -->
+<!-- Question 3a:  What can you tell from the scatterplot about the direction of the relationship?  -->
 
-<!-- 2.  *See R script* -->
-
-<!-- 3.  *See R script* -->
-
-<!-- 4.  What can you tell from the scatterplot about the direction of the relationship?  -->
-
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- There is a negative association between 'Home' and 'TV'. This means that the longer a child spends watching TV, the shorter they will read at home. -->
 <!-- ::: -->
 
-<!-- 5.  Conduct the correlation analysis. *See R script* -->
+<!-- Question 4a.  What is the correlation coefficient (Pearson's r)?  -->
 
-<!-- 6.  What is the correlation coefficient (Pearson's r)?  -->
-
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ***r*** **= -.65** -->
 <!-- ::: -->
 
-<!-- 7.  What is the p value?  -->
+<!-- Question 4b.  What is the p value?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ***p*** **\< .001** -->
 <!-- ::: -->
 
-<!-- 8.  Is the correlation significant at the p \< .05 level?  -->
+<!-- Question 4c.  Is the correlation significant at the p \< .05 level?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Yes, because the p-value is smaller than .005** -->
 <!-- ::: -->
 
-<!-- 9.  What are the degrees of freedom you need to report?  -->
+<!-- Question 4d.  What are the degrees of freedom you need to report?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **23** -->
 <!-- ::: -->
 
-<!-- 10. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?  -->
+<!-- Step 5. How much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **42%** -->
 <!-- ::: -->
 
-<!-- 11. Write a few sentences in which you report this result, following APA guidelines.  -->
+<!-- Step 6. Write a few sentences in which you report this result, following APA guidelines.  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, *r*(23) = -.65, *p* \< .001. As time spent watching TV at home increased, time spent reading at home decreased.** -->
+<!-- **Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, *r*(23) = -.65, *p* \< .001. As time spent watching TV increased, time spent reading at home decreased.** -->
 <!-- ::: -->
 
 <!-- ### Lab activity 3: More correlations -->
