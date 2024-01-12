@@ -181,6 +181,7 @@ library(tidyverse)
 :::
 
 **Step 2.**  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
+
 ::: {.callout-tip collapse="true"}
 ## Hint
 Use the `read_csv()`function.
@@ -228,6 +229,7 @@ ggplot(mh, aes(x = Home, y = TV)) +
 *Question 3a:*  What can you tell from the scatterplot about the direction of the relationship? Write a few sentences in your R Markdown script to describe the relationship.
 
 **Step 4.**  Conduct the correlation analysis.
+
 ::: {.callout-tip collapse="true"}
 ## Hint 1
 Use the `cor.test()`function in combination with `tidy()`.

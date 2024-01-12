@@ -257,7 +257,14 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit." id="toc-step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit." class="nav-link" data-scroll-target="#step-3.-construct-a-scatterplot-of-the-relationship-between-home-and-tv.-also-add-a-line-of-best-fit.">Step 3. Construct a scatterplot of the relationship between ‘Home’ and ‘TV’. Also add a line of best fit.</a></li>
   <li><a href="#step-4.-conduct-the-correlation-analysis." id="toc-step-4.-conduct-the-correlation-analysis." class="nav-link" data-scroll-target="#step-4.-conduct-the-correlation-analysis.">Step 4. Conduct the correlation analysis.</a></li>
   <li><a href="#step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv" id="toc-step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv" class="nav-link" data-scroll-target="#step-5.-calculate-how-much-variance-in-time-spent-reading-can-be-accounted-for-by-time-spent-watching-tv">Step 5. Calculate how much variance in ‘time spent reading’ can be accounted for by ‘time spent watching TV’?</a></li>
-  <li><a href="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." id="toc-step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="nav-link" data-scroll-target="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines.">Step 6. Write a few sentences in which you report this result, following APA guidelines.</a></li>
+  <li><a href="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." id="toc-step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="nav-link" data-scroll-target="#step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines.">Step 6. Write a few sentences in which you report this result, following APA guidelines.</a>
+  <ul class="collapse">
+  <li><a href="#lab-activity-3---hazardous-alcohol-use-and-impulsivity" id="toc-lab-activity-3---hazardous-alcohol-use-and-impulsivity" class="nav-link" data-scroll-target="#lab-activity-3---hazardous-alcohol-use-and-impulsivity">Lab activity 3 - Hazardous alcohol use and impulsivity</a></li>
+  </ul></li>
+  <li><a href="#step-1.-read-in-the-data" id="toc-step-1.-read-in-the-data" class="nav-link" data-scroll-target="#step-1.-read-in-the-data">Step 1. Read in the data</a></li>
+  <li><a href="#step-2.-plot-the-relationship-between-hazard-alcohol-use-and-impulsivity-using-a-scatterplot-and-a-line-of-best-fit" id="toc-step-2.-plot-the-relationship-between-hazard-alcohol-use-and-impulsivity-using-a-scatterplot-and-a-line-of-best-fit" class="nav-link" data-scroll-target="#step-2.-plot-the-relationship-between-hazard-alcohol-use-and-impulsivity-using-a-scatterplot-and-a-line-of-best-fit">Step 2. Plot the relationship between hazard alcohol use and impulsivity using a scatterplot and a line of best fit</a></li>
+  <li><a href="#step-3.-conduct-a-correlation-analysis-using-pearsons-r" id="toc-step-3.-conduct-a-correlation-analysis-using-pearsons-r" class="nav-link" data-scroll-target="#step-3.-conduct-a-correlation-analysis-using-pearsons-r">Step 3. Conduct a correlation analysis, using Pearson’s r</a></li>
+  <li><a href="#step-4.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." id="toc-step-4.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="nav-link" data-scroll-target="#step-4.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines.">Step 4. Write a few sentences in which you report this result, following APA guidelines.</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/data/week11/122_wk11_labActivities2_3.Rmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -412,6 +419,118 @@ dbl (5): Participant, Abil, IQ, Home, TV
 </section>
 <section id="step-6.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="level1">
 <h1>Step 6. Write a few sentences in which you report this result, following APA guidelines.</h1>
+<p>“A Pearson’s correlation coefficient was used to assess the relationship between time spent reading at home and time spent watching TV at home. There was a significant negative correlation, <em>r</em>(23) = -.65, <em>p</em> &lt; .001. As time spent watching TV increased, time spent reading at home decreased.”</p>
+<section id="lab-activity-3---hazardous-alcohol-use-and-impulsivity" class="level2">
+<h2 class="anchored" data-anchor-id="lab-activity-3---hazardous-alcohol-use-and-impulsivity">Lab activity 3 - Hazardous alcohol use and impulsivity</h2>
+</section>
+</section>
+<section id="step-1.-read-in-the-data" class="level1">
+<h1>Step 1. Read in the data</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"alcoholUse_Impulsivity.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 20 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (3): participant, hau, imp
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 3
+   participant   hau   imp
+         &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1           1     8    76
+ 2           2     8    64
+ 3           3    13    81
+ 4           4     0    59
+ 5           5     7    61
+ 6           6    11    71
+ 7           7     0    38
+ 8           8     7    67
+ 9           9    11    66
+10          10    12    59
+11          11     1    70
+12          12     9    74
+13          13     5    42
+14          14     2    53
+15          15    11    62
+16          16     8    64
+17          17     9    96
+18          18     7    65
+19          19     5    55
+20          20     4    58</code></pre>
+</div>
+</div>
+<p>Question 1a: How many variables does it have?</p>
+</section>
+<section id="step-2.-plot-the-relationship-between-hazard-alcohol-use-and-impulsivity-using-a-scatterplot-and-a-line-of-best-fit" class="level1">
+<h1>Step 2. Plot the relationship between hazard alcohol use and impulsivity using a scatterplot and a line of best fit</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> hau, <span class="at">y =</span> imp)) <span class="sc">+</span> </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Hazardous Alcohol Use"</span>, <span class="at">y =</span> <span class="st">"Impulsivity"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="122_wk11_labActivities2_3_files/figure-html/scatterplot hau imp-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Question 2a: What can you tell from the scatterplot about the direction of the relationship?</p>
+<p>There is a positive association between ‘hazardous alcohol use’ and ‘impulsivity’. This means that as a participant’s score on ‘hazardous alcohol use’ goes up, their score on ‘impulsivity’ also goes up.</p>
+</section>
+<section id="step-3.-conduct-a-correlation-analysis-using-pearsons-r" class="level1">
+<h1>Step 3. Conduct a correlation analysis, using Pearson’s r</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(data<span class="sc">$</span>hau, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                    data<span class="sc">$</span>imp, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">"pearson"</span>, </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">alternative =</span> <span class="st">"two.sided"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 8
+  estimate statistic p.value parameter conf.low conf.high method     alternative
+     &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;int&gt;    &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      
+1    0.539      2.71  0.0143        18    0.126     0.792 Pearson's… two.sided  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out Pearson's r, the degrees of freedom and the p-value for reporting the results</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(estimate) <span class="sc">%&gt;%</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(parameter)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>pvalue <span class="ot">&lt;-</span> results <span class="sc">%&gt;%</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(p.value) <span class="sc">%&gt;%</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">round</span>(<span class="dv">3</span>)</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>rsquared <span class="ot">&lt;-</span> r<span class="sc">*</span>r</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>rsquaredPercent <span class="ot">&lt;-</span> <span class="fu">round</span>(rsquared <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Question 3a: What is the correlation coefficient (Pearson’s r)?</p>
+<p>Question 3b: What is the p value?</p>
+<p>Question 3c: Is the correlation significant at the p &lt; .05 level?</p>
+<p>Question 3d: What are the degrees of freedom you need to report?</p>
+<p>Question 3e: How much variance in ‘impulsivity’ can be accounted for by ‘hazardous alcohol use’?</p>
+<p>Question 3f: Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question —-I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn’t tell us about what could be happening with the variables of interest.</p>
+<p>Examples:</p>
+<ol type="1">
+<li>Being more impulsive may make people consume more alcohol.</li>
+<li>Consuming more alcohol may make people more impulsive.</li>
+<li>An outgoing personality might influence both your level of impulsivity and you are more likely to be socialising in the pub and consuming alcohol. So the same ‘third factor’ may influence both our variables of interest.</li>
+</ol>
+</section>
+<section id="step-4.-write-a-few-sentences-in-which-you-report-this-result-following-apa-guidelines." class="level1">
+<h1>Step 4. Write a few sentences in which you report this result, following APA guidelines.</h1>
+<p>A Pearson’s correlation coefficient was used to assess the relationship between alcohol use and impulsivity. There was a significant positive correlation, <em>r</em>(18) = .54, <em>p</em> &lt; .014. People who reported to consume more alcohol, scored higher on the impulsivity scale.</p>
 
 
 </section>
