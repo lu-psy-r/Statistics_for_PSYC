@@ -71,9 +71,17 @@ You might want to re-visit the materials that John and Tom provided in PSYC121:
 
 - Create a folder for Week 11.
 
-- Download the [122_week11_forStudents.zip](data/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step. 
+- Download the [122_week11_forStudents.zip](data/week11/122_week11_forStudents.zip) file and upload it into the new folder in RStudio Server you created at the previous step.
 
-<!-- (data/week11/122_week11_forStudents.zip) -->
+::: {.callout-important}
+## If you have difficulty uploading files to the server
+If you get error messages when attempting to upload a file or a folder with files to the server, you can try the following steps:
+
+* Close the R Studio server, close your browser and start afresh.
+* Open the R Studio server in a **different** browser.
+* Follow a work around where you use code to directly download the file to the server. The code to do that will be available at the start of the lab activity where you need that particular file.
+:::
+
 ## Lab activities {#sec-wk11-labactivities}
 
 In this lab, you'll gain understanding of and practice with:
@@ -136,8 +144,6 @@ What was the reason for your answer?
 
 What is this 'new coefficient' called?
 
-Further lab activities will be added very soon.
-
 ### Lab activity 2: Visualising, calculating and reporting correlations {#sec-wk11-lab-miller-haden}
 
 ::: {.callout-important}
@@ -159,12 +165,21 @@ In the video on 'How to conduct correlation analysis using R' we looked at the c
 The folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class' contains the datafile ("MillerHadenData.csv"). Make sure you have set your working directory to this folder by right-clicking on it and selecting 'Set as working directory'.
 :::
 
+::: {.callout-important}
+## Do this if you couldn't upload files to the server
+If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
+:::
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week11/MillerHadenData.csv?raw=true", destfile = "MillerHadenData.csv")
+```
+
 ::: {.callout-warning} 
 ## New R Markdown script
 Before we begin, make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 :::
 
-**Step 1.**  Add the code to load the 'broom' and the 'tidyverse' libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
+>**Step 1.**  Add the code to load the `broom` and the `tidyverse` libraries in a new code chunk. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
 
 ::: {.callout-tip collapse="true"}
 ## Hint
@@ -180,7 +195,7 @@ library(tidyverse)
 ```
 :::
 
-**Step 2.**  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
+>**Step 2.**  Read in the data. You should now see a dataframe with 25 observations and 5 variables in the 'Environment'. Click on it to view it.
 
 ::: {.callout-tip collapse="true"}
 ## Hint
@@ -195,7 +210,7 @@ mh <- read_csv("MillerHadenData.csv")
 ```
 :::
 
-**Step 3.**  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit and make sure you use clear labels for your axes.
+>**Step 3.**  Construct a scatterplot of the relationship between 'Home' and 'TV'. Also add a line of best fit and make sure you use clear labels for your axes.
 
 ::: {.callout-tip collapse="true"}
 ## Hint 1
@@ -228,7 +243,7 @@ ggplot(mh, aes(x = Home, y = TV)) +
 
 *Question 3a:*  What can you tell from the scatterplot about the direction of the relationship? Write a few sentences in your R Markdown script to describe the relationship.
 
-**Step 4.**  Conduct the correlation analysis.
+>**Step 4.**  Conduct the correlation analysis.
 
 ::: {.callout-tip collapse="true"}
 ## Hint 1
@@ -277,11 +292,11 @@ r <- results %>%
 
 *Question 4d:*  What are the degrees of freedom you need to report?
 
-**Step 5.** Calculate how much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?
+>**Step 5.** Calculate how much variance in 'time spent reading' can be accounted for by 'time spent watching TV'?
 
 As discussed in the theory lecture, this is referred to as the 'coefficient of determination' or 'R-squared'. To calculate it, you square the value for Pearson's r. To calculate how much variance in one variable is accounted for by the other variable, you multiply it by 100 and round it to 0 decimals.
 
-**Step 6.** Write a few sentences in which you report this result, following APA guidelines. 
+>**Step 6.** Write a few sentences in which you report this result, following APA guidelines. 
 
 ### Lab activity 3: Hazardous alcohol use and impulsivity {#sec-wk11-lab-alcohol-impulsivity}
 
@@ -289,10 +304,19 @@ Researchers were interested in the relationship between hazardous alcohol use an
 
 ::: {.callout-warning} 
 ## Before we begin
-Assuming you are using the same R Markdown script as for the previous lab activity, you should already have code to load the 'broom' and the 'tidyverse' libraries. If this is a new session, you just need to re-run that code chunk to ensure they are loaded. At this point, it is a good idea to clear your environment to avoid any confusion between data frames or values. You can do this by clicking on the broom icon on the top right of the Environment pane. The data file ("alcoholUse_Impulsivity.csv") is in the folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class'. As long as that folder is set as your working directory, you are good to go.
+Assuming you are using the same R Markdown script as for the previous lab activity, you should already have code to load the `broom` and the `tidyverse` libraries. If this is a new session, you just need to re-run that code chunk to ensure they are loaded. At this point, it is a good idea to clear your environment to avoid any confusion between data frames or values. You can do this by clicking on the broom icon on the top right of the Environment pane. The data file ("alcoholUse_Impulsivity.csv") is in the folder you were asked to download under 'Pre-lab activity 4: Getting ready for the lab class'. As long as that folder is set as your working directory, you are good to go.
 :::
 
-**Step 1.**  Read in the data. You should now see an object containing the data in the 'Environment'.
+::: {.callout-important}
+## Do this if you couldn't upload files to the server
+If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
+:::
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week11/122_week11_forStudents/alcoholUse_Impulsivity.csv?raw=true", destfile = "alcoholUse_Impulsivity.csv")
+```
+
+>**Step 1.**  Read in the data. You should now see an object containing the data in the 'Environment'.
 
 *Question 1a:* How many variables does it have?
 
@@ -309,7 +333,7 @@ data <- read_csv("alcoholUse_Impulsivity.csv")
 ```
 :::
 
-**Step 2.** Plot the relationship between hazard alcohol use and impulsivity using a scatterplot and a line of best fit
+>**Step 2.** Plot the relationship between hazard alcohol use and impulsivity using a scatterplot and a line of best fit
 
 :::{.callout-tip collapse="true"}
 ## Hint 1
@@ -342,7 +366,7 @@ ggplot(data, aes(x = hau, y = imp)) +
 
 *Question 2a:*  What can you tell from the scatterplot about the direction of the relationship?
 
-**Step 3.** Conduct the correlation analysis.
+>**Step 3.** Conduct the correlation analysis.
 
 ::: {.callout-tip collapse="true"}
 ## Hint 1
@@ -388,7 +412,7 @@ results
 
 *Question 3f:* Give three logically possible directions of causality, indicating for each direction whether it is a plausible explanation in light of the variables involved (and why). No, this is not a trick question ----I know that correlation does not infer causation, but think critically! New studies/ideas are constructed by thinking what the previous study doesn't tell us about what could be happening with the variables of interest.
 
-**Step 4.** Write a few sentences in which you report this result, following APA guidelines. 
+>**Step 4.** Write a few sentences in which you report this result, following APA guidelines. 
 
 **Job completed --- Well done!**
 
