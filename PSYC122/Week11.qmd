@@ -79,8 +79,12 @@ If you get error messages when attempting to upload a file or a folder with file
 
 * Close the R Studio server, close your browser and start afresh.
 * Open the R Studio server in a **different** browser.
-* Follow a work around where you use code to directly download the file to the server. The code to do that will be available at the start of the lab activity where you need that particular file.
+* Follow a work around where you use code to directly download the file to the server. The code to do that will be available at the start of the lab activity where you need that particular file. The code to download the file you need to complete the quiz is below.
 :::
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week11/122_week11_forStudents/exams.csv?raw=true", destfile = "exams.csv")
+```
 
 ## Lab activities {#sec-wk11-labactivities}
 
