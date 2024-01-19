@@ -656,5 +656,40 @@
     "title": "122_wk11_labActivities2_3",
     "section": "Lab activity 3 - Hazardous alcohol use and impulsivity",
     "text": "Lab activity 3 - Hazardous alcohol use and impulsivity"
+  },
+  {
+    "objectID": "PSYC122/Week12.html",
+    "href": "PSYC122/Week12.html",
+    "title": "2. Week 12 - Correlation Part 2",
+    "section": "",
+    "text": "Today we will continue to look at correlation as a measure of association between two numerical variables. We will review assumptions associated with correlation, discuss some issues important to be aware of when interpreting correlation results and finally, we’ll talk about intercorrelation."
+  },
+  {
+    "objectID": "PSYC122/Week12.html#sec-wk12-lectures",
+    "href": "PSYC122/Week12.html#sec-wk12-lectures",
+    "title": "2. Week 12 - Correlation Part 2",
+    "section": "Lectures",
+    "text": "Lectures\nThe lecture material for this week is presented in three parts:\n\nTheory – Assumptions, issues and inter-correlation(~25 minutes) Watch this part before you complete the reading and the pre-lab activities. The video has captions, in case you find that helpful. You can download the slides and a transcript from the links below the video.\n\n\nSlides Transcript\n\nHow to – Assumptions, issues and inter-correlation(~25 minutes) Watch this part after you’ve completed the reading and before you attend the lab session.\n\n\nTranscript\n\nData wrangling with dplyr(~10 minutes) Watch this part before you complete the pre-lab activities and before you attend the lab session.\n\n\nSlides Transcript"
+  },
+  {
+    "objectID": "PSYC122/Week12.html#sec-wk12-reading",
+    "href": "PSYC122/Week12.html#sec-wk12-reading",
+    "title": "2. Week 12 - Correlation Part 2",
+    "section": "Reading",
+    "text": "Reading\nThe reading that accompanies the lectures this week is again from chapter 9 of the core text by Howell (2017).\nRougly, last week we covered the material in sections 9.1 to 9.4, as well as sections 9.8 to 9.11 and section 9.15. This week, we’ll cover the material in sections 9.5 to 9.7, and sections 9.12 to 9.13. Even if a section is not mentioned here, all of chapter 9 is relevant."
+  },
+  {
+    "objectID": "PSYC122/Week12.html#sec-wk12-prelab-activities",
+    "href": "PSYC122/Week12.html#sec-wk12-prelab-activities",
+    "title": "2. Week 12 - Correlation Part 2",
+    "section": "Pre-lab activities",
+    "text": "Pre-lab activities\nAfter having watched the lectures on correlation and read the textbook chapters you’ll be in a good position to try these activities. Completing them before you attend your lab session will help you to consolidate your learning and help move through the lab activities more smoothly.\n\nPre-lab activity 1: Data-wrangling with dplyr\nData comes in lots of different formats. One of the most common formats is that of a two-dimensional table (the two dimensions being rows and columns). Usually, each row stands for a separate observation (e.g. a participant), and each column stands for a different variable (e.g. a response, category, or group). A key benefit of tabular data is that it allows you to store different types of data-numerical measurements, alphanumeric labels, categorical descriptors-all in one place.\nIt may surprise you to learn that scientists actually spend far more of time cleaning and preparing their data than they spend actually analysing it. This means completing tasks such as cleaning up bad values, changing the structure of tables, merging information stored in separate tables, reducing the data down to a subset of observations, and producing data summaries. Some have estimated that up to 80% of time spent on data analysis involves such data preparation tasks (Dasu & Johnson, 2003)!\nMany people seem to operate under the assumption that the only option for data cleaning is the painstaking and time-consuming cutting and pasting of data within a spreadsheet program like Excel. We have witnessed students and colleagues waste days, weeks, and even months manually transforming their data in Excel, cutting, copying, and pasting data. Fixing up your data by hand is not only a terrible use of your time, but it is error-prone and not reproducible. Additionally, in this age where we can easily collect massive datasets online, you will not be able to organise, clean, and prepare these by hand.\nIn short, you will not thrive as a psychologist if you do not learn some key data wrangling skills. Although every dataset presents unique challenges, there are some systematic principles you should follow that will make your analyses easier, less error-prone, more efficient, and more reproducible.\nThe functions you’ll need in lab activity 2 include select(), filter(), mutate(), group_by() and summarise() from the dplyr package.\nYou’ve used these functions before, but the following ‘recipes’ summarise what each one does and how to use it.\n\nTASK Have a look at each ‘recipe’ and read through it. Try to understand each step.\n\n\n\n\n\n\n\nRecipes - how to use them\n\n\n\nEach ‘recipe’ has the same structure.\n\nFirst, it summarises what it is that you want to achieve when using that specific function. In the case of select() it says “You want to extract specific columns from a data frame and return them as a new, smaller data frame.”\nThen, it outlines a number of steps that you need to carry out when using this function. For select() it outlines 2 steps: 1. Pass the dataframe to the function. 2. List the column(s) to return.\nFinally, there is an example talks you through using the function with some data. For select() it uses an example with data on the weather.\nAdditional information appears in extra boxes with a light-bulb icon. If you find those confusing, don’t worry about them at this stage.\n\n\n\n\nselect() - extract variables (columns) - recipe\nfilter() - extract observations (rows)- recipe\nmutate() - create a new variable (column) - recipe\ngroup_by() - organise the observations into groups - recipe\nsummarise() - compute summary statistics - recipe\n\n\n\nPre-lab activity 2: Getting ready for the lab class\n\nGet your files ready\nDownload the 122_week12_forStudents.zip file and upload it into the new folder in RStudio Server you created (see last week’s Pre-lab activity 4 for instructions on how to do that.\n\n\n\n\n\n\nIf you have difficulty uploading files to the server\n\n\n\nIf you get error messages when attempting to upload a file or a folder with files to the server, you can try the following steps:\n\nClose the R Studio server, close your browser and start afresh.\nOpen the R Studio server in a different browser.\nFollow a work around where you use code to directly download the file to the server. The code to do that will be available at the start of the lab activity where you need that particular file. The code to download the file you need to complete the quiz is below."
+  },
+  {
+    "objectID": "PSYC122/Week12.html#sec-wk12-labactivities",
+    "href": "PSYC122/Week12.html#sec-wk12-labactivities",
+    "title": "2. Week 12 - Correlation Part 2",
+    "section": "Lab activities",
+    "text": "Lab activities\nThe lab activities will be published soon."
   }
 ]
