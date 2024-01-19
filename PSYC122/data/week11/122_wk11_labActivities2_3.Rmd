@@ -39,7 +39,7 @@ Question 3a: What can you tell from the scatterplot about the direction of the r
 results <- cor.test(mh$Home, 
                     mh$TV, 
                     method = "pearson", 
-                    alternative = "two.sided") %>% 
+                    alternative = "two.sided") %>%
   tidy()
 
 results
@@ -152,4 +152,4 @@ Examples:
 
 # Step 4. Write a few sentences in which you report this result, following APA guidelines.
 
-A Pearson's correlation coefficient was used to assess the relationship between alcohol use and impulsivity. There was a significant positive correlation, *r*(18) = .54, *p* \< .014. People who reported to consume more alcohol, scored higher on the impulsivity scale.
+A Pearson's correlation coefficient was used to assess the relationship between alcohol use and impulsivity. There was a significant positive correlation, *r*(18) = .54, *p* = .014. People who reported to consume more alcohol, scored higher on the impulsivity scale.
