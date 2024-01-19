@@ -586,11 +586,11 @@ Step 6. Write a few sentences in which you report this result, following APA gui
 **Something along the lines of: A Pearson's correlation coefficient was used to assess the relationship between alcohol use and impulsivity. There was a significant positive correlation, *r*(18) = .54, *p* \< .014. People who reported to consume more alcohol, scored higher on the impulsivity scale.**
 :::
 
-## Online Q&A
+<!-- ## Online Q&A -->
 
-Below is the recording of this week's online Q&A
+<!-- Below is the recording of this week's online Q&A -->
 
-```{=html}
-<iframe src="https://livelancsac-my.sharepoint.com/personal/groen_lancaster_ac_uk/_layouts/15/embed.aspx?UniqueId=b6420c3f-145d-43a0-98cd-70cc6332ff32&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="PSYC122 Online Seminar Fridays 9am wks 11-14 & 16-19-20240119_090028-Meeting Recording.mp4"></iframe>
-```
+<!-- ```{=html} -->
+<!-- <iframe src="https://livelancsac-my.sharepoint.com/personal/groen_lancaster_ac_uk/_layouts/15/embed.aspx?UniqueId=b6420c3f-145d-43a0-98cd-70cc6332ff32&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="PSYC122 Online Seminar Fridays 9am wks 11-14 & 16-19-20240119_090028-Meeting Recording.mp4"></iframe> -->
+<!-- ``` -->
 
