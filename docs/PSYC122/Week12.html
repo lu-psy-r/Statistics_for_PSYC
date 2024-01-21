@@ -596,7 +596,25 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Step 3.</strong> Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We’ll have to do some ’data wrangling to knock them into shape. We need to take the following into account: 1. Accuracy was calculated as proportion and as such can’t go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values. 2. We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8). 3. Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT). <strong>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</strong></p>
+<p><strong>Step 3.</strong> Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We’ll have to do some ’data wrangling to knock them into shape. We need to take the following into account:</p>
+</blockquote>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Accuracy was calculated as proportion and as such can’t go above 1. Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values.</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="2" type="1">
+<li>We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8).</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<ol start="3" type="1">
+<li>Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).</li>
+</ol>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</strong></p>
 </blockquote>
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-4_4636fffe828b34b48bbb662d34ecc261">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
