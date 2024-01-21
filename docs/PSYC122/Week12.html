@@ -491,7 +491,7 @@ Cleaning the R environment
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.</p>
-<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-2_34b71615db1ced0ce48a26513e87f7fd">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-2_cf28a84d1e5125387f4964eb0d2cd0d9">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -510,11 +510,8 @@ Checking your working directory
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the ‘Files’ pane on the right. Does it contain the data file (‘VapingData.csv’)?</p>
-<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-3_e9007669f99df1a85cf078c917d5df90">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-3_237bf61a2251e99e7c408e4193beea42">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "/Users/margrietgroen/Library/CloudStorage/OneDrive-LancasterUniversity/mg_work/mg_work_2324/2324_work_teaching/statistics_for_psychologists/PSYC122"</code></pre>
-</div>
 </div>
 <p>If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the ‘Files’ pane, click ‘More’ and then on ‘Set as working directory’.</p>
 <p><img src="images/wk2/more_workingDirectory.png" class="img-fluid"></p>
@@ -599,21 +596,15 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Step 3.</strong> Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We’ll have to do some ’data wrangling to knock them into shape. We need to take the following into account:</p>
+<p><strong>Step 3.</strong> Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We’ll have to do some ’data wrangling to knock them into shape. We need to take the following into account: 1. Accuracy was calculated as proportion and as such can’t go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values. 2. We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8). 3. Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT). <strong>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</strong></p>
 </blockquote>
-<ol type="1">
-<li><p>Accuracy was calculated as proportion and as such can’t go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values.</p></li>
-<li><p>We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8).</p></li>
-<li><p>Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).</p></li>
-</ol>
-<p>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-4_4636fffe828b34b48bbb662d34ecc261">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK3_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK5_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_ACC =</span> (IAT_BLOCK3_Acc <span class="sc">+</span> IAT_BLOCK5_Acc)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_ACC <span class="sc">&gt;</span> .<span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_RT =</span> IAT_BLOCK5_RT <span class="sc">-</span> IAT_BLOCK3_RT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK3_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK5_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_ACC =</span> (IAT_BLOCK3_Acc <span class="sc">+</span> IAT_BLOCK5_Acc)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_ACC <span class="sc">&gt;</span> .<span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_RT =</span> IAT_BLOCK5_RT <span class="sc">-</span> IAT_BLOCK3_RT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -634,11 +625,11 @@ Recipes
 <p><strong>Step 4.</strong> Calculating descriptive statistics. Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
 </blockquote>
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-5_ceb1c3cf61b583fce8b771af5a9b4db6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>descriptives <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_ACC =</span> <span class="fu">mean</span>(IAT_ACC),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_RT =</span> <span class="fu">mean</span>(IAT_RT),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_VPQ =</span> <span class="fu">mean</span>(VapingQuestionnaireScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>descriptives <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_ACC =</span> <span class="fu">mean</span>(IAT_ACC),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_RT =</span> <span class="fu">mean</span>(IAT_RT),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_VPQ =</span> <span class="fu">mean</span>(VapingQuestionnaireScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Question 4a:</em> Why might these averages be useful? Why are averages not always useful in correlations?</p>
 <blockquote class="blockquote">
@@ -647,7 +638,9 @@ Recipes
 <p><strong>Variable types</strong></p>
 <p><em>Questions 5a:</em> What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?</p>
 <p><strong>Missing data</strong></p>
+<blockquote class="blockquote">
 <p>Remove participants with missing data.</p>
+</blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -677,7 +670,9 @@ Code
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below.</p>
-<pre><code>dat &lt;- read_csv("VapingData.csv")</code></pre>
+<pre><code>dat &lt;- dat %&gt;% 
+  filter(!is.na(VapingQuestionnaireScore)) %&gt;% 
+  filter(!is.na(IAT_RT))</code></pre>
 </div>
 </div>
 </div>
@@ -829,12 +824,12 @@ pvalue &lt;- results %&gt;%
 <p><strong>Step 7.</strong> Write a few sentences in which you report this result, following APA guidelines. Make sure to include the <em>r</em>, df, p-value and an interpretation.</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Step 8.</strong> Intercorrelations. Finally, let’s check whether either implicit or explicit attitude is associated with age. First, let’s create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don’t forget to copy the code below to your script and run it. –&gt;</p>
+<p><strong>Step 8.</strong> Intercorrelations. Finally, let’s check whether either implicit or explicit attitude is associated with age. First, let’s create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don’t forget to copy the code below to your script and run it.</p>
 </blockquote>
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-6_40632df9d10776cc335054ff872fd951">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat_matrix <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, IAT_RT, VapingQuestionnaireScore) <span class="sc">%&gt;%</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(dat_matrix) <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat_matrix <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, IAT_RT, VapingQuestionnaireScore) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(dat_matrix) <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>Now, create a matrix of scatterplots.</p>
@@ -868,7 +863,7 @@ Code
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-7_d75c931960d746fe73fa3616012aff5b">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dat_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dat_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -906,11 +901,11 @@ Code
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell" data-hash="Week12_cache/html/unnamed-chunk-8_f49b1408e41d538e1ee79920d1830ae2">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>intercor_results <span class="ot">&lt;-</span> <span class="fu">correlate</span>(<span class="at">x =</span> dat_matrix, <span class="co"># our data</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">test =</span> <span class="cn">TRUE</span>, <span class="co"># compute p-values</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">corr.method =</span> <span class="st">"spearman"</span>, <span class="co"># run a spearman test </span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>) <span class="co"># use the bonferroni correction</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>intercor_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>intercor_results <span class="ot">&lt;-</span> <span class="fu">correlate</span>(<span class="at">x =</span> dat_matrix, <span class="co"># our data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">test =</span> <span class="cn">TRUE</span>, <span class="co"># compute p-values</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">corr.method =</span> <span class="st">"spearman"</span>, <span class="co"># run a spearman test </span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>) <span class="co"># use the bonferroni correction</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>intercor_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
