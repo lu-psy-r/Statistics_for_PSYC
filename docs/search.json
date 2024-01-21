@@ -705,5 +705,54 @@
     "title": "2. Week 12 - Correlation Part 2",
     "section": "Answers",
     "text": "Answers\nWhen you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. Remember, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. Actively engaging with the material is the way to learn these analysis skills, not by looking at someone else’s completed code…\nThe answers to the questions and the script containing the code will be available after the final lab session has taken place."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#variable-types",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#variable-types",
+    "title": "122_wk12_labActivity2",
+    "section": "Variable types",
+    "text": "Variable types\nQuestions 5a: What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?\nBoth can be considered continuous variables and at least at interval level."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#missing-data",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#missing-data",
+    "title": "122_wk12_labActivity2",
+    "section": "Missing data",
+    "text": "Missing data\n\ndat &lt;- dat %&gt;% \n  filter(!is.na(VapingQuestionnaireScore)) %&gt;% \n  filter(!is.na(IAT_RT))\n\nQuestion 5b How many people had missing data?\nBefore we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#normality",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#normality",
+    "title": "122_wk12_labActivity2",
+    "section": "Normality",
+    "text": "Normality\n\nggplot(dat, aes(x = VapingQuestionnaireScore)) + \n  geom_histogram(binwidth = 10) +\n  theme_bw()\n\n\n\nqqPlot(x = dat$VapingQuestionnaireScore)\n\n\n\n\n[1] 35 95\n\nggplot(dat, aes(x = IAT_RT)) + \n  geom_histogram(binwidth = 10) +\n  theme_bw()\n\n\n\nqqPlot(x = dat$IAT_RT)\n\n\n\n\n[1] 25 54\n\n\nQuestion 5c What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?\nYes. Both histograms resemble a normal distribution (bell curve) and the open circles in the qq-plots fall within the blue stripy lines."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#linearity-and-homoscedasticity",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#linearity-and-homoscedasticity",
+    "title": "122_wk12_labActivity2",
+    "section": "Linearity and homoscedasticity",
+    "text": "Linearity and homoscedasticity\n\nggplot(dat, aes(x = IAT_RT, y = VapingQuestionnaireScore)) + \n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_bw() +\n  labs(x = \"Implicit attitude\", y = \"Explicit attitude\")\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\nQuestion 5d What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?\nThe data look like a cloud without a clear direction. This suggests the relationship might might be weak. In terms of linearity, the scatterplot doesn’t suggest any curvilinear relationships. Variance seems quite constant, but there do seem to be few people with negative IAT_RT (Implicit attitude) scores, suggesting few people held the view that vaping is positive."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#create-a-new-data-frame-that-only-includes-the-relevant-variables",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#create-a-new-data-frame-that-only-includes-the-relevant-variables",
+    "title": "122_wk12_labActivity2",
+    "section": "Create a new data frame that only includes the relevant variables",
+    "text": "Create a new data frame that only includes the relevant variables\n\ndat_matrix &lt;- dat %&gt;%\n  select(Age, IAT_RT, VapingQuestionnaireScore) %&gt;%\n  as.data.frame() # Make sure tell R that dat is a data frame"
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#create-a-matrix-of-scatterplots",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#create-a-matrix-of-scatterplots",
+    "title": "122_wk12_labActivity2",
+    "section": "Create a matrix of scatterplots",
+    "text": "Create a matrix of scatterplots\n\npairs(dat_matrix)\n\n\n\n\nQuestion 8a What do you conclude from the scatterplots?\nThe scatterplots with age suggest that age is highly skewed with only a few participants older than 25. For now, let’s say we’ll therefore calculate Spearman’s rho, rather than Pearson’s r. That is ok for now, but if you were analysing these data for a research project, you’d want to have a closer look at the age variable (think histogram, qq-plot, and think about either collecting more data from older participants or transforming the variable (more about that next year)."
+  },
+  {
+    "objectID": "PSYC122/data/week12/122_wk12_labAct2.html#conduct-intercorrelation-multiple-correlations",
+    "href": "PSYC122/data/week12/122_wk12_labAct2.html#conduct-intercorrelation-multiple-correlations",
+    "title": "122_wk12_labActivity2",
+    "section": "Conduct intercorrelation (multiple correlations)",
+    "text": "Conduct intercorrelation (multiple correlations)\n\nintercor_results &lt;- correlate(x = dat_matrix, # our data\n                          test = TRUE, # compute p-values\n                          corr.method = \"spearman\", # run a spearman test \n                          p.adjust.method = \"bonferroni\") # use the bonferroni correction\nintercor_results\n\n\nCORRELATIONS\n============\n- correlation type:  spearman \n- correlations shown only when both variables are numeric\n\n                            Age    IAT_RT    VapingQuestionnaireScore   \nAge                           .     0.156                      -0.086   \nIAT_RT                    0.156         .                      -0.022   \nVapingQuestionnaireScore -0.086    -0.022                           .   \n\n---\nSignif. codes: . = p &lt; .1, * = p&lt;.05, ** = p&lt;.01, *** = p&lt;.001\n\n\np-VALUES\n========\n- total number of tests run:  3 \n- correction for multiple testing:  bonferroni \n- WARNING: cannot compute exact p-values with ties\n\n                           Age IAT_RT VapingQuestionnaireScore\nAge                          .  0.384                    1.000\nIAT_RT                   0.384      .                    1.000\nVapingQuestionnaireScore 1.000  1.000                        .\n\n\nSAMPLE SIZES\n============\n\n                         Age IAT_RT VapingQuestionnaireScore\nAge                       96     96                       96\nIAT_RT                    96     96                       96\nVapingQuestionnaireScore  96     96                       96\n\n\nQuestion 8b What do you conclude from the results of the correlation analysis?\nNo significant correlation with age was found."
   }
 ]

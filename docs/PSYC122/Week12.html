@@ -475,7 +475,7 @@ If you couldn’t upload files to the server, do this:
 <p>If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the ‘clipboard’ in the top right corner.</p>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-1_294101ea90170d4bd45cfa63ad4400cd">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week12/122_week12_forStudents/VapingData.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"VapingData.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -491,7 +491,7 @@ Cleaning the R environment
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.</p>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-2_34b71615db1ced0ce48a26513e87f7fd">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -510,7 +510,7 @@ Checking your working directory
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the ‘Files’ pane on the right. Does it contain the data file (‘VapingData.csv’)?</p>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-3_e9007669f99df1a85cf078c917d5df90">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/Users/margrietgroen/Library/CloudStorage/OneDrive-LancasterUniversity/mg_work/mg_work_2324/2324_work_teaching/statistics_for_psychologists/PSYC122"</code></pre>
@@ -607,7 +607,7 @@ Code
 <li><p>Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).</p></li>
 </ol>
 <p>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-4_4636fffe828b34b48bbb662d34ecc261">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK3_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK5_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
@@ -633,7 +633,7 @@ Recipes
 <blockquote class="blockquote">
 <p><strong>Step 4.</strong> Calculating descriptive statistics. Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
 </blockquote>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-5_ceb1c3cf61b583fce8b771af5a9b4db6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>descriptives <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_ACC =</span> <span class="fu">mean</span>(IAT_ACC),</span>
@@ -831,7 +831,7 @@ pvalue &lt;- results %&gt;%
 <blockquote class="blockquote">
 <p><strong>Step 8.</strong> Intercorrelations. Finally, let’s check whether either implicit or explicit attitude is associated with age. First, let’s create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don’t forget to copy the code below to your script and run it. –&gt;</p>
 </blockquote>
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-6_40632df9d10776cc335054ff872fd951">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat_matrix <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, IAT_RT, VapingQuestionnaireScore) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(dat_matrix) <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -867,7 +867,7 @@ Code
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-7_d75c931960d746fe73fa3616012aff5b">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dat_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -905,7 +905,7 @@ Code
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-8_f49b1408e41d538e1ee79920d1830ae2">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>intercor_results <span class="ot">&lt;-</span> <span class="fu">correlate</span>(<span class="at">x =</span> dat_matrix, <span class="co"># our data</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">test =</span> <span class="cn">TRUE</span>, <span class="co"># compute p-values</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">corr.method =</span> <span class="st">"spearman"</span>, <span class="co"># run a spearman test </span></span>
