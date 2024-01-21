@@ -148,148 +148,291 @@ Using the histograms and qq-plots below, which of these variables satisfies the 
 
 Why should correlation analysis not be conducted on variables with a curvilinear relationship?
 
-<!-- ### Lab activity 2: Attitudes towards vaping -->
+### Lab activity 2: Attitudes towards vaping
 
-<!-- Great work so far! Now we really want to see what you can do yourself. In this activity we'll use real data on implicit and explicit attitudes towards vaping. You'll need the data file `VapingData.csv` and the R-script `122_wk12_labAct2_template.R` that you downloaded when completing Pre-lab activity 2. -->
+Great work so far! Now we really want to see what you can do yourself. In this activity we'll use real data on implicit and explicit attitudes towards vaping.
 
-<!-- #### Background -->
+#### Background
 
-<!-- **Explicit attitudes** were measured via a questionnaire where higher scores indicated a positive attitude towards vaping (`VapingQuestionaireScore`). **Implicit attitudes** were measured through an Implicit Association Test (IAT) using images of Vaping and Kitchen utensils and associating them with positive and negative words. -->
+**Explicit attitudes** were measured via a questionnaire where higher scores indicated a positive attitude towards vaping (`VapingQuestionaireScore`). **Implicit attitudes** were measured through an Implicit Association Test (IAT) using images of Vaping and Kitchen utensils and associating them with positive and negative words.
 
-<!-- The IAT works on the principal that associations that go together (that are congruent, e.g. warm and sun) should be quicker to respond to than associations that do not go together (that are incongruent, e.g. warm and ice). You can read up more on the procedure on [**the Noba Project**](https://nobaproject.com/modules/research-methods-in-social-psychology) which has a good description of the procedure under the section "Subtle/Nonsconscious Research Methods". -->
+The IAT works on the principal that associations that go together (that are congruent, e.g. warm and sun) should be quicker to respond to than associations that do not go together (that are incongruent, e.g. warm and ice). You can read up more on the procedure on [**the Noba Project**](https://nobaproject.com/modules/research-methods-in-social-psychology) which has a good description of the procedure under the section "Subtle/Nonsconscious Research Methods".
 
-<!-- For this exercise, you need to know that "Block 3" in the experiment tested reaction times and accuracy towards congruent associations, pairing positive words with Kitchen utensils and negative words with Vaping. "Block 5" in the experiment tested reaction times and accuracy towards incongruent associations, pairing positive words with Vaping and negative words with Kitchen Utensils. As such, if reaction times were longer in Block 5 than in Block 3 then people are considered to hold the view that Vaping is negative (i.e. congruent associations are quicker than incongruent associations). However, if reaction times were quicker in Block 5 than in Block 3 then people are considered to hold the view that Vaping is positive (i.e. incongruent associations were quicker than congruent associations). The difference between reaction times in Block5 and Block3 is called the participants' IAT score. -->
+For this exercise, you need to know that "Block 3" in the experiment tested reaction times and accuracy towards congruent associations, pairing positive words with Kitchen utensils and negative words with Vaping. "Block 5" in the experiment tested reaction times and accuracy towards incongruent associations, pairing positive words with Vaping and negative words with Kitchen Utensils. As such, if reaction times were longer in Block 5 than in Block 3 then people are considered to hold the view that Vaping is negative (i.e. congruent associations are quicker than incongruent associations). However, if reaction times were quicker in Block 5 than in Block 3 then people are considered to hold the view that Vaping is positive (i.e. incongruent associations were quicker than congruent associations). The difference between reaction times in Block5 and Block3 is called the participants' IAT score.
 
-<!-- #### Step 0: Clean your environment -->
+::: {.callout-warning} 
+## Before we begin
+Let's put the basics in place:
 
-<!-- Before you do anything else, when starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. You can do this by clicking on the broom icon at the top of the environment window, or you can use the code below. -->
+* Make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
+* You'll need the data file `VapingData.csv` you downloaded when completing Pre-lab activity 2. If you experienced issues with uploading files to the server, follow the instructions below.
+* When starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. 
+* Finally, make sure your working directory is set to the folder in which you have stored the data file (`VapingData.csv`). 
+:::
 
-<!-- > **TASK**: Use the code snippet below to clear the environment. **TIP**: If you hover your mouse over the box that includes the code snippet, a 'copy to clipboard' icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. ![](images/wk2/copy.png) -->
+::: {.callout-important}
+## If you couldn't upload files to the server, do this:
+If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
+:::
 
-<!-- ```{r eval=FALSE} -->
-<!-- rm(list=ls())                             -->
-<!-- ``` -->
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week12/122_week12_forStudents/VapingData.csv?raw=true", destfile = "VapingData.csv")
+```
 
-<!-- #### Step 1: Set your working directory -->
+:::{.callout-tip collapse="true"}
+## Cleaning the R environment
+You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.
 
-<!-- Now, make sure your working directory is set to the folder in which you have stored the data file (`VapingData.csv`). -->
+```{r}
+rm(list=ls())
+```
+:::
 
-<!-- > **TASK**: Use the code snippet below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data file ('VapingData.csv')? -->
+:::{.callout-tip collapse="true"}
+## Checking your working directory
+Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data file ('VapingData.csv')?
 
-<!-- ```{r eval=FALSE} -->
-<!-- getwd() -->
-<!-- ``` -->
+```{r}
+getwd()
+```
 
-<!-- If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'. -->
+If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'.
 
-<!-- ![](images/wk2/more_workingDirectory.png) -->
+![](images/wk2/more_workingDirectory.png)
+:::
 
-<!-- #### Step 2: Load packages -->
+>**Step 1.**  Add the code to load the relevant libraries in a new code chunk. We need the following ones: `broom`, `car`, `Hmisc`, `lsr` and `tidyverse`. If you are unsure, you can look at the 'Hint' below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the 'Code' section below. 
 
-<!-- Before we can get started we need to tell R which libraries to use. For this analysis we'll need `broom`, `car`, `Hmisc`, `lsr` and `tidyverse`. -->
+::: {.callout-tip collapse="true"}
+## Hint
+Use the `library()`function. Remember to put it inside a 'code chunk' in your R Markdown script.
+:::
 
-<!-- > **TASK**: Load the relevant libraries. **HINT**: Use the `library()` function. -->
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+library(broom)
+library(car)
+library(Hmisc)
+library(lsr)
+library(tidyverse)
+```
+:::
 
-<!-- #### Step 3: Read in the data -->
+>**Step 2.** Read in the data. The data file we'll be working with is `VapingData.csv`. Have a look at the layout of the data and familiarise yourself with it. You have 8 columns. Reaction times and Accuracy scores for Blocks 3 and 5 as well as the Explicit Vaping Questionnaire scores, Sex and Age, for each participant. 
 
-<!-- The data file we'll be working with is `VapingData.csv` -->
+*Question 2a:* For how many participants do we have data?
 
-<!-- > **TASK**: Read in the data file (using the `read_csv()` function) and store it in an object called `dat`. Have a look at the layout of the data and familiarise yourself with it. You have 8 columns. Reaction times and Accuracy scores for Blocks 3 and 5 as well as the Explicit Vaping Questionnaire scores, Sex and Age, for each participant. -->
+::: {.callout-tip collapse="true"}
+## Hint
+Use the `read_csv()`function.
+:::
 
-<!-- **QUESTION 1:** For how many participants do we have data? -->
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+dat <- read_csv("VapingData.csv")
+```
+:::
 
-<!-- #### Step 4: Data wrangling -->
+>**Step 3.** Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We'll have to do some 'data wrangling to knock them into shape. We need to take the following into account:
 
-<!-- The data are not in a shape yet that we can actually use for our analysis. We'll have to do some 'data wrangling to knock them into shape. We need to take the following into account: -->
+1.  Accuracy was calculated as proportion and as such can't go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values.
 
-<!-- 1.  Accuracy was calculated as proportion and as such can't go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values. -->
+2.  We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8).
 
-<!-- 2.  We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8). -->
+3.  Now that we have removed data points that were the result of data entry mistakes or came from participants who didn't pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).
 
-<!-- 3.  Now that we have removed data points that were the result of data entry mistakes or came from participants who didn't pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT). -->
+Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.
 
-<!-- > **TASK**: Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does. -->
+```{r eval=FALSE}
+dat <- dat %>%
+  filter(IAT_BLOCK3_Acc < 1) %>%
+  filter(IAT_BLOCK5_Acc < 1) %>%
+  mutate(IAT_ACC = (IAT_BLOCK3_Acc + IAT_BLOCK5_Acc)/2) %>%
+  filter(IAT_ACC > .8) %>%
+  mutate(IAT_RT = IAT_BLOCK5_RT - IAT_BLOCK3_RT)
+```
 
-<!-- ```{r eval=FALSE} -->
-<!-- dat <- dat %>%  -->
-<!--   filter(IAT_BLOCK3_Acc < 1) %>% -->
-<!--   filter(IAT_BLOCK5_Acc < 1) %>% -->
-<!--   mutate(IAT_ACC = (IAT_BLOCK3_Acc + IAT_BLOCK5_Acc)/2) %>% -->
-<!--   filter(IAT_ACC > .8) %>% -->
-<!--   mutate(IAT_RT = IAT_BLOCK5_RT - IAT_BLOCK3_RT) -->
-<!-- ``` -->
+::: {.callout-tip}
+## Recipes
+You might want to revisit the 'recipes' for `filter()` and `mutate()` we looked at in pre-lab activity 1 (here @sec-wk12-prelab-activities) to remind yourself what these functions do and how to use them.
+:::
 
-<!-- **QUESTION 2:** For how many participants do we have data now that we have cleaned them up? -->
+*Question 3a:* For how many participants do we have data now that we have cleaned them up?
 
-<!-- **QUESTION 3:** Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? What does a negative IAT_RT score reflect? What does a higher score on the 'VapingQuestionnaireScore' mean? -->
+*Question 3b:* Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? What does a negative IAT_RT score reflect? What does a higher score on the 'VapingQuestionnaireScore' mean?
 
-<!-- #### Step 5: Calculating descriptive statistics -->
+>**Step 4.** Calculating descriptive statistics. Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.
 
-<!-- Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. -->
+```{r eval=FALSE}
+descriptives <- dat %>%
+  summarise(n = n(),
+            mean_IAT_ACC = mean(IAT_ACC),
+            mean_IAT_RT = mean(IAT_RT),
+            mean_VPQ = mean(VapingQuestionnaireScore, na.rm = TRUE))
+```
 
-<!-- > **TASK**: Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does. -->
+*Question 4a:* Why might these averages be useful? Why are averages not always useful in correlations?
 
-<!-- ```{r eval=FALSE} -->
-<!-- descriptives <- dat %>% -->
-<!--   summarise(n = n(), -->
-<!--             mean_IAT_ACC = mean(IAT_ACC), -->
-<!--             mean_IAT_RT = mean(IAT_RT), -->
-<!--             mean_VPQ = mean(VapingQuestionnaireScore, na.rm = TRUE)) -->
-<!-- ``` -->
+>**Step 5.** Check the assumptions.
 
-<!-- **QUESTION 4:** Why might these averages be useful? Why are averages not always useful in correlations? -->
+**Variable types**
 
-<!-- #### Step 6: Check the assumptions -->
+*Questions 5a:* What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?
 
-<!-- **Variable types** -->
+**Missing data**
 
-<!-- **QUESTION 5:** What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables? -->
+Remove participants with missing data.
 
-<!-- **Missing data** -->
+:::{.callout-tip collapse="true"}
+## Hint
+Use the `filter()` function and the `is.na()` function.
+:::
 
-<!-- > **TASK**: Remove participants with missing data. **HINT**: Use the `filter()` function and the `is.na()` function -->
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+dat <- read_csv("VapingData.csv")
+```
+:::
 
-<!-- **QUESTION 6:** How many people had missing data? -->
+*Question 5b* How many people had missing data?
 
-<!-- **Normality** -->
+**Normality**
 
-<!-- > **TASK**: Create histograms and qq-plots for the `IAT_RT` and `VapingQuestionnaireScore` variables. **HINT**: Use the `ggplot()` function with `geom_histogram()` and use the `qqPlot()` function (note the capital P) -->
+> Create histograms and qq-plots for the `IAT_RT` and `VapingQuestionnaireScore` variables.
 
-<!-- **QUESTION 7:** What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed? -->
+:::{.callout-tip collapse="true"}
+## Hint
+Use the `ggplot()` function with `geom_histogram()` and use the `qqPlot()` function (note the capital P).
+:::
 
-<!-- **Linearity and homoscedasticity** -->
+::: {.callout-tip collapse="true"}
+## Code
+The code to do this is below. 
+```
+ggplot(dat, aes(x = VapingQuestionnaireScore)) + 
+  geom_histogram(binwidth = 10) +
+  theme_bw()
 
-<!-- > **TASK**: Plot the relationship between IAT_RT and VapingQuestionnaireScore using a scatterplot and a line of best fit. **HINT**: For this you'll need the `ggplot()` function together with `geom_point()` and `geom_smooth()`. Make sure to give your axes some sensible labels. -->
+qqPlot(x = dat$VapingQuestionnaireScore)
 
-<!-- **QUESTION 8:** What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)? -->
+ggplot(dat, aes(x = IAT_RT)) + 
+  geom_histogram(binwidth = 10) +
+  theme_bw()
 
-<!-- #### Step 7: Conduct a correlation analysis -->
+qqPlot(x = dat$IAT_RT)
+```
+:::
 
-<!-- **QUESTION 9:** Do you need to calculate Pearson's r or Spearman's rho? -->
+*Question 5c* What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?
 
-<!-- > **TASK**: Conduct a correlation analysis. **HINT**: Use the `cor.test()` function. You may want to use the `pull()` and the `round()` functions to get the numbers out. -->
+**Linearity and homoscedasticity**
 
-<!-- **QUESTION 10:** Can you write up the results including the r, df, p-value and an interpretation? -->
+> Plot the relationship between IAT_RT and VapingQuestionnaireScore using a scatterplot and a line of best fit.
 
-<!-- #### Step 8: Intercorrelations -->
+:::{.callout-tip collapse="true"}
+## Hint
+For this you'll need the `ggplot()` function together with `geom_point()` and `geom_smooth()`. Make sure to give your axes some sensible labels.
+:::
 
-<!-- Finally, let's check whether either implicit or explicit attitude is associated with age. -->
+:::{.callout-tip collapse="true"}
+## Code
+```
+ggplot(dat, aes(x = IAT_RT, y = VapingQuestionnaireScore)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw() +
+  labs(x = "Implicit attitude", y = "Explicit attitude")
+```
+:::
 
-<!-- First, let's create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don't forget to copy the code below to your script and run it. -->
+*Question 5d* What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?
 
-<!-- ```{r eval=FALSE} -->
-<!-- dat_matrix <- dat %>% -->
-<!--   select(Age, IAT_RT, VapingQuestionnaireScore) %>% -->
-<!--   as.data.frame(dat_matrix) # Make sure tell R that dat is a data frame -->
-<!-- ``` -->
+>**Step 6.** Conduct a correlation analysis.
 
-<!-- > **TASK**: Now, create a matrix of scatterplots. **HINT**: Use the `pairs()` function. -->
+*Question 6a* Do you need to calculate Pearson's *r* or Spearman's *rho*? Why?
 
-<!-- **QUESTION 11:** What do you conclude from the scatterplots? -->
+:::{.callout-tip collapse="true"}
+## Hint
+Use the `cor.test()` function. You may want to use the `pull()` and the `round()` functions to get the numbers out.
+:::
 
-<!-- > **TASK**: Finally, conduct intercorrelation (multiple correlations). **HINT**: Use the `correlate()` function. Do you need Pearson's *r* or Spearman's *rho*? Have you adjusted for multiple comparisons? -->
+:::{.callout-tip collapse="true"}
+## Code
+```
+results <- cor.test(dat$VapingQuestionnaireScore, 
+                    dat$IAT_RT, 
+                    method = "pearson") %>% 
+  tidy()
 
-<!-- **QUESTION 12:** What do you conclude from the results of the correlation analysis? -->
+results
+
+correlation <- results %>% 
+  pull(estimate) %>%
+  round(2)
+
+df <- results %>% 
+  pull(parameter) %>%
+  round(0)
+
+pvalue <- results %>% 
+  pull(p.value) %>%
+  round(3)
+```
+:::
+
+*Question 6b* Is the correlation significant?
+
+>**Step 7.** Write a few sentences in which you report this result, following APA guidelines. Make sure to include the *r*, df, p-value and an interpretation.
+
+>**Step 8.** Intercorrelations. Finally, let's check whether either implicit or explicit attitude is associated with age. First, let's create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don't forget to copy the code below to your script and run it. -->
+
+```{r eval=FALSE}
+dat_matrix <- dat %>%
+  select(Age, IAT_RT, VapingQuestionnaireScore) %>%
+  as.data.frame(dat_matrix) # Make sure tell R that dat is a data frame
+```
+
+> Now, create a matrix of scatterplots.
+
+:::{.callout-tip collapse="true"}
+## Hint
+Use the `pairs()` function.
+:::
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r eval=FALSE}
+pairs(dat_matrix)
+```
+:::
+
+*Question 8a* What do you conclude from the scatterplots?
+
+> Finally, conduct intercorrelation (multiple correlations). 
+
+:::{.callout-tip collapse="true"}
+## Hint
+Use the `correlate()` function. Do you need Pearson's *r* or Spearman's *rho*? Have you adjusted for multiple comparisons?
+:::
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r eval=FALSE}
+intercor_results <- correlate(x = dat_matrix, # our data
+                          test = TRUE, # compute p-values
+                          corr.method = "spearman", # run a spearman test 
+                          p.adjust.method = "bonferroni") # use the bonferroni correction
+intercor_results
+```
+:::
+
+*Question 8b* What do you conclude from the results of the correlation analysis? 
 
 ## Answers
 
@@ -336,32 +479,32 @@ The answers to the questions and the script containing the code will be availabl
 
 <!-- ### Lab activity 2 -->
 
-<!-- You can download the R-script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](data/week12/122_wk12_labAct2.R). -->
+<!-- You can download the R-Markdown script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](data/week12/122_wk12_labAct2.Rmd). -->
 
-<!-- 1.  For how many participants do we have data?  -->
+<!-- Question 2a.  For how many participants do we have data?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **There are 166 observations, so we have data for 166 participants. You can see this in the Environment window in the top right. This does not tell us whether any of these participants have any missing data.** -->
 <!-- ::: -->
 
-<!-- 2.  For how many participants do we have data now that we have cleaned them up?  -->
+<!-- Question 3a.  For how many participants do we have data now that we have cleaned them up?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **104 participants** -->
 <!-- ::: -->
 
-<!-- 3.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect?  -->
+<!-- Question 3b.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations)**  -->
+<!-- **People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations).**  -->
 <!-- ::: -->
 
 <!-- What does a negative IAT_RT score reflect? -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ::: -->
 <!--  **People with a negative IAT_RT are considered to hold the implicit view that vaping is positive (i.e. incongruent associations were quicker than congruent associations).** -->
@@ -369,72 +512,79 @@ The answers to the questions and the script containing the code will be availabl
 
 <!--  What does a higher score on the 'VapingQuestionnaireScore' mean?  -->
 
-<!--  ::: {.callout-warning icon=false collapse="true"} -->
+<!--  ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ::: -->
 <!-- **Higher scores indicated a positive explicit attitude towards vaping.** -->
 <!-- ::: -->
 
-<!-- 4.  Why might these averages be useful? Why are averages not always useful in correlations?  -->
+<!-- Question 4a.  Why might these averages be useful? Why are averages not always useful in correlations?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **It is always worth thinking about which averages are informative and which are not. Knowing the average explicit attitude towards vaping could well be informative. In contrast, if you are using an ordinal scale and people use the whole of the scale then the average may just tell you the middle of the scale you are using - which you already know and really isn't that informative. So it is always worth thinking about what your descriptives are calculating.** -->
 <!-- ::: -->
 
-<!-- 5.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?  -->
+<!-- Question 5a.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Both can be considered continuous variables and at least at interval level.** -->
 <!-- ::: -->
 
-<!-- 6.  How many people had missing data?  -->
+<!-- Question 5b.  How many people had missing data?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **8. Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.** -->
+<!-- **Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.** -->
 <!-- ::: -->
 
-<!-- 7.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?  -->
+<!-- Question 5c.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Yes. Both histograms resemble a normal distribution (bell curve) and the open circles in the qq-plots fall within the blue stripy lines.** -->
 <!-- ::: -->
 
-<!-- 8.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?  -->
+<!-- Question 5d.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **The data look like a cloud without a clear direction. This suggests the relationship might might be weak. In terms of linearity, the scatterplot doesn't suggest any curvilinear relationships. Variance seems quite constant, but there do seem to be few people with negative IAT_RT (Implicit attitude) scores, suggesting few people held the view that vaping is positive.** -->
 <!-- ::: -->
 
-<!-- 9.  Do you need to calculate Pearson's r or Spearman's rho?  -->
+<!-- Question 6a.  Do you need to calculate Pearson's *r* or Spearman's *rho*?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **Pearson's r because the data do meet the assumptions.** -->
+<!-- **Pearson's *r* because the data do meet the assumptions.** -->
 <!-- ::: -->
 
-<!-- 10. Can you write up the results including the r, df, p-value and an interpretation?  -->
+<!-- Question 6b.  Is the correlation significant? -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **No, *p* = .822, which is larger than .05.** -->
+<!-- ::: -->
+
+<!-- Write a few sentences in which you report this result, following APA guidelines. Make sure to include the *r*, df, p-value and an interpretation.  -->
+
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Testing the hypothesis of a relationship between implicit and explicit attitudes towards vaping, a Pearson correlation found no significant relationship between IAT reaction times (implicit attitude) and answers on a Vaping Questionnaire (explicit attitude), *r*(94) = -.02, *p* = .822. Overall this suggests that there is no direct relationship between implicit and explicit attitudes with regard to vaping and as such our hypothesis was not supported; we cannot reject the null hypothesis.** -->
 <!-- ::: -->
 
-<!-- 11. What do you conclude from the scatterplots?  -->
+<!-- Question 8a. What do you conclude from the scatterplots?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **The scatterplots with age suggest that age is highly skewed with only a few participants older than 25. For now, let's say we'll therefore calculate Spearman's rho, rather than Pearson's *r*. That is ok for now, but if you were analysing these data for a research project, you'd want to have a closer look at the age variable (think histogram, qq-plot, and think about either collecting more data from older participants or transforming the variable (more about that next year).** -->
 <!-- ::: -->
 
 
-<!-- 12. What do you conclude from the results of the correlation analysis?  -->
+<!-- Question 8b. What do you conclude from the results of the correlation analysis?  -->
 
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **No significant correlation with age was found.** -->
 <!-- ::: -->

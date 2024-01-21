@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -232,6 +266,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#sec-wk12-labactivities" id="toc-sec-wk12-labactivities" class="nav-link" data-scroll-target="#sec-wk12-labactivities">Lab activities</a>
   <ul class="collapse">
   <li><a href="#lab-activity-1-assumptions-of-correlation-analysis" id="toc-lab-activity-1-assumptions-of-correlation-analysis" class="nav-link" data-scroll-target="#lab-activity-1-assumptions-of-correlation-analysis">Lab activity 1: Assumptions of Correlation Analysis</a></li>
+  <li><a href="#lab-activity-2-attitudes-towards-vaping" id="toc-lab-activity-2-attitudes-towards-vaping" class="nav-link" data-scroll-target="#lab-activity-2-attitudes-towards-vaping">Lab activity 2: Attitudes towards vaping</a></li>
   </ul></li>
   <li><a href="#answers" id="toc-answers" class="nav-link" data-scroll-target="#answers">Answers</a></li>
   </ul>
@@ -398,88 +433,489 @@ If you have difficulty uploading files to the server
 <section id="question-4" class="level4">
 <h4 class="anchored" data-anchor-id="question-4">Question 4</h4>
 <p>Why should correlation analysis not be conducted on variables with a curvilinear relationship?</p>
-<!-- ### Lab activity 2: Attitudes towards vaping -->
-<!-- Great work so far! Now we really want to see what you can do yourself. In this activity we'll use real data on implicit and explicit attitudes towards vaping. You'll need the data file `VapingData.csv` and the R-script `122_wk12_labAct2_template.R` that you downloaded when completing Pre-lab activity 2. -->
-<!-- #### Background -->
-<!-- **Explicit attitudes** were measured via a questionnaire where higher scores indicated a positive attitude towards vaping (`VapingQuestionaireScore`). **Implicit attitudes** were measured through an Implicit Association Test (IAT) using images of Vaping and Kitchen utensils and associating them with positive and negative words. -->
-<!-- The IAT works on the principal that associations that go together (that are congruent, e.g. warm and sun) should be quicker to respond to than associations that do not go together (that are incongruent, e.g. warm and ice). You can read up more on the procedure on [**the Noba Project**](https://nobaproject.com/modules/research-methods-in-social-psychology) which has a good description of the procedure under the section "Subtle/Nonsconscious Research Methods". -->
-<!-- For this exercise, you need to know that "Block 3" in the experiment tested reaction times and accuracy towards congruent associations, pairing positive words with Kitchen utensils and negative words with Vaping. "Block 5" in the experiment tested reaction times and accuracy towards incongruent associations, pairing positive words with Vaping and negative words with Kitchen Utensils. As such, if reaction times were longer in Block 5 than in Block 3 then people are considered to hold the view that Vaping is negative (i.e. congruent associations are quicker than incongruent associations). However, if reaction times were quicker in Block 5 than in Block 3 then people are considered to hold the view that Vaping is positive (i.e. incongruent associations were quicker than congruent associations). The difference between reaction times in Block5 and Block3 is called the participants' IAT score. -->
-<!-- #### Step 0: Clean your environment -->
-<!-- Before you do anything else, when starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. You can do this by clicking on the broom icon at the top of the environment window, or you can use the code below. -->
-<!-- > **TASK**: Use the code snippet below to clear the environment. **TIP**: If you hover your mouse over the box that includes the code snippet, a 'copy to clipboard' icon will appear in the top right corner of the box. Click that to copy the code. Now you can easily paste it into your script. ![](images/wk2/copy.png) -->
-<!-- ```{r eval=FALSE} -->
-<!-- rm(list=ls())                             -->
-<!-- ``` -->
-<!-- #### Step 1: Set your working directory -->
-<!-- Now, make sure your working directory is set to the folder in which you have stored the data file (`VapingData.csv`). -->
-<!-- > **TASK**: Use the code snippet below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data file ('VapingData.csv')? -->
-<!-- ```{r eval=FALSE} -->
-<!-- getwd() -->
-<!-- ``` -->
-<!-- If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'. -->
-<!-- ![](images/wk2/more_workingDirectory.png) -->
-<!-- #### Step 2: Load packages -->
-<!-- Before we can get started we need to tell R which libraries to use. For this analysis we'll need `broom`, `car`, `Hmisc`, `lsr` and `tidyverse`. -->
-<!-- > **TASK**: Load the relevant libraries. **HINT**: Use the `library()` function. -->
-<!-- #### Step 3: Read in the data -->
-<!-- The data file we'll be working with is `VapingData.csv` -->
-<!-- > **TASK**: Read in the data file (using the `read_csv()` function) and store it in an object called `dat`. Have a look at the layout of the data and familiarise yourself with it. You have 8 columns. Reaction times and Accuracy scores for Blocks 3 and 5 as well as the Explicit Vaping Questionnaire scores, Sex and Age, for each participant. -->
-<!-- **QUESTION 1:** For how many participants do we have data? -->
-<!-- #### Step 4: Data wrangling -->
-<!-- The data are not in a shape yet that we can actually use for our analysis. We'll have to do some 'data wrangling to knock them into shape. We need to take the following into account: -->
-<!-- 1.  Accuracy was calculated as proportion and as such can't go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values. -->
-<!-- 2.  We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8). -->
-<!-- 3.  Now that we have removed data points that were the result of data entry mistakes or came from participants who didn't pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT). -->
-<!-- > **TASK**: Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does. -->
-<!-- ```{r eval=FALSE} -->
-<!-- dat <- dat %>%  -->
-<!--   filter(IAT_BLOCK3_Acc < 1) %>% -->
-<!--   filter(IAT_BLOCK5_Acc < 1) %>% -->
-<!--   mutate(IAT_ACC = (IAT_BLOCK3_Acc + IAT_BLOCK5_Acc)/2) %>% -->
-<!--   filter(IAT_ACC > .8) %>% -->
-<!--   mutate(IAT_RT = IAT_BLOCK5_RT - IAT_BLOCK3_RT) -->
-<!-- ``` -->
-<!-- **QUESTION 2:** For how many participants do we have data now that we have cleaned them up? -->
-<!-- **QUESTION 3:** Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? What does a negative IAT_RT score reflect? What does a higher score on the 'VapingQuestionnaireScore' mean? -->
-<!-- #### Step 5: Calculating descriptive statistics -->
-<!-- Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. -->
-<!-- > **TASK**: Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does. -->
-<!-- ```{r eval=FALSE} -->
-<!-- descriptives <- dat %>% -->
-<!--   summarise(n = n(), -->
-<!--             mean_IAT_ACC = mean(IAT_ACC), -->
-<!--             mean_IAT_RT = mean(IAT_RT), -->
-<!--             mean_VPQ = mean(VapingQuestionnaireScore, na.rm = TRUE)) -->
-<!-- ``` -->
-<!-- **QUESTION 4:** Why might these averages be useful? Why are averages not always useful in correlations? -->
-<!-- #### Step 6: Check the assumptions -->
-<!-- **Variable types** -->
-<!-- **QUESTION 5:** What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables? -->
-<!-- **Missing data** -->
-<!-- > **TASK**: Remove participants with missing data. **HINT**: Use the `filter()` function and the `is.na()` function -->
-<!-- **QUESTION 6:** How many people had missing data? -->
-<!-- **Normality** -->
-<!-- > **TASK**: Create histograms and qq-plots for the `IAT_RT` and `VapingQuestionnaireScore` variables. **HINT**: Use the `ggplot()` function with `geom_histogram()` and use the `qqPlot()` function (note the capital P) -->
-<!-- **QUESTION 7:** What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed? -->
-<!-- **Linearity and homoscedasticity** -->
-<!-- > **TASK**: Plot the relationship between IAT_RT and VapingQuestionnaireScore using a scatterplot and a line of best fit. **HINT**: For this you'll need the `ggplot()` function together with `geom_point()` and `geom_smooth()`. Make sure to give your axes some sensible labels. -->
-<!-- **QUESTION 8:** What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)? -->
-<!-- #### Step 7: Conduct a correlation analysis -->
-<!-- **QUESTION 9:** Do you need to calculate Pearson's r or Spearman's rho? -->
-<!-- > **TASK**: Conduct a correlation analysis. **HINT**: Use the `cor.test()` function. You may want to use the `pull()` and the `round()` functions to get the numbers out. -->
-<!-- **QUESTION 10:** Can you write up the results including the r, df, p-value and an interpretation? -->
-<!-- #### Step 8: Intercorrelations -->
-<!-- Finally, let's check whether either implicit or explicit attitude is associated with age. -->
-<!-- First, let's create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don't forget to copy the code below to your script and run it. -->
-<!-- ```{r eval=FALSE} -->
-<!-- dat_matrix <- dat %>% -->
-<!--   select(Age, IAT_RT, VapingQuestionnaireScore) %>% -->
-<!--   as.data.frame(dat_matrix) # Make sure tell R that dat is a data frame -->
-<!-- ``` -->
-<!-- > **TASK**: Now, create a matrix of scatterplots. **HINT**: Use the `pairs()` function. -->
-<!-- **QUESTION 11:** What do you conclude from the scatterplots? -->
-<!-- > **TASK**: Finally, conduct intercorrelation (multiple correlations). **HINT**: Use the `correlate()` function. Do you need Pearson's *r* or Spearman's *rho*? Have you adjusted for multiple comparisons? -->
-<!-- **QUESTION 12:** What do you conclude from the results of the correlation analysis? -->
+</section>
+</section>
+<section id="lab-activity-2-attitudes-towards-vaping" class="level3">
+<h3 class="anchored" data-anchor-id="lab-activity-2-attitudes-towards-vaping">Lab activity 2: Attitudes towards vaping</h3>
+<p>Great work so far! Now we really want to see what you can do yourself. In this activity we’ll use real data on implicit and explicit attitudes towards vaping.</p>
+<section id="background" class="level4">
+<h4 class="anchored" data-anchor-id="background">Background</h4>
+<p><strong>Explicit attitudes</strong> were measured via a questionnaire where higher scores indicated a positive attitude towards vaping (<code>VapingQuestionaireScore</code>). <strong>Implicit attitudes</strong> were measured through an Implicit Association Test (IAT) using images of Vaping and Kitchen utensils and associating them with positive and negative words.</p>
+<p>The IAT works on the principal that associations that go together (that are congruent, e.g.&nbsp;warm and sun) should be quicker to respond to than associations that do not go together (that are incongruent, e.g.&nbsp;warm and ice). You can read up more on the procedure on <a href="https://nobaproject.com/modules/research-methods-in-social-psychology"><strong>the Noba Project</strong></a> which has a good description of the procedure under the section “Subtle/Nonsconscious Research Methods”.</p>
+<p>For this exercise, you need to know that “Block 3” in the experiment tested reaction times and accuracy towards congruent associations, pairing positive words with Kitchen utensils and negative words with Vaping. “Block 5” in the experiment tested reaction times and accuracy towards incongruent associations, pairing positive words with Vaping and negative words with Kitchen Utensils. As such, if reaction times were longer in Block 5 than in Block 3 then people are considered to hold the view that Vaping is negative (i.e.&nbsp;congruent associations are quicker than incongruent associations). However, if reaction times were quicker in Block 5 than in Block 3 then people are considered to hold the view that Vaping is positive (i.e.&nbsp;incongruent associations were quicker than congruent associations). The difference between reaction times in Block5 and Block3 is called the participants’ IAT score.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before we begin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let’s put the basics in place:</p>
+<ul>
+<li>Make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 (<a href="https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown">here</a>).</li>
+<li>You’ll need the data file <code>VapingData.csv</code> you downloaded when completing Pre-lab activity 2. If you experienced issues with uploading files to the server, follow the instructions below.</li>
+<li>When starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one.</li>
+<li>Finally, make sure your working directory is set to the folder in which you have stored the data file (<code>VapingData.csv</code>).</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you couldn’t upload files to the server, do this:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the ‘clipboard’ in the top right corner.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week12/122_week12_forStudents/VapingData.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"VapingData.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cleaning the R environment
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Checking your working directory
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the ‘Files’ pane on the right. Does it contain the data file (‘VapingData.csv’)?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/margrietgroen/Library/CloudStorage/OneDrive-LancasterUniversity/mg_work/mg_work_2324/2324_work_teaching/statistics_for_psychologists/PSYC122"</code></pre>
+</div>
+</div>
+<p>If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the ‘Files’ pane, click ‘More’ and then on ‘Set as working directory’.</p>
+<p><img src="images/wk2/more_workingDirectory.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Step 1.</strong> Add the code to load the relevant libraries in a new code chunk. We need the following ones: <code>broom</code>, <code>car</code>, <code>Hmisc</code>, <code>lsr</code> and <code>tidyverse</code>. If you are unsure, you can look at the ‘Hint’ below for a clue by expanding it. After that, if you are still unsure, you can view the code by expanding the ‘Code’ section below.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>library()</code>function. Remember to put it inside a ‘code chunk’ in your R Markdown script.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code to do this is below.</p>
+<pre><code>library(broom)
+library(car)
+library(Hmisc)
+library(lsr)
+library(tidyverse)</code></pre>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Step 2.</strong> Read in the data. The data file we’ll be working with is <code>VapingData.csv</code>. Have a look at the layout of the data and familiarise yourself with it. You have 8 columns. Reaction times and Accuracy scores for Blocks 3 and 5 as well as the Explicit Vaping Questionnaire scores, Sex and Age, for each participant.</p>
+</blockquote>
+<p><em>Question 2a:</em> For how many participants do we have data?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>read_csv()</code>function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code to do this is below.</p>
+<pre><code>dat &lt;- read_csv("VapingData.csv")</code></pre>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Step 3.</strong> Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We’ll have to do some ’data wrangling to knock them into shape. We need to take the following into account:</p>
+</blockquote>
+<ol type="1">
+<li><p>Accuracy was calculated as proportion and as such can’t go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values.</p></li>
+<li><p>We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8).</p></li>
+<li><p>Now that we have removed data points that were the result of data entry mistakes or came from participants who didn’t pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).</p></li>
+</ol>
+<p>Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK3_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_BLOCK5_Acc <span class="sc">&lt;</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_ACC =</span> (IAT_BLOCK3_Acc <span class="sc">+</span> IAT_BLOCK5_Acc)<span class="sc">/</span><span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(IAT_ACC <span class="sc">&gt;</span> .<span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">IAT_RT =</span> IAT_BLOCK5_RT <span class="sc">-</span> IAT_BLOCK3_RT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recipes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might want to revisit the ‘recipes’ for <code>filter()</code> and <code>mutate()</code> we looked at in pre-lab activity 1 (here <a href="#sec-wk12-prelab-activities">Section&nbsp;3</a>) to remind yourself what these functions do and how to use them.</p>
+</div>
+</div>
+<p><em>Question 3a:</em> For how many participants do we have data now that we have cleaned them up?</p>
+<p><em>Question 3b:</em> Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect? What does a negative IAT_RT score reflect? What does a higher score on the ‘VapingQuestionnaireScore’ mean?</p>
+<blockquote class="blockquote">
+<p><strong>Step 4.</strong> Calculating descriptive statistics. Now that we have the variables that we need and the data cleaned up, we will create a descriptives summary of the number of people, and the means for the IAT and Vaping Questionnaire Score. Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>descriptives <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_ACC =</span> <span class="fu">mean</span>(IAT_ACC),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_IAT_RT =</span> <span class="fu">mean</span>(IAT_RT),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_VPQ =</span> <span class="fu">mean</span>(VapingQuestionnaireScore, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><em>Question 4a:</em> Why might these averages be useful? Why are averages not always useful in correlations?</p>
+<blockquote class="blockquote">
+<p><strong>Step 5.</strong> Check the assumptions.</p>
+</blockquote>
+<p><strong>Variable types</strong></p>
+<p><em>Questions 5a:</em> What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?</p>
+<p><strong>Missing data</strong></p>
+<p>Remove participants with missing data.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>filter()</code> function and the <code>is.na()</code> function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code to do this is below.</p>
+<pre><code>dat &lt;- read_csv("VapingData.csv")</code></pre>
+</div>
+</div>
+</div>
+<p><em>Question 5b</em> How many people had missing data?</p>
+<p><strong>Normality</strong></p>
+<blockquote class="blockquote">
+<p>Create histograms and qq-plots for the <code>IAT_RT</code> and <code>VapingQuestionnaireScore</code> variables.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>ggplot()</code> function with <code>geom_histogram()</code> and use the <code>qqPlot()</code> function (note the capital P).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code to do this is below.</p>
+<pre><code>ggplot(dat, aes(x = VapingQuestionnaireScore)) + 
+  geom_histogram(binwidth = 10) +
+  theme_bw()
+
+qqPlot(x = dat$VapingQuestionnaireScore)
+
+ggplot(dat, aes(x = IAT_RT)) + 
+  geom_histogram(binwidth = 10) +
+  theme_bw()
+
+qqPlot(x = dat$IAT_RT)</code></pre>
+</div>
+</div>
+</div>
+<p><em>Question 5c</em> What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?</p>
+<p><strong>Linearity and homoscedasticity</strong></p>
+<blockquote class="blockquote">
+<p>Plot the relationship between IAT_RT and VapingQuestionnaireScore using a scatterplot and a line of best fit.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For this you’ll need the <code>ggplot()</code> function together with <code>geom_point()</code> and <code>geom_smooth()</code>. Make sure to give your axes some sensible labels.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>ggplot(dat, aes(x = IAT_RT, y = VapingQuestionnaireScore)) + 
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  theme_bw() +
+  labs(x = "Implicit attitude", y = "Explicit attitude")</code></pre>
+</div>
+</div>
+</div>
+<p><em>Question 5d</em> What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?</p>
+<blockquote class="blockquote">
+<p><strong>Step 6.</strong> Conduct a correlation analysis.</p>
+</blockquote>
+<p><em>Question 6a</em> Do you need to calculate Pearson’s <em>r</em> or Spearman’s <em>rho</em>? Why?</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>cor.test()</code> function. You may want to use the <code>pull()</code> and the <code>round()</code> functions to get the numbers out.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<pre><code>results &lt;- cor.test(dat$VapingQuestionnaireScore, 
+                    dat$IAT_RT, 
+                    method = "pearson") %&gt;% 
+  tidy()
+
+results
+
+correlation &lt;- results %&gt;% 
+  pull(estimate) %&gt;%
+  round(2)
+
+df &lt;- results %&gt;% 
+  pull(parameter) %&gt;%
+  round(0)
+
+pvalue &lt;- results %&gt;% 
+  pull(p.value) %&gt;%
+  round(3)</code></pre>
+</div>
+</div>
+</div>
+<p><em>Question 6b</em> Is the correlation significant?</p>
+<blockquote class="blockquote">
+<p><strong>Step 7.</strong> Write a few sentences in which you report this result, following APA guidelines. Make sure to include the <em>r</em>, df, p-value and an interpretation.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Step 8.</strong> Intercorrelations. Finally, let’s check whether either implicit or explicit attitude is associated with age. First, let’s create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don’t forget to copy the code below to your script and run it. –&gt;</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat_matrix <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, IAT_RT, VapingQuestionnaireScore) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(dat_matrix) <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<blockquote class="blockquote">
+<p>Now, create a matrix of scatterplots.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>pairs()</code> function.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(dat_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p><em>Question 8a</em> What do you conclude from the scatterplots?</p>
+<blockquote class="blockquote">
+<p>Finally, conduct intercorrelation (multiple correlations).</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Use the <code>correlate()</code> function. Do you need Pearson’s <em>r</em> or Spearman’s <em>rho</em>? Have you adjusted for multiple comparisons?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>intercor_results <span class="ot">&lt;-</span> <span class="fu">correlate</span>(<span class="at">x =</span> dat_matrix, <span class="co"># our data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">test =</span> <span class="cn">TRUE</span>, <span class="co"># compute p-values</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">corr.method =</span> <span class="st">"spearman"</span>, <span class="co"># run a spearman test </span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">p.adjust.method =</span> <span class="st">"bonferroni"</span>) <span class="co"># use the bonferroni correction</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>intercor_results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p><em>Question 8b</em> What do you conclude from the results of the correlation analysis?</p>
 </section>
 </section>
 </section>
@@ -514,76 +950,81 @@ If you have difficulty uploading files to the server
 <!-- **May be subject to a type 2 error - there actually is a relationship between variables yet we reject the null hypothesis. As the relationship is not linear, correlation analysis will not identify this.** -->
 <!-- ::: -->
 <!-- ### Lab activity 2 -->
-<!-- You can download the R-script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](data/week12/122_wk12_labAct2.R). -->
-<!-- 1.  For how many participants do we have data?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- You can download the R-Markdown script that contains the code to complete lab activity 2 here: [122_wk12_labAct2.R](data/week12/122_wk12_labAct2.Rmd). -->
+<!-- Question 2a.  For how many participants do we have data?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **There are 166 observations, so we have data for 166 participants. You can see this in the Environment window in the top right. This does not tell us whether any of these participants have any missing data.** -->
 <!-- ::: -->
-<!-- 2.  For how many participants do we have data now that we have cleaned them up?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 3a.  For how many participants do we have data now that we have cleaned them up?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **104 participants** -->
 <!-- ::: -->
-<!-- 3.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 3b.  Use the information in the background description to understand how the scores relate to attitudes. What does a positive IAT_RT score reflect?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations)**  -->
+<!-- **People with a positive IAT_RT are considered to hold the implicit view that vaping is negative (i.e. congruent associations are quicker than incongruent associations).**  -->
 <!-- ::: -->
 <!-- What does a negative IAT_RT score reflect? -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ::: -->
 <!--  **People with a negative IAT_RT are considered to hold the implicit view that vaping is positive (i.e. incongruent associations were quicker than congruent associations).** -->
 <!--  ::: -->
 <!--  What does a higher score on the 'VapingQuestionnaireScore' mean?  -->
-<!--  ::: {.callout-warning icon=false collapse="true"} -->
+<!--  ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- ::: -->
 <!-- **Higher scores indicated a positive explicit attitude towards vaping.** -->
 <!-- ::: -->
-<!-- 4.  Why might these averages be useful? Why are averages not always useful in correlations?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 4a.  Why might these averages be useful? Why are averages not always useful in correlations?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **It is always worth thinking about which averages are informative and which are not. Knowing the average explicit attitude towards vaping could well be informative. In contrast, if you are using an ordinal scale and people use the whole of the scale then the average may just tell you the middle of the scale you are using - which you already know and really isn't that informative. So it is always worth thinking about what your descriptives are calculating.** -->
 <!-- ::: -->
-<!-- 5.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 5a.  What are the variable types for the implicit (IAT_RT) and the explicit (VapingQuestionnaireScore) attitude variables?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Both can be considered continuous variables and at least at interval level.** -->
 <!-- ::: -->
-<!-- 6.  How many people had missing data?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 5b.  How many people had missing data?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **8. Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.** -->
+<!-- **Before we removed participants with missing data, we had 104 observations, now we have 96. So there must have been 8 participants without a score on one or the other variable.** -->
 <!-- ::: -->
-<!-- 7.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 5c.  What do you conclude from the histograms and the qq-plots? Are the VapingQuestionnaireScore and the IAT_RT normally distributed?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Yes. Both histograms resemble a normal distribution (bell curve) and the open circles in the qq-plots fall within the blue stripy lines.** -->
 <!-- ::: -->
-<!-- 8.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 5d.  What do you conclude from the scatterplot in terms of the homoscedasticity of the data and the linearity, direction and strength of the relationship? What does the scatterplot tell you about possible issues (outliers, range restrictions)?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **The data look like a cloud without a clear direction. This suggests the relationship might might be weak. In terms of linearity, the scatterplot doesn't suggest any curvilinear relationships. Variance seems quite constant, but there do seem to be few people with negative IAT_RT (Implicit attitude) scores, suggesting few people held the view that vaping is positive.** -->
 <!-- ::: -->
-<!-- 9.  Do you need to calculate Pearson's r or Spearman's rho?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 6a.  Do you need to calculate Pearson's *r* or Spearman's *rho*?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- **Pearson's r because the data do meet the assumptions.** -->
+<!-- **Pearson's *r* because the data do meet the assumptions.** -->
 <!-- ::: -->
-<!-- 10. Can you write up the results including the r, df, p-value and an interpretation?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 6b.  Is the correlation significant? -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- **No, *p* = .822, which is larger than .05.** -->
+<!-- ::: -->
+<!-- Write a few sentences in which you report this result, following APA guidelines. Make sure to include the *r*, df, p-value and an interpretation.  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **Testing the hypothesis of a relationship between implicit and explicit attitudes towards vaping, a Pearson correlation found no significant relationship between IAT reaction times (implicit attitude) and answers on a Vaping Questionnaire (explicit attitude), *r*(94) = -.02, *p* = .822. Overall this suggests that there is no direct relationship between implicit and explicit attitudes with regard to vaping and as such our hypothesis was not supported; we cannot reject the null hypothesis.** -->
 <!-- ::: -->
-<!-- 11. What do you conclude from the scatterplots?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 8a. What do you conclude from the scatterplots?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **The scatterplots with age suggest that age is highly skewed with only a few participants older than 25. For now, let's say we'll therefore calculate Spearman's rho, rather than Pearson's *r*. That is ok for now, but if you were analysing these data for a research project, you'd want to have a closer look at the age variable (think histogram, qq-plot, and think about either collecting more data from older participants or transforming the variable (more about that next year).** -->
 <!-- ::: -->
-<!-- 12. What do you conclude from the results of the correlation analysis?  -->
-<!-- ::: {.callout-warning icon=false collapse="true"} -->
+<!-- Question 8b. What do you conclude from the results of the correlation analysis?  -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
 <!-- **No significant correlation with age was found.** -->
 <!-- ::: -->
