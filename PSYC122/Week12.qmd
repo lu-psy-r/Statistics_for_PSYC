@@ -183,7 +183,7 @@ download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/mai
 ## Cleaning the R environment
 You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.
 
-```{r}
+```{r eval=FALSE}
 rm(list=ls())
 ```
 :::
@@ -192,7 +192,7 @@ rm(list=ls())
 ## Checking your working directory
 Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data file ('VapingData.csv')?
 
-```{r}
+```{r eval=FALSE}
 getwd()
 ```
 
@@ -238,14 +238,10 @@ dat <- read_csv("VapingData.csv")
 :::
 
 >**Step 3.** Data wrangling. The data are not in a shape yet that we can actually use for our analysis. We'll have to do some 'data wrangling to knock them into shape. We need to take the following into account:
-
 1.  Accuracy was calculated as proportion and as such can't go above 1.Participants entered their own data so some might have made a mistake. Remove participants who had an accuracy greater than 1 in either Block 3 or Block 5 as we are unclear on the accuracy of these values.
-
 2.  We also only want participants who were paying attention so best remove anybody whose average accuracy score across Blocks 3 and 5 was less than 80%. Note - this value is arbitrary and if you wanted, in your own experiment, you could use a more relaxed or strict cut-off based on other studies or guidance. Note that these decisions should be set out at the start of your research as part of your pre-registration or as part of your Registered Report. Finally, in this instance, remember, the values are in proportions not percentages (so 80% will be .8).
-
 3.  Now that we have removed data points that were the result of data entry mistakes or came from participants who didn't pay attention during the task, we create an IAT score for participants by subtracting Block 3 reaction times (RT) from Block 5 reaction times (IAT_BLOCK5_RT - IAT_BLOCK3_RT).
-
-Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.
+**Look closely at each line of code below and check you understand what it does. Copy the code to your script and for each line add a comment to describe what it does.**
 
 ```{r eval=FALSE}
 dat <- dat %>%
@@ -285,7 +281,7 @@ descriptives <- dat %>%
 
 **Missing data**
 
-Remove participants with missing data.
+>Remove participants with missing data.
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -296,7 +292,9 @@ Use the `filter()` function and the `is.na()` function.
 ## Code
 The code to do this is below. 
 ```
-dat <- read_csv("VapingData.csv")
+dat <- dat %>% 
+  filter(!is.na(VapingQuestionnaireScore)) %>% 
+  filter(!is.na(IAT_RT))
 ```
 :::
 
@@ -390,7 +388,7 @@ pvalue <- results %>%
 
 >**Step 7.** Write a few sentences in which you report this result, following APA guidelines. Make sure to include the *r*, df, p-value and an interpretation.
 
->**Step 8.** Intercorrelations. Finally, let's check whether either implicit or explicit attitude is associated with age. First, let's create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don't forget to copy the code below to your script and run it. -->
+>**Step 8.** Intercorrelations. Finally, let's check whether either implicit or explicit attitude is associated with age. First, let's create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don't forget to copy the code below to your script and run it.
 
 ```{r eval=FALSE}
 dat_matrix <- dat %>%
