@@ -844,10 +844,10 @@ pvalue &lt;- results %&gt;%
 <blockquote class="blockquote">
 <p><strong>Step 8.</strong> Intercorrelations. Finally, let’s check whether either implicit or explicit attitude is associated with age. First, let’s create a new data frame that only includes the relevant variables. Look closely at each line of code below and check you understand what it does. Don’t forget to copy the code below to your script and run it.</p>
 </blockquote>
-<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-6_40632df9d10776cc335054ff872fd951">
+<div class="cell" data-hash="Week12_cache/html/unnamed-chunk-6_436bb4f20bf0a6baebb7b34cbe3458bf">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dat_matrix <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Age, IAT_RT, VapingQuestionnaireScore) <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>(dat_matrix) <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() <span class="co"># Make sure tell R that dat is a data frame</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>Now, create a matrix of scatterplots.</p>
