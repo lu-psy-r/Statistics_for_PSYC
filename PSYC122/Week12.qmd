@@ -24,6 +24,7 @@ Watch this part after you've completed the reading and before you attend the lab
 ```{=html}
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=61013&amp;code=dZ~vUgUpAChLJGyKPLgVdnmLIMaaYxjpe&amp;cc=1" frameborder="0" allowfullscreen></iframe>
 ```
+[Slides](data/week12/stats_correlation_howto2_1pp.pdf)
 [Transcript](data/week12/04statscorrelationhowto2.txt)
 
 
