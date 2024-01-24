@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistics for Psychologists - 3. The Linear Model</title>
+<title>Statistics for Psychologists - 3. Week 13 - The Linear Model</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC122/index.html">PSYC122</a></li><li class="breadcrumb-item"><a href="../PSYC122/Week13.html">3. The Linear Model</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../PSYC122/index.html">PSYC122</a></li><li class="breadcrumb-item"><a href="../PSYC122/Week13.html">3. Week 13 - The Linear Model</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -247,7 +247,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../PSYC122/Week13.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">3. The Linear Model</span></a>
+ <span class="menu-text">3. Week 13 - The Linear Model</span></a>
   </div>
 </li>
       </ul>
@@ -275,7 +275,6 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#lab-activity-1-the-regression-line" id="toc-lab-activity-1-the-regression-line" class="nav-link" data-scroll-target="#lab-activity-1-the-regression-line">Lab activity 1: The regression line</a></li>
   <li><a href="#lab-activity-2-statistics-anxiety-and-engagement-in-module-activities" id="toc-lab-activity-2-statistics-anxiety-and-engagement-in-module-activities" class="nav-link" data-scroll-target="#lab-activity-2-statistics-anxiety-and-engagement-in-module-activities">Lab activity 2: Statistics anxiety and engagement in module activities</a></li>
   </ul></li>
-  <li><a href="#hint-2" id="toc-hint-2" class="nav-link" data-scroll-target="#hint-2">Hint</a></li>
   <li><a href="#code-5" id="toc-code-5" class="nav-link" data-scroll-target="#code-5">Code</a></li>
   <li><a href="#sec-wk13-answers" id="toc-sec-wk13-answers" class="nav-link" data-scroll-target="#sec-wk13-answers">Answers</a></li>
   </ul>
@@ -286,7 +285,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">3. The Linear Model</h1>
+<h1 class="title">3. Week 13 - The Linear Model</h1>
 <p class="subtitle lead">Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team at the University of Glasgow)</p>
 </div>
 
@@ -312,7 +311,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=61147&amp;code=dP~jYkqqav3khUnljKwIwDVsdWshImqpb&amp;cc=1" frameborder="0" allowfullscreen=""></iframe>
 <p><a href="data/week13/stats_linearModel_theory_dis_1pp.pdf">Slides</a> <a href="data/week13/statslinearModeltheory.txt">Transcript</a></p>
 <ol start="2" type="1">
-<li><strong>How to – How to build a linear model in R</strong>(~? minutes) Watch this part after you’ve completed the reading and before you attend the lab session. You can download the slides, a transcript and the example scritps from the links below the video.</li>
+<li><strong>How to – How to build a linear model in R</strong>(~? minutes) VIDEO WILL BE ADDED SOON Watch this part after you’ve completed the reading and before you attend the lab session. You can download the slides, a transcript and the example scritps from the links below the video.</li>
 </ol>
 
 <p><a href="">Slides</a> <a href="">Transcript</a> <a href="">Example R-script</a></p>
@@ -365,7 +364,7 @@ Recipes - how to use them
 </div>
 <ul>
 <li><code>geom_point()</code> - create a scatterplot - <a href="https://posit.cloud/learn/recipes/visualize/VisualizeA3"><strong>recipe</strong></a></li>
-<li><code>geom_line()</code> - add a regression line - there is no recipe, but have a look at the <a href="https://ggplot2.tidyverse.org"><strong><code>ggplot2()</code> cheatsheet</strong></a> mentioned earlier</li>
+<li><code>geom_line()</code> - add a regression line - there is no recipe, but have a look at the <code>ggplot2()</code> <a href="https://ggplot2.tidyverse.org"><strong>cheatsheet</strong></a> mentioned earlier</li>
 <li><code>labs()</code> - change the axes labels - <a href="https://posit.cloud/learn/recipes/visualize/VisualizeG"><strong>recipe</strong></a></li>
 </ul>
 </section>
@@ -373,7 +372,7 @@ Recipes - how to use them
 <h3 class="anchored" data-anchor-id="pre-lab-activity-3-getting-ready-for-the-lab-class">Pre-lab activity 3: Getting ready for the lab class</h3>
 <section id="get-your-files-ready" class="level4">
 <h4 class="anchored" data-anchor-id="get-your-files-ready">Get your files ready</h4>
-<p>Download the <a href="data/week13/122_week13_forStudents.zip">122_week12_forStudents.zip</a> file and upload it into the new folder in RStudio Server you created (see last week’s Pre-lab activity 4 for instructions on how to do that.</p>
+<p>Download the <a href="data/week13/122_week13_forStudents.zip">122_week13_forStudents.zip</a> file and upload it into the new folder in RStudio Server you created (see last week’s Pre-lab activity 4 for instructions on how to do that.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,7 +437,7 @@ If you have difficulty uploading files to the server
 <p>As a measure of engagement in the course, we will use data from Moodle usage analytics. Over the course of the term, there were eight optional weekly on-line sessions that students could attend for extra support. The variable <code>n_weeks</code> in the <code>psess.csv</code> file tells you how many (out of eight) a given student attended.</p>
 <p>Our hypothesis was that greater anxiety would be reflected in lower engagement. Answer the following question.</p>
 <blockquote class="blockquote">
-<p><em>Question 1a</em> If our hypothesis is correct, what type of correlation (if any) should we observe between students’ mean anxiety levels and the variable <code>n_weeks</code>?</p>
+<p><em>Question 1a:</em> If our hypothesis is correct, what type of correlation (if any) should we observe between students’ mean anxiety levels and the variable <code>n_weeks</code>?</p>
 </blockquote>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -596,19 +595,29 @@ head(engage)</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p><em>Question 2a</em> In the <code>stars</code> data frame, what do the numbers in the first row across the three columns refer to?</p>
+<p><em>Question 2a:</em> In the <code>stars</code> data frame, what do the numbers in the first row across the three columns refer to?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><strong>Step 3.</strong> Getting the data ready. Now that we’ve read in both data files, the next step is to calculate the mean anxiety scores for each participant. At the moment we have scores on all questions separately for each participant in the <code>stars</code> table. Instead we need one mean anxiety score for each participant. Write the code to calculate mean anxiety scores. ::: {.callout-tip collapse=“true”}</p>
+<p><strong>Step 3.</strong> Getting the data ready. Now that we’ve read in both data files, the next step is to calculate the mean anxiety scores for each participant. At the moment we have scores on all questions separately for each participant in the <code>stars</code> table. Instead we need one mean anxiety score for each participant. Write the code to calculate mean anxiety scores.</p>
 </blockquote>
-</section>
-</section>
-</section>
-<section id="hint-2" class="level2">
-<h2 class="anchored" data-anchor-id="hint-2">Hint</h2>
-<p>Remember that participant is identified by the <code>ID</code> variable. Use <code>group_by()</code> and <code>summarise()</code>. Store the resulting table in a variable named <code>stars_mean</code>. Also, remember to use <code>na.rm = TRUE</code> when calculating the mean scores to deal with participants who have missing data (NAs). :::</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Remember that participant is identified by the <code>ID</code> variable. Use <code>group_by()</code> and <code>summarise()</code>. Store the resulting table in a variable named <code>stars_mean</code>. Also, remember to use <code>na.rm = TRUE</code> when calculating the mean scores to deal with participants who have missing data (NAs).</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -617,7 +626,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>stars_means &lt;- stars %&gt;%
@@ -627,14 +636,14 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><em>Question 3a</em> What is the mean anxiety score for participant 3?</p>
+<p><em>Question 3a:</em> What is the mean anxiety score for participant 3?</p>
 </blockquote>
 <p>Ok, before we get ahead of ourselves, in order to perform the regression analysis we need to combine the data from <code>stars</code> (the mean anxiety scores) with the data from <code>engage</code> (n_weeks).</p>
 <blockquote class="blockquote">
 <p><strong>TASK</strong>: Join the two tables, call the resulting table <code>joined</code>.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -643,14 +652,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the <code>inner_join()</code> function (making use of the variable that is common across both tables) to join.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -659,7 +668,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>joined &lt;- inner_join(stars_means, engage, "ID")</code></pre>
@@ -667,10 +676,10 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Step 4.</strong>: Descriptive statistics. We now need descriptive statistics for both variables. Calculate the mean and standard deviations for the anxiety scores and the engagement data.</p>
+<p><strong>Step 4.</strong> We now need descriptive statistics for both variables. Calculate the mean and standard deviations for the anxiety scores and the engagement data.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -679,14 +688,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the <code>summarise()</code> function, in combination with the <code>mean()</code> and <code>sd()</code> functions to do this. Remember to use <code>na.rm = TRUE</code> when calculating the mean scores to deal with participants who have missing data (NAs).</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -695,7 +704,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>descriptives &lt;- joined %&gt;%
@@ -707,42 +716,10 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><em>Question 4a</em> What are the means and standard deviation for anxiety and engagement with the statistics module?</p>
+<p><em>Question 4a:</em> What are the means and standard deviation for anxiety and engagement with the statistics module?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Step 5.</strong> Visualise the data. As always, it is a good idea to visualise your data. Now that we have all the variables in one place, make a scatterplot of anxiety as a function of engagement.</p>
-</blockquote>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>For this you’ll need the <code>ggplot()</code> function together with <code>geom_point()</code> and <code>geom_smooth()</code>. Make sure to give your axes some sensible labels with the <code>labs()</code> function.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="code-5" class="level2 callout-top" data-collapse="true">
-<h2 class="anchored" data-anchor-id="code-5">Code</h2>
-<p>The code to do this is below:</p>
-<pre><code>ggplot(joined, aes(x = mean_anxiety, y = n_weeks)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  labs(x = "Anxiety", y = "Engagement") +
-  theme_bw()</code></pre>
-</section>
-<blockquote class="blockquote">
-<p><em>Question 5a</em> What does the scatterplot suggest about the relationship between anxiety and engagement?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>Step 6.</strong> With all the variables in place, we’re ready now to start building the regression model. Use the <code>lm()</code> function to run the regression model in which you model engagement (the outcome variable) as a function of anxiety (the predictor variable) and use the <code>summary()</code> function to look at the output.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
@@ -756,6 +733,40 @@ Hint
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<p>For this you’ll need the <code>ggplot()</code> function together with <code>geom_point()</code> and <code>geom_smooth()</code>. Make sure to give your axes some sensible labels with the <code>labs()</code> function.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="code-5" class="level2 callout-top" data-collapse="true">
+<h2 class="anchored" data-anchor-id="code-5">Code</h2>
+<p>The code to do this is below:</p>
+<pre><code>ggplot(joined, aes(x = mean_anxiety, y = n_weeks)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs(x = "Anxiety", y = "Engagement") +
+  theme_bw()</code></pre>
+</section>
+<blockquote class="blockquote">
+<p><em>Question 5a:</em> What does the scatterplot suggest about the relationship between anxiety and engagement?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Step 6.</strong> With all the variables in place, we’re ready now to start building the regression model. Use the <code>lm()</code> function to run the regression model in which you model engagement (the outcome variable) as a function of anxiety (the predictor variable) and use the <code>summary()</code> function to look at the output.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Use the template below. Replace the ‘outcome’, ‘predictor’ and ‘my_data’ parts with the relevant info.</p>
 <pre><code>mod &lt;-lm(outcome ~ predictor, data = my_data)
 mod_summary &lt;- summary(mod)
@@ -764,7 +775,7 @@ mod_summary</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -773,7 +784,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>mod &lt;- lm(n_weeks ~ mean_anxiety, data = joined)
@@ -783,28 +794,28 @@ mod_summary</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p><em>Question 6a</em> What is the estimate of the y-intercept for the model, rounded to three decimal places?</p>
+<p><em>Question 6a:</em> What is the estimate of the y-intercept for the model, rounded to three decimal places?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 6b</em> To three decimal places, if the General Linear Model for this model is <code>Y=beta0 + beta1X + e</code>, then the value of <code>beta1</code> is …</p>
+<p><em>Question 6b:</em> To three decimal places, if the General Linear Model for this model is <code>Y=beta0 + beta1X + e</code>, then the value of <code>beta1</code> is …</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 6c</em> To three decimal places, for each unit increase in anxiety, engagement decreases by …</p>
+<p><em>Question 6c:</em> To three decimal places, for each unit increase in anxiety, engagement decreases by …</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 6d</em> To two decimal places, what is the overall F-value of the model?</p>
+<p><em>Question 6d:</em> To two decimal places, what is the overall F-value of the model?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 6e</em> Is the overall model significant?</p>
+<p><em>Question 6e:</em> Is the overall model significant?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 6f</em> What proportion of the variance does the model explain?</p>
+<p><em>Question 6f:</em> What proportion of the variance does the model explain?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Step 7.</strong> Now that we’ve fitted a model, let’s check whether the model meets the assumptions of linearity, normality and homoscedasticity. Write the code to create the plots that allow you to check the assumptions.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -813,14 +824,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>crPlots()</code> to check linearity, <code>qqPlot()</code> to check normality of the residuals, and <code>residualPlot()</code> to check homoscedasticity of the residuals.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -829,7 +840,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below</p>
 <pre><code>crPlots(mod)            # Plot linear line and line that best fits the data to check the relationship between outcome and predictor is linear
@@ -841,19 +852,19 @@ residualPlot(mod)      # Create residual plot to check residual show homoscedast
 </div>
 </div>
 <blockquote class="blockquote">
-<p><em>Question 7a</em> Does the relationship appear to be linear?</p>
+<p><em>Question 7a:</em> Does the relationship appear to be linear?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 7b</em> Do the residuals show normality?</p>
+<p><em>Question 7b:</em> Do the residuals show normality?</p>
 </blockquote>
 <blockquote class="blockquote">
-<p><em>Question 7c</em> Do the residuals show homoscedasticity?</p>
+<p><em>Question 7c:</em> Do the residuals show homoscedasticity?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p><strong>Step 8.</strong> Finally, it’s time to write up the results following APA guidelines. What would the results section look like if you wrote them up, following APA guidelines?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -862,7 +873,7 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <a href="https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/apa_numbers_statistics.html"><strong>Purdue writing lab website</strong></a> is helpful for guidance on punctuating statistics.</p>
 </div>

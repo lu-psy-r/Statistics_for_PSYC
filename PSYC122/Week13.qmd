@@ -1,5 +1,5 @@
 ---
-title: 3. The Linear Model
+title: 3. Week 13 - The Linear Model
 subtitle: Written by Margriet Groen (partly adapted from materials developed by the PsyTeachR team at the University of Glasgow)
 order: 4
 ---
@@ -19,7 +19,7 @@ Watch this part before you complete the reading and the pre-lab activities. The 
 ```
 [Slides](data/week13/stats_linearModel_theory_dis_1pp.pdf) [Transcript](data/week13/statslinearModeltheory.txt)
 
-2.  **How to -- How to build a linear model in R**(~? minutes)
+2.  **How to -- How to build a linear model in R**(~? minutes) VIDEO WILL BE ADDED SOON
 Watch this part after you've completed the reading and before you attend the lab session. You can download the slides, a transcript and the example scritps from the links below the video.
 
 ```{=html}
@@ -72,14 +72,14 @@ Each 'recipe' has the same structure.
 :::
 
 * `geom_point()` - create a scatterplot - [**recipe**](https://posit.cloud/learn/recipes/visualize/VisualizeA3)
-* `geom_line()` - add a regression line - there is no recipe, but have a look at the [**`ggplot2()` cheatsheet**](https://ggplot2.tidyverse.org) mentioned earlier
+* `geom_line()` - add a regression line - there is no recipe, but have a look at the `ggplot2()` [**cheatsheet**](https://ggplot2.tidyverse.org) mentioned earlier
 * `labs()` - change the axes labels - [**recipe**](https://posit.cloud/learn/recipes/visualize/VisualizeG)
 
 ### Pre-lab activity 3: Getting ready for the lab class
 
 #### Get your files ready
 
-Download the [122_week12_forStudents.zip](data/week13/122_week13_forStudents.zip) file and upload it into the new folder in RStudio Server you created (see last week's Pre-lab activity 4 for instructions on how to do that.
+Download the [122_week13_forStudents.zip](data/week13/122_week13_forStudents.zip) file and upload it into the new folder in RStudio Server you created (see last week's Pre-lab activity 4 for instructions on how to do that.
 
 ::: {.callout-important}
 ## If you have difficulty uploading files to the server
@@ -141,7 +141,7 @@ As a measure of engagement in the course, we will use data from Moodle usage ana
 
 Our hypothesis was that greater anxiety would be reflected in lower engagement. Answer the following question.
 
->*Question 1a* If our hypothesis is correct, what type of correlation (if any) should we observe between students' mean anxiety levels and the variable `n_weeks`?
+>*Question 1a:* If our hypothesis is correct, what type of correlation (if any) should we observe between students' mean anxiety levels and the variable `n_weeks`?
 
 ::: {.callout-warning} 
 ## Before we begin
@@ -222,11 +222,11 @@ head(engage)
 ```
 :::
 
->*Question 2a* In the `stars` data frame, what do the numbers in the first row across the three columns refer to?
+>*Question 2a:* In the `stars` data frame, what do the numbers in the first row across the three columns refer to?
 
 >**Step 3.**    Getting the data ready. Now that we've read in both data files, the next step is to calculate the mean anxiety scores for each participant. At the moment we have scores on all questions separately for each participant in the `stars` table. Instead we need one mean anxiety score for each participant. Write the code to calculate mean anxiety scores. 
-::: {.callout-tip collapse="true"}
 
+::: {.callout-tip collapse="true"}
 ## Hint
 Remember that participant is identified by the `ID` variable. Use `group_by()` and `summarise()`. Store the resulting table in a variable named `stars_mean`.  Also, remember to use `na.rm = TRUE` when calculating the mean scores to deal with participants who have missing data (NAs).
 :::
@@ -241,7 +241,7 @@ stars_means <- stars %>%
 ```
 :::
 
->*Question 3a* What is the mean anxiety score for participant 3?
+>*Question 3a:* What is the mean anxiety score for participant 3?
 
 Ok, before we get ahead of ourselves, in order to perform the regression analysis we need to combine the data from `stars` (the mean anxiety scores) with the data from `engage` (n_weeks).
 
@@ -260,7 +260,7 @@ joined <- inner_join(stars_means, engage, "ID")
 ```
 :::
 
-> **Step 4.**: Descriptive statistics. We now need descriptive statistics for both variables. Calculate the mean and standard deviations for the anxiety scores and the engagement data.
+> **Step 4.** We now need descriptive statistics for both variables. Calculate the mean and standard deviations for the anxiety scores and the engagement data.
 
 ::: {.callout-tip collapse="true"}
 ## Hint
@@ -279,7 +279,7 @@ descriptives <- joined %>%
 ```
 :::
 
->*Question 4a* What are the means and standard deviation for anxiety and engagement with the statistics module?
+>*Question 4a:* What are the means and standard deviation for anxiety and engagement with the statistics module?
 
 >**Step 5.** Visualise the data. As always, it is a good idea to visualise your data. Now that we have all the variables in one place, make a scatterplot of anxiety as a function of engagement.
 
@@ -288,7 +288,9 @@ descriptives <- joined %>%
 For this you'll need the `ggplot()` function together with `geom_point()` and `geom_smooth()`. Make sure to give your axes some sensible labels with the `labs()` function.
 :::
 
+
 :::{.callout-top collapse="true"}
+
 ## Code
 The code to do this is below:
 ```
@@ -300,7 +302,7 @@ ggplot(joined, aes(x = mean_anxiety, y = n_weeks)) +
 ```
 :::
 
->*Question 5a* What does the scatterplot suggest about the relationship between anxiety and engagement?
+>*Question 5a:* What does the scatterplot suggest about the relationship between anxiety and engagement?
 
 > **Step 6.** With all the variables in place, we're ready now to start building the regression model. Use the `lm()` function to run the regression model in which you model engagement (the outcome variable) as a function of anxiety (the predictor variable) and use the `summary()` function to look at the output.
 
@@ -324,17 +326,17 @@ mod_summary
 ```
 :::
 
->*Question 6a* What is the estimate of the y-intercept for the model, rounded to three decimal places?
+>*Question 6a:* What is the estimate of the y-intercept for the model, rounded to three decimal places?
 
->*Question 6b* To three decimal places, if the General Linear Model for this model is `Y=beta0 + beta1X + e`, then the value of `beta1` is ...
+>*Question 6b:* To three decimal places, if the General Linear Model for this model is `Y=beta0 + beta1X + e`, then the value of `beta1` is ...
 
->*Question 6c* To three decimal places, for each unit increase in anxiety, engagement decreases by ...
+>*Question 6c:* To three decimal places, for each unit increase in anxiety, engagement decreases by ...
 
->*Question 6d* To two decimal places, what is the overall F-value of the model?
+>*Question 6d:* To two decimal places, what is the overall F-value of the model?
 
->*Question 6e* Is the overall model significant?
+>*Question 6e:* Is the overall model significant?
 
->*Question 6f* What proportion of the variance does the model explain?
+>*Question 6f:* What proportion of the variance does the model explain?
 
 > **Step 7.** Now that we've fitted a model, let's check whether the model meets the assumptions of linearity, normality and homoscedasticity. Write the code to create the plots that allow you to check the assumptions.
 
@@ -355,11 +357,11 @@ residualPlot(mod)      # Create residual plot to check residual show homoscedast
 ```
 :::
 
->*Question 7a* Does the relationship appear to be linear?
+>*Question 7a:* Does the relationship appear to be linear?
 
->*Question 7b* Do the residuals show normality?
+>*Question 7b:* Do the residuals show normality?
 
->*Question 7c* Do the residuals show homoscedasticity?
+>*Question 7c:* Do the residuals show homoscedasticity?
 
 > **Step 8.** Finally, it's time to write up the results following APA guidelines. What would the results section look like if you wrote them up, following APA guidelines?
 
