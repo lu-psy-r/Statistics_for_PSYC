@@ -275,7 +275,6 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <li><a href="#lab-activity-1-the-regression-line" id="toc-lab-activity-1-the-regression-line" class="nav-link" data-scroll-target="#lab-activity-1-the-regression-line">Lab activity 1: The regression line</a></li>
   <li><a href="#lab-activity-2-statistics-anxiety-and-engagement-in-module-activities" id="toc-lab-activity-2-statistics-anxiety-and-engagement-in-module-activities" class="nav-link" data-scroll-target="#lab-activity-2-statistics-anxiety-and-engagement-in-module-activities">Lab activity 2: Statistics anxiety and engagement in module activities</a></li>
   </ul></li>
-  <li><a href="#code-5" id="toc-code-5" class="nav-link" data-scroll-target="#code-5">Code</a></li>
   <li><a href="#sec-wk13-answers" id="toc-sec-wk13-answers" class="nav-link" data-scroll-target="#sec-wk13-answers">Answers</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/M1V0/Statistics_for_PSYC/edit/main/PSYC122/Week13.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/M1V0/Statistics_for_PSYC/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
@@ -737,18 +736,27 @@ Hint
 </div>
 </div>
 </div>
-</section>
-</section>
-</section>
-<section id="code-5" class="level2 callout-ttip" data-collapse="true">
-<h2 class="anchored" data-anchor-id="code-5">Code</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>ggplot(joined, aes(x = mean_anxiety, y = n_weeks)) +
   geom_point() +
   geom_smooth(method = "lm") +
   labs(x = "Anxiety", y = "Engagement") +
   theme_bw()</code></pre>
-</section>
+</div>
+</div>
+</div>
 <blockquote class="blockquote">
 <p><em>Question 5a:</em> What does the scatterplot suggest about the relationship between anxiety and engagement?</p>
 </blockquote>
@@ -756,7 +764,7 @@ Hint
 <p><strong>Step 6.</strong> With all the variables in place, we’re ready now to start building the regression model. Use the <code>lm()</code> function to run the regression model in which you model engagement (the outcome variable) as a function of anxiety (the predictor variable) and use the <code>summary()</code> function to look at the output.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,7 +773,7 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use the template below. Replace the ‘outcome’, ‘predictor’ and ‘my_data’ parts with the relevant info.</p>
 <pre><code>mod &lt;-lm(outcome ~ predictor, data = my_data)
@@ -775,7 +783,7 @@ mod_summary</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -784,7 +792,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below:</p>
 <pre><code>mod &lt;- lm(n_weeks ~ mean_anxiety, data = joined)
@@ -815,7 +823,7 @@ mod_summary</code></pre>
 <p><strong>Step 7.</strong> Now that we’ve fitted a model, let’s check whether the model meets the assumptions of linearity, normality and homoscedasticity. Write the code to create the plots that allow you to check the assumptions.</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -824,14 +832,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>crPlots()</code> to check linearity, <code>qqPlot()</code> to check normality of the residuals, and <code>residualPlot()</code> to check homoscedasticity of the residuals.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -840,7 +848,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The code to do this is below</p>
 <pre><code>crPlots(mod)            # Plot linear line and line that best fits the data to check the relationship between outcome and predictor is linear
@@ -864,7 +872,7 @@ residualPlot(mod)      # Create residual plot to check residual show homoscedast
 <p><strong>Step 8.</strong> Finally, it’s time to write up the results following APA guidelines. What would the results section look like if you wrote them up, following APA guidelines?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -873,12 +881,15 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The <a href="https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_formatting_and_style_guide/apa_numbers_statistics.html"><strong>Purdue writing lab website</strong></a> is helpful for guidance on punctuating statistics.</p>
 </div>
 </div>
 </div>
+</section>
+</section>
+</section>
 <section id="sec-wk13-answers" class="level2">
 <h2 class="anchored" data-anchor-id="sec-wk13-answers">Answers</h2>
 <p>When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. <strong>Remember</strong>, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. <strong>Actively engaging</strong> with the material is the way to learn these analysis skills, not by looking at someone else’s completed code…</p>

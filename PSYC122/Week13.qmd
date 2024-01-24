@@ -288,7 +288,7 @@ descriptives <- joined %>%
 For this you'll need the `ggplot() function together with `geom_point()` and `geom_smooth()`. Make sure to give your axes some sensible labels with the `labs()` function.
 :::
 
-::: {.callout-ttip collapse="true"}
+::: {.callout-tip collapse="true"}
 ## Code
 The code to do this is below:
 ```
