@@ -25,6 +25,8 @@ descriptives <- mh %>%
             mean_IQ = mean(IQ, na.rm = TRUE),
             sd_IQ = sd(IQ, na.rm = TRUE))
 
+descriptives
+
 # Create a scatterplot
 ggplot(mh, aes(x = IQ, y = Abil)) +
   geom_point() +
