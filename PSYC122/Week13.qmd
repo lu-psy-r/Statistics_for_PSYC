@@ -19,14 +19,15 @@ Watch this part before you complete the reading and the pre-lab activities. The 
 ```
 [Slides](data/week13/stats_linearModel_theory_dis_1pp.pdf) [Transcript](data/week13/statslinearModeltheory.txt)
 
-2.  **How to -- How to build a linear model in R**(~? minutes) VIDEO WILL BE ADDED SOON
+2.  **How to -- How to build a linear model in R**(~14 minutes)
 Watch this part after you've completed the reading and before you attend the lab session. You can download the slides, a transcript and the example scritps from the links below the video.
 
 ```{=html}
+<iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=72461&amp;code=dH~asTfLNKCEXURHjJKJ8GFxHJmIidNKr&amp;cc=1" frameborder="0" allowfullscreen></iframe>
 ```
-[Slides]()
-[Transcript]()
-[Example R-script]()
+[Slides](data/week13/stats_linearModel_howto_dis.pdf)
+[Transcript](data/week13/statslinerModelhowto20240124.txt)
+[Example R-script](data/week13/122_wk13_simpleLinearRegressionHowTo.R)
 
 ## Reading {#sec-wk13-reading}
 
