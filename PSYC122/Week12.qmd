@@ -596,7 +596,7 @@ Question 8b. What do you conclude from the results of the correlation analysis?
 
 Below is the recording of this week's online Q&A.
 
-```{=htmal}
+```{=html}
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=72519&amp;code=e0~6wwC9yNzirzLhrkQaCGYxEAwLC7M9j&amp;cc=1" frameborder="0" allowfullscreen></iframe>
 ```
 [Transcript](data/week12/PSYC122OnlineQampA26thJanuary2024.txt)
