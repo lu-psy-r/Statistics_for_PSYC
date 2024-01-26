@@ -58,6 +58,7 @@ descriptives <- dat %>%
             mean_IAT_ACC = mean(IAT_ACC),
             mean_IAT_RT = mean(IAT_RT),
             mean_VPQ = mean(VapingQuestionnaireScore, na.rm = TRUE))
+descriptives
 ```
 
 *Question 4a:* Why might these averages be useful? Why are averages not always useful in correlations?
