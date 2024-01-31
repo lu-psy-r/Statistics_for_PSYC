@@ -217,5 +217,5 @@ results$residuals
 # Write up:
 # Those in the reminder-through-association condition performed the intended behaviour at a significantly higher rate
 # (74%, 29 out of 39) than did those in the control condition (42%, 16 out of 38)), χ2(1, N = 77) = 8.24, p = 0.004,
-# V = 0.33. The analysis showed that 10% of variance in intended behaviour could be accounted for by condition
+# V = 0.33. The analysis showed that 11% of variance in intended behaviour could be accounted for by condition
 # (reminder-through-association vs. control). 

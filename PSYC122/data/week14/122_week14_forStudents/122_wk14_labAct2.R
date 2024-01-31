@@ -10,8 +10,8 @@
 rm(list=ls())                            
 
 # Run this code to load relevant libraries
-library("lsr")
-library("tidyverse")
+library(lsr)
+library(tidyverse)
 
 # TASK: Read in the data file "RTA_study1.csv" (using the read_csv() function), have a look at the layout of
 # the data and familiarise yourself with it. You can use the head() function for that.

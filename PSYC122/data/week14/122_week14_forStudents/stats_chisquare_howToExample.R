@@ -53,7 +53,7 @@ head(fighting_recode)            # Look at the new table
 
 # Run this code to do the counts and create the 'contingency' table
 fighting_counts <- fighting_recode %>%
-group_by(TV, Fight) %>%
+  group_by(TV, Fight) %>%
   count()
 
 fighting_counts
