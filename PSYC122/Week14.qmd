@@ -382,7 +382,7 @@ Assumptions 1) to 5) should be evaluated by reviewing the design of the study. T
 The information we need is in the object in which your stored the results of the Chi-square test.
 :::
 
-:::{.callout-tiop collapse="true"}
+:::{.callout-tip collapse="true"}
 ## Code
 The code to do this is below:
 ```
@@ -392,7 +392,7 @@ results$expected
 
 >*Question 7a:* What do you conclude from the output?
 
->**Step 8.**The last step before writing up the results is to calculate an effect size so that we have a standardised measure of how large the association between our grouping variables is, the effect size measure for chi-square is Cramer’s V. To calculate Cramer’s V we’re going to use the function `cramersv()` from the `lsr` package. The code mirrors the code used for the Chi-square test itself:
+>**Step 8.** The last step before writing up the results is to calculate an effect size so that we have a standardised measure of how large the association between our grouping variables is, the effect size measure for chi-square is Cramer’s V. To calculate Cramer’s V we’re going to use the function `cramersv()` from the `lsr` package. The code mirrors the code used for the Chi-square test itself:
 
 ```{r eval=FALSE}
 eff_size <- cramersV(x = intent_recode$condition,     # the first grouping variable
