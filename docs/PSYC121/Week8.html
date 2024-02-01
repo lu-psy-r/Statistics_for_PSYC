@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -225,8 +225,39 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">PSYC122</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../PSYC122/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">PSYC122</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC122/Week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Week 11 - Correlation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC122/Week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Week 12 - Correlation Part 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC122/Week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. Week 13 - The Linear Model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../PSYC122/Week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. Week 14 - Chi-Square</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -311,7 +342,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li><p>View the data with <code>View(data_object_name)</code>. You will see that the data are a little different from the data we have worked with previously. We have an <em>pID</em> variable, which gives a unique number for each person, but each person has 3 rows of data. This is because the different conditions of the Stroop task reflect a <strong>within-subjects variable</strong> (related samples). For data like this it is often useful to have them arranged in what is referred to as <strong>“long format”</strong>, with multiple rows for each response the participant provides. For the current data that means we have a variable called <em>condition</em>, which is our IV, and one called <em>time</em> which is our DV. We also have a column labelled <em>avg_time</em>, which is the average of the 3 time values for each participant (the data is duplicated, which is both normal and necessary with long format data).</p></li>
 <li><p>Let’s look at the distribution of <em>time</em> (our DV) as a function of <em>condition</em>. Add another chunk of code and include the following code:</p></li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-2_8d8ef66717036c9ca06d68f0e45fc5cc">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of times by condition</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>your_data_object <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
@@ -322,7 +353,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <li><p>You’ll need to “map” <em>x</em> to <em>time</em> and <em>fill</em> to <em>condition</em> for our <code>geom_density()</code> plot. You can play around with the <em>alpha</em> parameter (which sets the transparency of the elements of the graph), setting it to a value between 0 and 1. Note that this is done OUTSIDE of the <code>aes()</code> command.</p></li>
 <li><p>From the density plot, it does seem like we have some outlier values. It’s probably best if we remove data for the whole participant if their <em>average</em> time is unusual. To do that, we’ll look at the data using the <em>avg_time</em> column. Add the following code for a <code>geom_histogram()</code> to plot the distribution of values in the new <em>avg_time</em> column.</p></li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-4_ada1ced9bc943cc55d5d5b73248aef60">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distribution of average times</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>your_data_object <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
@@ -332,7 +363,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 <ol start="7" type="1">
 <li>Let’s use the filter command we learned last week to remove these high values. Like last week, we will do this (for now) in a fairly unprincipled manner, by “eyeballing” the data (next week we’ll consider something a bit more “scientific”). Complete the filter command so that it keeps only the responses for people that had an <code>avg_time</code> less than 12 seconds. Remember that you need to think about how you are storing the result of this filter process. Do you want to create a new object, or overwrite the existing object?</li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-6_e62ae9414eced7b7d8dfc30b1d19293f">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter out the high values</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>new_data_object <span class="ot">&lt;-</span> <span class="co"># create a new object (or overwrite)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  your_data_object <span class="sc">%&gt;%</span> <span class="co"># original data object </span></span>
@@ -354,7 +385,7 @@ Check your result!
 <ol start="8" type="1">
 <li>Add and edit the following code to plot a histogram of the <em>filtered</em> data.</li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-7_78b8af344810db7640c4f8d773f36c98">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># draw a histogram of the filtered data </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>new_data_object <span class="sc">%&gt;%</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
@@ -376,7 +407,7 @@ Check your result!
 <ol type="1">
 <li>Copy the code below into your R Markdown and edit the <code>group_by()</code> line to specify the IV and the <code>summarise()</code> line to calculate the <code>mean()</code> of our DV. If you do this correctly, you’ll get three values - a mean value for each level (condition) of our IV. Do these means reflect what you would expect in the Stroop task? Do they match the central tendency of the distributions you plotted?</li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-9_e9245ba5047131e1d38e848894e7a071">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>name_of_data_object <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name_of_IV_column) <span class="sc">%&gt;%</span> <span class="co"># you need to EDIT this for Q1</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">stroop_mean =</span> <span class="fu">mean</span>(name_of_DV_column)) <span class="co"># you need to EDIT this for Q1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -401,7 +432,7 @@ Check your result!
 <li><p>Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test. We use this test because each level of the IV in this experiment came from the same person. First though, we must use a <code>filter()</code> to restrict the data to just two levels of the IV. The IV is the <em>condition</em> column/variable in the data. The related samples t-test looks at the difference between two means (and only two), so the column we use for the t-test needs to have just two levels of the IV (two of the conditions).</p></li>
 <li><p>Copy the code below into your R Markdown. The filter command is already set up to restrict the data to two of the conditions. Note that the filter uses an “|” symbol, which means “or”, because we want the data that <strong>is the same as</strong> (==) one condition OR <strong>is the same as</strong> (==) the other condition. You’ll need to edit the name of the data object to get this to run.</p></li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-10_b7dcc61e532a096c13fff3010539d30b">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use filter to select two levels of the IV - Q3-5</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>stroop_comparison <span class="ot">&lt;-</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  name_of_data_object <span class="sc">%&gt;%</span> <span class="co"># Edit this for the name of YOUR data object</span></span>
@@ -446,7 +477,7 @@ Check your result!
 <ol start="2" type="1">
 <li>The code from Task 2, Question 1 will give the mean. We will now add a second line of this code to give the standard error values:</li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-11_487786d7e3377bdff33224b0eafdd06c">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>stroop_summary <span class="ot">&lt;-</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  name_of_data_object <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(name_of_IV_column) <span class="sc">%&gt;%</span> <span class="co"># you need to EDIT this for Q2</span></span>
@@ -475,7 +506,7 @@ Check your result!
 <ol start="5" type="1">
 <li>We will now plot these 3 mean values in a figure. Let’s use <code>geom_point()</code> so that our means and SEs look a bit like the figure above. Complete the ggplot command to plot our summarised value called <em>stroop_mean</em> (y), as a function of the IV, <em>condition</em> (x):</li>
 </ol>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-12_98c4e1ac69cd5653b242f79e23e5c152">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's first plot the means</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>name_of_data_object <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name_of_IV_column, <span class="at">y =</span> name_of_DV_column)) <span class="sc">+</span> <span class="co"># map variables to x and y for Q5</span></span>
@@ -497,7 +528,7 @@ Plotting the error bars
 <p>Use the illustration of the error bars above to work out how to combine the mean value and the SE value (hint: you’ll need to either ADD or SUBTRACT for the two statements) to create the right <code>ymin</code> and <code>ymax</code>. You need to put this in the “missing_equation” bit of the code below:</p>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-hash="Week8_cache/html/unnamed-chunk-13_ce3f1c728f99048aefd7211b090197b0">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's first plot the means</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>name_of_data_object <span class="sc">%&gt;%</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> name_of_IV_column, <span class="at">y =</span> name_of_DV_column)) <span class="sc">+</span> <span class="co"># map variables to x and y for Q5</span></span>
