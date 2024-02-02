@@ -4,7 +4,6 @@ subtitle: Written by Margriet Groen (partly adapted from materials developed by 
 order: 5
 ---
 
-
 This week we will focus on Chi-square as a measure of association between categorical variables.
 
 ## Lectures {#sec-wk14-lectures}
