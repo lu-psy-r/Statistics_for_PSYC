@@ -16,10 +16,10 @@ Watch this part before you complete the reading and the pre-lab activities. The 
 ```{=html}
 <iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=61323&amp;code=e0~6vwx9tNyiyzNhwkTaDGWxCAALB7J9h&amp;cc=1" frameborder="0" allowfullscreen></iframe>
 ```
-[Slides](data/week14/stats_categoricalPredictors_theory_dis_1pp.pdf)
+[Slides](data/week14/stats_chisquare_theory_1pp.pdf)
 [Transcript](data/week14/statschisquaretheory.txt)
 
-2.  **How to - Ho to do Chi-square in R** (~19 min)
+2.  **How to - How to do Chi-square in R** (~19 min)
 Watch this part after you've completed the reading and before you attend the lab session. You can download the slides, a transcript and the example scritps from the links below the video.
 
 ```{=html}
