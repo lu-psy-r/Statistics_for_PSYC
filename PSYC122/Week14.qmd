@@ -584,3 +584,11 @@ Can you reject the null hypothesis? **Yes**
 ## Answer
 **Those in the reminder-through-association condition performed the intended behaviour at a significantly higher rate (74%, 29 out of 39) than did those in the control condition (42%, 16 out of 38)), *χ2*(1, N = 77) = 8.24, *p* = 0.004, *V* = 0.33. The analysis showed that 11% of variance in intended behaviour could be accounted for by condition (reminder-through-association vs. control).**
 :::
+
+## Online Q&A
+
+Below is the recording of this week's online Q&A.
+
+```{=html}
+<iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=73848&amp;code=dR~mpPBLjRLf4H3fMKyVGq2Rmz7BIoGKr&amp;cc=1" frameborder="0" allowfullscreen></iframe>
+```

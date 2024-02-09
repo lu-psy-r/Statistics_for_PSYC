@@ -102,7 +102,7 @@ results <- chisq.test(x = intent_recode$condition,        # the first grouping v
 results
 ```
 
->*Question 6a:* What do you conclude from the output? **There is a significnat association between the grouping variables.**
+>*Question 6a:* What do you conclude from the output? **There is a significant association between the grouping variables.**
 
 # Step 7: Checking assumptions
 

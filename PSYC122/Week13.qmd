@@ -509,3 +509,11 @@ You can download the R Markdown-script that contains the code to complete lab ac
 ## Answer
 **A simple linear regression was performed with engagement (*M* = 4.54, *SD* = 0.56) as the outcome variable and statistics anxiety (*M* = 2.08, *SD* = 0.56) as the predictor variable. The results of the regression indicated that the model significantly predicted course engagement (*F*(1, 35) = 11.99, *p* \< .001, *R\^2* = 0.25), accounting for 25% of the variance. Anxiety was a significant negative predictor (*beta* = -2.17, *p* \< 0.001): as anxiety increased, course engagement decreased.**
 :::
+
+## Online Q&A
+
+Below is the recording of this week's online Q&A.
+
+```{=html}
+<iframe allow="autoplay; fullscreen" height="282" width="500" src="https://estream.lancaster.ac.uk/Embed.aspx?id=73847&amp;code=dH~atT7LQKAF0UOHrJGJ5GzxNJnIkdNKt&amp;cc=1" frameborder="0" allowfullscreen></iframe>
+```
