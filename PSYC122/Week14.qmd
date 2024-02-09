@@ -463,11 +463,7 @@ b.  How do males and females compare in terms of wanting to be a psychologist wh
 :::
 
 
-4.  What were your answers to the pre-lab activity 1 questions? Please compare them with other students at your table.
-
--
-
-    a.  Complete the Pearson's chi-square test by hand using the data above and fill in the blanks:
+4.  What were your answers to the pre-lab activity 1 questions? Please compare them with other students at your table. Complete the Pearson's chi-square test by hand using the data above and fill in the blanks:
 
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
