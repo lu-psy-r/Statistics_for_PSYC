@@ -14,34 +14,40 @@ This page is under construction: come back soon
 
 The lecture material for this week is presented in four short parts.
 
-Each video has captions, in case you find that helpful. 
+You can view video recordings of the lectures using Panopto, by clicking on the links shown following.
 
-You can download the slides for the video using the links:
+The slides presented in the videos can be **downloaded** in two formats:
 
-- [Slides](data/week13/stats_linearModel_theory_dis_1pp.pdf) 
-- [Transcript](data/week13/statslinearModeltheory.txt)
+- [The slides](data/week16/122-hypotheses-assocations.html) exactly as presented (36 MB). 
+- [The slides](data/week16/122-hypotheses-associations-printable-edit.docx) converted to a Word .docx (24 MB). 
 
-[advice]
+The slides were written in R (using Quarto) and are produced as .html documents (like web pages.)
 
-1. Overview (~15 minutes)
+You can download the .html file and click on it to open it in any browser (e.g., Chrome, Safari). The slide images are high quality so the file is quite big.
+
+You can download the .docx file and click on to open as a Word document that you can then edit or add notes to. Converting the slides to a .docx distorts some images but the benefit of conversion is that it makes it easier for you to add your notes to the slides.
+
+Before you go on to the activities, **watch* the lectures:
+
+1. Overview (15 minutes)
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&start=9&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-2. Thinking critically (~11 minutes)
+2. Thinking critically (11 minutes)
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6fd6d7e9-7457-441d-a689-afaa0113f62d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3. Thinking about associations in research (~22 minutes)
+3. Thinking about associations in research (22 minutes)
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5bbbe88e-b701-4658-b484-afaa011819e3&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4. Interpreting, reporting and visualizing correlations (~11 minutes)
+4. Interpreting, reporting and visualizing correlations (11 minutes)
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec9bbeb3-ad95-48e1-a03f-afaa012037f9&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
