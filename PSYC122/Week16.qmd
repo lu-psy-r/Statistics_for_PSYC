@@ -12,41 +12,39 @@ This page is under construction: come back soon
 
 ## Lectures {#sec-wk16-lectures}
 
-The lecture material for this week is presented in four parts.
+The lecture material for this week is presented in four short parts.
 
-[advice]
+Each video has captions, in case you find that helpful. 
 
-The video has captions, in case you find that helpful. 
-
-You can download the slides and a transcript from the links below the video.
+You can download the slides for the video using the links:
 
 - [Slides](data/week13/stats_linearModel_theory_dis_1pp.pdf) 
 - [Transcript](data/week13/statslinearModeltheory.txt)
 
 [advice]
 
-1.  **title** (~XX min)
+1. Overview (~15 minutes)
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&start=9&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-2.  **title** (~XX min)
+2. Thinking critically (~11 minutes)
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6fd6d7e9-7457-441d-a689-afaa0113f62d&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3.  **title** (~XX min)
+3. Thinking about associations in research (~22 minutes)
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5bbbe88e-b701-4658-b484-afaa011819e3&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4.  **title** (~XX min)
+4. Interpreting, reporting and visualizing correlations (~11 minutes)
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ec9bbeb3-ad95-48e1-a03f-afaa012037f9&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 ## Pre-lab activities {#sec-wk6-prelab-activities}
@@ -64,7 +62,6 @@ You can download the slides and a transcript from the links below the video.
 #### Introduction {#sec-wk6-lab-activities-1-introduction}
 
 #### Set up {#sec-wk6-lab-activities-1-set-up}
-
 
 * Make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
 * You'll need the data files `stars2.csv` and `psess.csv` you downloaded when completing Pre-lab activity 3. If you experienced issues with uploading files to the server, follow the instructions below.
