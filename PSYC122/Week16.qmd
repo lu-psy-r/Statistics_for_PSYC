@@ -1,23 +1,23 @@
 ---
-title: 6. Data Visualisation
+title: Week 16
 subtitle: Written by Rob Davies
-order: 7
+order: 2
 ---
 ## PSYC122 *Part 2* Week 16 {#sec-week-16-intro}
 
-# ```{r}
-# #| warning: false
-# #| echo: false
-# library(kableExtra)
-# library(tidyverse)
-# ```
-# 
-# ```{r}
-# #| warning: false
-# #| echo: false
-# study.one <- read_csv("data/week16/study-one-general-participants.csv")  
-# study.two <- read_csv("data/week16/study-two-general-participants.csv")
-# ```
+<!-- # ```{r} -->
+<!-- # #| warning: false -->
+<!-- # #| echo: false -->
+<!-- # library(kableExtra) -->
+<!-- # library(tidyverse) -->
+<!-- # ``` -->
+<!-- #  -->
+<!-- # ```{r} -->
+<!-- # #| warning: false -->
+<!-- # #| echo: false -->
+<!-- # study.one <- read_csv("data/week16/study-one-general-participants.csv")   -->
+<!-- # study.two <- read_csv("data/week16/study-two-general-participants.csv") -->
+<!-- # ``` -->
 
 ::: callout-warning
 Page under construction
