@@ -19,6 +19,10 @@ study.one <- read_csv("data/week16/study-one-general-participants.csv")
 study.two <- read_csv("data/week16/study-two-general-participants.csv")
 ```
 
+::: callout-warning
+Page under construction
+:::
+
 Welcome to your overview of the materials and guidance you will work with in **PSYC122 Week 16**.
 
 We will complete four classes in weeks 16-19.
