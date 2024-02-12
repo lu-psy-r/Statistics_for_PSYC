@@ -17,20 +17,6 @@ These classes are designed to help students to revise and put into practice some
 
 We will do this in the context of a live research project with potential real world impacts: the **Clearly understood** project.
 
-- Our focus will be on **what makes it easy or difficult for people to understand written health information**.
-
-We encounter written health information all the time: in warnings signs, on medication labels, in clinics when we go to see the doctor, and online when we research things we are worried about.
-It is not always easy to understand this information.
-The problem is that it is unclear how health information should be communicated.
-As psychologists, we can help to improve health communication.
-
-::: callout-important
-In these classes, we will complete a research project to answer the research questions:
-
-1. What person attributes predict success in understanding?
-2. Can people accurately evaluate whether they correctly understand written health information?
-:::
-
 We will present our PSYC122 lessons in the context of this research project because we think that this *context* will help you to make sense of the data, and to see why we ask you to practice the skills we are teaching.
 
 We will be revisiting some of the ideas and techniques you have seen introduced in previous classes.
@@ -147,54 +133,44 @@ If you do not want to complete the survey, we invite you to read the pre-registe
 
 [Read the project pre-registration](https://osf.io/p6fsc/)
 
-#### Get your files ready {#sec-wk6-prelab-activities-ready}
-
 ## Lab activities {#sec-wk6-lab-activities}
+
+### Introduction {#sec-wk6-lab-activities-1-introduction}
+
+We will do our practical lab work to develop your skills in the context of a live research project with potential real world impacts: the **Clearly understood** project.
+
+- Our focus will be on **what makes it easy or difficult for people to understand written health information**.
+
+We encounter written health information all the time: in warnings signs, on medication labels, in clinics when we go to see the doctor, and online when we research things we are worried about.
+It is not always easy to understand this information.
+The problem is that it is unclear how health information should be communicated.
+As psychologists, we can help to improve health communication.
+
+::: callout-important
+In these classes, we will complete a research project to answer the research questions:
+
+1. What person attributes predict success in understanding?
+2. Can people accurately evaluate whether they correctly understand written health information?
+:::
+
+### Get ready {#sec-wk6-prelab-activities-ready}
+
+**Download the data** [122_week16_for_students.zip](data/week16/122_week16_for_students.zip) files folder and upload the contents to the new folder you created in RStudio Server.
+
+The folder includes data files:
+
+- `study-one-general-participants.csv`
+- `study-two-general-participants.csv`
+
+and the *code file*:
+
+- `2023-24-PSYC122-w16-how-to.R`
 
 ### Lab activity 1 {#sec-wk6-lab-activities-1}
 
-#### Introduction {#sec-wk6-lab-activities-1-introduction}
+<!-- [inset how to .R guide here] -->
 
-#### Set up {#sec-wk6-lab-activities-1-set-up}
-
-* Make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
-* You'll need the data files `stars2.csv` and `psess.csv` you downloaded when completing Pre-lab activity 3. If you experienced issues with uploading files to the server, follow the instructions below.
-* When starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. 
-* Finally, make sure your working directory is set to the folder in which you have stored the data files (`stars2.csv` and `psess.csv`). 
-:::
-
-::: {.callout-important}
-## If you couldn't upload files to the server, do this:
-If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
-:::
-
-```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week13/stars2.csv?raw=true", destfile = "stars2.csv")
-```
-
-```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week13/psess.csv?raw=true", destfile = "psess.csv")
-```
-
-:::{.callout-tip collapse="true"}
-## Cleaning the R environment
-You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.
-
-```{r eval=FALSE}
-rm(list=ls())
-```
-:::
-
-:::{.callout-tip collapse="true"}
-## Checking your working directory
-Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data files?
-
-```{r eval=FALSE}
-getwd()
-```
-
-If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'.
-:::
+### Lab activity 2 {#sec-wk6-lab-activities-2}
 
 #### Questions {#sec-wk6-lab-activities-1-questions}
 
