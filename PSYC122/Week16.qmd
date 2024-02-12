@@ -8,6 +8,112 @@ order: 5
 This page is under construction: come back soon
 :::
 
-## PSYC122 *Part 2* Week 16 {#sec-week-16-intro}
+## Week 16: Introduction {#sec-wk16-introduction}
+
+## Lectures {#sec-wk16-lectures}
+
+The lecture material for this week is presented in four parts.
+
+[advice]
+
+The video has captions, in case you find that helpful. 
+
+You can download the slides and a transcript from the links below the video.
+
+- [Slides](data/week13/stats_linearModel_theory_dis_1pp.pdf) 
+- [Transcript](data/week13/statslinearModeltheory.txt)
+
+[advice]
+
+1.  **title** (~XX min)
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+2.  **title** (~XX min)
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+3.  **title** (~XX min)
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+4.  **title** (~XX min)
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=219a5ba8-cce8-43e3-afea-afaa010f2d91&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+```
+
+## Pre-lab activities {#sec-wk6-prelab-activities}
+
+### Pre-lab activity 1 {#sec-wk6-prelab-activities-1}
+
+### Pre-lab activity 2 {#sec-wk6-prelab-activities-1}
+
+#### Get your files ready {#sec-wk6-prelab-activities-ready}
+
+## Lab activities {#sec-wk6-lab-activities}
+
+### Lab activity 1 {#sec-wk6-lab-activities-1}
+
+#### Introduction {#sec-wk6-lab-activities-1-introduction}
+
+#### Set up {#sec-wk6-lab-activities-1-set-up}
 
 
+* Make sure you have started a new R Markdown script. If you need a reminder of how to do that, please revisit week 6 of PSYC121 ([here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC121/Week6.html#some-basic-rmarkdown)).
+* You'll need the data files `stars2.csv` and `psess.csv` you downloaded when completing Pre-lab activity 3. If you experienced issues with uploading files to the server, follow the instructions below.
+* When starting a new analysis, it is a good idea to empty the R environment. This prevents objects and variables from previous analyses interfering with the current one. 
+* Finally, make sure your working directory is set to the folder in which you have stored the data files (`stars2.csv` and `psess.csv`). 
+:::
+
+::: {.callout-important}
+## If you couldn't upload files to the server, do this:
+If you experienced difficulties with uploading a folder or a file to the server, you can use the code below to directly download the file you need in this lab activity to the server (instead of first downloading it to you computer and then uploading it to the server). Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
+:::
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week13/stars2.csv?raw=true", destfile = "stars2.csv")
+```
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week13/psess.csv?raw=true", destfile = "psess.csv")
+```
+
+:::{.callout-tip collapse="true"}
+## Cleaning the R environment
+You can clean the R environment by clicking on the broom icon at the top right of the environment window, or you can use the code below.
+
+```{r eval=FALSE}
+rm(list=ls())
+```
+:::
+
+:::{.callout-tip collapse="true"}
+## Checking your working directory
+Use the code below to check what you working directory is currently set to. This is the folder that R will use to look for files. Is the file path that is written to the Console after you run the code snippet the one that contains the data file? You can check by nativating to the path you can see in the Console in the 'Files' pane on the right. Does it contain the data files?
+
+```{r eval=FALSE}
+getwd()
+```
+
+If your working directory is not set to the folder that contains the data file, navigate to folder that contains the data file in the 'Files' pane, click 'More' and then on 'Set as working directory'.
+:::
+
+#### Questions {#sec-wk6-lab-activities-1-questions}
+
+## Answers {#sec-wk6-lab-activities-answers}
+
+When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code...
+
+## Online Q&A {#sec-wk6-lab-Q-and-A}
+
+Below is the recording of this week's online Q&A.
+
+```{=html}
+```
