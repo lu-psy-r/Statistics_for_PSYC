@@ -104,6 +104,9 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
 </script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script language="JavaScript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script language="JavaScript" type="text/javascript" src="../function.js"></script>
 
@@ -289,7 +292,7 @@ gtag('config', 'G-631SFSCPZB', { 'anonymize_ip': true});
   <ul class="collapse">
   <li><a href="#sec-wk6-lab-activities-1-introduction" id="toc-sec-wk6-lab-activities-1-introduction" class="nav-link" data-scroll-target="#sec-wk6-lab-activities-1-introduction">Introduction</a></li>
   <li><a href="#sec-wk6-prelab-activities-ready" id="toc-sec-wk6-prelab-activities-ready" class="nav-link" data-scroll-target="#sec-wk6-prelab-activities-ready">Get ready</a></li>
-  <li><a href="#sec-wk6-lab-activities-1" id="toc-sec-wk6-lab-activities-1" class="nav-link" data-scroll-target="#sec-wk6-lab-activities-1">Lab activity 1</a></li>
+  <li><a href="#sec-wk6-lab-activities-1" id="toc-sec-wk6-lab-activities-1" class="nav-link" data-scroll-target="#sec-wk6-lab-activities-1">Lab activity 1: Work with the How-to guide</a></li>
   <li><a href="#sec-wk6-lab-activities-2" id="toc-sec-wk6-lab-activities-2" class="nav-link" data-scroll-target="#sec-wk6-lab-activities-2">Lab activity 2</a></li>
   </ul></li>
   <li><a href="#sec-wk6-lab-activities-answers" id="toc-sec-wk6-lab-activities-answers" class="nav-link" data-scroll-target="#sec-wk6-lab-activities-answers">Answers</a></li>
@@ -533,23 +536,217 @@ Tip
 <ol type="1">
 <li>Get the <code>study-one-general-participants.csv</code> data</li>
 </ol>
-<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-1_c480db013716d99dd7a804289c923f88">
+<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-3_d53d0842df3ba90afa35b65c507eeba7">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/study-one-general-participants.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"study-one-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Get the <code>study-two-general-participants.csv</code> data</li>
 </ol>
-<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-2_3396f6c80396adbc4d3f9028ac8b7018">
+<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-4_bd2ad73063b9c5f565a9165ebe89d7f0">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/study-two-general-participants.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"study-two-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 </section>
+<section id="check-what-is-in-the-data-files" class="level4">
+<h4 class="anchored" data-anchor-id="check-what-is-in-the-data-files">Check: What is in the data files?</h4>
+<p>Each of the data files we will work with has a similar structure, as you can see in this extract.</p>
+<div class="cell" data-hash="Week16_cache/html/headcheck-wide_4e556bd32f87c93cb27f1bb546dcb401">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">participant_ID</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean.acc</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">mean.self</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">study</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">AGE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">SHIPLEY</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">HLVA</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">FACTOR3</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">QRITOTAL</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">GENDER</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">EDUCATION</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">ETHNICITY</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">studytwo.1</td>
+<td style="text-align: right;">0.4107143</td>
+<td style="text-align: right;">6.071429</td>
+<td style="text-align: left;">studytwo</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Higher</td>
+<td style="text-align: left;">Asian</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">studytwo.10</td>
+<td style="text-align: right;">0.6071429</td>
+<td style="text-align: right;">8.500000</td>
+<td style="text-align: left;">studytwo</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Secondary</td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">studytwo.100</td>
+<td style="text-align: right;">0.8750000</td>
+<td style="text-align: right;">8.928571</td>
+<td style="text-align: left;">studytwo</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Higher</td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">studytwo.101</td>
+<td style="text-align: right;">0.9642857</td>
+<td style="text-align: right;">8.500000</td>
+<td style="text-align: left;">studytwo</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">59</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Female</td>
+<td style="text-align: left;">Higher</td>
+<td style="text-align: left;">White</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>You can use the <em>scroll bar</em> at the bottom of the data window to view different columns.</p>
+<p>You can see the columns:</p>
+<ul>
+<li><code>participant_ID</code> participant code</li>
+<li><code>mean.acc</code> average accuracy of response to questions testing understanding of health guidance</li>
+<li><code>mean.self</code> average self-rated accuracy of understanding of health guidance</li>
+<li><code>study</code> variable coding for what study the data were collected in</li>
+<li><code>AGE</code> age in years</li>
+<li><code>HLVA</code> health literacy test score</li>
+<li><code>SHIPLEY</code> vocabulary knowledge test score</li>
+<li><code>FACTOR3</code> reading strategy survey score</li>
+<li><code>GENDER</code> gender code</li>
+<li><code>EDUCATION</code> education level code</li>
+<li><code>ETHNICITY</code> ethnicity (Office National Statistics categories) code</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is always a good idea to view the dataset – click on the name of the dataset in the R-Studio <code>Environment</code> window, and check out the columns, scroll through the rows – to get a sense of what you are working with.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="sec-wk6-lab-activities-1" class="level3">
-<h3 class="anchored" data-anchor-id="sec-wk6-lab-activities-1">Lab activity 1</h3>
-<!-- [inset how to .R guide here] -->
+<h3 class="anchored" data-anchor-id="sec-wk6-lab-activities-1">Lab activity 1: Work with the How-to guide</h3>
+<p>The <code>how-to</code> guide comprises an .Rmd file:</p>
+<ul>
+<li><code>2023-24-PSYC122-w16-how-to.Rmd</code></li>
+</ul>
+<p>It is full of advice and example code.</p>
+<p>The code in the <code>how-to</code> guide was written to work with the data file:</p>
+<ul>
+<li><code>study-one-general-participants.csv</code>.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We show you how to do everything you need to do in the lab activity (<a href="#sec-wk6-lab-activities-2">Section&nbsp;5.4</a>, next) in the <code>how-to</code> guide.</p>
+<ul>
+<li>Start by looking at the <code>how-to</code> guide to understand what steps you need to follow in the lab activity.</li>
+</ul>
+</div>
+</div>
+<p>We will take things <em>step-by-step</em>.</p>
+<p>We split .R scripts into parts, tasks and questions:</p>
+<ul>
+<li>different parts for different phases of the analysis process;</li>
+<li>different tasks for different steps in each phase;</li>
+<li>different questions to examine different ideas or coding steps.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Make sure you start at the top of the <code>.R</code> file and work your way, in order, through each task.</li>
+<li>Complete each task before you move on to the next task.</li>
+</ul>
+</div>
+</div>
+<p>In the activity <em>workbook</em>, we are going to work through the following tasks.</p>
+<ol type="1">
+<li>Empty the R environment – using <code>rm(list=ls())</code></li>
+<li>Load relevant libraries – using <code>library()</code></li>
+<li>Read in the data file – using <code>read_csv()</code></li>
+<li>Inspect the data – using <code>head()</code> and <code>summary()</code></li>
+<li>Change the type classification of a variable in the data – using <code>as.factor()</code></li>
+<li>Draw histograms to examine the distributions of variables – using <code>ggplot()</code> and <code>geom_histogram()</code></li>
+<li>Edit the appearance of <em>one variable</em> histogram plot step-by-step</li>
+<li>Draw scatterplots to examine the associations between some variables – using <code>ggplot()</code> and <code>geom_point()</code></li>
+<li>Draw scatterplots to examine different variables</li>
+<li>Edit the appearance of a plot step-by-step</li>
+<li>Examine associations between variables using correlation.</li>
+</ol>
+<p>The activity <code>2022-23-PSYC122-w16-workbook.R</code> file takes you through the tasks, one by one.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are unsure about what you need to do, look at the advice in <code>2022-23-PSYC122-w16-how-to.R</code> on what steps you have to follow, and examples on how to write the code.</p>
+</div>
+</div>
+<p>You will see that you can match a task in the <code>activity</code> to the same task in the <code>how-to</code>. The <code>how-to</code> shows you what function you need and how you should write the function code.</p>
+<ul>
+<li>Don’t forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.</li>
+</ul>
+<p>This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.</p>
 </section>
 <section id="sec-wk6-lab-activities-2" class="level3">
 <h3 class="anchored" data-anchor-id="sec-wk6-lab-activities-2">Lab activity 2</h3>
