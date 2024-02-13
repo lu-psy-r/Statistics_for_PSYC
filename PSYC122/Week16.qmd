@@ -750,7 +750,6 @@ You can click on the reveal button, for each question, to get our example code.
 - **Experiment** change the options and see what happens.
 :::
 
-
 #### Questions: Task 10
 
 >**Q.18.** Change the appearance of the points using alpha, size and colour:
@@ -802,76 +801,102 @@ Now it's your turn: experiment!
 - What about a different level of transparency (alpha)? Replace `alpha = 0.5` with `alpha =  ...` using a different fraction.
 :::
 
-<!-- ## Step 7: Use correlation to to answer the research questions -->
+#### Step 7: Use correlation to to answer the research questions
 
+##### Task 11 -- Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables
 
-<!-- ### Task 11 -- Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables -->
+We use `cor.test()` for the questions that follow.
 
-<!-- We use `cor.test()` -->
+::: callout-tip
+- We take a slightly different approach to the approach you have seen in previous weeks [see here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC122/Week12.html)
+- You have seen the code before.
+- Here, we use `cor.test()` on its own because we want to focus your attention on the *statistics*
+:::
 
-<!-- - Q.22. What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`? -->
+>**Q.22.** What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`?
 
-<!-- ```{r} -->
-<!-- cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
+<!-- - A.22. r = 0.5000559 -->
 
-<!-- - A.22. r = 0.5000559  -->
+Can you figure out the code to do the calculation?
 
-<!-- - Q.23. Is the correlation significant? -->
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
+```
+:::
+
+>**Q.23.** Is the correlation significant?
 
 <!-- - A.23. r is significant -->
 
-<!-- - Q.24. What are the values for t and p for the significance test for the correlation? -->
+>**Q.24.** What are the values for t and p for the significance test for the correlation?
 
 <!-- - A.24. t = 7.5288, p = 2.866e-12 -->
 
-<!-- - Q.25. What do you conclude, given the correlation results? (Maybe draw a scatterplot to examine the shape of the association.) -->
+>**Q.25.** What do you conclude, given the correlation results? 
 
-<!-- - A.25. HLVA and mean.acc are positively correlated suggesting that as HLVA scores increase so also do -->
-<!-- mean.acc scores -->
+Maybe draw a scatterplot to examine the shape of the association.
 
-<!-- - Q.26. What is r (given as `cor` in the output) for the correlation between `mean.self` and `mean.acc`? -->
+<!-- - A.25. HLVA and mean.acc are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
 
-<!-- ```{r} -->
-<!-- cor.test(study.two.gen$mean.self, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
+>**Q.26.** What is r (given as `cor` in the output) for the correlation between `mean.self` and `mean.acc`?
 
-<!-- - A.26. r = 0.5460792  -->
+<!-- - A.26. r = 0.5460792 -->
 
-<!-- - Q.27. Is the correlation between `AGE` and `mean.acc` significant? -->
+Can you figure out the code to do the calculation?
 
-<!-- ```{r} -->
-<!-- cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+cor.test(study.two.gen$mean.self, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
+```
+:::
+
+>**Q.27.** Is the correlation between `AGE` and `mean.acc` significant?
 
 <!-- - A.27. r is not significant -->
 
-<!-- - Q.28. What are the values for t and p for the significance test for the correlation between `QRITOTAL` -->
-<!-- and `mean.acc`? -->
+Can you figure out the code to do the calculation?
 
-<!-- ```{r} -->
-<!-- cor.test(study.two.gen$QRITOTAL, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
+```
+:::
+
+>**Q.28.** What are the values for t and p for the significance test for the correlation between `QRITOTAL` and `mean.acc`?
 
 <!-- - A.28. t = 6.4711, p = 9.993e-10 -->
 
-<!-- - Q.29. What do you conclude, given the correlation results, about the association between `SHIPLEY` -->
-<!-- and `mean.acc`? -->
+Can you figure out the code to do the calculation?
 
-<!-- ```{r} -->
-<!-- cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+cor.test(study.two.gen$QRITOTAL, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
+```
+:::
 
-<!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do -->
-<!-- mean.acc scores -->
+>**Q.29.** What do you conclude, given the correlation results, about the association between `SHIPLEY` and `mean.acc`?
+
+<!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
+
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
+```
+:::
 
 ## Answers {#sec-wk6-lab-activities-answers}
 
-When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code...
+When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week.
 
 ## Online Q&A {#sec-wk6-lab-Q-and-A}
 
-Below is the recording of this week's online Q&A.
+You will find, below, a link to the video recording of the week 16 online Q&A after it has been completed.
 
 ```{=html}
 ```
