@@ -8,6 +8,20 @@ order: 5
 This page is under construction: come back soon
 :::
 
+```{r}
+#| warning: false
+#| echo: false
+library(kableExtra)
+library(tidyverse)
+```
+
+```{r}
+#| warning: false
+#| echo: false
+study.one <- read_csv("study-one-general-participants.csv")  
+study.two <- read_csv("study-two-general-participants.csv")
+```
+
 ## Week 16: Introduction {#sec-wk16-introduction}
 
 Welcome to your overview of our work together.
@@ -184,11 +198,98 @@ download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/mai
 ```
 :::
 
+#### Check: What is in the data files?
 
+Each of the data files we will work with has a similar structure, as you can see in this extract.
 
-### Lab activity 1 {#sec-wk6-lab-activities-1}
+```{r}
+#| label: headcheck-wide
+#| echo: false
+# head(behaviour.rt)
+study.two %>%
+  filter(participant_ID == c('studytwo.1', 'studytwo.10', 'studytwo.100', 'studytwo.101')) %>%
+  as.data.frame() %>%
+  kable() %>%
+  kable_styling()
+```
 
-<!-- [inset how to .R guide here] -->
+You can use the *scroll bar* at the bottom of the data window to view different columns.
+
+You can see the columns:
+
+- `participant_ID` participant code
+- `mean.acc` average accuracy of response to questions testing understanding of health guidance
+- `mean.self` average self-rated accuracy of understanding of health guidance
+- `study` variable coding for what study the data were collected in
+- `AGE` age in years
+- `HLVA` health literacy test score
+- `SHIPLEY` vocabulary knowledge test score
+- `FACTOR3` reading strategy survey score
+- `GENDER` gender code
+- `EDUCATION` education level code
+- `ETHNICITY` ethnicity (Office National Statistics categories) code
+
+::: callout-tip
+It is always a good idea to view the dataset -- click on the name of the dataset in the R-Studio `Environment` window, and check out the columns, scroll through the rows -- to get a sense of what you are working with.
+:::
+
+### Lab activity 1: Work with the How-to guide {#sec-wk6-lab-activities-1}
+
+The `how-to` guide comprises an .Rmd file:
+
+- `2023-24-PSYC122-w16-how-to.Rmd`
+
+It is full of advice and example code.
+
+The code in the `how-to` guide was written to work with the data file:
+
+- `study-one-general-participants.csv`.
+
+::: callout-tip
+We show you how to do everything you need to do in the lab activity (@sec-wk6-lab-activities-2, next) in the `how-to` guide.
+
+- Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
+:::
+
+We will take things *step-by-step*.
+
+We split .R scripts into parts, tasks and questions:  
+
+- different parts for different phases of the analysis process;
+- different tasks for different steps in each phase;
+- different questions to examine different ideas or coding steps.
+
+::: callout-tip
+- Make sure you start at the top of the `.R` file and work your way, in order, through each task.
+- Complete each task before you move on to the next task.
+:::
+
+In the activity *workbook*, we are going to work through the following tasks.
+
+1. Empty the R environment -- using `rm(list=ls())`
+2. Load relevant libraries -- using `library()`
+3. Read in the data file -- using `read_csv()`
+4. Inspect the data -- using `head()` and `summary()`
+5. Change the type classification of a variable in the data -- using `as.factor()`
+6. Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()`
+7. Edit the appearance of *one variable* histogram plot step-by-step
+8. Draw scatterplots to examine the associations between some variables -- using `ggplot()` and `geom_point()`
+9. Draw scatterplots to examine different variables
+10. Edit the appearance of a plot step-by-step
+11. Examine associations between variables using correlation.
+
+The activity `2022-23-PSYC122-w16-workbook.R` file takes you through the tasks, one by one.
+
+::: callout-tip
+If you are unsure about what you need to do, look at the advice in `2022-23-PSYC122-w16-how-to.R` on what steps you have to follow, and examples on how to write the code.
+:::
+
+You will see that you can match a task in the `activity` to the same task in the `how-to`.
+The `how-to` shows you what function you need and how you should write the function code.
+
+- Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+
+This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.
 
 ### Lab activity 2 {#sec-wk6-lab-activities-2}
 
