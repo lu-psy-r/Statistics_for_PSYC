@@ -568,7 +568,7 @@ You can *break* this code by not adding a + at the end of each bit (except the l
 
 Notice that how to break the code, and how to figure out how to fix the break, are discussed in the `how-to` guide.
 
-#### Step 5: Now draw scatterplots to examine associations between variables -->
+#### Step 5: Now draw scatterplots to examine associations between variables
 
 ##### Task 8 -- Create a scatterplot to examine the association between some variables
 
@@ -603,7 +603,7 @@ The plot code moves through the following steps:
 
 ##### Task 9 -- Now do scatterplots with *every* numeric predictor variable in the `study.two.gen` dataset
 
-You always want to use as the y-axis variable the outcome `mean.acc` so:
+You always want to use the outcome `mean.acc` as the y-axis variable so:
 
 - `y = mean.acc`
 
@@ -611,12 +611,14 @@ Then you can use each numeric predictor variable as the x-axis variable so:
 
 - `x = mean.self`
 
+::: callout-tip
 Remember what we saw with `summary()`: not every variable consists of numbers
 
 If the `summary()` does not show you a mean for a variable, then R does not think
 that variable is numeric
+:::
 
-It can be hard to decide what an association looks like so make a decision based on what you see.
+**It can be hard to decide what an association looks like so make a decision based on what you see and *trust your instincts* right now**
 
 ##### Draw the plot, answer the question
 
@@ -706,62 +708,99 @@ ggplot(data = study.two.gen, aes(x = QRITOTAL, y = mean.acc)) +
 ```
 :::
 
+#### Step 6: Edit the scatterplots to make them look good
 
-<!-- ## Step 6: Edit the scatterplots to make them look good -->
+##### Task 10 -- Edit the appearance of one plot step-by-step
+
+Learn how to edit your plotting code so that you can make plots with a 
+professional appearance.
+
+::: callout-tip
+- We teach this because we know that some of our alumni get jobs after they develop pro visualization skills
+with us.
+- We will do this learning as part of *PSYC122*.
+:::
+
+In doing this work, you will learn about:
+
+- **coding** -- how to do the edits;
+- **visualization** -- how to look at and read plots;
+- **presentation** -- what works and what doesn't for your audience.
+
+We get started here.
+
+##### Hint: Task 10 -- We are going to edit a scatterplot to adjust
+
+1. the appearance of the points using `alpha`, `size` and `colour`;
+2. the colour of the background using `theme_bw()`;
+3. the appearance of the labels using `labs()`.
+
+In the following, we ask you to edit one plot element at a time.
+You can work out what to do.
+
+There is helpful `ggplot` reference information that you can use: [here](https://ggplot2.tidyverse.org/reference/geom_point.html).
+
+You can visit the find the `ggplot` reference webpages, find some example code,
+and come back here.
+
+You can click on the reveal button, for each question, to get our example code.
+
+::: callout-tip
+- You do not have to stick with our choices on colour, size etc.
+- **Experiment** change the options and see what happens.
+:::
 
 
-<!-- ### Task 10 -- Edit the appearance of one plot step-by-step -->
+#### Questions: Task 10
 
-<!-- #### Hint: Task 10 -- We are going to edit: -->
+>**Q.18.** Change the appearance of the points using alpha, size and colour:
 
-<!-- 1. the appearance of the points using alpha, size and colour; -->
-<!-- 2. the colour of the background using theme_bw(); -->
-<!-- 3. the appearance of the labels using labs(). -->
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "red")
+```
+:::
 
-<!-- Just like with `geom_histogram()` there is `ggplot` reference  -->
-<!-- information for the geom you can use here -- take a look: -->
+>**Q.19.** Edit the colour of the background using `theme_bw()`
+
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "red")   +
+  theme_bw()
+```
+:::
+
+>**Q.20.** Edit the appearance of the labels using `labs()`
+
+:::{.callout-tip collapse="true"}
+```{r}
+#| eval: false
+ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "red")   +
+  theme_bw() +
+  labs(x = "HLVA", y = "mean accuracy")
+```
+:::
+
+>**Q.21.** Can you find the ggplot reference page?
+
+Try doing a search with the keywords: `ggplot reference geom_point`
+
+<!-- - A.21. -- It is here: -->
 
 <!-- <https://ggplot2.tidyverse.org/reference/geom_point.html> -->
 
-<!-- You can find some example code and come back here if you are unsure what to do -->
+::: callout=tip
+Now it's your turn: experiment!
 
-<!-- #### Questions: Task 10 -->
-
-<!-- - Q.18. Change the appearance of the points using alpha, size and colour: -->
-
-<!-- ```{r} -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red")  -->
-<!-- ``` -->
-
-<!-- - Q.19. Edit the colour of the background using `theme_bw()` -->
-
-<!-- ```{r} -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red")   + -->
-<!--   theme_bw() -->
-<!-- ``` -->
-
-<!-- - Q.20. Edit the appearance of the labels using `labs()` -->
-
-<!-- ```{r} -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red")   + -->
-<!--   theme_bw() + -->
-<!--   labs(x = "HLVA", y = "mean accuracy") -->
-<!-- ``` -->
-
-<!-- - Q.21. Can you find the ggplot reference page? -->
-
-<!-- Do a search with the keywords "ggplot reference geom_point" -->
-
-<!-- - A.21. -- It is here:  -->
-
-<!-- <https://ggplot2.tidyverse.org/reference/geom_point.html> -->
-
-
-<!-- ## Now you: experiment! -->
-
+- What about different colour words? Replace `"red"` with `"..."`?
+- What about a different size? Replace `size = 2` with `size =  ...` using a different number.
+- What about a different level of transparency (alpha)? Replace `alpha = 0.5` with `alpha =  ...` using a different fraction.
+:::
 
 <!-- ## Step 7: Use correlation to to answer the research questions -->
 
