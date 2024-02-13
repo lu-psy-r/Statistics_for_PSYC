@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -314,12 +348,11 @@ Tip
 <p><em>Putting it all together</em></p>
 <ul>
 <li>These classes are designed to help you to revise and to put into practice some of the key ideas and skills you have been developing in the first year research methods modules <em>PSYC121, PSYC123 and PSYC124</em>.</li>
-<li>We will do this in the context of a live research project with potential real world impacts.</li>
-<li>This is the <strong>Clearly understood</strong> project.</li>
+<li>We will do this in the context of a live research project with potential real world impacts: the <strong>Clearly Understood</strong> project.</li>
 </ul>
 </div>
 </div>
-<p>We will present our PSYC122 lessons in the context of a real research project because we think that this <em>context</em> will help you to make sense of the data, and will help you to see <em>why</em> we ask you to practice the skills we are teaching.</p>
+<p>We will present our PSYC122 lessons in the context of a real research project because we think that this <em>context</em> will help you to make sense of the data, and it will help you to see <em>why</em> we ask you to practice the skills we are teaching.</p>
 <p>We will be revisiting some of the ideas and techniques you have seen introduced in previous classes. This will give you the opportunity to <em>revise</em> and <em>consolidate</em> your learning. We will <em>extend</em> your development with some new ideas, to help you to strengthen your skills.</p>
 <p>We will observe real scientific findings using the data we will collect together. These new findings will ultimately show health providers how to communicate their advice more effectively.</p>
 <section id="our-learning-goals" class="level3">
@@ -336,13 +369,13 @@ Tip
 <div class="callout-body-container callout-body">
 <p>In Week 16, we will ask you to do three things.</p>
 <ul>
-<li><em>First</em>, we will ask you to do a pre-lab activity that involves completing a survey.</li>
-<li><em>Second</em>, we will ask you to do a set of practical tasks in the lab activity that are designed to consolidate your learning on <em>data visualization</em>.</li>
-<li><em>Third</em>, we will ask you to think critically about potential associations between measures of individual differences and measures of how well people understand health information.</li>
+<li><em>First</em> we will ask you to do a pre-lab activity that involves completing a survey.</li>
+<li><em>Second</em> we will ask you to do a set of practical tasks in the lab activity that are designed to consolidate your learning on data <strong>visualization</strong>.</li>
+<li><em>Third</em> we will ask you to <strong>think critically</strong> about potential associations between measures of individual differences and measures of how well people understand health information.</li>
 </ul>
 </div>
 </div>
-<p>Completing the survey will help you to make sense of the numbers you will be working with in the activities. And it will help to teach you about the challenges of measurement, a key aspect of scientific thinking in psychology.</p>
+<p>Completing the survey will help you to understand the numbers you will be working with in the activities: where they come from, and what they show about the people tested. It will also help to teach you about the challenges of measurement: this is one of the key challenges in psychological science.</p>
 <p>We will build practice in using correlations to test predictions about associations and <em>thus</em> to answer research questions.</p>
 </section>
 </section>
@@ -395,8 +428,8 @@ Tip
 <li><a href="data/week16/122-hypotheses-assocations.html">The slides</a> exactly as presented (36 MB).</li>
 <li><a href="data/week16/122-hypotheses-associations-printable-edit.docx">The slides</a> converted to a Word .docx (24 MB).</li>
 </ul>
-<p>You can download the web page <code>.html</code> file and click on it to open it in any browser (e.g., Bing, Chrome or Safari). The slide images are high quality so the file is quite big.</p>
-<p>You can download the <code>.docx</code> file and click on it to open it as a Word document that you can then edit. Converting the slides to a .docx distorts some images but the benefit of conversion is that it makes it easier for you to add your notes.</p>
+<p>You can download the web page <code>.html</code> file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big.</p>
+<p>You can download the <code>.docx</code> file and click on it to open it as a Word document that you can then edit. Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.</p>
 </section>
 <section id="reading-links-to-other-classes" class="level2">
 <h2 class="anchored" data-anchor-id="reading-links-to-other-classes">Reading: Links to other classes</h2>
@@ -441,11 +474,13 @@ Tip
 <h2 class="anchored" data-anchor-id="sec-wk6-lab-activities">Lab activities</h2>
 <section id="sec-wk6-lab-activities-1-introduction" class="level3">
 <h3 class="anchored" data-anchor-id="sec-wk6-lab-activities-1-introduction">Introduction</h3>
-<p>We will do our practical lab work to develop your skills in the context of the <strong>Clearly understood</strong> project.</p>
+<p>We will do our practical lab work to develop your skills in the context of the <strong>Clearly Understood</strong> project.</p>
 <ul>
 <li>Our focus will be on what makes it easy or difficult for people to understand written health information.</li>
 </ul>
-<p><strong>Why are we doing this?</strong> We encounter written health information all the time: in warnings signs, on medication labels, in clinics when we go to see the doctor, and online when we research things we are worried about. It is not always easy to understand this information. The problem is that it is unclear how health information should be communicated. As psychologists, we can help to improve health communication.</p>
+<p><strong>Why are we doing this?</strong></p>
+<p>We encounter written health information all the time: in warnings signs, on medication labels, in clinics when we go to see the doctor, and online when we research things we are worried about. It is not always easy to understand this information. The problem is that it is unclear how health information <em>should</em> be communicated: even this is important, there is not much evidence.</p>
+<p>As psychologists, <strong>we can help</strong>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -458,7 +493,7 @@ Important
 <div class="callout-body-container callout-body">
 <p>In these classes, we will complete a research project to answer the research questions:</p>
 <ol type="1">
-<li>What person attributes predict success in understanding?</li>
+<li>What person attributes predict success in understanding health information?</li>
 <li>Can people accurately evaluate whether they correctly understand written health information?</li>
 </ol>
 </div>
@@ -466,8 +501,10 @@ Important
 </section>
 <section id="sec-wk6-prelab-activities-ready" class="level3">
 <h3 class="anchored" data-anchor-id="sec-wk6-prelab-activities-ready">Get ready</h3>
-<p><strong>Download the data</strong> <a href="data/week16/122_week16_for_students.zip">122_week16_for_students.zip</a> files folder and upload the contents to the new folder you created in RStudio Server.</p>
-<p>The folder includes the data files:</p>
+<section id="download-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="download-the-data">Download the data</h4>
+<p>Click on the link: <a href="data/week16/122_week16_for_students.zip">122_week16_for_students.zip</a> to download the data files folder. Then upload the contents to the new folder you created in RStudio Server.</p>
+<p>The downloadable .zip folder includes the data files:</p>
 <ul>
 <li><code>study-one-general-participants.csv</code></li>
 <li><code>study-two-general-participants.csv</code></li>
@@ -476,6 +513,39 @@ Important
 <ul>
 <li><code>2023-24-PSYC122-w16-how-to.Rmd</code></li>
 </ul>
+<p>If you can’t upload these files to the server, you can use some code to get R to do it for you: uncover the hint to see how.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>You can use the code below to directly download the file you need in this lab activity to the server.</li>
+<li>Remember that you can copy the code to your clipboard by clicking on the ‘clipboard’ in the top right corner.</li>
+</ul>
+<ol type="1">
+<li>Get the <code>study-one-general-participants.csv</code> data</li>
+</ol>
+<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-1_c480db013716d99dd7a804289c923f88">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/study-one-general-participants.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"study-one-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Get the <code>study-two-general-participants.csv</code> data</li>
+</ol>
+<div class="cell" data-hash="Week16_cache/html/unnamed-chunk-2_3396f6c80396adbc4d3f9028ac8b7018">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/study-two-general-participants.csv?raw=true"</span>, <span class="at">destfile =</span> <span class="st">"study-two-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="sec-wk6-lab-activities-1" class="level3">
 <h3 class="anchored" data-anchor-id="sec-wk6-lab-activities-1">Lab activity 1</h3>
