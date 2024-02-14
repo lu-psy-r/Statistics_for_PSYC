@@ -179,9 +179,10 @@ and the R Markdown `.Rmd`:
 
 - `2023-24-PSYC122-w16-how-to.Rmd`
 
-If you can't upload these files to the server, you can use some code to get R to do it for you: uncover the hint to see how.
+If you can't upload these files to the server -- this affects some students -- you can use some code to get R to do it for you: uncover the code box below to reveal the code to do this.
 
 :::{.callout-tip collapse="true"}
+## Code
 - You can use the code below to directly download the file you need in this lab activity to the server. 
 - Remember that you can copy the code to your clipboard by clicking on the 'clipboard' in the top right corner.
 
@@ -264,7 +265,7 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-In the activity workbook, we are going to work through the following tasks.
+In the activity @sec-wk6-lab-activities-2, we are going to work through the following tasks.
 
 **Step 1: Set-up**
 
@@ -302,7 +303,7 @@ In the activity workbook, we are going to work through the following tasks.
 If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w16-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
 :::
 
-You will see that you can match a task in the `activity` workbook to the same task in the `how-to` guide.
+You will see that you can match a task in the activity @sec-wk6-lab-activities-2 to the same task in the `how-to` guide.
 The `how-to` shows you what function you need and how you should write the function code.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
@@ -320,9 +321,9 @@ You will learn more if you follow this advice:
 
 ::: callout-tip
 1. We will hide the code to do some tasks behind a drop-down button. Try to write and run the code for yourself first.
-2. We will not always give you the code you need so you can check what you have learned.
-3. We will not give you the answers to questions about the data or about the results of analyses. 
-4. An answers version of the workbook will be provided at the end of the week (see @sec-wk6-lab-activities-answers) so you can check whether your independent work has been correct.
+2. We won't always give you the code required to do something: this gives you the chance to check what you have learned by trying out your code without the answer in front of you.
+3. We will not *at first* give you the answers to questions about the data or about the results of analyses. 
+4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk6-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
 #### Questions {#sec-wk6-lab-activities-1-questions}
@@ -356,20 +357,21 @@ The data file for the *workbook* is called:
 Use the `read_csv()` function to read the data file into R.
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 study.two.gen <- read_csv("study-two-general-participants.csv")
 ```
 :::
 
-When you code this, give the data object you create a clear name 
-e.g. `study.two.gen`.
+When you code this, you can choose your own file name, but be sure to give the data object you create a distinct name e.g. `study.two.gen`.
 
 ##### Task 4 -- Inspect the data file
 
 Use the `summary()` or `head()` functions to take a look
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 summary(study.two.gen)
@@ -394,6 +396,7 @@ You can use the `as.factor()` function you have used before: how do you write th
 Try it for yourself before revealing the code.
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 study.two.gen$ETHNICITY <- as.factor(study.two.gen$ETHNICITY)
@@ -404,6 +407,7 @@ study.two.gen$ETHNICITY <- as.factor(study.two.gen$ETHNICITY)
 about the variable `ETHNICITY`?
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 summary(study.two.gen)
@@ -424,6 +428,7 @@ summary(study.two.gen)
 ##### Hint: Task 6
 
 :::{.callout-tip collapse="true"}
+## Hint
 Use `ggplot()` with `geom_histogram()`.
 
 The first time we do this, we can take things one step at a time.
@@ -464,6 +469,7 @@ Try it for yourself before revealing the code: can you do it?
 Click on the button to see the code for drawing the histogram of `SHIPLEY` scores.
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = SHIPLEY)) + geom_histogram()
@@ -494,6 +500,7 @@ the minimum and smaller than the maximum for the variable.
 Remember, min and max values are given for each numeric variable in `summary()`.
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = SHIPLEY)) + geom_histogram(binwidth = 2)
@@ -529,6 +536,7 @@ You can create a new plot for each edit so you can see what difference your edit
 >**Q.9.** Edit the appearance of the bars using `binwidth`
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA)) +
@@ -539,6 +547,7 @@ ggplot(data = study.two.gen, aes(x = HLVA)) +
 >**Q.10.** Edit the colour of the background using `theme_bw()`
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA)) +
@@ -550,6 +559,7 @@ ggplot(data = study.two.gen, aes(x = HLVA)) +
 >**Q.11.** Edit the appearance of the labels using `labs()`
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA)) +
@@ -559,9 +569,9 @@ ggplot(data = study.two.gen, aes(x = HLVA)) +
 ```
 :::
 
-Notice how, if you are doing edits in steps, one line at a time, each line in your code **except the last one** ends in a +.
+Notice how, if you are doing edits in steps, one line at a time, each line in your code **except the last one** ends in a `+`.
 
-What we are doing is telling R we want this + this + this ...
+What we are doing is telling R we want this `+` and this `+` and this ...
 Each line then adds an extra step.
 
 You can *break* this code by not adding a + at the end of each bit (except the last line).
@@ -618,7 +628,9 @@ If the `summary()` does not show you a mean for a variable, then R does not thin
 that variable is numeric
 :::
 
-**It can be hard to decide what an association looks like so make a decision based on what you see and *trust your instincts* right now**
+**It can be hard to decide what an association looks like so make a decision based on what you see**
+
+Right now, we are working to build your intuitions so: reflect, trust your intuition, and make a decision.
 
 ##### Draw the plot, answer the question
 
@@ -627,6 +639,7 @@ that variable is numeric
 <!-- - A.12. Increase in `mean.self` is associated with increase in `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) +
@@ -641,6 +654,7 @@ ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) +
 <!-- - A.13. There is no clear association between `AGE` and `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
@@ -656,6 +670,7 @@ and `mean.acc`?
 <!-- - A.14. Increase in `SHIPLEY` is associated with increase in `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
@@ -671,6 +686,7 @@ and `mean.acc`?
 <!-- - A.15. Increase in `HLVA` is associated with increase in `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
@@ -686,6 +702,7 @@ and `mean.acc`?
 <!-- - A.16. Increase in `FACTOR3` is associated with increase in `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = FACTOR3, y = mean.acc)) +
@@ -701,6 +718,7 @@ and `mean.acc`?
 <!-- - A.17. Increase in `QRITOTAL` is associated with increase in `mean.acc` -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = QRITOTAL, y = mean.acc)) +
@@ -716,8 +734,8 @@ Learn how to edit your plotting code so that you can make plots with a
 professional appearance.
 
 ::: callout-tip
-- We teach this because we know that some of our alumni get jobs after they develop pro visualization skills
-with us.
+- We teach this because we know that some of our alumni get jobs after they 
+develop pro visualization skills with us.
 - We will do this learning as part of *PSYC122*.
 :::
 
@@ -755,6 +773,7 @@ You can click on the reveal button, for each question, to get our example code.
 >**Q.18.** Change the appearance of the points using alpha, size and colour:
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
@@ -765,6 +784,7 @@ ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
 >**Q.19.** Edit the colour of the background using `theme_bw()`
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
@@ -776,6 +796,7 @@ ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
 >**Q.20.** Edit the appearance of the labels using `labs()`
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
@@ -820,6 +841,7 @@ We use `cor.test()` for the questions that follow.
 Can you figure out the code to do the calculation?
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
@@ -847,6 +869,7 @@ Maybe draw a scatterplot to examine the shape of the association.
 Can you figure out the code to do the calculation?
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 cor.test(study.two.gen$mean.self, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
@@ -860,6 +883,7 @@ cor.test(study.two.gen$mean.self, study.two.gen$mean.acc, method = "pearson",  a
 Can you figure out the code to do the calculation?
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
@@ -873,6 +897,7 @@ cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alterna
 Can you figure out the code to do the calculation?
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 cor.test(study.two.gen$QRITOTAL, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
@@ -884,6 +909,7 @@ cor.test(study.two.gen$QRITOTAL, study.two.gen$mean.acc, method = "pearson",  al
 <!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
 
 :::{.callout-tip collapse="true"}
+## Code
 ```{r}
 #| eval: false
 cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
