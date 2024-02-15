@@ -4,6 +4,12 @@ subtitle: Written by Rob Davies
 order: 5
 ---
 
+::: callout-warning
+This page is now live for you to use: **Welcome!**
+
+- Here is a link to the sign-in page for [R-Studio Server](https://psy-rstudio.lancaster.ac.uk/auth-sign-in?appUri=%2F)
+:::
+
 ```{r}
 #| warning: false
 #| echo: false
