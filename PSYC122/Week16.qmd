@@ -4,10 +4,6 @@ subtitle: Written by Rob Davies
 order: 5
 ---
 
-::: callout-warning
-This page is under construction: come back soon
-:::
-
 ```{r}
 #| warning: false
 #| echo: false
