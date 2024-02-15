@@ -203,7 +203,7 @@ download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/mai
 3. Get the `2023-24-PSYC122-w16-how-to.Rmd` how-to guide
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/2023-24-PSYC122-w16-how-to.Rmd?raw=true", destfile = "study-two-general-participants.csv")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week16/2023-24-PSYC122-w16-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w16-how-to.Rmd")
 ```
 :::
 
