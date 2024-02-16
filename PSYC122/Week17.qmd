@@ -113,6 +113,40 @@ You can download the web page `.html` file and click on it to open it in any bro
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
+### The lectures have two main areas of focus {#sec-wk17-lectures-focus}
+
+**1. Understanding the scientific process**
+
+I outline the steps through which a psychological scientist may progress, in logic and practice, from research questions to hypotheses to analyses.
+
+We are learning data analysis methods.
+But the key point is that we use these methods in the context of a research project with concerns, aims, methodological assumptions, and choices.
+This is generally true so the aim is to present a concrete example of how research works.
+
+As part of the discussion, I raise questions you might want to consider.
+These questions are also part of the context for our data analysis, because they help to inform how you interpret or evaluate the results.
+These questions are examples of the **critical evaluation** that you will need to develop through your studies.
+
+**2. The linear model**
+
+We look at how the linear model can be used to address research questions in the context of the **Clearly understood** health comprehension project.
+But I aim to outline some general ideas about why we use the linear model technique, and how it works.
+
+I build on work you have done with Margriet Groen in earlier PSYC122 classes, so that we can *strengthen* understanding, and *extend skills*.
+
+The lectures end with a discussion of the critical information you must identify and extract when you view the summary of a linear model results.
+
+I then show you how to report the results.
+I give you examples of the conventional language you can use to report your results.
+
+::: callout-tip
+To work with the recordings:
+
+- Watch the video parts right through.
+- Use the printable versions of the slides (provided on Moodle) to make notes.
+- Try out the coding exercises in the how-to and the workbook (see @sec-w17-resources) to see for yourself how you can construct visualizations and do analyses.
+:::
+
 ## Reading: Links to other classes
 
 We do not provide further reading for this class but you will find it helpful to revise some of the key ideas you have been learning about PSYC122 and in other modules.
