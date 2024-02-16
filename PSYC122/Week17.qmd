@@ -275,83 +275,88 @@ You can see the columns:
 It is always a good idea to view the dataset -- click on the name of the dataset in the R-Studio `Environment` window, and check out the columns, scroll through the rows -- to get a sense of what you are working with.
 :::
 
-<!-- ### Lab activity 1: Work with the `How-to` guide {#sec-wk17-lab-activities-1} -->
+### Lab activity 1: Work with the `How-to` guide {#sec-wk17-lab-activities-1}
 
-<!-- The `how-to` guide comprises an .Rmd file: -->
+The `how-to` guide comprises an .Rmd file:
 
-<!-- - `2023-24-PSYC122-w17-how-to.Rmd` -->
+- `2023-24-PSYC122-w17-how-to.Rmd`
 
-<!-- It is full of advice and example code. -->
+It is full of advice and example code.
 
-<!-- The code in the `how-to` guide was written to work with the data file: -->
+The code in the `how-to` guide was written to work with the data file:
 
-<!-- - `study-one-general-participants.csv`. -->
+- `study-one-general-participants.csv`.
 
-<!-- ::: callout-tip -->
-<!-- We show you how to do everything you need to do in the lab activity (@sec-wk17-lab-activities-2, next) in the `how-to` guide. -->
+::: callout-tip
+We show you how to do everything you need to do in the lab activity (@sec-wk17-lab-activities-2, next) in the `how-to` guide.
 
-<!-- - Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity. -->
-<!-- ::: -->
+- Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
+:::
 
-<!-- We will take things *step-by-step*. -->
+We will take things *step-by-step*.
 
-<!-- We split .Rmd scripts by steps, tasks and questions:   -->
+We split .Rmd scripts by steps, tasks and questions:
 
-<!-- - different steps for different phases of the analysis workflow; -->
-<!-- - different tasks for different things you need to do; -->
-<!-- - different questions to examine different ideas or coding challenges -->
+- different steps for different phases of the analysis workflow;
+- different tasks for different things you need to do;
+- different questions to examine different ideas or coding challenges
 
-<!-- ::: callout-tip -->
-<!-- - Make sure you start at the top of the `.Rmd` file and work your way, in order, through each task. -->
-<!-- - Complete each task before you move on to the next task. -->
-<!-- ::: -->
+::: callout-tip
+- Make sure you start at the top of the `.Rmd` file and work your way, in order, through each task.
+- Complete each task before you move on to the next task.
+:::
 
-<!-- In the activity @sec-wk17-lab-activities-2, we are going to work through the following tasks. -->
+In the activity @sec-wk17-lab-activities-2, we are going to work through the following tasks.
 
-<!-- **Step 1: Set-up** -->
+::: callout-tip
+- Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
+- Over time, we will refer less and less to what we have learned before.
+:::
 
-<!-- 1. Empty the R environment -- using `rm(list=ls())` -->
-<!-- 2. Load relevant libraries -- using `library()` -->
+**Step 1: Set-up**
 
-<!-- **Step 2: Load the data** -->
+1. Empty the R environment -- using `rm(list=ls())`
+2. Load relevant libraries -- using `library()`
 
-<!-- 3. Read in the data file -- using `read_csv()` -->
-<!-- 4. Inspect the data -- using `head()` and `summary()` -->
-<!-- 5. Change the type classification of a variable in the data -- using `as.factor()` -->
+**Step 2: Load the data**
 
-<!-- **Step 3: Use histograms to examine the distributions of variables** -->
+3. Read in the data file -- using `read_csv()`
+4. Inspect the data -- using `head()` and `summary()`
 
-<!-- 6. Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()` -->
+**Step 3: Use histograms to examine the distributions of variables**
 
-<!-- **Step 4: Edit your plots to make them look good** -->
+5. Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()`
+6. Practice editing the appearance of a histogram plot step-by-step
 
-<!-- 7. Edit the appearance of one histogram plot step-by-step -->
+**Step 4: Now draw scatterplots to examine associations between variables**
 
-<!-- **Step 5: Now draw scatterplots to examine associations between variables** -->
+7. Create scatterplots to examine the association between some variables 
+8. Edit the appearance of *each* plot step-by-step
 
-<!-- 8. Draw scatterplots to examine the associations between some variables -- using `ggplot()` and `geom_point()` -->
-<!-- 9. Draw scatterplots to examine different variables -->
+**Step 5: Use correlation to to answer the research questions **
 
-<!-- **Step 6: Edit the scatterplots to make them look good** -->
+9. Examine the correlations between the outcome variable and predictor variables
 
-<!-- 10. Edit the appearance of a plot step-by-step -->
+**Step 6: Use a linear model to to answer the research questions**
 
-<!-- **Step 7: Use correlation to to answer the research questions** -->
+10. Examine the relation between outcome mean accuracy (`mean.acc`) and each of the potential predictors: `SHIPLEY`, `HLVA` and `AGE`
 
-<!-- 11. Examine associations between variables using correlation. -->
+**Step 7: Use a linear model to generate predictions**
 
-<!-- ::: callout-tip -->
-<!-- If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w17-how-to.Rmd` on how to do the tasks, with examples on how to write the code. -->
-<!-- ::: -->
+11. Use a model we have fitted to plot model predictions
 
-<!-- You will see that you can match a task in the activity @sec-wk17-lab-activities-2 to the same task in the `how-to` guide. -->
-<!-- The `how-to` shows you what function you need and how you should write the function code. -->
+::: callout-tip
+If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w17-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
+:::
 
-<!-- This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science. -->
+You will see that you can match a task in the activity @sec-wk17-lab-activities-2 to the same task in the `how-to` guide.
+The `how-to` shows you what function you need and how you should write the function code.
 
-<!-- ::: callout-warning -->
-<!-- Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity. -->
-<!-- ::: -->
+This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
+
+::: callout-warning
+Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+:::
 
 <!-- ### Lab activity 2 {#sec-wk17-lab-activities-2} -->
 
