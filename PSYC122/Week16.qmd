@@ -113,9 +113,9 @@ We do not provide further reading for this class but you will find it helpful to
 - The lectures in *PSYC123* on: the scientific method; reliability and validity; experimental design, especially between-subjects studies; hypothesis testing; and precise hypotheses.
 - The lecture in *PSYC122* on correlations. 
 
-## Pre-lab activities {#sec-wk6-prelab-activities}
+## Pre-lab activities {#sec-wk16-prelab-activities}
 
-### Pre-lab activity 1 {#sec-wk6-prelab-activities-1}
+### Pre-lab activity 1 {#sec-wk16-prelab-activities-1}
 
 In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice.
 
@@ -137,15 +137,15 @@ If you do not want to do the survey, you can do an alternative activity (see bel
 
 All responses will be recorded completely anonymously.
 
-### Pre-lab activity alternative option {#sec-wk6-prelab-activities-2}
+### Pre-lab activity alternative option {#sec-wk16-prelab-activities-2}
 
 If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
 
 [Read the project pre-registration](https://osf.io/p6fsc/)
 
-## Lab activities {#sec-wk6-lab-activities}
+## Lab activities {#sec-wk16-lab-activities}
 
-### Introduction {#sec-wk6-lab-activities-1-introduction}
+### Introduction {#sec-wk16-lab-activities-1-introduction}
 
 We will do our practical lab work to develop your skills in the context of the **Clearly Understood** project.
 
@@ -166,7 +166,7 @@ In these classes, we will complete a research project to answer the research que
 2. Can people accurately evaluate whether they correctly understand written health information?
 :::
 
-### Get ready {#sec-wk6-prelab-activities-ready}
+### Get ready {#sec-wk16-prelab-activities-ready}
 
 #### Download the data 
 
@@ -242,7 +242,7 @@ You can see the columns:
 It is always a good idea to view the dataset -- click on the name of the dataset in the R-Studio `Environment` window, and check out the columns, scroll through the rows -- to get a sense of what you are working with.
 :::
 
-### Lab activity 1: Work with the `How-to` guide {#sec-wk6-lab-activities-1}
+### Lab activity 1: Work with the `How-to` guide {#sec-wk16-lab-activities-1}
 
 The `how-to` guide comprises an .Rmd file:
 
@@ -255,7 +255,7 @@ The code in the `how-to` guide was written to work with the data file:
 - `study-one-general-participants.csv`.
 
 ::: callout-tip
-We show you how to do everything you need to do in the lab activity (@sec-wk6-lab-activities-2, next) in the `how-to` guide.
+We show you how to do everything you need to do in the lab activity (@sec-wk16-lab-activities-2, next) in the `how-to` guide.
 
 - Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
 :::
@@ -273,7 +273,7 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-In the activity @sec-wk6-lab-activities-2, we are going to work through the following tasks.
+In the activity @sec-wk16-lab-activities-2, we are going to work through the following tasks.
 
 **Step 1: Set-up**
 
@@ -311,7 +311,7 @@ In the activity @sec-wk6-lab-activities-2, we are going to work through the foll
 If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w16-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
 :::
 
-You will see that you can match a task in the activity @sec-wk6-lab-activities-2 to the same task in the `how-to` guide.
+You will see that you can match a task in the activity @sec-wk16-lab-activities-2 to the same task in the `how-to` guide.
 The `how-to` shows you what function you need and how you should write the function code.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
@@ -320,7 +320,7 @@ This process of adapting demonstration code is a process critical to data litera
 Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.
 :::
 
-### Lab activity 2 {#sec-wk6-lab-activities-2}
+### Lab activity 2 {#sec-wk16-lab-activities-2}
 
 ### OK: now let's do it!
 
@@ -331,10 +331,10 @@ You will learn more if you follow this advice:
 1. We will hide the code to do some tasks behind a drop-down button. Try to write and run the code for yourself first.
 2. We won't always give you the code required to do something: this gives you the chance to check what you have learned by trying out your code without the answer in front of you.
 3. We will not *at first* give you the answers to questions about the data or about the results of analyses. 
-4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk6-lab-activities-answers) so that you can check whether your independent work has been correct.
+4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk16-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
-#### Questions {#sec-wk6-lab-activities-1-questions}
+#### Questions {#sec-wk16-lab-activities-1-questions}
 
 #### Step 1: Set-up
 
@@ -924,7 +924,7 @@ cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alt
 ```
 :::
 
-## Answers {#sec-wk6-lab-activities-answers}
+## Answers {#sec-wk16-lab-activities-answers}
 
 When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week.
 
@@ -939,13 +939,13 @@ We focus on the **Lab activity 2** questions where we ask you to interpret somet
 
 <!-- You can see all the code and all the answers in `2023-24-PSYC122-w16-workbook-answers.Rmd`. -->
 
-<!-- ### Answers {#sec-wk6-lab-activities-answers-information}  -->
+<!-- ### Answers {#sec-wk16-lab-activities-answers-information}  -->
 
 <!-- ::: callout-tip -->
 <!-- Click on a box to reveal the answer. -->
 <!-- ::: -->
 
-<!-- #### Questions {#sec-wk6-lab-activities-1-questions-answers} -->
+<!-- #### Questions {#sec-wk16-lab-activities-1-questions-answers} -->
 
 <!-- >**Q.1.** What is the median of `AGE`? -->
 
@@ -1136,7 +1136,7 @@ We focus on the **Lab activity 2** questions where we ask you to interpret somet
 <!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
 <!-- ::: -->
 
-## Online Q&A {#sec-wk6-lab-Q-and-A}
+## Online Q&A {#sec-wk16-lab-Q-and-A}
 
 You will find, below, a link to the video recording of the week 16 online Q&A after it has been completed.
 
