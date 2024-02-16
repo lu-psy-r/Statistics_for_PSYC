@@ -68,25 +68,25 @@ Before you go on to the activities, **watch** the lectures:
 The lecture for this week is presented in four short parts.
 You can view video recordings of the lectures using Panopto, by clicking on the links shown following.
 
-1. **Overview** (15 minutes): What we are doing in weeks 16-20, and *how* and *why* you will develop your critical thinking skills.
+1. **Overview** (19 minutes): What we are doing in week 17 -- thinking critically about predicting people.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5c751906-33d0-4ebd-a49d-afb000ec09ce&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-2. **Thinking critically** (11 minutes): A summary of the health communication project, and the ideas we assume to develop our hypotheses.
+2. **Using linear models to do prediction** (11 minutes): How we answer live research questions by using linear models to predict behaviour.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d9d5ade2-e10c-4e14-b938-afb000f2634c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3. **Thinking about associations** in research (22 minutes): How we visualize and think about distributions and associations.
+3. **How linear models work** (9 minutes): How we can visualize and think about predictions, and about the difference between what we predict and what we observe when we study people.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=44dfb2c3-80d3-4fa6-8978-afb000f63c17&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4. **Interpreting, reporting and visualizing** correlations (11 minutes): How we use R to estimate and test correlations.
+4. **Interpreting, reporting and visualizing** linear model results (15 minutes): Identifying, interpreting and communicating the key statistics.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4a20cb70-618c-4bf3-999a-afb000f9bdcf&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
