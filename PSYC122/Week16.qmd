@@ -614,8 +614,8 @@ The plot code moves through the following steps:
 2. `ggplot(data = study.two.gen, ...)` with the `study.two.gen` dataset
 3. `ggplot(...aes(x = HLVA, y = mean.acc))` using two aesthetic mappings:
 
-- x = HLVA` map `HLVA` values to x-axis (horizontal, left to right) positions
-- y = mean.acc` map `meann.acc` values to y-axis (vertical, bottom to top) positions
+- `x = HLVA` map `HLVA` values to x-axis (horizontal, left to right) positions
+- `y = mean.acc` map `mean.acc` values to y-axis (vertical, bottom to top) positions
 
 4. `geom_point()` show the mappings as points
 
