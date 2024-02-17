@@ -999,7 +999,7 @@ You will need to record some information from the model summary so you can use i
 
 <!-- - A.23. 0.026207 -->
 
-*Second** use the `geom_point()` to draw a scatterplot and `geom_abline()` function to draw the prediction line representing the association between this outcome and predictor.
+**Second, draw a prediction plot**, using the `geom_point()` to draw a scatterplot and using the `geom_abline()` function to draw the prediction line representing the association between this outcome and predictor.
 
 Check first if you can write the code you need to produce the prediction plot.
 Click on the button to see the code example: compare it to the code you wrote.
