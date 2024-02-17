@@ -383,7 +383,7 @@ ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
   geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw() +
   labs(x = "HLVA", y = "mean accuracy") +
-  xlim(0, 15) + ylim(0, 1)
+  xlim(0, 16) + ylim(0, 1)
 ```
 
 ```{r}
