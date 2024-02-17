@@ -618,8 +618,8 @@ Code
 </div>
 </div>
 </section>
-<section id="check-what-is-in-the-data-files" class="level4">
-<h4 class="anchored" data-anchor-id="check-what-is-in-the-data-files">Check: What is in the data files?</h4>
+<section id="sec-wk17-data-summary" class="level4">
+<h4 class="anchored" data-anchor-id="sec-wk17-data-summary">Check: What is in the data files?</h4>
 <p>Each of the data files we will work with has a similar structure, as you can see in this extract.</p>
 <div class="cell" data-hash="Week17_cache/html/headcheck-wide_6dde5e5645a5d367a85d1a62a260a4b5">
 <div class="cell-output-display">
@@ -706,17 +706,17 @@ Code
 <p>You can use the <em>scroll bar</em> at the bottom of the data window to view different columns.</p>
 <p>You can see the columns:</p>
 <ul>
-<li><code>participant_ID</code> participant code</li>
-<li><code>mean.acc</code> average accuracy of response to questions testing understanding of health guidance</li>
-<li><code>mean.self</code> average self-rated accuracy of understanding of health guidance</li>
+<li><code>participant_ID</code> participant code;</li>
+<li><code>mean.acc</code> average accuracy of response to questions testing understanding of health guidance (varies between 0-1);</li>
+<li><code>mean.self</code> average self-rated accuracy of understanding of health guidance (varies between 1-9);</li>
 <li><code>study</code> variable coding for what study the data were collected in</li>
-<li><code>AGE</code> age in years</li>
-<li><code>HLVA</code> health literacy test score</li>
-<li><code>SHIPLEY</code> vocabulary knowledge test score</li>
-<li><code>FACTOR3</code> reading strategy survey score</li>
-<li><code>GENDER</code> gender code</li>
-<li><code>EDUCATION</code> education level code</li>
-<li><code>ETHNICITY</code> ethnicity (Office National Statistics categories) code</li>
+<li><code>AGE</code> age in years;</li>
+<li><code>HLVA</code> health literacy test score (varies between 1-16);</li>
+<li><code>SHIPLEY</code> vocabulary knowledge test score (varies between 0-40);</li>
+<li><code>FACTOR3</code> reading strategy survey score (varies between 0-80);</li>
+<li><code>GENDER</code> gender code;</li>
+<li><code>EDUCATION</code> education level code;</li>
+<li><code>ETHNICITY</code> ethnicity (Office National Statistics categories) code.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1249,260 +1249,601 @@ Hint
 </section>
 <section id="consolidation-should-be-no-surprises-here" class="level4">
 <h4 class="anchored" data-anchor-id="consolidation-should-be-no-surprises-here">Consolidation: should be no surprises here</h4>
-<!-- ##### Task 8 -- Create a scatterplot to examine the association between some variables -->
-<!-- We are working with `geom_point()` and you need x and y aesthetic mappings -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| message: false -->
-<!-- #| label: fig-scatter-study-two-hlva-acc -->
-<!-- #| fig-width: 5 -->
-<!-- #| fig-height: 5 -->
-<!-- #| fig-align: center -->
-<!-- #| fig-cap: "Scatterplot showing the potential association between health literacy (HLVA) scores and how accurately people understand health information in the Study Two dataset" -->
-<!-- #| fig-alt: "The plot shows a scatter of black points against a light grey background. The points appear to trend upwards so that higher mean.acc scores are observed for higher HLVA scores" -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- This plot shows the possible association between x-axis variable `HLVA` and y-axis variable -->
-<!-- `mean.acc`. -->
-<!-- The plot code moves through the following steps: -->
-<!-- 1. `ggplot(...)` make a plot -->
-<!-- 2. `ggplot(data = study.two.gen, ...)` with the `study.two.gen` dataset -->
-<!-- 3. `ggplot(...aes(x = HLVA, y = mean.acc))` using two aesthetic mappings: -->
-<!-- - x = HLVA` map `HLVA` values to x-axis (horizontal, left to right) positions -->
-<!-- - y = mean.acc` map `meann.acc` values to y-axis (vertical, bottom to top) positions -->
-<!-- 4. `geom_point()` show the mappings as points -->
-<!-- ##### Task 9 -- Now do scatterplots with *every* numeric predictor variable in the `study.two.gen` dataset -->
-<!-- You always want to use the outcome `mean.acc` as the y-axis variable so: -->
-<!-- - `y = mean.acc` -->
-<!-- Then you can use each numeric predictor variable as the x-axis variable so: -->
-<!-- - `x = mean.self` -->
-<!-- ::: callout-tip -->
-<!-- Remember what we saw with `summary()`: not every variable consists of numbers -->
-<!-- If the `summary()` does not show you a mean for a variable, then R does not think -->
-<!-- that variable is numeric -->
-<!-- ::: -->
-<!-- **It can be hard to decide what an association looks like so make a decision based on what you see** -->
-<!-- Right now, we are working to build your intuitions so: reflect, trust your intuition, and make a decision. -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.12.** What is the shape (direction) of the association between `mean.self` and `mean.acc`? -->
-<!-- <!-- - A.12. Increase in `mean.self` is associated with increase in `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.13.** What is the shape (direction) of the association between `AGE` and `mean.acc`? -->
-<!-- <!-- - A.13. There is no clear association between `AGE` and `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.14.** What is the shape (direction) of the association between `SHIPLEY` -->
-<!-- and `mean.acc`? -->
-<!-- <!-- - A.14. Increase in `SHIPLEY` is associated with increase in `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.15.** What is the shape (direction) of the association between `HLVA` -->
-<!-- and `mean.acc`? -->
-<!-- <!-- - A.15. Increase in `HLVA` is associated with increase in `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.16.** What is the shape (direction) of the association between `FACTOR3` -->
-<!-- and `mean.acc`? -->
-<!-- <!-- - A.16. Increase in `FACTOR3` is associated with increase in `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = FACTOR3, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ##### Draw the plot, answer the question -->
-<!-- >**Q.17.** What is the shape (direction) of the association between `QRITOTAL` -->
-<!-- and `mean.acc`? -->
-<!-- <!-- - A.17. Increase in `QRITOTAL` is associated with increase in `mean.acc` -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = QRITOTAL, y = mean.acc)) + -->
-<!--   geom_point() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- #### Step 6: Edit the scatterplots to make them look good -->
-<!-- ##### Task 10 -- Edit the appearance of one plot step-by-step -->
-<!-- Learn how to edit your plotting code so that you can make plots with a  -->
-<!-- professional appearance. -->
-<!-- ::: callout-tip -->
-<!-- - We teach this because we know that some of our alumni get jobs after they  -->
-<!-- develop pro visualization skills with us. -->
-<!-- - We will do this learning as part of *PSYC122*. -->
-<!-- ::: -->
-<!-- In doing this work, you will learn about: -->
-<!-- - **coding** -- how to do the edits; -->
-<!-- - **visualization** -- how to look at and read plots; -->
-<!-- - **presentation** -- what works and what doesn't for your audience. -->
-<!-- We get started here. -->
-<!-- ##### Hint: Task 10 -- We are going to edit a scatterplot to adjust -->
-<!-- 1. the appearance of the points using `alpha`, `size` and `colour`; -->
-<!-- 2. the colour of the background using `theme_bw()`; -->
-<!-- 3. the appearance of the labels using `labs()`. -->
-<!-- In the following, we ask you to edit one plot element at a time. -->
-<!-- You can work out what to do. -->
-<!-- There is helpful `ggplot` reference information that you can use: [here](https://ggplot2.tidyverse.org/reference/geom_point.html). -->
-<!-- You can visit the find the `ggplot` reference webpages, find some example code, -->
-<!-- and come back here. -->
-<!-- You can click on the reveal button, for each question, to get our example code. -->
-<!-- ::: callout-tip -->
-<!-- - You do not have to stick with our choices on colour, size etc. -->
-<!-- - **Experiment** change the options and see what happens. -->
-<!-- ::: -->
-<!-- #### Questions: Task 10 -->
-<!-- >**Q.18.** Change the appearance of the points using alpha, size and colour: -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.19.** Edit the colour of the background using `theme_bw()` -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red")   + -->
-<!--   theme_bw() -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.20.** Edit the appearance of the labels using `labs()` -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) + -->
-<!--   geom_point(alpha = 0.5, size = 2, colour = "red")   + -->
-<!--   theme_bw() + -->
-<!--   labs(x = "HLVA", y = "mean accuracy") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.21.** Can you find the ggplot reference page? -->
-<!-- Try doing a search with the keywords: `ggplot reference geom_point` -->
-<!-- <!-- - A.21. -- It is here: -->
-<p>–&gt;</p>
-<!-- <!-- <https://ggplot2.tidyverse.org/reference/geom_point.html> -->
-<p>–&gt;</p>
-<!-- ::: callout=tip -->
-<!-- Now it's your turn: experiment! -->
-<!-- - What about different colour words? Replace `"red"` with `"..."`? -->
-<!-- - What about a different size? Replace `size = 2` with `size =  ...` using a different number. -->
-<!-- - What about a different level of transparency (alpha)? Replace `alpha = 0.5` with `alpha =  ...` using a different fraction. -->
-<!-- ::: -->
-<!-- #### Step 7: Use correlation to to answer the research questions -->
-<!-- ##### Task 11 -- Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables -->
-<!-- We use `cor.test()` for the questions that follow. -->
-<!-- ::: callout-tip -->
-<!-- - We take a slightly different approach to the approach you have seen in previous weeks [see here](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC122/Week12.html) -->
-<!-- - You have seen the code before. -->
-<!-- - Here, we use `cor.test()` on its own because we want to focus your attention on the *statistics* -->
-<!-- ::: -->
-<!-- >**Q.22.** What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`? -->
-<!-- <!-- - A.22. r = 0.5000559 -->
-<p>–&gt;</p>
-<!-- Can you figure out the code to do the calculation? -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.23.** Is the correlation significant? -->
-<!-- <!-- - A.23. r is significant -->
-<p>–&gt;</p>
-<!-- >**Q.24.** What are the values for t and p for the significance test for the correlation? -->
-<!-- <!-- - A.24. t = 7.5288, p = 2.866e-12 -->
-<p>–&gt;</p>
-<!-- >**Q.25.** What do you conclude, given the correlation results?  -->
-<!-- Maybe draw a scatterplot to examine the shape of the association. -->
-<!-- <!-- - A.25. HLVA and mean.acc are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
-<p>–&gt;</p>
-<!-- >**Q.26.** What is r (given as `cor` in the output) for the correlation between `mean.self` and `mean.acc`? -->
-<!-- <!-- - A.26. r = 0.5460792 -->
-<p>–&gt;</p>
-<!-- Can you figure out the code to do the calculation? -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- cor.test(study.two.gen$mean.self, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.27.** Is the correlation between `AGE` and `mean.acc` significant? -->
-<!-- <!-- - A.27. r is not significant -->
-<p>–&gt;</p>
-<!-- Can you figure out the code to do the calculation? -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.28.** What are the values for t and p for the significance test for the correlation between `QRITOTAL` and `mean.acc`? -->
-<!-- <!-- - A.28. t = 6.4711, p = 9.993e-10 -->
-<p>–&gt;</p>
-<!-- Can you figure out the code to do the calculation? -->
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- cor.test(study.two.gen$QRITOTAL, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.29.** What do you conclude, given the correlation results, about the association between `SHIPLEY` and `mean.acc`? -->
-<!-- <!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
-<p>–&gt;</p>
-<!-- :::{.callout-tip collapse="true"} -->
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
-<!-- ``` -->
-<!-- ::: -->
+<p>But if you want to remind yourself how to do things, click on the box to reveal hint information.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>We are working with <code>geom_point()</code> and you need x and y aesthetic mappings.</li>
+<li>The outcome variable <code>mean.acc</code> has to be mapped to the y-axis using <code>...y = ...</code></li>
+</ul>
+<p>This is how the target scatterplot code works.</p>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-18_5b556fc8cfba233ad049b65056571f1a">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data.set, <span class="fu">aes</span>(<span class="at">x =</span> predictor.variable, <span class="at">y =</span> outcome.variable)) <span class="sc">+</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The plot code moves through the following steps:</p>
+<ol type="1">
+<li><code>ggplot(...)</code> make a plot;</li>
+<li><code>ggplot(data = data.set, ...)</code> working with the <code>data.set</code>, using the name you gave the dataset you are working with;</li>
+<li><code>ggplot(...aes(x = predictor.variable, y = outcome.variable))</code> using two aesthetic mappings</li>
+</ol>
+<ul>
+<li><code>x = predictor.variable</code> maps values of the <code>predictor.variable</code> (whatever it is called) to x-axis (horizontal, left to right) positions;</li>
+<li><code>y = outcome.variable</code> maps values of the <code>outcome.variable</code>(whatever it is called) to y-axis (vertical, bottom to top) positions;</li>
+</ul>
+<ol start="4" type="1">
+<li><code>geom_point()</code> show the mappings as points.</li>
+</ol>
+</div>
+</div>
+</div>
+<section id="task-7-create-a-scatterplot-to-examine-the-association-between-some-variables" class="level5">
+<h5 class="anchored" data-anchor-id="task-7-create-a-scatterplot-to-examine-the-association-between-some-variables">Task 7 – Create a scatterplot to examine the association between some variables</h5>
+<p>Create three scatterplots to visualize the relationship between (1.) the outcome <code>mean.acc</code> and (2.) each of three numeric potential predictor variables <code>SHIPLEY</code>, <code>HLVA</code> and <code>AGE</code>.</p>
+<p>Check first if you can write the code you need to produce each scatterplot. Click on the button to see the code example: compare it to the code you wrote.</p>
+<ul>
+<li>Notice that R will tolerate some variation in how code is written.</li>
+<li>This is like any language where we can ask for the same thing in different ways.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the scatterplots we are asking you to do.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-19_0e7d43eada90dc91b93f70724509c6c4">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="revise-make-sure-you-are-confident-about-doing-these-things-1" class="level4">
+<h4 class="anchored" data-anchor-id="revise-make-sure-you-are-confident-about-doing-these-things-1">Revise: make sure you are confident about doing these things</h4>
+<section id="task-8-edit-the-appearance-of-each-plot-step-by-step" class="level5">
+<h5 class="anchored" data-anchor-id="task-8-edit-the-appearance-of-each-plot-step-by-step">Task 8 – Edit the appearance of <em>each</em> plot step-by-step</h5>
+<ol type="1">
+<li>You may want to use the same plot appearance choices for all plots.</li>
+</ol>
+<ul>
+<li>Producing plots with a consistent appearance will make it easier for your audience to read your plots.</li>
+</ul>
+<ol start="2" type="1">
+<li>You can find links to reference information on options in the how-to guide.</li>
+</ol>
+<ul>
+<li>Use the information to make the plots pleasing in appearance to you.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Do not be afraid to select, copy then paste code to re-use it and <em>save yourself</em> the effort of typing out the code over and over again.</li>
+<li>But be careful to make sure that you change variable names, and that things like axis values are sensible for each variable.</li>
+</ul>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Q.8.</strong> First, edit the appearance of the points using <code>alpha</code>, <code>size</code>, <code>shape</code>, and <code>colour</code>.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the scatterplots.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-20_6951df62f50e80108bf8fc9ca7855e49">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Q.9.</strong> Then edit the colour of the background using <code>theme_bw()</code>.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the scatterplots.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-21_c39461d51c88dadb2d4066d8b7c15ae8">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Q.10.</strong> Then edit the appearance of the labels using <code>labs()</code>.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the scatterplots.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-22_4238bc5d610a10a5b3e9e26821ac9566">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"HLVA"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Years)"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="introduce-make-some-new-moves-1" class="level4">
+<h4 class="anchored" data-anchor-id="introduce-make-some-new-moves-1">Introduce: make some new moves</h4>
+<blockquote class="blockquote">
+<p><strong>Q.11.</strong> Then set the x-axis and y-axis limits to the minimum-maximum ranges of the variables you are plotting.</p>
+</blockquote>
+<p>You can set axis limits by adding the <code>xlim()</code> and <code>ylim()</code> function calls to the chunk of code you have written to produce each plot.</p>
+<ul>
+<li>The task, here, is to work out <em>what</em> numeric values you should enter inside <code>xlim()</code> or <code>ylim()</code>.</li>
+<li>The code works if you enter values like this: <code>xlim(minimum, maximum)</code> and <code>ylim(minimum, maximum)</code>.</li>
+<li>Where <code>minimum, maximum</code> are the numbers representing the smallest possible (minimum) and largest possible (maximum) value for each variable.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>For these plots the y-axis limits will be the same because the outcome stays the same.</li>
+<li>But the x-axis limits will be different for each different predictor variable.</li>
+<li>Check out the information in the <code>summary()</code> you got of the dataset.</li>
+<li>The minimum values for the variables will often (not always) be 0 e.g.&nbsp;if you are looking at data from ability tests and people who do the tests can get 0 (because none of their responses are correct). However, if you are looking at e.g.&nbsp;ratings data then the minimim value could be 1 (e.g.&nbsp;because people are asked to rate something on a scale from 1-9).</li>
+<li>The maximum values for the variables is not necessarily the largest value recorded for that variable in the sample data-set you are working with (e.g., because nobody in your sample got all test questions correct). Thus, you need to use information about measurement design, see <a href="#sec-wk17-data-summary">Section&nbsp;5.2.2</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Check first if you can write the code you need to produce each scatterplot. Click on the button to see the code example: compare it to the code you wrote.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-38-contents" aria-controls="callout-38" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-38" class="callout-38-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the scatterplots.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-23_4ce8e3448575f9df76b61f0d5520c2d0">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"HLVA"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">16</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Years)"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">80</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-use-correlation-to-to-answer-the-research-questions" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-use-correlation-to-to-answer-the-research-questions">Step 5: Use correlation to to answer the research questions</h4>
+</section>
+<section id="revise-make-sure-you-are-confident-about-doing-these-things-2" class="level4">
+<h4 class="anchored" data-anchor-id="revise-make-sure-you-are-confident-about-doing-these-things-2">Revise: make sure you are confident about doing these things</h4>
+<p>One of our research questions is:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+</ol>
+<section id="task-9-examine-the-correlations-between-the-outcome-variable-and-predictor-variables" class="level5">
+<h5 class="anchored" data-anchor-id="task-9-examine-the-correlations-between-the-outcome-variable-and-predictor-variables">Task 9 – Examine the correlations between the outcome variable and predictor variables</h5>
+<p>You need to run three separate correlations:</p>
+<ol type="1">
+<li>between mean accuracy and <code>SHIPLEY</code>;</li>
+<li>between mean accuracy and <code>HLVA</code>;</li>
+<li>between mean accuracy and <code>AGE</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Use <code>cor.test()</code> to do the correlation analysis.</li>
+<li>You can look at the <code>how-to</code> guide or review previous materials (e.g. <strong>?@sec-wk12-labactivities</strong> or <strong>?@sec-wk16-lab-activities-1-questions</strong>) for more advice.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Check first if you can write the code you need to complete each correlation analysis. Click on the button to see the code example: compare it to the code you wrote.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-40-contents" aria-controls="callout-40" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-40" class="callout-40-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for doing each of the correlation analyses.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-24_5c4b375758e3f67f10394dbc0ef66b63">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.two.gen<span class="sc">$</span>SHIPLEY, study.two.gen<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.two.gen<span class="sc">$</span>HLVA, study.two.gen<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.two.gen<span class="sc">$</span>AGE, study.two.gen<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>Now use the results from the correlations to answer the following questions.</p>
+<blockquote class="blockquote">
+<p><strong>Q.12.</strong> What is <code>r</code>, the coefficient for the correlation between <code>mean.acc</code> and <code>SHIPLEY</code>?</p>
+</blockquote>
+<!-- - A.12. r = 0.4650537 -->
+<blockquote class="blockquote">
+<p><strong>Q.13.</strong> Is the correlation between <code>mean.acc</code> and <code>HLVA</code> significant?</p>
+</blockquote>
+<!-- - A.13. -- r is significant, p < .05 -->
+<blockquote class="blockquote">
+<p><strong>Q.14.</strong> What are the values for t and p for the significance test for the correlation between <code>mean.acc</code> and <code>AGE</code>?</p>
+</blockquote>
+<!-- - A.14. t = 0.30121, p = 0.7636 -->
+<blockquote class="blockquote">
+<p><strong>Q.15.</strong> For which pair of outcome-predictor variables is the correlation the largest?</p>
+</blockquote>
+<!-- - A.15. -- The correlation is the largest between `mean.acc` and `HLVA`. -->
+<blockquote class="blockquote">
+<p><strong>Q.16.</strong> What is the sign or direction of each of the correlations?</p>
+</blockquote>
+<!-- - A.16. -- All the correlations are positive. -->
+</section>
+</section>
+<section id="step-6-use-a-linear-model-to-to-answer-the-research-questions" class="level4">
+<h4 class="anchored" data-anchor-id="step-6-use-a-linear-model-to-to-answer-the-research-questions">Step 6: Use a linear model to to answer the research questions</h4>
+</section>
+<section id="introduce-make-some-new-moves-2" class="level4">
+<h4 class="anchored" data-anchor-id="introduce-make-some-new-moves-2">Introduce: Make some new moves</h4>
+<p>One of our research questions is:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+</ol>
+<section id="task-10-examine-the-relation-between-outcome-mean-accuracy-mean.acc-and-each-of-the-predictors-shipley-hlva-and-age" class="level5">
+<h5 class="anchored" data-anchor-id="task-10-examine-the-relation-between-outcome-mean-accuracy-mean.acc-and-each-of-the-predictors-shipley-hlva-and-age">Task 10 – Examine the relation between outcome mean accuracy (<code>mean.acc</code>) and each of the predictors: <code>SHIPLEY</code>, <code>HLVA</code> and <code>AGE</code></h5>
+<p>You need to run three separate <code>lm()</code> analyses:</p>
+<ol type="1">
+<li>with mean accuracy as the outcome and <code>SHIPLEY</code> as the predictor;</li>
+<li>with mean accuracy as the outcome and <code>HLVA</code> as the predictor;</li>
+<li>with mean accuracy as the outcome and <code>AGE</code> as the predictor.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You need to use <code>lm()</code> to do the analyses.</p>
+<ol type="1">
+<li>Be careful to identify the outcome and predictor variables correctly.</li>
+<li>Remember that analysis code is arranged like this:</li>
+</ol>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-25_6f680c1347d78dc5aaeb6b83e1ad76fd">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(outcome.variable <span class="sc">~</span> predictor.variable, <span class="at">data =</span> data.set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>With:</p>
+<ul>
+<li><code>lm()</code> asking R to do the linear model analysis;</li>
+<li><code>outcome.variable ~ ...</code> specified on the <em>left</em> of the <code>~</code>;</li>
+<li>the <code>predictor.variable ~ ...</code> specified on the <em>right</em> of the <code>~</code>;</li>
+<li>and <code>data.set</code> identifying to R what dataset you are working with.</li>
+</ul>
+<p>Notice that R has a general formula syntax:</p>
+<p><code>outcome ~ predictor *or* y ~ x</code></p>
+<ul>
+<li>and uses the same format across a number of different functions;</li>
+<li>each time, the left of the tilde symbol <code>~</code> is some output or outcome;</li>
+<li>and the right of the tilde <code>~</code> is some input or predictor or set of predictors.</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Check first if you can write the code you need to complete each linear model analysis. Click on the button to see the code example: compare it to the code you wrote.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-42" class="callout-42-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Check out the example code for each of the models.</p>
+<ul>
+<li>Notice what changes and what stays the same.</li>
+</ul>
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-26_215ead081e6edbc0e35772c06e799016">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>model<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> study.two.gen)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model<span class="fl">.1</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>model<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA, <span class="at">data =</span> study.two.gen)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model<span class="fl">.2</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>model<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> AGE, <span class="at">data =</span> study.two.gen)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>If you look at the model summary you can answer the following questions.</p>
+<blockquote class="blockquote">
+<p><strong>Q.17.</strong> What is the estimate for the coefficient of the effect of the predictor <code>HLVA</code> on <code>mean.acc</code>?</p>
+</blockquote>
+<!-- - A.17. 0.026207  -->
+<blockquote class="blockquote">
+<p><strong>Q.18.</strong> Is the effect significant?</p>
+</blockquote>
+<!-- - A.18. It is significant, p < .05 -->
+<blockquote class="blockquote">
+<p><strong>Q.19.</strong> What are the values for t and p for the significance test for the coefficient?</p>
+</blockquote>
+<!-- - A.19. t = 7.529, p = 2.87e-12 -->
+<blockquote class="blockquote">
+<p><strong>Q.20.</strong> How would you describe in words the shape or direction of the association between <code>HLVA</code> and <code>mean.acc</code>?</p>
+</blockquote>
+<!-- - A.20. The slope coefficient -- and a scatterplot (draw it) -- suggest that as HLVA scores increase so also do mean accuracy scores. -->
+<blockquote class="blockquote">
+<p><strong>Q.21.</strong> How how would you describe the relations apparent between the predictor and outcome in all three models?</p>
+</blockquote>
+<!-- - A.21. It is possible to see, given coefficient estimates, that the association between predictor and outcome is positive for each model: mean accuracy appears to increase for increasing values of SHIPLEY vocabulary, HLVA health literacy, and age. -->
+</section>
+</section>
+<section id="step-7-use-a-linear-model-to-generate-predictions" class="level4">
+<h4 class="anchored" data-anchor-id="step-7-use-a-linear-model-to-generate-predictions">Step 7: Use a linear model to generate predictions</h4>
+</section>
+<section id="introduce-make-some-new-moves-3" class="level4">
+<h4 class="anchored" data-anchor-id="introduce-make-some-new-moves-3">Introduce: Make some new moves</h4>
+<p>One of our research questions is:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+</ol>
+<section id="task-11-we-can-use-the-model-we-have-just-fitted-to-plot-the-model-predictions" class="level5">
+<h5 class="anchored" data-anchor-id="task-11-we-can-use-the-model-we-have-just-fitted-to-plot-the-model-predictions">Task 11 – We can use the model we have just fitted to plot the model predictions</h5>
+<p>We are going to draw a scatterplot and add a line.</p>
+<ul>
+<li>The line will show the model predictions, given the model intercept and effect coefficient estimates.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can see reference information here:</p>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_abline.html</a></p>
+</div>
+</div>
+</div>
+<p><strong>First fit a model</strong> and get the summary: model the relationship between <code>mean.acc</code> and <code>HLVA</code>.</p>
+<p>Check first if you can write the code you need to complete the linear model analysis. Click on the button to see the code example: compare it to the code you wrote.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-44" class="callout-44-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-27_2914b5514cd3f68aaea1da9dd793559e">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA, <span class="at">data =</span> study.two.gen)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<p>You will need to record some information from the model summary so you can use it next.</p>
+<blockquote class="blockquote">
+<p><strong>Q.22.</strong> What is the coefficient estimate for the intercept?</p>
+</blockquote>
+<!-- - A.22. 0.522016 -->
+<blockquote class="blockquote">
+<p><strong>Q.23.</strong> What is the coefficient estimate for the slope of <code>HLVA</code> (see earlier)?</p>
+</blockquote>
+<!-- - A.23. 0.026207 -->
+<p>*Second** use the <code>geom_point()</code> to draw a scatterplot and <code>geom_abline()</code> function to draw the prediction line representing the association between this outcome and predictor.</p>
+<p>Check first if you can write the code you need to produce the prediction plot. Click on the button to see the code example: compare it to the code you wrote.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell" data-hash="Week17_cache/html/unnamed-chunk-28_17613b5321465b68995ca69507114e91">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.two.gen, <span class="fu">aes</span>(<span class="at">x =</span> HLVA, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.522016</span>, <span class="at">slope =</span> <span class="fl">0.026207</span>, </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"HLVA"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">15</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="you-have-now-completed-the-week-17-questions." class="level4">
+<h4 class="anchored" data-anchor-id="you-have-now-completed-the-week-17-questions.">You have now completed the Week 17 questions.</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Predicting human behaviour is at the heart of:</p>
+<ul>
+<li>Psychological science, and our collective attempt to understand ourselves.</li>
+<li>Behavioural analytics, and the ways businesses work with what we know about people.</li>
+</ul>
+<p>This is an important step in your developmental journey: <strong>Well done!</strong></p>
+</div>
+</div>
 </section>
 </section>
 </section>
