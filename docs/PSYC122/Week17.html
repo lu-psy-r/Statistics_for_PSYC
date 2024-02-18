@@ -465,7 +465,7 @@ Tip
 </div>
 <ul>
 <li><a href="data/week17/122-linear-model-intro.html">The slides</a> exactly as presented (21 MB).</li>
-<li><a href="data/week17/122-linear-model-intro-printable-edit.docx">The slides</a> converted to a Word .docx (1 MB).</li>
+<li><a href="data/week17/122-linear-model-intro-printable-edit.docx">The slides</a> converted to a Word .docx (11 MB).</li>
 </ul>
 <p>You can download the web page <code>.html</code> file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.</p>
 <p>You can download the <code>.docx</code> file and click on it to open it as a Word document that you can then edit. Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.</p>
@@ -1796,7 +1796,7 @@ Code
 <p><strong>Q.23.</strong> What is the coefficient estimate for the slope of <code>HLVA</code> (see earlier)?</p>
 </blockquote>
 <!-- - A.23. 0.026207 -->
-<p>*Second** use the <code>geom_point()</code> to draw a scatterplot and <code>geom_abline()</code> function to draw the prediction line representing the association between this outcome and predictor.</p>
+<p><strong>Second, draw a prediction plot</strong>, using the <code>geom_point()</code> to draw a scatterplot and using the <code>geom_abline()</code> function to draw the prediction line representing the association between this outcome and predictor.</p>
 <p>Check first if you can write the code you need to produce the prediction plot. Click on the button to see the code example: compare it to the code you wrote.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
@@ -1842,6 +1842,9 @@ Important
 <li>Behavioural analytics, and the ways businesses work with what we know about people.</li>
 </ul>
 <p>This is an important step in your developmental journey: <strong>Well done!</strong></p>
+<ul>
+<li>We will continue to deepen and extend your skills and understanding but everything builds on the key lessons we have been learning here.</li>
+</ul>
 </div>
 </div>
 </section>
@@ -1864,151 +1867,133 @@ Tip
 <!-- - You can download the script [2023-24-PSYC122-w17-workbook-answers.Rmd](data/week17/2023-24-PSYC122-w17-workbook-answers.Rmd) when it is available. -->
 </div>
 </div>
-<p>We set out the Week 17 <strong>Better understanding the linear model</strong> questions below. We focus on the <strong>Lab activity 2</strong> questions where we ask you to interpret something or say something.</p>
+<p>We set out answers information the Week 17 <strong>Better understanding the linear model</strong> questions, below.</p>
+<ul>
+<li>We focus on the <strong>Lab activity 2</strong> questions where we ask you to interpret something or say something.</li>
+<li>We do not show questions where we have given example or target code in the foregoing lab activity <a href="#sec-wk17-lab-activities-2">Section&nbsp;5.4</a>.</li>
+</ul>
 <!-- You can see all the code and all the answers in `2023-24-PSYC122-w17-workbook-answers.Rmd`. -->
 <!-- ### Answers {#sec-wk17-lab-activities-answers-information}  -->
 <!-- ::: callout-tip -->
 <!-- Click on a box to reveal the answer. -->
 <!-- ::: -->
-<!-- #### Questions {#sec-wk17-lab-activities-1-questions-answers} -->
-<!-- >**Q.1.** What is the median of `AGE`? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.1. 32.50 -->
+<!-- #### Questions {#sec-wk17-lab-activities-2-questions-answers} -->
+<!-- >**Q.6.** Can you find information on how to define the limits on the x-axis  -->
+<!-- and on the y-axis? -->
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Hint -->
+<!-- You can see the information in this week's `how-to` guide but try a search online for "ggplot reference xlim". -->
 <!-- ::: -->
-<!-- >**Q.2.** What class is the variable `ETHNICITY`? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.2. character -->
+<!-- - A.6. See ggplot reference information on setting limits here: -->
+<!-- <https://ggplot2.tidyverse.org/reference/lims.html> -->
 <!-- ::: -->
-<!-- >**Q.3.** Does the summary indicate if any variable has missing values (NAs)? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - Q.3. No -->
+<!-- >**Q.7.** Can you find information on how to a reference line? -->
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Hint -->
+<!-- You can see the information in this week's how-to but try a search online for "ggplot reference vline". -->
 <!-- ::: -->
-<!-- >**Q.4.** After you have done this [change ETHNICITY to a factor], what information does `summary()` give you  -->
-<!-- about the variable `ETHNICITY`? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.4. We can see that ETHNICITY lists observations following UK Office National Statistics ethnicity grouping: -->
-<!-- - Asian: 15 -->
-<!-- - Black: 5 -->
-<!-- - Mixed: 7 -->
-<!-- - White: 145 -->
+<!-- - A.7. See ggplot reference information on adding lines here: -->
+<!-- <https://ggplot2.tidyverse.org/reference/geom_abline.html> -->
 <!-- ::: -->
-<!-- >**Q.5.** Did you get a message in the `Console` window in `R-Studio` [when you produced a histogram]:  -->
-<!-- what does it say? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.5. The message says: -->
-<!-- - `stat_bin()` using `bins = 30`. Pick better value with `binwidth`. -->
-<!-- ::: -->
-<!-- >**Q.6.** Draw two different histograms to examine the distributions of two  -->
-<!-- different variables: `SHIPLEY` and `HLVA` -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
+<!-- One of our research questions is: -->
+<!-- 1. What person attributes predict success in understanding? -->
+<!-- Examine the correlations between the outcome variable and predictor variables. -->
+<!-- You need to run three separate correlations:  -->
+<!-- 1. between mean accuracy and `SHIPLEY`; -->
+<!-- 2. between mean accuracy and `HLVA`;  -->
+<!-- 3. between mean accuracy and `AGE`. -->
+<!-- Check out the example code for doing each of the correlation analyses. -->
 <!-- ```{r} -->
 <!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = SHIPLEY)) + geom_histogram() -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA)) + geom_histogram() -->
+<!-- cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
+<!-- cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
+<!-- cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided") -->
 <!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.7.** Now edit the code for both plots: can you change the binwidth in `geom_histogram()` to make the bars wider? -->
+<!-- Now use the results from the correlations to answer the following questions. -->
+<!-- >**Q.12.** What is `r`, the coefficient for the correlation between `mean.acc` and `SHIPLEY`? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
+<!-- - A.12. r = 0.4650537 -->
+<!-- ::: -->
+<!-- >**Q.13.** Is the correlation between `mean.acc` and `HLVA`  significant? -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- - A.13. -- r is significant, p < .05 -->
+<!-- ::: -->
+<!-- >**Q.14.** What are the values for t and p for the significance test for the correlation between `mean.acc` and `AGE`? -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- - A.14. t = 0.30121, p = 0.7636 -->
+<!-- ::: -->
+<!-- >**Q.15.** For which pair of outcome-predictor variables is the correlation the largest? -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- - A.15. -- The correlation is the largest between `mean.acc` and `HLVA`. -->
+<!-- ::: -->
+<!-- >**Q.16.** What is the sign or direction of each of the correlations? -->
+<!-- ::: {.callout-note icon=false collapse="true"} -->
+<!-- ## Answer -->
+<!-- - A.16. -- All the correlations are positive. -->
+<!-- ::: -->
+<!-- Examine the relation between outcome mean accuracy (`mean.acc`) and each of the predictors: `SHIPLEY`, `HLVA` and `AGE` -->
+<!-- You need to run three separate `lm()` analyses: -->
+<!-- 1. with mean accuracy as the outcome and `SHIPLEY` as the predictor; -->
+<!-- 2. with mean accuracy as the outcome and `HLVA` as the predictor;  -->
+<!-- 3. with mean accuracy as the outcome and `AGE` as the predictor. -->
+<!-- Check out the example code for each of the models. -->
 <!-- ```{r} -->
 <!-- #| eval: false -->
-<!-- ggplot(data = study.two.gen, aes(x = SHIPLEY)) + geom_histogram(binwidth = 2) -->
-<!-- ggplot(data = study.two.gen, aes(x = HLVA)) + geom_histogram(binwidth = 2) -->
+<!-- model.1 <- lm(mean.acc ~ SHIPLEY, data = study.two.gen) -->
+<!-- summary(model.1) -->
+<!-- model.2 <- lm(mean.acc ~ HLVA, data = study.two.gen) -->
+<!-- summary(model.2) -->
+<!-- model.3 <- lm(mean.acc ~ AGE, data = study.two.gen) -->
+<!-- summary(model.3) -->
 <!-- ``` -->
-<!-- ::: -->
-<!-- >**Q.8.** -- How would you describe the distributions -- in a sentence -- of the distributions of the -->
-<!-- `SHIPLEY` and `HLVA` variable values for our sample? -->
+<!-- If you look at the model summary you can answer the following questions. -->
+<!-- >**Q.17.** What is the estimate for the coefficient of the effect of the predictor `HLVA` on `mean.acc`? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.8. The `SHIPLEY` values lie between about 25 and 40, and are skewed towards high scores. -->
-<!-- - A.8. The `HLVA` values lie between 4 and about 14, and peak in the middle (near 7). -->
+<!-- - A.17. 0.026207 -->
 <!-- ::: -->
-<!-- >**Q.12.** What is the shape (direction) of the association between `mean.self` and `mean.acc`? -->
+<!-- >**Q.18.** Is the effect significant? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.12. Increase in `mean.self` is associated with increase in `mean.acc` -->
+<!-- - A.18. It is significant, p < .05 -->
 <!-- ::: -->
-<!-- >**Q.13.** What is the shape (direction) of the association between `AGE` and `mean.acc`? -->
+<!-- >**Q.19.** What are the values for t and p for the significance test for the coefficient? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.13. There is no clear association between `AGE` and `mean.acc` -->
+<!-- - A.19. t = 7.529, p = 2.87e-12 -->
 <!-- ::: -->
-<!-- >**Q.14.** What is the shape (direction) of the association between `SHIPLEY` -->
-<!-- and `mean.acc`? -->
+<!-- >**Q.20.** How would you describe in words the shape or direction of the association between `HLVA` and `mean.acc`? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.14. Increase in `SHIPLEY` is associated with increase in `mean.acc` -->
+<!-- - A.20. The slope coefficient -- and a scatterplot (draw it) -- suggest that as HLVA scores increase so also do mean accuracy scores. -->
 <!-- ::: -->
-<!-- >**Q.15.** What is the shape (direction) of the association between `HLVA` -->
-<!-- and `mean.acc`? -->
+<!-- >**Q.21.** How how would you describe the relations apparent between the predictor and outcome in all three models? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.15. Increase in `HLVA` is associated with increase in `mean.acc` -->
+<!-- - A.21. It is possible to see, given coefficient estimates, that the association between predictor and outcome is positive for each model: mean accuracy appears to increase for increasing values of SHIPLEY vocabulary, HLVA health literacy, and age. -->
 <!-- ::: -->
-<!-- >**Q.16.** What is the shape (direction) of the association between `FACTOR3` -->
-<!-- and `mean.acc`? -->
+<!-- We are going to draw a scatterplot and add a line. -->
+<!-- - The line will show the model predictions, given the model intercept and effect  -->
+<!-- coefficient estimates. -->
+<!-- **First fit a model** and get the summary: model the relationship between `mean.acc` and `HLVA`. -->
+<!-- You will need to record some information from the model summary so you can use it next. -->
+<!-- >**Q.22.** What is the coefficient estimate for the intercept? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.16. Increase in `FACTOR3` is associated with increase in `mean.acc` -->
+<!-- - A.22. 0.522016 -->
 <!-- ::: -->
-<!-- >**Q.17.** What is the shape (direction) of the association between `QRITOTAL` -->
-<!-- and `mean.acc`? -->
+<!-- >**Q.23.** What is the coefficient estimate for the slope of `HLVA` (see earlier)? -->
 <!-- ::: {.callout-note icon=false collapse="true"} -->
 <!-- ## Answer -->
-<!-- - A.17. Increase in `QRITOTAL` is associated with increase in `mean.acc` -->
-<!-- ::: -->
-<!-- >**Q.21.** Can you find the ggplot reference page? -->
-<!-- Try doing a search with the keywords: `ggplot reference geom_point` -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.21. -- It is here: -->
-<!-- <https://ggplot2.tidyverse.org/reference/geom_point.html> -->
-<!-- ::: -->
-<!-- >**Q.22.** What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.22. r = 0.5000559 -->
-<!-- ::: -->
-<!-- >**Q.23.** Is the correlation significant? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.23. r is significant -->
-<!-- ::: -->
-<!-- >**Q.24.** What are the values for t and p for the significance test for the correlation? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.24. t = 7.5288, p = 2.866e-12 -->
-<!-- ::: -->
-<!-- >**Q.25.** What do you conclude, given the correlation results?  -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.25. HLVA and mean.acc are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
-<!-- ::: -->
-<!-- >**Q.26.** What is r (given as `cor` in the output) for the correlation between `mean.self` and `mean.acc`? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.26. r = 0.5460792 -->
-<!-- ::: -->
-<!-- >**Q.27.** Is the correlation between `AGE` and `mean.acc` significant? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.27. r is not significant -->
-<!-- ::: -->
-<!-- >**Q.28.** What are the values for t and p for the significance test for the correlation between `QRITOTAL` and `mean.acc`? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.28. t = 6.4711, p = 9.993e-10 -->
-<!-- ::: -->
-<!-- >**Q.29.** What do you conclude, given the correlation results, about the association between `SHIPLEY` and `mean.acc`? -->
-<!-- ::: {.callout-note icon=false collapse="true"} -->
-<!-- ## Answer -->
-<!-- - A.29. `SHIPLEY` and `mean.acc` are positively correlated suggesting that as HLVA scores increase so also do mean.acc scores -->
+<!-- - A.23. 0.026207 -->
 <!-- ::: -->
 </section>
 <section id="sec-wk17-lab-Q-and-A" class="level2">
