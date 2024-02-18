@@ -1056,74 +1056,6 @@ We set out answers information the Week 17 **Better understanding the linear mod
 
 <!-- #### Questions {#sec-wk17-lab-activities-2-questions-answers} -->
 
->**Q.1.** Edit the appearance of the bars by specifying a `binwidth` value.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2)
-```
-:::
-
->**Q.2.** Then add an edit to the appearance of the background using `theme_bw()`.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw()
-```
-:::
-
->**Q.3.** Then add an edit to the appearance of the labels using `labs()`.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "frequency count")
-```
-:::
-
-#### Introduce: make some new moves
-
->**Q.4.** Now add an edit by setting the x-axis limits using `x.lim()`.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40)
-```
-:::
-
->**Q.5.** Then add an edit to draw a vertical line to show the mean value of 
-the variable you are plotting..
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40) +
-  geom_vline(xintercept = mean(study.two.gen$SHIPLEY), colour = "red", size = 1.5)
-```
-:::
-
 >**Q.6.** Can you find information on how to define the limits on the x-axis 
 and on the y-axis?
 
@@ -1132,9 +1064,12 @@ and on the y-axis?
 You can see the information in this week's `how-to` guide but try a search online for "ggplot reference xlim".
 :::
 
-<!-- - A.6. See ggplot reference information on setting limits here: -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.6. See ggplot reference information on setting limits here:
 
-<!-- <https://ggplot2.tidyverse.org/reference/lims.html> -->
+<https://ggplot2.tidyverse.org/reference/lims.html>
+:::
 
 >**Q.7.** Can you find information on how to a reference line?
 
@@ -1143,224 +1078,18 @@ You can see the information in this week's `how-to` guide but try a search onlin
 You can see the information in this week's how-to but try a search online for "ggplot reference vline".
 :::
 
-<!-- - A.7. See ggplot reference information on adding lines here: -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.7. See ggplot reference information on adding lines here:
 
-<!-- <https://ggplot2.tidyverse.org/reference/geom_abline.html> -->
-
-#### Step 4: Now draw scatterplots to examine associations between variables
-
-#### Consolidation: should be no surprises here
-
-But if you want to remind yourself how to do things, click on the box to reveal hint information.
-
-:::{.callout-tip collapse="true"}
-## Hint
-- We are working with `geom_point()` and you need x and y aesthetic mappings.
-- The outcome variable `mean.acc` has to be mapped to the y-axis using `...y = ...`
-
-This is how the target scatterplot code works.
-
-```{r}
-#| eval: false
-ggplot(data = data.set, aes(x = predictor.variable, y = outcome.variable)) +
-  geom_point()
-```
-
-The plot code moves through the following steps:
-
-1. `ggplot(...)` make a plot;
-2. `ggplot(data = data.set, ...)` working with the `data.set`, using the name you gave the dataset you are working with;
-3. `ggplot(...aes(x = predictor.variable, y = outcome.variable))` using two aesthetic mappings
-
-- `x = predictor.variable` maps values of the `predictor.variable` (whatever it is called) to x-axis (horizontal, left to right) positions;
-- `y = outcome.variable` maps values of the `outcome.variable`(whatever it is called) to y-axis (vertical, bottom to top) positions;
-
-4. `geom_point()` show the mappings as points.
+<https://ggplot2.tidyverse.org/reference/geom_abline.html>
 :::
-
-##### Task 7 -- Create a scatterplot to examine the association between some variables
-
-Create three scatterplots to visualize the relationship between (1.) the outcome `mean.acc` and (2.) each of three numeric potential predictor variables `SHIPLEY`, `HLVA` and `AGE`.
-
-Check first if you can write the code you need to produce each scatterplot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-- Notice that R will tolerate some variation in how code is written.
-- This is like any language where we can ask for the same thing in different ways.
-
-:::{.callout-tip collapse="true"}
-## Code
-
-Check out the example code for each of the scatterplots we are asking you to do.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point()
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point()
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point()
-```
-:::
-
-#### Revise: make sure you are confident about doing these things
-
-##### Task 8 -- Edit the appearance of *each* plot step-by-step
-
-1. You may want to use the same plot appearance choices for all plots.
-
-- Producing plots with a consistent appearance will make it easier for 
-your audience to read your plots.
-
-2. You can find links to reference information on options in the how-to guide.
-
-- Use the information to make the plots pleasing in appearance to you.
-
-:::{.callout-tip collapse="true"}
-## Hints
-- Do not be afraid to select, copy then paste code to re-use it and *save yourself* the effort of typing out the code over and over again.
-- But be careful to make sure that you change variable names, and that things like axis values are sensible for each variable.
-:::
-
->**Q.8.** First, edit the appearance of the points using `alpha`, `size`, `shape`, and `colour`.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-```
-:::
-
->**Q.9.** Then edit the colour of the background using `theme_bw()`.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-```
-:::
-
->**Q.10.** Then edit the appearance of the labels using `labs()`.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy")
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy")
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Age (Years)", y = "mean accuracy")
-```
-:::
-
-#### Introduce: make some new moves
-
->**Q.11.** Then set the x-axis and y-axis limits to the minimum-maximum ranges 
-of the variables you are plotting.
-
-You can set axis limits by adding the `xlim()` and `ylim()` function calls to
-the chunk of code you have written to produce each plot.
-
-- The task, here, is to work out *what* numeric values you should enter inside
-`xlim()` or `ylim()`.
-- The code works if you enter values like this: `xlim(minimum, maximum)` and `ylim(minimum, maximum)`.
-- Where `minimum, maximum` are the numbers representing the smallest possible (minimum) and largest possible (maximum) value for each variable.
-
-:::{.callout-tip collapse="true"}
-## Hint
-- For these plots the y-axis limits will be the same because the outcome stays the same.
-- But the x-axis limits will be different for each different predictor variable.
-- Check out the information in the `summary()` you got of the dataset.
-- The minimum values for the variables will often (not always) be 0 e.g. if you are looking at data from ability tests and people who do the tests can get 0 (because none of their responses are correct). However, if you are looking at e.g. ratings data then the minimim value could be 1 (e.g. because people are asked to rate something on a scale from 1-9).
-- The maximum values for the variables is not necessarily the largest value recorded for that variable in the sample data-set you are working with (e.g., because nobody in your sample got all test questions correct). Thus, you need to use information about measurement design, see @sec-wk17-data-summary.
-:::
-
-Check first if you can write the code you need to produce each scatterplot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy") +
-  xlim(0, 16) + ylim(0, 1)
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Age (Years)", y = "mean accuracy") +
-  xlim(0, 80) + ylim(0, 1)
-```
-:::
-
-#### Step 5: Use correlation to to answer the research questions
-
-#### Revise: make sure you are confident about doing these things
 
 One of our research questions is:
 
 1. What person attributes predict success in understanding?
 
-##### Task 9 -- Examine the correlations between the outcome variable and predictor variables
+Examine the correlations between the outcome variable and predictor variables.
 
 You need to run three separate correlations: 
 
@@ -1368,20 +1097,7 @@ You need to run three separate correlations:
 2. between mean accuracy and `HLVA`; 
 3. between mean accuracy and `AGE`.
 
-:::{.callout-tip collapse="true"}
-## Hints
-- Use `cor.test()` to do the correlation analysis.
-- You can look at the `how-to` guide or review previous materials (e.g. @sec-wk12-labactivities or @sec-wk16-lab-activities-1-questions) for more advice.
-:::
-
-Check first if you can write the code you need to complete each correlation analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
 Check out the example code for doing each of the correlation analyses.
-
-- Notice what changes and what stays the same.
 
 ```{r}
 #| eval: false
@@ -1391,39 +1107,45 @@ cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  altern
 
 cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
 ```
-:::
 
 Now use the results from the correlations to answer the following questions.
 
 >**Q.12.** What is `r`, the coefficient for the correlation between `mean.acc` and `SHIPLEY`?
 
-<!-- - A.12. r = 0.4650537 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.12. r = 0.4650537
+:::
 
 >**Q.13.** Is the correlation between `mean.acc` and `HLVA`  significant?
 
-<!-- - A.13. -- r is significant, p < .05 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.13. -- r is significant, p < .05
+:::
 
 >**Q.14.** What are the values for t and p for the significance test for the correlation between `mean.acc` and `AGE`?
 
-<!-- - A.14. t = 0.30121, p = 0.7636 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.14. t = 0.30121, p = 0.7636
+:::
 
 >**Q.15.** For which pair of outcome-predictor variables is the correlation the largest?
 
-<!-- - A.15. -- The correlation is the largest between `mean.acc` and `HLVA`. -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.15. -- The correlation is the largest between `mean.acc` and `HLVA`.
+:::
 
 >**Q.16.** What is the sign or direction of each of the correlations?
 
-<!-- - A.16. -- All the correlations are positive. -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.16. -- All the correlations are positive.
+:::
 
-#### Step 6: Use a linear model to to answer the research questions
-
-#### Introduce: Make some new moves
-
-One of our research questions is:
-
-1. What person attributes predict success in understanding?
-
-##### Task 10 -- Examine the relation between outcome mean accuracy (`mean.acc`) and each of the predictors: `SHIPLEY`, `HLVA` and `AGE`
+Examine the relation between outcome mean accuracy (`mean.acc`) and each of the predictors: `SHIPLEY`, `HLVA` and `AGE`
 
 You need to run three separate `lm()` analyses:
 
@@ -1431,42 +1153,7 @@ You need to run three separate `lm()` analyses:
 2. with mean accuracy as the outcome and `HLVA` as the predictor; 
 3. with mean accuracy as the outcome and `AGE` as the predictor.
 
-:::{.callout-tip collapse="true"}
-## Hints
-You need to use `lm()` to do the analyses.
-
-1. Be careful to identify the outcome and predictor variables correctly.
-2. Remember that analysis code is arranged like this:
-
-```{r}
-#| eval: false
-lm(outcome.variable ~ predictor.variable, data = data.set)
-```
-
-With:
-
-- `lm()` asking R to do the linear model analysis;
-- `outcome.variable ~ ...` specified on the *left* of the `~`;
-- the `predictor.variable ~ ...` specified on the *right* of the `~`;
-- and `data.set` identifying to R what dataset you are working with.
-
-Notice that R has a general formula syntax: 
-
-`outcome ~ predictor *or* y ~ x`
-
-- and uses the same format across a number of different functions;
-- each time, the left of the tilde symbol `~` is some output or outcome;
-- and the right of the tilde `~` is some input or predictor or set of predictors.
-:::
-
-Check first if you can write the code you need to complete each linear model analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
 Check out the example code for each of the models.
-
-- Notice what changes and what stays the same.
 
 ```{r}
 #| eval: false
@@ -1479,98 +1166,66 @@ summary(model.2)
 model.3 <- lm(mean.acc ~ AGE, data = study.two.gen)
 summary(model.3)
 ```
-:::
 
 If you look at the model summary you can answer the following questions.
 
 >**Q.17.** What is the estimate for the coefficient of the effect of the predictor `HLVA` on `mean.acc`?
 
-<!-- - A.17. 0.026207  -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.17. 0.026207
+:::
 
 >**Q.18.** Is the effect significant?
 
-<!-- - A.18. It is significant, p < .05 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.18. It is significant, p < .05
+:::
 
 >**Q.19.** What are the values for t and p for the significance test for the coefficient?
 
-<!-- - A.19. t = 7.529, p = 2.87e-12 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.19. t = 7.529, p = 2.87e-12
+:::
 
 >**Q.20.** How would you describe in words the shape or direction of the association between `HLVA` and `mean.acc`?
 
-<!-- - A.20. The slope coefficient -- and a scatterplot (draw it) -- suggest that as HLVA scores increase so also do mean accuracy scores. -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.20. The slope coefficient -- and a scatterplot (draw it) -- suggest that as HLVA scores increase so also do mean accuracy scores.
+:::
 
 >**Q.21.** How how would you describe the relations apparent between the predictor and outcome in all three models?
 
-<!-- - A.21. It is possible to see, given coefficient estimates, that the association between predictor and outcome is positive for each model: mean accuracy appears to increase for increasing values of SHIPLEY vocabulary, HLVA health literacy, and age. -->
-
-#### Step 7: Use a linear model to generate predictions
-
-#### Introduce: Make some new moves
-
-One of our research questions is:
-
-1. What person attributes predict success in understanding?
-
-##### Task 11 -- We can use the model we have just fitted to plot the model predictions
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.21. It is possible to see, given coefficient estimates, that the association between predictor and outcome is positive for each model: mean accuracy appears to increase for increasing values of SHIPLEY vocabulary, HLVA health literacy, and age.
+:::
 
 We are going to draw a scatterplot and add a line.
 
 - The line will show the model predictions, given the model intercept and effect 
 coefficient estimates.
 
-:::{.callout-tip collapse="true"}
-## Hint
-You can see reference information here:  
-
-<https://ggplot2.tidyverse.org/reference/geom_abline.html>
-:::
-
 **First fit a model** and get the summary: model the relationship between `mean.acc` and `HLVA`.
-
-Check first if you can write the code you need to complete the linear model analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-model <- lm(mean.acc ~ HLVA, data = study.two.gen)
-summary(model)
-```
-:::
 
 You will need to record some information from the model summary so you can use it next.
 
 >**Q.22.** What is the coefficient estimate for the intercept?
 
-<!-- - A.22. 0.522016 -->
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.22. 0.522016
+:::
 
 >**Q.23.** What is the coefficient estimate for the slope of `HLVA` (see earlier)?
 
-<!-- - A.23. 0.026207 -->
-
-**Second, draw a prediction plot**, using the `geom_point()` to draw a scatterplot and using the `geom_abline()` function to draw the prediction line representing the association between this outcome and predictor.
-
-Check first if you can write the code you need to produce the prediction plot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_abline(intercept = 0.522016, slope = 0.026207, 
-              colour = "red", size = 1.5) +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy") +
-  xlim(0, 15) + ylim(0, 1)
-```
+::: {.callout-note icon=false collapse="true"}
+## Answer
+- A.23. 0.026207
 :::
-
-
-
-
 
 ## Online Q&A {#sec-wk17-lab-Q-and-A}
 
