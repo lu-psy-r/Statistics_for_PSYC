@@ -41,11 +41,10 @@ In Week 18, we aim to further develop skills in *analyzing* and in *visualizing*
 We will do this in the context of the **Clearly Understood** project: our focus will be on what makes it easy or difficult for people to understand written health information.
 
 ::: callout-tip
-In the Week 18 class, we will aim to answer the research question:
+In the week 18 class, we will aim to answer **two research questions**:
 
 1. What person attributes predict success in understanding?
-
-In psychological science, research questions like our question can be examined **using linear models**.
+2. Can people accurately evaluate whether they correctly understand written health information
 :::
 
 When we do these analyses, we will need to think about how we report the results:  
