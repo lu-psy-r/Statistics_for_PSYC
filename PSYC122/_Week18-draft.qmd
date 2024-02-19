@@ -1,7 +1,7 @@
 ---
-title: 6. Week 17 -- Better understanding the linear model
+title: 7. Week 18 -- Developing the linear model
 subtitle: Written by Rob Davies
-order: 6
+order: 7
 ---
 
 ::: callout-warning
@@ -22,9 +22,9 @@ study.one.gen <- read_csv("study-one-general-participants.csv")
 study.two.gen <- read_csv("study-two-general-participants.csv")
 ```
 
-## Week 17: Introduction {#sec-wk17-introduction}
+## Week 18: Introduction {#sec-wk18-introduction}
 
-Welcome to your overview of our work together in **PSYC122 Week 17**.
+Welcome to your overview of our work together in **PSYC122 Week 18**.
 
 ::: callout-tip
 *Putting it all together*
@@ -36,12 +36,12 @@ Welcome to your overview of our work together in **PSYC122 Week 17**.
 
 ### Our learning goals
 
-In Week 17, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
+In Week 18, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
 
 We will do this in the context of the **Clearly Understood** project: our focus will be on what makes it easy or difficult for people to understand written health information.
 
 ::: callout-tip
-In the Week 17 class, we will aim to answer the research question:
+In the Week 18 class, we will aim to answer the research question:
 
 1. What person attributes predict success in understanding?
 
@@ -68,52 +68,52 @@ At every stage, as we work, we will visualize the data to:
 - We will aim to build skills in producing professional-looking plots for our audiences. 
 :::
 
-## Lectures {#sec-wk17-lectures}
+## Lectures {#sec-wk18-lectures}
 
 ::: callout-tip
-Before you go on to the activities in @sec-wk17-lab-activities, **watch** the lectures:
+Before you go on to the activities in @sec-wk18-lab-activities, **watch** the lectures:
 :::
 
 The lecture for this week is presented in four short parts.
 You can view video recordings of the lectures using Panopto, by clicking on the links shown following.
 
-1. **Overview** (19 minutes): What we are doing in Week 17 -- thinking critically about predicting people.
+1. **Overview** (19 minutes): What we are doing in Week 18 -- thinking critically about predicting people.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5c751906-33d0-4ebd-a49d-afb000ec09ce&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7ae0e020-8dcc-436e-9d69-afb700ca1a52&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 2. **Using linear models to do prediction** (11 minutes): How we answer live research questions by using linear models to predict behaviour.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d9d5ade2-e10c-4e14-b938-afb000f2634c&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d2638334-4683-4543-8183-afb700cfbff0&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 3. **How linear models work** (9 minutes): How we can visualize and think about predictions, and about the difference between what we predict and what we observe when we study people.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=44dfb2c3-80d3-4fa6-8978-afb000f63c17&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=68e5cba9-ea96-4788-9c21-afb700d3ba29&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 4. **Interpreting, reporting and visualizing** linear model results (15 minutes): Identifying, interpreting and communicating the key statistics.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4a20cb70-618c-4bf3-999a-afb000f9bdcf&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f6ba49d-f54d-41d0-ab30-afb700d84744&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 ::: callout-tip
 The slides presented in the videos can be downloaded either as a web page or as a Word document.
 :::
 
-- [The slides](data/week17/122-linear-model-intro.html) exactly as presented (21 MB). 
-- [The slides](data/week17/122-linear-model-intro-printable-edit.docx) converted to a Word .docx (11 MB). 
+- [The slides](data/week18/122-linear-model-develop.html) exactly as presented (21 MB). 
+- [The slides](data/week18/122-linear-model-develop-printable-edit.docx) converted to a Word .docx (11 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
-### The lectures have two main areas of focus {#sec-wk17-lectures-focus}
+### The lectures have two main areas of focus {#sec-wk18-lectures-focus}
 
 **1. Understanding the scientific process**
 
@@ -144,7 +144,7 @@ To work with the recordings:
 
 - Watch the video parts right through.
 - Use the printable versions of the slides (provided on Moodle) to make notes.
-- Try out the coding exercises in the how-to guide and the acitivity tasks or questions (@sec-wk17-lab-activities) to learn how to construct visualizations and do analyses.
+- Try out the coding exercises in the how-to guide and the acitivity tasks or questions (@sec-wk18-lab-activities) to learn how to construct visualizations and do analyses.
 :::
 
 ## Reading: Links to other classes
@@ -154,9 +154,9 @@ We do not provide further reading for this class but you will find it helpful to
 - The lectures in *PSYC123* on: the scientific method; reliability and validity; experimental design, especially between-subjects studies; hypothesis testing; and precise hypotheses.
 - The lecture in *PSYC122* on correlations. 
 
-## Pre-lab activities {#sec-wk17-prelab-activities}
+## Pre-lab activities {#sec-wk18-prelab-activities}
 
-### Pre-lab activity 1 {#sec-wk17-prelab-activities-1}
+### Pre-lab activity 1 {#sec-wk18-prelab-activities-1}
 
 In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice.
 
@@ -178,15 +178,15 @@ If you do not want to do the survey, you can do an alternative activity (see bel
 
 All responses will be recorded completely anonymously.
 
-### Pre-lab activity alternative option {#sec-wk17-prelab-activities-2}
+### Pre-lab activity alternative option {#sec-wk18-prelab-activities-2}
 
 If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
 
 [Read the project pre-registration](https://osf.io/p6fsc/)
 
-## Lab activities {#sec-wk17-lab-activities}
+## Lab activities {#sec-wk18-lab-activities}
 
-### Introduction {#sec-wk17-lab-activities-1-introduction}
+### Introduction {#sec-wk18-lab-activities-1-introduction}
 
 We will do our practical lab work to develop your skills in the context of the **Clearly Understood** project.
 
@@ -199,11 +199,11 @@ In these classes, we will complete a research project to answer the research que
 2. Can people accurately evaluate whether they correctly understand written health information?
 :::
 
-### Get ready {#sec-wk17-prelab-activities-ready}
+### Get ready {#sec-wk18-prelab-activities-ready}
 
 #### Download the data
 
-Click on the link: [122_week17_for_students.zip](data/week17/122_week17_for_students.zip) to download the data files folder. Then upload the contents to the new folder you created in RStudio Server.
+Click on the link: [122-week18_for_students.zip](data/week18/122-week18_for_students.zip) to download the data files folder. Then upload the contents to the new folder you created in RStudio Server.
 
 The downloadable .zip folder includes the data files:
 
@@ -212,7 +212,7 @@ The downloadable .zip folder includes the data files:
 
 and the R Markdown `.Rmd`:
 
-- `2023-24-PSYC122-w17-how-to.Rmd`
+- `2023-24-PSYC122-w18-how-to.Rmd`
 
 If you can't upload these files to the server -- this affects some students -- you can use some code to get R to do it for you: uncover the code box below to reveal the code to do this.
 
@@ -224,23 +224,23 @@ If you can't upload these files to the server -- this affects some students -- y
 1. Get the `study-one-general-participants.csv` data
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week17/study-one-general-participants.csv?raw=true", destfile = "study-one-general-participants.csv")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/study-one-general-participants.csv?raw=true", destfile = "study-one-general-participants.csv")
 ```
 
 2. Get the `study-two-general-participants.csv` data
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week17/study-two-general-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/study-two-general-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
 ```
 
-3. Get the `2023-24-PSYC122-w17-how-to.Rmd` how-to guide
+3. Get the `2023-24-PSYC122-w18-how-to.Rmd` how-to guide
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week17/2023-24-PSYC122-w17-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w17-how-to.Rmd")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/2023-24-PSYC122-w18-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w18-how-to.Rmd")
 ```
 :::
 
-#### Check: What is in the data files? {#sec-wk17-data-summary}
+#### Check: What is in the data files? {#sec-wk18-data-summary}
 
 Each of the data files we will work with has a similar structure, as you can see in this extract.
 
@@ -275,11 +275,11 @@ You can see the columns:
 It is always a good idea to view the dataset -- click on the name of the dataset in the R-Studio `Environment` window, and check out the columns, scroll through the rows -- to get a sense of what you are working with.
 :::
 
-### Lab activity 1: Work with the `How-to` guide {#sec-wk17-lab-activities-1}
+### Lab activity 1: Work with the `How-to` guide {#sec-wk18-lab-activities-1}
 
 The `how-to` guide comprises an .Rmd file:
 
-- `2023-24-PSYC122-w17-how-to.Rmd`
+- `2023-24-PSYC122-w18-how-to.Rmd`
 
 It is full of advice and example code.
 
@@ -288,7 +288,7 @@ The code in the `how-to` guide was written to work with the data file:
 - `study-one-general-participants.csv`.
 
 ::: callout-tip
-We show you how to do everything you need to do in the lab activity (@sec-wk17-lab-activities-2, next) in the `how-to` guide.
+We show you how to do everything you need to do in the lab activity (@sec-wk18-lab-activities-2, next) in the `how-to` guide.
 
 - Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
 :::
@@ -306,7 +306,7 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-In the activity @sec-wk17-lab-activities-2, we are going to work through the following tasks.
+In the activity @sec-wk18-lab-activities-2, we are going to work through the following tasks.
 
 ::: callout-tip
 - Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
@@ -346,10 +346,10 @@ In the activity @sec-wk17-lab-activities-2, we are going to work through the fol
 11. Use a model we have fitted to plot model predictions
 
 ::: callout-tip
-If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w17-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
+If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w18-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
 :::
 
-You will see that you can match a task in the activity @sec-wk17-lab-activities-2 to the same task in the `how-to` guide.
+You will see that you can match a task in the activity @sec-wk18-lab-activities-2 to the same task in the `how-to` guide.
 The `how-to` shows you what function you need and how you should write the function code.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
@@ -358,7 +358,7 @@ This process of adapting demonstration code is a process critical to data litera
 Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.
 :::
 
-### Lab activity 2 {#sec-wk17-lab-activities-2}
+### Lab activity 2 {#sec-wk18-lab-activities-2}
 
 ### OK: now let's do it!
 
@@ -369,10 +369,10 @@ You will learn more if you follow this advice:
 1. We will hide the code to do some tasks behind a drop-down button. Try to write and run the code for yourself first.
 2. We won't always give you the code required to do something: this gives you the chance to check what you have learned by trying out your code without the answer in front of you.
 3. We will not *at first* give you the answers to questions about the data or about the results of analyses.
-4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk17-lab-activities-answers) so that you can check whether your independent work has been correct.
+4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk18-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
-#### Questions {#sec-wk17-lab-activities-1-questions}
+#### Questions {#sec-wk18-lab-activities-1-questions}
 
 #### Step 1: Set-up
 
@@ -768,7 +768,7 @@ the chunk of code you have written to produce each plot.
 - But the x-axis limits will be different for each different predictor variable.
 - Check out the information in the `summary()` you got of the dataset.
 - The minimum values for the variables will often (not always) be 0 e.g. if you are looking at data from ability tests and people who do the tests can get 0 (because none of their responses are correct). However, if you are looking at e.g. ratings data then the minimim value could be 1 (e.g. because people are asked to rate something on a scale from 1-9).
-- The maximum values for the variables is not necessarily the largest value recorded for that variable in the sample data-set you are working with (e.g., because nobody in your sample got all test questions correct). Thus, you need to use information about measurement design, see @sec-wk17-data-summary.
+- The maximum values for the variables is not necessarily the largest value recorded for that variable in the sample data-set you are working with (e.g., because nobody in your sample got all test questions correct). Thus, you need to use information about measurement design, see @sec-wk18-data-summary.
 :::
 
 Check first if you can write the code you need to produce each scatterplot.
@@ -1018,7 +1018,7 @@ ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
 ```
 :::
 
-#### You have now completed the Week 17 questions.
+#### You have now completed the Week 18 questions.
 
 ::: callout-important
 Predicting human behaviour is at the heart of:
@@ -1031,30 +1031,30 @@ This is an important step in your developmental journey: **Well done!**
 - We will continue to deepen and extend your skills and understanding but everything builds on the key lessons we have been learning here.
 :::
 
-## Answers {#sec-wk17-lab-activities-answers}
+## Answers {#sec-wk18-lab-activities-answers}
 
 When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week.
 
 ::: callout-tip
 The `.Rmd` script containing all code and all answers for each task and each question will be made available after the final lab session has taken place.
 
-<!-- - You can download the script [2023-24-PSYC122-w17-workbook-answers.Rmd](data/week17/2023-24-PSYC122-w17-workbook-answers.Rmd) when it is available. -->
+<!-- - You can download the script [2023-24-PSYC122-w18-workbook-answers](data/week18/2023-24-PSYC122-w18-workbook-answers) when it is available. -->
 :::
 
-We set out answers information the Week 17 **Better understanding the linear model** questions, below.
+We set out answers information the Week 18 **Better understanding the linear model** questions, below.
 
 - We focus on the **Lab activity 2** questions where we ask you to interpret something or say something.
-- We do not show questions where we have given example or target code in the foregoing lab activity @sec-wk17-lab-activities-2.
+- We do not show questions where we have given example or target code in the foregoing lab activity @sec-wk18-lab-activities-2.
 
-<!-- You can see all the code and all the answers in `2023-24-PSYC122-w17-workbook-answers.Rmd`. -->
+<!-- You can see all the code and all the answers in `2023-24-PSYC122-w18-workbook-answers`. -->
 
-<!-- ### Answers {#sec-wk17-lab-activities-answers-information}  -->
+<!-- ### Answers {#sec-wk18-lab-activities-answers-information}  -->
 
 <!-- ::: callout-tip -->
 <!-- Click on a box to reveal the answer. -->
 <!-- ::: -->
 
-<!-- #### Questions {#sec-wk17-lab-activities-2-questions-answers} -->
+<!-- #### Questions {#sec-wk18-lab-activities-2-questions-answers} -->
 
 <!-- >**Q.6.** Can you find information on how to define the limits on the x-axis  -->
 <!-- and on the y-axis? -->
@@ -1227,9 +1227,9 @@ We set out answers information the Week 17 **Better understanding the linear mod
 <!-- - A.23. 0.026207 -->
 <!-- ::: -->
 
-## Online Q&A {#sec-wk17-lab-Q-and-A}
+## Online Q&A {#sec-wk18-lab-Q-and-A}
 
-You will find, below, a link to the video recording of the Week 17 online Q&A after it has been completed.
+You will find, below, a link to the video recording of the Week 18 online Q&A after it has been completed.
 
 ```{=html}
 ```
