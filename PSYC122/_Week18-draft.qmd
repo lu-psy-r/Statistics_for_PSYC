@@ -39,32 +39,40 @@ Welcome to your overview of our work together in **PSYC122 Week 18**.
 In Week 18, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
 
 We will do this in the context of the **Clearly Understood** project: our focus will be on what makes it easy or difficult for people to understand written health information.
-
-::: callout-tip
-In the week 18 class, we will aim to answer **two research questions**:
+In the Week 18 class, we will aim to answer two research questions:
 
 1. What person attributes predict success in understanding?
-2. Can people accurately evaluate whether they correctly understand written health information
-:::
+2. Can people accurately evaluate whether they correctly understand written health information?
 
-When we do these analyses, we will need to think about how we report the results:  
-
-- we usually need to report information about the kind of model we specify;
-- and we will need to report the nature of the association estimated in our model.
-
-This means we will usually need to decide:
-
-- is the association significant?
-- does the association reflect a positive or negative relationship between outcome and predictor?
-- is the association relatively strong or weak?
-
-Our thinking, and our decision-making, will be helped by developing our data visualization skills.
-At every stage, as we work, we will visualize the data to:
-
-- Understand the shape of the relationships we may observe or predict.
+We will use linear models to estimate the association between predictors and outcomes.
+What is **new**, here, is that we will explore the power and flexibility of the linear model analysis method in two important aspects.
 
 ::: callout-tip
-- We will aim to build skills in producing professional-looking plots for our audiences. 
+1. We will fit linear models including *multiple* predictors, this is why this form of analysis is also often called *multiple regression*.
+2 We will use linear models to estimate the effects of numeric and categorical or nominal predictor variables.
+:::
+
+When we do these analyses, we will need to adapt how we report the results:  
+
+- we need to report information about **the model we specify**, identifying *all* predictors;
+- we will need to decide **if the effects** of one or more predictors **are significant**;
+- we will report the model **fit statistics** (`F, R-squared`) as well as coefficient estimates;
+- and we need to learn to write texts **describing the impact** of predictors.
+
+Usually, in describing the impacts of predictors, we are required to communicate:
+
+- the **direction** of the effect -- do values of the outcome variable *increase* or *decrease* given increasing values of the predictor?
+- the **size** of the effect -- *how much* do values of the outcome variable *increase* or *decrease* given increasing values of the predictor?
+
+This task of description is enabled by producing plots of the predictions we can make:
+
+- plots to show we expect the outcome to change, given different values of a predictor.
+
+::: callout-tip
+We will aim to build skills in producing professional-looking plots for our audiences.
+
+- We can produce plots showing the effects of predictors
+- As predictions of change in outcome, given different values of the predictor variables.
 :::
 
 ## Lectures {#sec-wk18-lectures}
