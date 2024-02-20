@@ -326,6 +326,8 @@ We split .Rmd scripts by steps, tasks and questions:
 
 In the activity @sec-wk18-lab-activities-2, we are going to work through a sequence of steps and tasks that mirrors the sequence you find in the `how-to` guide.
 
+- There is a little bit of variation, comparing the later steps in the `how-to` guide and the steps in @sec-wk18-lab-activities-2, but that is designed to help you with your learning, in different places, when we think you will most need the support.
+
 ::: callout-tip
 - Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
 - Over time, we will refer less and less to what we have learned before.
@@ -347,12 +349,14 @@ In the activity @sec-wk18-lab-activities-2, we are going to work through a seque
 
 **Step 4: Use a linear model to to answer the research questions -- multiple predictors**
 
-6. Examine the relation between between an outcome variable and *multiple* predictors
+6. Use `lm()` to examine the relation between between an outcome variable and *multiple* predictors
 
 **Step 5: Plot predictions from linear models with multiple predictors**
 
 7. Use `ggpredict()` to plot linear model predictions for one of the predictors
 8. Produce plots that show the predictions for all the predictor variables in a model
+
+In @sec-wk18-lab-activities-2, you will see that we show you how you can understand what linear model estimates show by examining the predictions from one outcome-predictor relation.
 
 **Step 6: Draw boxplots to examine associations between variables**
 
