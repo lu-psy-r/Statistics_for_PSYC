@@ -39,6 +39,7 @@ Welcome to your overview of our work together in **PSYC122 Week 18**.
 In Week 18, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
 
 We will do this in the context of the **Clearly Understood** project: our focus will be on what makes it easy or difficult for people to understand written health information.
+
 In the Week 18 class, we will aim to answer two research questions:
 
 1. What person attributes predict success in understanding?
@@ -82,27 +83,29 @@ Before you go on to the activities in @sec-wk18-lab-activities, **watch** the le
 :::
 
 The lecture for this week is presented in four short parts.
-You can view video recordings of the lectures using Panopto, by clicking on the links shown following.
+You can view video recordings of the lectures using Panopto, by clicking on the video images shown following.
 
-1. **Overview** (19 minutes): What we are doing in Week 18 -- thinking critically about predicting people.
+- Anybody who has the link should be able to view the video.
+
+1. **Overview** (19 minutes): What we are doing in Week 18 -- Exploring the power of linear models, extending their application to use multiple variables to predict people.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7ae0e020-8dcc-436e-9d69-afb700ca1a52&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-2. **Using linear models to do prediction** (11 minutes): How we answer live research questions by using linear models to predict behaviour.
+2. **Using linear models to predict people** (13 minutes): Coding, thinking about, and reporting linear models with multiple predictors.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d2638334-4683-4543-8183-afb700cfbff0&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3. **How linear models work** (9 minutes): How we can visualize and think about predictions, and about the difference between what we predict and what we observe when we study people.
+3. **Critical evaluation** (15 minutes): Critically evaluating the results of analyses involving linear models.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=68e5cba9-ea96-4788-9c21-afb700d3ba29&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4. **Interpreting, reporting and visualizing** linear model results (15 minutes): Identifying, interpreting and communicating the key statistics.
+4. **Everything is some kind of linear model** (13 minutes): Understanding just how general and powerful this method for understanding people can be.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f6ba49d-f54d-41d0-ab30-afb700d84744&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
@@ -112,39 +115,47 @@ You can view video recordings of the lectures using Panopto, by clicking on the 
 The slides presented in the videos can be downloaded either as a web page or as a Word document.
 :::
 
-- [The slides](data/week18/122-linear-model-develop.html) exactly as presented (21 MB). 
-- [The slides](data/week18/122-linear-model-develop-printable-edit.docx) converted to a Word .docx (11 MB). 
+- [The slides](data/week18/122-linear-model-develop.html) exactly as presented (6 MB). 
+- [The slides](data/week18/122-linear-model-develop-printable-edit.docx) converted to a Word .docx (1 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
-### The lectures have two main areas of focus {#sec-wk18-lectures-focus}
+### The lectures have three main areas of focus {#sec-wk18-lectures-focus}
 
-**1. Understanding the scientific process**
+**1. Working with the linear model with multiple predictors**
 
-I outline the steps through which a psychological scientist may progress, in logic and practice, from research questions to hypotheses to analyses.
+We focus in-depth on how you code linear models, how you identify critical information in the results summaries, and how you report the results: the language and the style you can use in your reports.
 
-We are learning data analysis methods.
-But the key point is that we use these methods in the context of a research project with concerns, aims, methodological assumptions, and choices.
-This is generally true so the aim is to present a concrete example of how research works.
+::: callout-tip
+- A small change to `lm()` coding releases tremendous power and flexibility in how you use the analysis method.
+:::
 
-As part of the discussion, I raise questions you might want to consider.
-These questions are also part of the context for our data analysis, because they help to inform how you interpret or evaluate the results.
-These questions are examples of the **critical evaluation** that you will need to develop through your studies.
+**2. Analyses are done in context so when we conduct analyses we *must* use contextual information**
 
-**2. The linear model**
+The power and flexibility of the linear model presents challenges.
+We must decide *which* predictor variables we specify in our model.
+This specification requires us to think about our theoretical assumptions and what they require us to include to make sense of the behaviours or the individual differences we observe when we do things like investigating what makes health information easy or difficult to understand.
 
-We look at how the linear model can be used to address research questions in the context of the **Clearly understood** health comprehension project.
-But I aim to outline some general ideas about why we use the linear model technique, and how it works.
+**3. Developing critical thinking**
 
-I build on work you have done with Margriet Groen in earlier PSYC122 classes, so that we can *strengthen* understanding, and *extend skills*.
+As we develop conceptual understanding and practical skills, we must learn to *reflect critically* on our analyses, and learn to critically evaluate the analyses we read about when we read research reports in the scientific literature.
 
-The lectures end with a discussion of the critical information you must identify and extract when you view the summary of a linear model results.
+::: callout-tip
+*Critical analysis* can develop by considering
 
-I then show you how to report the results.
-I give you examples of the conventional language you can use to report your results.
+- validity
+- measurement
+- generalizability
+:::
+
+We are always working in the broader context of uncertainty:
+
+- uncertainty about the predictions we may make concerning outcomes of interest;
+- uncertainty given the possibility that predicted effects may vary between individuals or groups;
+- uncertainty given the influence of sources of randomness in how specific responses are produced.
 
 ::: callout-tip
 To work with the recordings:
