@@ -476,10 +476,7 @@ One of our research questions is:
 
 2. Can people accurately evaluate whether they correctly understand written health information?
 
-We can address this question by examining whether someone's rated evaluation
-of their own understanding matches their performance on a test of that
-understanding, and by investigating what variables predict variation in 
-mean self-rated accuracy.
+We can address this question by examining whether someone's rated evaluation of their own understanding matches their performance on a test of that understanding, and by investigating what variables predict variation in mean self-rated accuracy.
 
 - For these data, participants were asked to respond to questions about health information to get `mean.acc` scores and they were then asked to rate their own understanding of the same information (ratings on a scale from 1-9).
 - Ratings of accuracy are ordinal data but, here, we choose to examine the average of participants' ratings of their own understanding of health information to keep our analysis fairly simple.
@@ -723,7 +720,10 @@ The **important lesson**, here, is that estimates of predictor effects are scale
 <!-- outcomes given some set of predictor variables. Predictions will necessarily be *scaled* -->
 <!-- in the same way as the outcome variable.  -->
 
-We can visualize the predictions from each model to see the *visualize* the comparison.
+We can visualize the predictions from each model to *visualize* the comparison. This will help your learning:
+
+- Look at *how much* the outcome is predicted to change;
+- Look at the values on the y-axis labels.
 
 - Q.15. Can you plot the predictions from each model?
 
@@ -741,7 +741,8 @@ Click on the button to see the code example: compare it to the code you wrote.
 
 ```{r}
 #| eval: false
-model.1 <- lm(mean.acc ~ mean.self, data = study.two.gen)
+model.1 <- lm(mean.acc ~ mean.self, 
+              data = study.two.gen)
 summary(model.1)
 
 model.2 <- lm(mean.self ~ mean.acc, 
@@ -766,7 +767,7 @@ dat.2 <- ggpredict(model.2, "mean.acc")
 plot(dat.1)
 ```
 
-1. Predictions from the model `mean.self ~ mean.acc`
+2. Predictions from the model `mean.self ~ mean.acc`
 
 ```{r}
 #| eval: false
@@ -776,7 +777,7 @@ plot(dat.2)
 
 >**Q.16.** Look at the two plots: what do you see?
 
-Look at changes in height of the prediction line, given changes in x-axis position of the line.
+Look at changes in height of the prediction line, given changes in predictor values.
 
 <!-- - A.16. A side-by-side comparison shows that: -->
 
@@ -877,15 +878,15 @@ The effect or prediction plot will show you **dot-and-whisker** representations 
 <!-- - `EDUCATIONHigher    -0.082217` -->
 <!-- - `EDUCATIONSecondary  0.346161` -->
 
-The reference level for `EDUCATION` is `Further`. 
+<!-- The reference level for `EDUCATION` is `Further`.  -->
 
-The estimates therefore show that people with `Higher` education have `mean.self` 
-scores about -.08 lower than `mean.self` for people with `Further` education. 
+<!-- The estimates therefore show that people with `Higher` education have `mean.self`  -->
+<!-- scores about -.08 lower than `mean.self` for people with `Further` education.  -->
 
-People with `Secondary` education have `mean.self` scores about .35 higher than 
-`mean.self` for people with `Further` education.
+<!-- People with `Secondary` education have `mean.self` scores about .35 higher than  -->
+<!-- `mean.self` for people with `Further` education. -->
 
-We are learning some new things here so it is useful to explain them:
+We are learning some new things here so it is useful to explain them in a bit more detail:
 
 1. Categorical variables or **factors** and reference levels.
 
@@ -913,9 +914,12 @@ using our analysis procedure (Hoekstra et al., 2014).
 > If we were to repeat the experiment over and over, then 95 % of the time the 
 confidence intervals contain the true mean.
 
-- You can read more about this here
+::: callout-tip
+## Reading to grow your understanding
+- You can read more about this here:
 
 Hoekstra, R., Morey, R. D., Rouder, J. N., & Wagenmakers, E. J. (2014). Robust misinterpretation of confidence intervals. *Psychonomic Bulletin & Review*, 21, 1157-1164.
+:::
 
 #### You have now completed the Week 18 questions.
 
