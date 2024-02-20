@@ -324,7 +324,7 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-In the activity @sec-wk18-lab-activities-2, we are going to work through the following tasks.
+In the activity @sec-wk18-lab-activities-2, we are going to work through a sequence of steps and tasks that mirrors the sequence you find in the `how-to` guide.
 
 ::: callout-tip
 - Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
@@ -341,27 +341,32 @@ In the activity @sec-wk18-lab-activities-2, we are going to work through the fol
 3. Read in the data file -- using `read_csv()`
 4. Inspect the data -- using `head()` and `summary()`
 
-**Step 3: Use histograms to examine the distributions of variables**
+**Step 3: Use a linear model to to answer the research questions -- one predictor**
 
-5. Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()`
-6. Practice editing the appearance of a histogram plot step-by-step
+5. Use `lm()` to examine the relation between an outcome variable and one predictor variable
 
-**Step 4: Now draw scatterplots to examine associations between variables**
+**Step 4: Use a linear model to to answer the research questions -- multiple predictors**
 
-7. Create scatterplots to examine the association between some variables 
-8. Edit the appearance of *each* plot step-by-step
+6. Examine the relation between between an outcome variable and *multiple* predictors
 
-**Step 5: Use correlation to to answer the research questions **
+**Step 5: Plot predictions from linear models with multiple predictors**
 
-9. Examine the correlations between the outcome variable and predictor variables
+7. Use `ggpredict()` to plot linear model predictions for one of the predictors
+8. Produce plots that show the predictions for all the predictor variables in a model
 
-**Step 6: Use a linear model to to answer the research questions**
+**Step 6: Draw boxplots to examine associations between variables**
 
-10. Examine the relation between outcome mean accuracy (`mean.acc`) and each of the potential predictors: `SHIPLEY`, `HLVA` and `AGE`
+The `how-to` guide shows you how to produce boxplots. 
+We do not include the task in the @sec-wk18-lab-activities-2 tasks sequence but you *will* find it useful to produce boxplots when you are examining the impact of categorical variables (next).
 
-**Step 7: Use a linear model to generate predictions**
+9. Create boxplots to examine the association between a continuous numeric outcome variable like `mean.acc` and a categorical variable like `ETHNICITY`
 
-11. Use a model we have fitted to plot model predictions
+**Step 7: Estimate the effects of factors as well as numeric variables**
+
+We refer to categorical or nominal variables like `ETHNICITY` as *factors* in data analysis.
+
+10. Fit a linear model including both numeric variables and categorical variables as predictors
+11. Fit a linear model including both numeric variables and categorical variables as predictors, and then plot the predicted effect of the factor (the categorical variable)
 
 ::: callout-tip
 If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w18-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
@@ -373,7 +378,7 @@ The `how-to` shows you what function you need and how you should write the funct
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
 
 ::: callout-warning
-Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in @sec-wk18-lab-activities-2.
 :::
 
 ### Lab activity 2 {#sec-wk18-lab-activities-2}
