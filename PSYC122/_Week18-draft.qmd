@@ -796,48 +796,66 @@ We can visualize the predictions from each model to *visualize* the comparison. 
 
 Can you work out how to write the model prediction plotting code without looking at the code example?
 
-Click on the button to see the code example: compare it to the code you wrote.
+Click on the Hint button to see advice on what you need to do. 
+You can see example code, for a different model, for Step 5 in the `2023-24-PSYC122-w18-how-to.Rmd`.
 
 :::{.callout-tip collapse="true"}
-## Code
-**First** fit the models.
+## Hint
+**First** fit the models like this:
+
+```{r}
+#| eval: false
+model.1 <- lm(outcome ~ predictor, data)
+```
 
 - Remember to give each model object distinct names.
 
-```{r}
-#| eval: false
-model.1 <- lm(mean.acc ~ mean.self, 
-              data = study.two.gen)
-summary(model.1)
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model.1 <- lm(mean.acc ~ mean.self,  -->
+<!--               data = study.two.gen) -->
+<!-- summary(model.1) -->
 
-model.2 <- lm(mean.self ~ mean.acc, 
-            data = study.two.gen)
-summary(model.2)
-```
+<!-- model.2 <- lm(mean.self ~ mean.acc,  -->
+<!--             data = study.two.gen) -->
+<!-- summary(model.2) -->
+<!-- ``` -->
 
-**Second** get the predictions:
-
-```{r}
-#| eval: false
-dat.1 <- ggpredict(model.1, "mean.self")
-dat.2 <- ggpredict(model.2, "mean.acc")
-```
-
-**Third** make the prediction plots:
-
-1. Predictions from the model `mean.acc ~ mean.self`
+**Second** get the predictions like this:
 
 ```{r}
 #| eval: false
-plot(dat.1)
+model.predictions <- ggpredict(model.1, "...")
 ```
 
-2. Predictions from the model `mean.self ~ mean.acc`
+- Replace `...` with the name of the predictor in `model.1`.
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- dat.1 <- ggpredict(model.1, "mean.self") -->
+<!-- dat.2 <- ggpredict(model.2, "mean.acc") -->
+<!-- ``` -->
+
+**Third** make the prediction plots like this:
 
 ```{r}
 #| eval: false
-plot(dat.2)
+plot(model.predictions)
 ```
+
+<!-- 1. Predictions from the model `mean.acc ~ mean.self` -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- plot(dat.1) -->
+<!-- ``` -->
+
+<!-- 2. Predictions from the model `mean.self ~ mean.acc` -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- plot(dat.2) -->
+<!-- ``` -->
 :::
 
 >**Q.16.** Look at the two plots: what do you see?
