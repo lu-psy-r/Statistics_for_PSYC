@@ -895,20 +895,27 @@ As well as a categorical or nominal variable like:
 
 Note: `EDUCATION` is a categorical or nominal variable *because* participants are classified by what education category (`higher education, further education, secondary school`) they report themselves as having received.
 
-Check first if you can write the code you need to complete the linear model analysis.
-
-Click on the button to see the code example: compare it to the code you wrote.
+Can you write the code to complete the linear model analysis?
 
 :::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
-                        EDUCATION, 
-            data = study.two.gen)
-summary(model)
-```
+## Hint
+Follow the same procedure for model specification that you have been learning to follow: the inclusion of a nominal variable does not affect how you specify the model.
 :::
+
+<!-- Check first if you can write the code you need to complete the linear model analysis. -->
+
+<!-- Click on the button to see the code example: compare it to the code you wrote. -->
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc + -->
+<!--                         EDUCATION,  -->
+<!--             data = study.two.gen) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- ::: -->
 
 If you look at the model summary you can answer the following questions.
 
@@ -924,29 +931,63 @@ If you look at the model summary you can answer the following questions.
 
 >**Q.18.** Can you plot the predicted effect of `EDUCATION` given your model?
 
-Check first if you can write the code produce the prediction plot.
-
-Click on the button to see the code example: compare it to the code you wrote.
-
 :::{.callout-tip collapse="true"}
-##Hint and code
-1. We first fit the model, including `EDUCATION`.
+## Hint
+Follow the same procedure that you have been learning to follow.
+
+1. Fit the model:
 
 ```{r}
 #| eval: false
-model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
-              EDUCATION, 
-            data = study.two.gen)
+model <- lm(outcome ~ predictors, data)
 ```
 
-2. We then use the `ggpredict()` function to get the prediction for the effect of `EDUCATION` differences on outcome `mean.self`.
+- Replace `outcome` with the outcome variable required for this analysis.
+- Replace `predictor` with the predictor variable required for this analysis.
+- Replace `data` with the name of the correct data set.
+- Give the model a distinctive name.
+
+2. Get the predictions:
 
 ```{r}
 #| eval: false
-dat <- ggpredict(model, "EDUCATION")
-plot(dat)
+model.predictions <- ggpredict(model, "EDUCATION")
+```
+
+- Use the model name you assigned to the analysis you just did.
+- Ask for predictions of the effect on outcomes of the nominal variable.
+
+3. Plot the predictions:
+
+```{r}
+#| eval: false
+plot(model.predictions)
 ```
 :::
+
+<!-- Check first if you can write the code produce the prediction plot. -->
+
+<!-- Click on the button to see the code example: compare it to the code you wrote. -->
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ##Hint and code -->
+<!-- 1. We first fit the model, including `EDUCATION`. -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc + -->
+<!--               EDUCATION,  -->
+<!--             data = study.two.gen) -->
+<!-- ``` -->
+
+<!-- 2. We then use the `ggpredict()` function to get the prediction for the effect of `EDUCATION` differences on outcome `mean.self`. -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- dat <- ggpredict(model, "EDUCATION") -->
+<!-- plot(dat) -->
+<!-- ``` -->
+<!-- ::: -->
 
 >**Q.19.** Q.19. The plot should give you dot-and-whisker representations of the estimated `mean.self` outcome for different levels of `EDUCATION`. What is the difference in the estimated `mean.self` between the groups?
 
