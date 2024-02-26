@@ -401,25 +401,43 @@ You will learn more if you follow this advice:
 
 #### Questions {#sec-wk18-lab-activities-1-questions}
 
+::: callout-warning
+Students and *student reps* have told us that it would be helpful to your learning if we reduce the information in the hints we provide you. The motivation for doing this is:
+
+1. It will require you to do more *active* thinking to complete tasks or answer questions;
+2. Thus, you can check to see how your learning is developing -- can you do the tasks, given what you know now?
+3. Plus, psychological research shows that *active* thinking is better for understanding and for learning.
+
+Where we do give you hints, we will sometimes replace the correct bit of code with a place-holder: `...`
+
+- Your task will therefore be to replace the place-holder `...` with the correct bit of code or the correct dataset or variable name.
+:::
+
 #### Step 1: Set-up
 
 To begin, we set up our environment in R.
 
 ##### Task 1 -- Run code to empty the R environment
 
-```{r}
-#| eval: false
-rm(list=ls())
-```
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- rm(list=ls()) -->
+<!-- ``` -->
 
 ##### Task 2 -- Run code to load relevant libraries
 
 Notice that in Week 18, we need to work with the libraries `ggeffects` and `tidyverse`.
 
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- library("ggeffects") -->
+<!-- library("tidyverse") -->
+<!-- ``` -->
+
 ```{r}
 #| eval: false
-library("ggeffects")
-library("tidyverse")
+library("...")
+library("...")
 ```
 
 #### Step 2: Load the data
@@ -432,11 +450,19 @@ The data file for the *workbook* is called:
 
 Use the `read_csv()` function to read the data file into R.
 
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- study.two.gen <- read_csv("study-two-general-participants.csv") -->
+<!-- ``` -->
+<!-- ::: -->
+
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
 #| eval: false
-study.two.gen <- read_csv("study-two-general-participants.csv")
+... <- read_csv("...")
 ```
 :::
 
@@ -444,16 +470,16 @@ When you code this, you can choose your own file name, but be sure to give the d
 
 ##### Task 4 -- Inspect the data file
 
-Use the `summary()` or `head()` functions to take a look
+Use the `summary()` or `head()` functions to take a look.
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-head(study.two.gen)
-summary(study.two.gen)
-```
-:::
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- head(study.two.gen) -->
+<!-- summary(study.two.gen) -->
+<!-- ``` -->
+<!-- ::: -->
 
 ::: callout-tip
 ## Hint
@@ -469,7 +495,7 @@ again, here, and pay particular attention to:
 #### Revise: practice to strengthen skills
 
 ::: callout-tip
-- Revise: We start by revising how to use lm() with one predictor
+- Revise: We start by revising how to use `lm()` with one predictor
 :::
 
 One of our research questions is:
@@ -486,33 +512,44 @@ be associated with performance on tests of understanding
 
 ##### Task 5 -- Estimate the relation between outcome mean self-rated accuracy (`mean.self`) and tested accuracy of understanding (`mean.acc`)
 
-We can use `lm()` to estimate whether the ratings of accuracy actually predict the outcome tested accuracy levels.
+We can use `lm()` to estimate whether :
 
-Can you work out how to specify the model without looking at the code example?
+1. the *outcome* variable, participants' ratings of the accuracy of their understanding (`mean.self`), can be predicted by 
+2. the *predictor* variable, information about the same participants' level of accuracy in direct tests of their understanding (`mean.acc`).
 
-Click on the button to see the code example: compare it to the code you wrote.
+Can you work out how to specify the model?
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-model <- lm(mean.acc ~ mean.self, data = study.two.gen)
-summary(model)
-```
-:::
+<!-- without looking at the code example? -->
+
+<!-- Click on the button to see the code example: compare it to the code you wrote. -->
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model <- lm(mean.self ~ mean.acc, data = study.two.gen) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- ::: -->
 
 You can get more advice on how `lm()` code works if you click on the `Hint` box.
 
 :::{.callout-tip collapse="true"}
 ## Hint
-In R analysis code, we write `method(outcome ~ predictor)` so:
+In R analysis code, we normally write linear model analysis code like this: 
 
 ```{}
-lm(mean.acc ~ mean.self, data = study.two.gen)
+model <- lm(outcome ~ predictor, data)
+summary(model)
 ```
 
-- gets us an analysis of whether or how `mean.self` predicts variation in
-outcome `mean.acc`.
+<!-- ```{} -->
+<!-- model <- lm(mean.self ~ mean.acc, data = study.two.gen) -->
+<!-- summary(model) -->
+<!-- ``` -->
+
+<!-- - gets us an analysis of whether or how `mean.self` predicts variation in -->
+<!-- outcome `mean.acc`. -->
 ::: 
 
 If you look at the model `summary` you can answer the following questions.
