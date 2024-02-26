@@ -1274,11 +1274,11 @@ plot(dat.2)
 2. For model `mean.self ~ mean.acc` increases in predictor `mean.acc` from about 0.4 to 1.0 are associated with a change in outcome `mean.self` from about 5 to about 9.
 :::
 
-After you have fitted a linear model to examine what variables predict outcome mean self-rated accuracy of `mean.self`
+After you have fitted a linear model to examine what variables predict outcome mean self-rated accuracy of `mean.self`:
 
 - Including as predictors both numeric variables and categorical variables.
 
-If you look at the model summary you can answer the following questions.
+Then if you look at the model summary you can answer the following questions.
 
 >**Q.17.** Can you report the overall model and model fit statistics?
 
@@ -1306,8 +1306,7 @@ summary(model)
 
 ```{r}
 #| eval: false
-model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
-              EDUCATION, 
+model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc + EDUCATION, 
             data = study.two.gen)
 ```
 
