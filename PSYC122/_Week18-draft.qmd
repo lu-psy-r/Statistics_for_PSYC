@@ -760,21 +760,18 @@ What does a comparison of the model predictor `Estimate` values show us?
 
 - You may benefit by reflecting on the [lm-intro](https://lu-psy-r.github.io/statistics_for_psychologists/PSYC122/Week17.html)) lecture and practical materials, especially where they concern predictions.
 
-- So, the answer is:
+The lesson to learn here is that:
  
 1. If we have the model, `mean.acc ~ mean.self` then this means that the outcome is `mean.acc`.
 
 - So if we are predicting change in outcome `mean.acc`, which is **scaled 0-1**, 
 then we are looking at coefficients that will lie somewhere on the same scale (also 0-1).
-- Here: the model estimate suggests that each unit change in values of the variable `mean.self` 
-predicts an increase of 0.053566 in `mean.acc`.
+- Here: the model estimate will show that each unit change in values of the variable `mean.self` predicts an increase of 0.053566 in `mean.acc`.
 
 2. Whereas if we have the model, `mean.self ~ mean.acc` then this means that the outcome is `mean.self`.
 
-- So if we are predicting change in outcome `mean.self`, which is **scaled 1-9** ,
-then we are looking at coefficients that will lie somewhere on the same scale (also 1-9).
-- Here: the model estimate suggests that unit change in `mean.acc` predicts increase of 5.5670
-in `mean.self`.
+- So if we are predicting change in outcome `mean.self`, which is **scaled 1-9**, then we are looking at coefficients that will lie somewhere on the same scale (also 1-9).
+- Here: the model estimate will show that unit change in `mean.acc` predicts increase of 5.5670 in `mean.self`.
 
 Remember that:
 
