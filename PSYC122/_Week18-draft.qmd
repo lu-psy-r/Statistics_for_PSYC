@@ -659,8 +659,7 @@ If you look at the model summary you can answer the following questions.
 
 <!-- - A.9. Vocabulary (`SHIPLEY`), reading strategy (`FACTOR3`), `AGE`, and performance on tests of accuracy of understanding (`mean.acc`) all appear to significantly predict variation in mean ratings of understanding (`mean.self`). -->
 
->**Q.10.** What is the estimate for the coefficient of the effect of the predictor 
-`mean.acc` in this model?
+>**Q.10.** What is the estimate for the coefficient of the effect of the predictor `mean.acc` in this model?
 
 <!-- - A.10. 4.763278  -->
 
@@ -672,8 +671,7 @@ If you look at the model summary you can answer the following questions.
 
 <!-- - A.12. t = 6.726, p = 2.69e-10 -->
 
->**Q.13.** What do you conclude is the answer to the follow-up question, 
-what actually predicts ratings of understanding?
+>**Q.13.** What do you conclude is the answer to the follow-up question, what actually predicts ratings of understanding?
 
 <!-- - A.13. Ratings of understanding appear to be predicted by performance on tests of accuracy of understanding, together with variation in age, vocabulary knowledge, health literacy and reading strategy -->
 
