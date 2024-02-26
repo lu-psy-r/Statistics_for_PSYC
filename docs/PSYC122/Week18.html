@@ -980,23 +980,19 @@ Warning
 </section>
 <section id="task-2-run-code-to-load-relevant-libraries" class="level5">
 <h5 class="anchored" data-anchor-id="task-2-run-code-to-load-relevant-libraries">Task 2 – Run code to load relevant libraries</h5>
-<p>Notice that in Week 18, we need to work with the libraries <code>ggeffects</code> and <code>tidyverse</code>.</p>
+<p>Notice that in Week 18, we need to work with the libraries <code>ggeffects</code> and <code>tidyverse</code>. Use the <code>library()</code> function to make these libraries available to you.</p>
 <!-- ```{r} -->
 <!-- #| eval: false -->
 <!-- library("ggeffects") -->
 <!-- library("tidyverse") -->
 <!-- ``` -->
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-7_eab5915f1c05e573f2a6f6b0ae3ddbe7">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"..."</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 </section>
 <section id="step-2-load-the-data" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-load-the-data">Step 2: Load the data</h4>
 <section id="task-3-read-in-the-data-file-we-will-be-using" class="level5">
 <h5 class="anchored" data-anchor-id="task-3-read-in-the-data-file-we-will-be-using">Task 3 – Read in the data file we will be using</h5>
-<p>The data file for the <em>workbook</em> is called:</p>
+<p>The data file for <strong>Lab Activity 2</strong> is called:</p>
 <ul>
 <li><code>study-two-general-participants.csv</code></li>
 </ul>
@@ -1014,14 +1010,14 @@ Warning
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Code
+Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-8_1004cfc127c0c8ba5b9db03939e6f964">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>... <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-7_b6c8e7f1d1a87b93f8ce4537be8ff2de">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>... <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1084,7 +1080,8 @@ Tip
 </ol>
 <p>We can address this question by examining whether someone’s rated evaluation of their own understanding matches their performance on a test of that understanding, and by investigating what variables predict variation in mean self-rated accuracy.</p>
 <ul>
-<li>For these data, participants were asked to respond to questions about health information to get <code>mean.acc</code> scores and they were then asked to rate their own understanding of the same information (ratings on a scale from 1-9).</li>
+<li>For these data, participants were asked to respond to questions about health information to get <code>mean.acc</code> scores</li>
+<li>and they were then asked to rate their own understanding of the same information (ratings on a scale from 1-9) to get <code>mean.self</code> scores.</li>
 <li>Ratings of accuracy are ordinal data but, here, we choose to examine the average of participants’ ratings of their own understanding of health information to keep our analysis fairly simple.</li>
 </ul>
 <p>If you <em>can</em> evaluate your own understanding then ratings of understanding <em>should</em> be associated with performance on tests of understanding</p>
@@ -1131,7 +1128,7 @@ summary(model)</code></pre>
 </div>
 </div>
 </div>
-<p>If you look at the model <code>summary</code> you can answer the following questions.</p>
+<p>If you first run the model, and then look at the model <code>summary</code> you can answer the following questions.</p>
 </section>
 </section>
 <section id="questions-task-5" class="level4">
@@ -1222,18 +1219,12 @@ Hint
 <li>one variable at a time <code>... + ...</code>;</li>
 <li>like this:</li>
 </ul>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-9_401239ee6ce8ddd7130b3ca91ba0be98">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> ... <span class="sc">+</span> ... <span class="sc">+</span> ..., </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> study.two.gen)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-8_ad45bf107e3f4610f8ab22a52cb1e058">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> ... <span class="sc">+</span> ... <span class="sc">+</span> ..., </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> study.two.gen)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!-- ## Code -->
-<!-- ```{r} -->
-<!-- #| eval: false -->
-<!-- model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc,  -->
-<!--             data = study.two.gen) -->
-<!-- summary(model) -->
-<!-- ``` -->
+<p>You will need to replace place-holder <code>...</code>s with the names of variables as they appear in the dataset. <!-- ## Code --> <!-- ```{r} --> <!-- #| eval: false --> <!-- model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc,  --> <!--             data = study.two.gen) --> <!-- summary(model) --> <!-- ``` --></p>
 </div>
 </div>
 </div>
@@ -1423,8 +1414,8 @@ Hint
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>First</strong> fit the models like this:</p>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-10_805920f74cb7dd64d6f1e0fee7cb7870">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> predictor, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-9_019d36e9ace14569d1adf9ac79b71f04">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> predictor, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Remember to give each model object distinct names.</li>
@@ -1439,8 +1430,8 @@ Hint
 <!-- summary(model.2) -->
 <!-- ``` -->
 <p><strong>Second</strong> get the predictions like this:</p>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-11_9f971eadc54bef6f74e5890759ec5d0e">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model.predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model<span class="fl">.1</span>, <span class="st">"..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-10_bc7247b637807d49a44982e44ee5cf4d">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>model.predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model<span class="fl">.1</span>, <span class="st">"..."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Replace <code>...</code> with the name of the predictor in <code>model.1</code>.</li>
@@ -1451,8 +1442,8 @@ Hint
 <!-- dat.2 <- ggpredict(model.2, "mean.acc") -->
 <!-- ``` -->
 <p><strong>Third</strong> make the prediction plots like this:</p>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-12_a844bae62f015fe07ec31e1a188b0735">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model.predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-11_9d7b25bb85bf3d0edefbd07d75fd5d2f">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model.predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <!-- 1. Predictions from the model `mean.acc ~ mean.self` -->
 <!-- ```{r} -->
@@ -1558,8 +1549,8 @@ Hint
 <ol type="1">
 <li>Fit the model:</li>
 </ol>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-13_1aa269c2ac553f3bda1e9b34bf4ff4f4">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> predictors, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-12_4729a7669d37544116d750ec6d999182">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(outcome <span class="sc">~</span> predictors, data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Replace <code>outcome</code> with the outcome variable required for this analysis.</li>
@@ -1570,8 +1561,8 @@ Hint
 <ol start="2" type="1">
 <li>Get the predictions:</li>
 </ol>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-14_5e4222a4fa7a2f30092ac6979f0377a6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>model.predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model, <span class="st">"EDUCATION"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-13_14df0b25f9faad3a97e2a4bbf27bdc6d">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model.predictions <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model, <span class="st">"EDUCATION"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Use the model name you assigned to the analysis you just did.</li>
@@ -1580,8 +1571,8 @@ Hint
 <ol start="3" type="1">
 <li>Plot the predictions:</li>
 </ol>
-<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-15_8c0e83cbe6785c1c26aa12fd160aec9b">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model.predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Week18_cache/html/unnamed-chunk-14_4838d1c68833b844331100e1eb53c540">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model.predictions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1605,7 +1596,7 @@ Hint
 <!-- ``` -->
 <!-- ::: -->
 <blockquote class="blockquote">
-<p><strong>Q.19.</strong> Q.19. The plot should give you dot-and-whisker representations of the estimated <code>mean.self</code> outcome for different levels of <code>EDUCATION</code>. What is the difference in the estimated <code>mean.self</code> between the groups?</p>
+<p><strong>Q.19.</strong> The plot should give you dot-and-whisker representations of the estimated <code>mean.self</code> outcome for different levels of <code>EDUCATION</code>. What is the difference in the estimated <code>mean.self</code> between the groups?</p>
 </blockquote>
 <p>The effect or prediction plot will show you <strong>dot-and-whisker</strong> representations of predicted outcome <code>mean.self</code>. In these plots, the dots represent the estimated <code>mean.self</code> while the lines (whiskers) represent confidence intervals.</p>
 <!-- - A.19. The difference in the estimated `mean.self` between these groups is small: the groups vary between ratings of about 7, 7.10 and 7.5. -->
@@ -1625,7 +1616,7 @@ Hint
 <li>Categorical variables or <strong>factors</strong> and reference levels.</li>
 </ol>
 <ul>
-<li>If you have a categorical variable like <code>EDUCATION</code> then when you use it in an analysis, R will look at the different categories (called <code>levels) e.g., here,</code>higher education, further education, secondary school` and it will pick one level to be the <em>reference</em> or baseline level.</li>
+<li>If you have a categorical variable like <code>EDUCATION</code> then when you use it in an analysis, R will look at the different categories (called <code>levels</code>) e.g., here, <code>higher education, further education, secondary school</code> and it will pick one level to be the <em>reference</em> or baseline level.</li>
 <li>The <em>reference</em> is the the level against which other levels are compared.</li>
 <li>Here, the reference level is <code>Further</code> (education) simply because, unless you tell R otherwise, it picks the level with a category name that begins earlier in the alphabet as the reference level.</li>
 </ul>
