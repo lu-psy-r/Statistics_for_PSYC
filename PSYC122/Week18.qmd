@@ -427,6 +427,7 @@ To begin, we set up our environment in R.
 ##### Task 2 -- Run code to load relevant libraries
 
 Notice that in Week 18, we need to work with the libraries `ggeffects` and `tidyverse`.
+Use the `library()` function to make these libraries available to you.
 
 <!-- ```{r} -->
 <!-- #| eval: false -->
@@ -434,17 +435,11 @@ Notice that in Week 18, we need to work with the libraries `ggeffects` and `tidy
 <!-- library("tidyverse") -->
 <!-- ``` -->
 
-```{r}
-#| eval: false
-library("...")
-library("...")
-```
-
 #### Step 2: Load the data
 
 ##### Task 3 -- Read in the data file we will be using
 
-The data file for the *workbook* is called:
+The data file for **Lab Activity 2** is called:
 
 - `study-two-general-participants.csv`
 
@@ -459,7 +454,7 @@ Use the `read_csv()` function to read the data file into R.
 <!-- ::: -->
 
 :::{.callout-tip collapse="true"}
-## Code
+## Hint
 ```{r}
 #| eval: false
 ... <- read_csv("...")
@@ -504,11 +499,11 @@ One of our research questions is:
 
 We can address this question by examining whether someone's rated evaluation of their own understanding matches their performance on a test of that understanding, and by investigating what variables predict variation in mean self-rated accuracy.
 
-- For these data, participants were asked to respond to questions about health information to get `mean.acc` scores and they were then asked to rate their own understanding of the same information (ratings on a scale from 1-9).
+- For these data, participants were asked to respond to questions about health information to get `mean.acc` scores
+- and they were then asked to rate their own understanding of the same information (ratings on a scale from 1-9) to get `mean.self` scores.
 - Ratings of accuracy are ordinal data but, here, we choose to examine the average of participants' ratings of their own understanding of health information to keep our analysis fairly simple.
 
-If you *can* evaluate your own understanding then ratings of understanding *should*
-be associated with performance on tests of understanding
+If you *can* evaluate your own understanding then ratings of understanding *should* be associated with performance on tests of understanding
 
 ##### Task 5 -- Estimate the relation between outcome mean self-rated accuracy (`mean.self`) and tested accuracy of understanding (`mean.acc`)
 
@@ -552,7 +547,7 @@ summary(model)
 <!-- outcome `mean.acc`. -->
 ::: 
 
-If you look at the model `summary` you can answer the following questions.
+If you first run the model, and then look at the model `summary` you can answer the following questions.
 
 #### Questions: Task 5
 
@@ -644,6 +639,7 @@ model <- lm(outcome ~ ... + ... + ...,
 summary(model)
 ```
 
+You will need to replace place-holder `...`s with the names of variables as they appear in the dataset.
 <!-- ## Code -->
 <!-- ```{r} -->
 <!-- #| eval: false -->
@@ -989,7 +985,7 @@ plot(model.predictions)
 <!-- ``` -->
 <!-- ::: -->
 
->**Q.19.** Q.19. The plot should give you dot-and-whisker representations of the estimated `mean.self` outcome for different levels of `EDUCATION`. What is the difference in the estimated `mean.self` between the groups?
+>**Q.19.** The plot should give you dot-and-whisker representations of the estimated `mean.self` outcome for different levels of `EDUCATION`. What is the difference in the estimated `mean.self` between the groups?
 
 The effect or prediction plot will show you **dot-and-whisker** representations of predicted outcome `mean.self`. In these plots, the dots represent the estimated `mean.self` while the lines (whiskers) represent confidence intervals.
 
@@ -1014,10 +1010,7 @@ We are learning some new things here so it is useful to explain them in a bit mo
 
 1. Categorical variables or **factors** and reference levels.
 
-- If you have a categorical variable like `EDUCATION` then when you use it in
-an analysis, R will look at the different categories (called `levels) e.g., here,
-`higher education, further education, secondary school` and it will pick one
-level to be the *reference* or baseline level. 
+- If you have a categorical variable like `EDUCATION` then when you use it in an analysis, R will look at the different categories (called `levels`) e.g., here, `higher education, further education, secondary school` and it will pick one level to be the *reference* or baseline level. 
 - The *reference* is the the level against which other levels are compared. 
 - Here, the reference level is `Further` (education) simply because, unless
 you tell R otherwise, it picks the level with a category name that begins
