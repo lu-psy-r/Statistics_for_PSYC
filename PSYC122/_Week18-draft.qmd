@@ -1070,7 +1070,7 @@ We set out answers information the Week 18 **Developing the linear model** quest
 - We focus on the **Lab activity 2** questions where we ask you to interpret something or say something.
 - We do not show questions where we have given example or target code in the foregoing lab activity @sec-wk18-lab-activities-2.
 
-You can see all the code and all the answers in `2023-24-PSYC122-w18-workbook-answers.Rmd`.
+<!-- You can see all the code and all the answers in `2023-24-PSYC122-w18-workbook-answers.Rmd`. -->
 
 ### Answers {#sec-wk18-lab-activities-answers-information}
 
@@ -1081,18 +1081,18 @@ Click on a box to reveal the answer.
 #### Questions {#sec-wk18-lab-activities-2-questions-answers}
 
 >**Q.1.** What is the estimate for the coefficient of the effect of the predictor 
-`mean.self` on the outcome `mean.acc` in this model?
+`mean.acc` on the outcome `mean.self` in this model?
 
 The model is:
 
 ```{r}
-model <- lm(mean.acc ~ mean.self, data = study.two.gen)
+model <- lm(mean.self ~ mean.acc, data = study.two.gen)
 summary(model)
 ```
 
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
-- A.1. 0.053566
+- A.1. 5.5670 
 :::
 
 >**Q.2.** Is the effect significant?
@@ -1118,7 +1118,8 @@ The research questions is:
 
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
-- A.4. The model slope estimate suggests that higher levels of rated understanding can predict higher levels of tested understanding so, yes: it does appear that people can evaluate their own understanding.
+- A.4. The model slope estimate suggests that higher levels of tested understanding can predict higher levels of rated understanding so, yes: it does appear
+that people can evaluate their own understanding.
 :::
 
 >**Q.5.** What is the F-statistic for the regression? Report F, DF and the p-value.
