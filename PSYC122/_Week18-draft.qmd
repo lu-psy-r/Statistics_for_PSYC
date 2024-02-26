@@ -703,41 +703,51 @@ Remember that:
 - `mean.acc` is scaled from 0 to 1 because it represents the average accuracy of the responses made by study participants to questions about health texts.
 - `mean.self` is scaled from 1 to 9 because it represents the average self-rated accuracy of understanding.
   
->**Q.14.** Why do you think it appears that the slope coefficient estimate is different
-if you compare:
+>**Q.14.** Why do you think it appears that the slope coefficient estimate is different if you compare:
 
 1. The model `mean.acc ~ mean.self` versus 
 2. The model `mean.self ~ mean.acc`?
 
-You can fit these two simple models using the verbal description in the **Q.14.** wording.
+You can fit these two simple models using the verbal description in the **Q.14.** information, plus what you have learned so far.
 
-Click on the `Code` button following, if you want to see the example code.
+- Remember to give each model a *different* name.
 
 :::{.callout-tip collapse="true"}
-## Code
-If we want to compare two models:
+## Hint
+1. Remember: you write model code with the outcome on the left of the tilde symbol `~` and the predictor (or predictors) on the right of the `~`.
+2. In the model information, we specify two different models.
 
-1. The model `mean.acc ~ mean.self` versus 
-2. The model `mean.self ~ mean.acc`
-
-Then we can specify each model as follows.
-
-**1. The model `mean.acc ~ mean.self`**
-
-```{r}
-#| eval: false
-model.1 <- lm(mean.acc ~ mean.self, data = study.two.gen)
-summary(model.1)
-```
-
-**2. The model `mean.self ~ mean.acc`**
-
-```{r}
-#| eval: false
-model.2 <- lm(mean.self ~ mean.acc, data = study.two.gen)
-summary(model.2)
-```
+- The variables and the data are the same.
+- But *which* variable is the outcome, and *which* variable is the predictor, is different in the two models.
 :::
+
+<!-- Click on the `Code` button following, if you want to see the example code. -->
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- If we want to compare two models: -->
+
+<!-- 1. The model `mean.acc ~ mean.self` versus  -->
+<!-- 2. The model `mean.self ~ mean.acc` -->
+
+<!-- Then we can specify each model as follows. -->
+
+<!-- **1. The model `mean.acc ~ mean.self`** -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model.1 <- lm(mean.acc ~ mean.self, data = study.two.gen) -->
+<!-- summary(model.1) -->
+<!-- ``` -->
+
+<!-- **2. The model `mean.self ~ mean.acc`** -->
+
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model.2 <- lm(mean.self ~ mean.acc, data = study.two.gen) -->
+<!-- summary(model.2) -->
+<!-- ``` -->
+<!-- ::: -->
 
 **Do that** then compare the `Estimate` of the predictor effect in the two models.
 
