@@ -170,7 +170,7 @@ To work with the recordings:
 We do not provide further reading for this class but you will find it helpful to revise some of the key ideas you have been learning about PSYC122 and in other modules.
 
 - The lectures in *PSYC123* on: the scientific method; reliability and validity; experimental design, especially between-subjects studies; hypothesis testing; and precise hypotheses.
-- The lecture in *PSYC122* on correlations. 
+- The lecture in *PSYC122* on linear models. 
 
 ## Pre-lab activities {#sec-wk18-prelab-activities}
 
