@@ -50,7 +50,7 @@ What is **new**, here, is that we will explore the power and flexibility of the 
 
 ::: callout-tip
 1. We will fit linear models including *multiple* predictors, this is why this form of analysis is also often called *multiple regression*.
-2 We will use linear models to estimate the effects of numeric and categorical or nominal predictor variables.
+2. We will use linear models to estimate the effects of numeric and categorical or nominal predictor variables.
 :::
 
 When we do these analyses, we will need to adapt how we report the results:  
