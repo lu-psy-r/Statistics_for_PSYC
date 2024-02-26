@@ -609,7 +609,7 @@ We can look at this follow-up question, next.
 
 ##### Task 6 -- Examine the relation between outcome mean self-rated accuracy (`mean.self`) and  multiple predictors
 
-Here, the predictors will include:
+Here, the predictors will include *all* of:
 
 - health literacy (`HLVA`); 
 - vocabulary (`SHIPLEY`); 
@@ -617,17 +617,40 @@ Here, the predictors will include:
 - reading strategy (`FACTOR3`);
 - as well as average accuracy of the tested understanding of health information (`mean.acc`).
 
-We use `lm()`, as before, but now specify each variable listed here by variable name.
+We use `lm()`, as before, but now when we specify the model we write the code to include all of the *multiple* predictors in the same model at the same time.
 
-Check first if you can write the code you need to do the linear model analysis.
+- When you do this, specify all of the predictors we list.
+- Specify each variable listed here by using the variable name.
 
-Click on the button to see the code example: compare it to the code you wrote.
+Can you write the code you need to do the linear model analysis?
+
+You can click on the button to see the hint.
+You can see example code, for a different model, for Step 4 in the `2023-24-PSYC122-w18-how-to.Rmd`.
 
 :::{.callout-tip collapse="true"}
-## Code
-model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc, 
+## Hint
+You can include multiple predictor variables in a model by:
+
+- listing the predictors in series;
+- specifying each predictor variable name;
+- entering the names `...` separated by a `+`;
+- one variable at a time `... + ...`;
+- like this:
+
+```{r}
+#| eval: false
+model <- lm(outcome ~ ... + ... + ..., 
             data = study.two.gen)
 summary(model)
+```
+
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc,  -->
+<!--             data = study.two.gen) -->
+<!-- summary(model) -->
+<!-- ``` -->
 :::
 
 If you look at the model summary you can answer the following questions.
