@@ -158,14 +158,14 @@ For these data, participants were asked to respond to questions about health inf
 We can use `lm()` to estimate whether the ratings of accuracy actually predict the outcome tested accuracy levels.
 
 ```{r}
-model <- lm(mean.acc ~ mean.self, data = study.two.gen)
+model <- lm(mean.self ~ mean.acc, data = study.two.gen)
 summary(model)
 ```
 
 In R analysis code, we write `method(outcome ~ predictor)` so:
 
 ```{}
-lm(mean.acc ~ mean.self, data = study.two.gen)
+lm(mean.self ~ mean.acc, data = study.two.gen)
 ```
 
 - gets us an analysis of whether or how `mean.self` predicts variation in
@@ -176,9 +176,9 @@ If you look at the model `summary` you can answer the following questions.
 #### Questions: Task 5
 
 - Q.1. What is the estimate for the coefficient of the effect of the predictor 
-`mean.self` on the outcome `mean.acc` in this model?
+`mean.acc` on the outcome `mean.self` in this model?
 
-- A.1. 0.053566 
+- A.1. 5.5670 
 
 - Q.2. Is the effect significant?
 
@@ -191,8 +191,7 @@ If you look at the model `summary` you can answer the following questions.
 - Q.4. What do you conclude is the answer to the research question, given the 
 linear model results?
 
-- A.4. The model slope estimate suggests that higher levels of rated understanding
-can predict higher levels of tested understanding so, yes: it does appear
+- A.4. The model slope estimate suggests that higher levels of tested understanding can predict higher levels of rated understanding so, yes: it does appear
 that people can evaluate their own understanding.
 
 - Q.5. What is the F-statistic for the regression? Report F, DF and the p-value.
@@ -257,12 +256,9 @@ If you look at the model summary you can answer the following questions.
 
 - Q.9. What predictors are significant in this model?
 
-- A.9. Vocabulary (`SHIPLEY`), reading strategy (`FACTOR3`), `AGE`,
-and performance on tests of accuracy of understanding (`mean.acc`) all appear 
-to significantly predict variation in mean ratings of understanding (`mean.self`).
+- A.9. Vocabulary (`SHIPLEY`), reading strategy (`FACTOR3`), `AGE`, and performance on tests of accuracy of understanding (`mean.acc`) all appear to significantly predict variation in mean ratings of understanding (`mean.self`).
 
-- Q.10. What is the estimate for the coefficient of the effect of the predictor 
-`mean.acc` in this model?
+- Q.10. What is the estimate for the coefficient of the effect of the predictor `mean.acc` in this model?
 
 - A.10. 4.763278 
 
@@ -274,12 +270,9 @@ to significantly predict variation in mean ratings of understanding (`mean.self`
 
 - A.12. t = 6.726, p = 2.69e-10
 
-- Q.13. What do you conclude is the answer to the follow-up question, 
-what actually predicts ratings of understanding?
+- Q.13. What do you conclude is the answer to the follow-up question, what actually predicts ratings of understanding?
 
-- A.13. Ratings of understanding appear to be predicted by performance on 
-tests of accuracy of understanding, together with variation in age, 
-vocabulary knowledge, health literacy and reading strategy
+- A.13. Ratings of understanding appear to be predicted by performance on tests of accuracy of understanding, together with variation in age, vocabulary knowledge, health literacy and reading strategy
 
 
 ## Step 5: Understanding linear model predictions by comparing one outcome-predictor relation
@@ -291,8 +284,7 @@ whether `mean.acc` predicts `mean.self`?
 - Note that a comparison between these models teaches us something important about 
 *what* it is that linear models predict.
   
-- Q.14. Why do you think it appears that the slope coefficient estimate is different
-if you compare :
+- Q.14. Why do you think it appears that the slope coefficient estimate is different if you compare :
 
 1. The model `mean.acc ~ mean.self` versus 
 2. The model `mean.self ~ mean.acc`?
@@ -318,25 +310,19 @@ summary(model.2)
 - hint: Q.14. You may benefit here by reflecting on the `lm-intro` lecture and
 practical materials, especially where they concern predictions.
 
-- A.14. Linear models are prediction models. We use them to predict variation in
-outcomes given some set of predictor variables. Predictions will necessarily be *scaled*
-in the same way as the outcome variable. 
+- A.14. Linear models are prediction models. We use them to predict variation in outcomes given some set of predictor variables. Predictions will necessarily be *scaled* in the same way as the outcome variable. 
 
-- So, the answer is:
+So, to expand on that explanation a bit more, to help understanding -- the answer is:
  
 1. If we have the model, `mean.acc ~ mean.self` then this means that the outcome is `mean.acc`.
 
-- So if we are predicting change in outcome `mean.acc`, which is **scaled 0-1**, 
-then we are looking at coefficients that will lie somewhere on the same scale (also 0-1).
-- Here: the model estimate suggests that each unit change in values of the variable `mean.self` 
-predicts an increase of 0.053566 in `mean.acc`.
+- So if we are predicting change in outcome `mean.acc`, which is **scaled 0-1**, then we are looking at coefficients that will lie somewhere on the same scale (also 0-1).
+- Here: the model estimate suggests that each unit change in values of the variable `mean.self` predicts an increase of 0.053566 in `mean.acc`.
 
 2. Whereas if we have the model, `mean.self ~ mean.acc` then this means that the outcome is `mean.self`.
 
-- So if we are predicting change in outcome `mean.self`, which is **scaled 1-9** ,
-then we are looking at coefficients that will lie somewhere on the same scale (also 1-9).
-- Here: the model estimate suggests that unit change in `mean.acc` predicts increase of 5.5670
-in `mean.self`.
+- So if we are predicting change in outcome `mean.self`, which is **scaled 1-9** , then we are looking at coefficients that will lie somewhere on the same scale (also 1-9).
+- Here: the model estimate suggests that unit change in `mean.acc` predicts increase of 5.5670 in `mean.self`.
 
 Note that:
 
@@ -471,8 +457,7 @@ explains 49% of variance (adjusted R2 = 0.489).
 - hint: Q.18. We first fit the model, including `EDUCATION`.
 
 ```{r}
-model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
-              EDUCATION, 
+model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc + EDUCATION, 
             data = study.two.gen)
 ```
 
@@ -484,20 +469,13 @@ dat <- ggpredict(model, "EDUCATION")
 plot(dat)
 ```
 
-- Q.19. The plot should give you dot-and-whisker representations of the
-estimated `mean.self` outcome for different levels of `EDUCATION`.
-What is the difference in the estimated `mean.self` between the groups?
+- Q.19. The plot should give you dot-and-whisker representations of the estimated `mean.self` outcome for different levels of `EDUCATION`. What is the difference in the estimated `mean.self` between the groups?
 
-- hint: Q.19. The effect or prediction plot will show you **dot-and-whisker**
-representations of predicted outcome `mean.self`. In these plots, the dots
-represent the estimated `mean.self` while the lines (whiskers) represent
-confidence intervals.
+- hint: Q.19. The effect or prediction plot will show you **dot-and-whisker** representations of predicted outcome `mean.self`. In these plots, the dots represent the estimated `mean.self` while the lines (whiskers) represent confidence intervals.
 
-- A.19. The difference in the estimated `mean.self` between these groups
-is small: the groups vary between ratings of about 7, 7.10 and 7.5.
+- A.19. The difference in the estimated `mean.self` between these groups is small: the groups vary between ratings of about 7, 7.10 and 7.5.
 
-- Q.20. Compare the difference in the estimated `mean.self` between these groups,
-given the plot, with the coefficient estimate from the model summary: what do you see?
+- Q.20. Compare the difference in the estimated `mean.self` between these groups, given the plot, with the coefficient estimate from the model summary: what do you see?
 
 - A.20. The effect of `EDUCATION` is presented in the summary as two estimates:
 
