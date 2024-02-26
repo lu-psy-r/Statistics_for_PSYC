@@ -390,19 +390,19 @@ Don't forget: You will need to change the names of the dataset or the variables 
 ### OK: now let's do it!
 
 In the following, we will guide you through the tasks and questions step by step.
-You will learn more if you follow this advice:
+<!-- You will learn more if you follow this advice: -->
 
 ::: callout-tip
-1. We will hide the code to do some tasks behind a drop-down button. Try to write and run the code for yourself first.
-2. We won't always give you the code required to do something: this gives you the chance to check what you have learned by trying out your code without the answer in front of you.
-3. We will not *at first* give you the answers to questions about the data or about the results of analyses.
-4. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk18-lab-activities-answers) so that you can check whether your independent work has been correct.
+1. We will not *at first* give you the answers to questions about the data or about the results of analyses.
+2. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk18-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
 #### Questions {#sec-wk18-lab-activities-1-questions}
 
 ::: callout-warning
-Students and *student reps* have told us that it would be helpful to your learning if we reduce the information in the hints we provide you. The motivation for doing this is:
+**Students have told us** that it would be helpful to your learning if we reduce the information in the hints we provide you. **We have done this** in Week 18.
+
+The motivation for doing this is:
 
 1. It will require you to do more *active* thinking to complete tasks or answer questions;
 2. Thus, you can check to see how your learning is developing -- can you do the tasks, given what you know now?
