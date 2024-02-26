@@ -1042,6 +1042,7 @@ Hoekstra, R., Morey, R. D., Rouder, J. N., & Wagenmakers, E. J. (2014). Robust m
 
 You have now extended the power of the linear models that you can deploy to predict people and their behaviour.
 
+::: callout-tip
 Models like the models you have been working with are used by:
 
 - scientists to predict outcomes relevant to important research questions;
