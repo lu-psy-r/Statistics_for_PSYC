@@ -1165,8 +1165,7 @@ summary(model)
 - A.9. Vocabulary (`SHIPLEY`), reading strategy (`FACTOR3`), `AGE`, and performance on tests of accuracy of understanding (`mean.acc`) all appear to significantly predict variation in mean ratings of understanding (`mean.self`).
 :::
 
->**Q.10.** What is the estimate for the coefficient of the effect of the predictor 
-`mean.acc` in this model?
+>**Q.10.** What is the estimate for the coefficient of the effect of the predictor `mean.acc` in this model?
 
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
@@ -1187,8 +1186,7 @@ summary(model)
 - A.12. t = 6.726, p = 2.69e-10
 :::
 
->**Q.13.** What do you conclude is the answer to the follow-up question, 
-what actually predicts ratings of understanding?
+>**Q.13.** What do you conclude is the answer to the follow-up question, what actually predicts ratings of understanding?
 
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
@@ -1203,6 +1201,18 @@ what actually predicts ratings of understanding?
 ::: {.callout-note icon=false collapse="true"}
 ## Answer
 - A.14. Linear models are prediction models. We use them to predict variation in outcomes given some set of predictor variables. Predictions will necessarily be *scaled* in the same way as the outcome variable.
+
+So, to expand on that explanation a bit more, to help understanding -- the answer is:
+ 
+1. If we have the model, `mean.acc ~ mean.self` then this means that the outcome is `mean.acc`.
+
+- So if we are predicting change in outcome `mean.acc`, which is **scaled 0-1**, then we are looking at coefficients that will lie somewhere on the same scale (also 0-1).
+- Here: the model estimate suggests that each unit change in values of the variable `mean.self` predicts an increase of 0.053566 in `mean.acc`.
+
+2. Whereas if we have the model, `mean.self ~ mean.acc` then this means that the outcome is `mean.self`.
+
+- So if we are predicting change in outcome `mean.self`, which is **scaled 1-9** , then we are looking at coefficients that will lie somewhere on the same scale (also 1-9).
+- Here: the model estimate suggests that unit change in `mean.acc` predicts increase of 5.5670 in `mean.self`.
 :::
 
 >**Q.15.** Can you plot the predictions from each model?
@@ -1260,10 +1270,8 @@ plot(dat.2)
 ## Answer
 - A.16. A side-by-side comparison shows that:
 
-1. For model `mean.acc ~ mean.self` increases in `mean.self` from about 4 to 9 are
-associated with a change in `mean.acc` from about .6 to about .85;
-2. For model `mean.self ~ mean.acc` increases in `mean.acc` from about 0.4 to 1.0 are
-associated with a change in `mean.self` from about 5 to about 9.
+1. For model `mean.acc ~ mean.self` increases in predictor `mean.self` from about 4 to 9 are associated with a change in outcome `mean.acc` from about .6 to about .85;
+2. For model `mean.self ~ mean.acc` increases in predictor `mean.acc` from about 0.4 to 1.0 are associated with a change in outcome `mean.self` from about 5 to about 9.
 :::
 
 After you have fitted a linear model to examine what variables predict outcome mean self-rated accuracy of `mean.self`
