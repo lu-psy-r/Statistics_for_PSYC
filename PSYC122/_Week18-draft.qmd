@@ -599,7 +599,7 @@ One of our research questions is:
 
 2. Can people accurately evaluate whether they correctly understand written health information?
 
-We have already looked at this question by asking whether ratings of understanding predict performance on tests of understanding.
+We have already looked at this question by asking whether ratings of understanding are predicted by performance on tests of understanding.
 
 But there is a problem with that analysis -- it leaves open the question: 
 
