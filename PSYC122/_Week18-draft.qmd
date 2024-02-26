@@ -557,9 +557,9 @@ If you look at the model `summary` you can answer the following questions.
 #### Questions: Task 5
 
 >**Q.1.** What is the estimate for the coefficient of the effect of the predictor 
-`mean.self` on the outcome `mean.acc` in this model?
+`mean.acc` on the outcome `mean.self` in this model?
 
-<!-- - A.1. 0.053566  -->
+<!-- - A.1. 5.5670  -->
 
 >**Q.2.** Is the effect significant?
 
@@ -572,7 +572,8 @@ If you look at the model `summary` you can answer the following questions.
 >**Q.4.** What do you conclude is the answer to the research question, given the 
 linear model results?
 
-<!-- - A.4. The model slope estimate suggests that higher levels of rated understanding can predict higher levels of tested understanding so, yes: it does appear that people can evaluate their own understanding. -->
+<!-- - A.4. The model slope estimate suggests that higher levels of tested understanding can predict higher levels of rated understanding so, yes: it does appear
+that people can evaluate their own understanding. -->
 
 >**Q.5.** What is the F-statistic for the regression? Report F, DF and the p-value.
 
