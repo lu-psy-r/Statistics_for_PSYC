@@ -338,9 +338,10 @@ The `how-to` guide comprises an .Rmd file:
 
 It is full of advice and example code.
 
-The code in the `how-to` guide was written to work with the data file:
+The code in the `how-to` guide was written to work with **two data files**:
 
-- `study-one-general-participants.csv`.
+- `study-one-general-participants.csv`
+- `study-two-general-participants.csv`
 
 ::: callout-tip
 We show you how to do everything you need to do in the lab activity (@sec-wk19-lab-activities-2, next) in the `how-to` guide.
@@ -363,11 +364,10 @@ We split .Rmd scripts by steps, tasks and questions:
 
 In the activity @sec-wk19-lab-activities-2, we are going to work through a sequence of steps and tasks that mirrors the sequence you find in the `how-to` guide.
 
-- There is a little bit of variation, comparing the later steps in the `how-to` guide and the steps in @sec-wk19-lab-activities-2, but that is designed to help you with your learning, in different places, when we think you will most need the support.
+- There is a little bit of variation, comparing the later steps in the `how-to` guide and the steps in @sec-wk19-lab-activities-2, but that variation is designed to help you with your learning.
 
 ::: callout-tip
 - Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
-- Over time, we will refer less and less to what we have learned before.
 :::
 
 **Step 1: Set-up**
@@ -377,37 +377,24 @@ In the activity @sec-wk19-lab-activities-2, we are going to work through a seque
 
 **Step 2: Load the data**
 
-3. Read in the data file -- using `read_csv()`
-4. Inspect the data -- using `head()` and `summary()`
+3. Read in the data files -- using `read_csv()`
+4. Inspect both datasets -- using `head()` and `summary()`
 
-**Step 3: Use a linear model to to answer the research questions -- one predictor**
+**Step 3: Compare the data from the different studies**
 
-5. Use `lm()` to examine the relation between an outcome variable and one predictor variable
+5. Compare the data distributions from the two studies -- using `geom_histogram()` 
+6-7. and by constructing grids of plots
 
-**Step 4: Use a linear model to to answer the research questions -- multiple predictors**
+**Step 4: Use scatterplots and correlation to examine associations between variables**
 
-6. Use `lm()` to examine the relation between between an outcome variable and *multiple* predictors
+8. Draw scatterplots to compare the potential association between variables
+9. Create grids of plots to make side-by-side comparisons of associations in different datasets
+10. Estimate the associations between pairs of variables and compare the estimates
 
-**Step 5: Plot predictions from linear models with multiple predictors**
+**Step 5: Use a linear model to to answer the research questions -- models with multiple predictors**
 
-7. Use `ggpredict()` to plot linear model predictions for one of the predictors
-8. Produce plots that show the predictions for all the predictor variables in a model
-
-In @sec-wk19-lab-activities-2, you will see that we show you how you can understand what linear model estimates show by examining the predictions from one outcome-predictor relation.
-
-**Step 6: Draw boxplots to examine associations between variables**
-
-The `how-to` guide shows you how to produce boxplots. 
-We do not include the task in the @sec-wk19-lab-activities-2 tasks sequence but you *will* find it useful to produce boxplots when you are examining the impact of categorical variables (next).
-
-9. Create boxplots to examine the association between a continuous numeric outcome variable like `mean.acc` and a categorical variable like `ETHNICITY`
-
-**Step 7: Estimate the effects of factors as well as numeric variables**
-
-We refer to categorical or nominal variables like `ETHNICITY` as *factors* in data analysis.
-
-10. Fit a linear model including both numeric variables and categorical variables as predictors
-11. Fit a linear model including both numeric variables and categorical variables as predictors, and then plot the predicted effect of the factor (the categorical variable)
+11. Examine the relation between one outcome and multiple predictors
+12. Do this in comparable datasets, and compare summaries or plots
 
 ::: callout-tip
 If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w19-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
