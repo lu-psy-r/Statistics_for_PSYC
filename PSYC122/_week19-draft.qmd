@@ -96,25 +96,25 @@ You can view video recordings of the lectures using Panopto, by clicking on the 
 
 - Anybody who has the link should be able to view the video.
 
-1. **Overview** (19 minutes): What we are doing in Week 19 -- Exploring the power of linear models, extending their application to use multiple variables to predict people.
+1. **Overview** (17 minutes): Critical perspectives -- The real challenge in psychological science (people vary, results vary) -- variation, replication and evaluating evidence across multiple studies.
 
 ```{=html}
 Embed.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-2. **Using linear models to predict people** (13 minutes): Coding, thinking about, and reporting linear models with multiple predictors.
+2. **The Clearly Understood project -- questions and analyses** (13 minutes): Critical thinking -- candidate answers, our assumptions, the sources of uncertainty, and working with samples.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6d20197c-6559-463b-8672-afbe011e2371&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3. **Critical evaluation** (15 minutes): Critically evaluating the results of analyses involving linear models.
+3. **Evaluating evidence across studies** (15 minutes): People vary, results vary -- evaluating, thinking about, critically reflecting on analysis results
 
 ```{=html}
 Embed.aspx?id=30c2ff78-40b9-4cf8-8650-afbe012398fb&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4. **Everything is some kind of linear model** (13 minutes): Understanding just how general and powerful this method for understanding people can be.
+4. **Becoming a power learner** (13 minutes): Learning to exploit the R knowledge ecosystem -- every question you ever have has an answer somewhere online; find out how to locate and use this knowledge for yourself.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a66baccd-f044-45f0-85af-afbe012bbc03&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
@@ -124,54 +124,85 @@ Embed.aspx?id=30c2ff78-40b9-4cf8-8650-afbe012398fb&autoplay=false&offerviewer=tr
 The slides presented in the videos can be downloaded either as a web page or as a Word document.
 :::
 
-- [The slides](data/week19/122-linear-model-perspectives.html) exactly as presented (6 MB).
-- [The slides](data/week19/122-linear-model-perspectives-printable-edit.docx) converted to a Word .docx (1 MB). 
+- [The slides](data/week19/122-linear-model-perspectives.html) exactly as presented (21 MB).
+- [The slides](data/week19/122-linear-model-perspectives-printable-edit.docx) converted to a Word .docx (11 MB). 
 
-You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
+You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality and there are a lot of them, so the file is quite big; it may take a few seconds to download.
 
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
-### The lectures have three main areas of focus {#sec-wk19-lectures-focus}
+### The lectures have four main areas of focus {#sec-wk19-lectures-focus}
 
-**1. Working with the linear model with multiple predictors**
+**1. The real challenges in psychological science**
 
-We focus in-depth on how you code linear models, how you identify critical information in the results summaries, and how you report the results: the language and the style you can use in your reports.
+We step back to get a broader perspective on what we are doing when we are doing psychological science. We look at some of the *real* challenges that professional psychologists work with, as we attempt to build a scientific understanding of what people think and do, and why they do it.
 
 ::: callout-tip
-- A small change to `lm()` coding releases tremendous power and flexibility in how you use the analysis method.
+What makes psychological science challenging:
+
+1. People vary
+2. Results vary
 :::
 
-**2. Analyses are done in context so when we conduct analyses we *must* use contextual information**
+**2. Critical thinking**
 
 The power and flexibility of the linear model presents challenges.
-We must decide *which* predictor variables we specify in our model.
-This specification requires us to think about our theoretical assumptions and what they require us to include to make sense of the behaviours or the individual differences we observe when we do things like investigating what makes health information easy or difficult to understand.
-
-**3. Developing critical thinking**
-
-As we develop conceptual understanding and practical skills, we must learn to *reflect critically* on our analyses, and learn to critically evaluate the analyses we read about when we read research reports in the scientific literature.
+We must decide which candidate predictor variables we specify in our model.
+This means *we must* think critically.
 
 ::: callout-tip
-*Critical analysis* can develop by considering
+We can develop our critical thinking skills by considering:
 
-- validity
-- measurement
-- generalizability
+1. Our assumptions about:
+
+- validity;
+- measurement;
+- generalizability.
+
+2. Sources of uncertainty about:
+
+- predicted change in outcomes, given our predictors;
+- ways that expected changes vary between people or groups;
+- random ways that specific responses can be produced.
 :::
 
-We are always working in the broader context of uncertainty:
+**3. Evaluating evidence across multiple studies**
 
-- uncertainty about the predictions we may make concerning outcomes of interest;
-- uncertainty given the possibility that predicted effects may vary between individuals or groups;
-- uncertainty given the influence of sources of randomness in how specific responses are produced.
+All important questions in the psychological scientific literature are addressed in *multiple studies*: how do we evaluate the evidence, comparing the results from different studies?
+
+::: callout-tip
+How do we *build* knowledge in psychological science?
+
+We consider:
+
+- replication
+- reproducibility
+
+And how to assess results across multiple studies.
+:::
+
+These are complex concerns and you will learn more about them, in other modules, this year and next year, when you develop an understanding of systematic reviews, meta-analysis, and the critical evaluation of scientific evidence.
+
+**4. How to become a power user**
+
+You have been learning about data analysis using R. We have been providing rich learning materials but in Week 19 we start to explore the wider world of knowledge about data analysis and R.
+
+::: callout-tip
+R is *free* and *open*. This means that:
+
+- there is a vast knowledge ecosystem you can use for your own purposes;
+- learning to be a powerful data analyst involves learning how to locate and to use the resources that are out there.
+:::
+
+We hope that these lessons are just the start for many of you.
 
 ::: callout-tip
 To work with the recordings:
 
 - Watch the video parts right through.
-- Use the printable versions of the slides (provided on Moodle) to make notes.
-- Try out the coding exercises in the how-to guide and the acitivity tasks or questions (@sec-wk19-lab-activities) to learn how to construct visualizations and do analyses.
+- Use the printable versions of the slides to make notes.
+- Try out the coding exercises in the how-to guide and the activity tasks or questions (@sec-wk19-lab-activities) to learn how to construct visualizations and do analyses.
 :::
 
 ## Reading: Links to other classes
@@ -185,29 +216,9 @@ We do not provide further reading for this class but you will find it helpful to
 
 ### Pre-lab activity 1 {#sec-wk19-prelab-activities-1}
 
-In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice.
+The survey is now closed.
 
-Completing the project involves collecting responses from *PSYC122* students: **you**.
-
-To enter your responses, we invite you to complete a short survey.
-
-Complete the survey by clicking on the link [here](https://lancasteruni.eu.qualtrics.com/jfe/form/SV_0qdj8TOZc18LR0q)
-
-::: callout-tip
-In our week 19 class activity, we will analyze the data we collect here.
-:::
-
-The survey should take about 20 minutes to complete.
-
-Taking part in the survey is **completely voluntary**.
-You can stop at any time without completing the survey if you do not want to finish it.
-If you do not want to do the survey, you can do an alternative activity (see below).
-
-All responses will be recorded completely anonymously.
-
-### Pre-lab activity alternative option {#sec-wk19-prelab-activities-2}
-
-If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
+If you want more information about the project, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
 
 [Read the project pre-registration](https://osf.io/p6fsc/)
 
