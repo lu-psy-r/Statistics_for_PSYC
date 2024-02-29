@@ -132,6 +132,14 @@ You can download the web page `.html` file and click on it to open it in any bro
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
+::: callout-tip
+To work with our lecture recordings:
+
+- Watch the video parts right through.
+- Use the printable versions of the slides to make notes.
+- Try out the coding exercises in the how-to guide and the activity tasks or questions (@sec-wk19-lab-activities) to learn how to construct visualizations and do analyses.
+:::
+
 ### The lectures have four main areas of focus {#sec-wk19-lectures-focus}
 
 **1. The real challenges in psychological science**
@@ -197,13 +205,11 @@ R is *free* and *open*. This means that:
 
 We hope that these lessons are just the start for many of you.
 
-::: callout-tip
-To work with the recordings:
+*Every* problem you ever have: 
 
-- Watch the video parts right through.
-- Use the printable versions of the slides to make notes.
-- Try out the coding exercises in the how-to guide and the activity tasks or questions (@sec-wk19-lab-activities) to learn how to construct visualizations and do analyses.
-:::
+- someone has had it before;
+- solved it;
+- and written a blog or social media post or recorded a YouTube or TikTok about it.
 
 ## Reading: Links to other classes
 
@@ -228,14 +234,25 @@ If you want more information about the project, we invite you to read the pre-re
 
 We will do our practical lab work to develop your skills in the context of the **Clearly Understood** project.
 
-- Our focus will be on what makes it easy or difficult for people to understand written health information.
+- Our focus is on what makes it easy or difficult for people to understand written health information.
 
 ::: callout-important
-In these classes, we will complete a research project to answer the research questions:
+In Week 19, we aim to answer the research questions:
 
 1. What person attributes predict success in understanding health information?
 2. Can people accurately evaluate whether they correctly understand written health information?
 :::
+
+PSYC122 students contributed their responses to a survey we have been using to collect data to find answers to these questions.
+
+In our practical work, we will be examining the PSYC122 data but, as we do so, we should understand that no one study in psychological science will give us definitive answers to any interesting question about people and what they do.
+
+In the practical work, you will be asked to reflect on how data from different studies -- using the same methods, with the same aims -- may nevertheless vary: 
+
+- vary in the data distributions;
+- and vary in the results that analyses indicate.
+
+Critically evaluating results across a series of studies, or replication attempts, is part of the process of accumulating evidence to build insight in psychological science, given measurement under uncertainty and limits in samples.
 
 ### Get ready {#sec-wk19-prelab-activities-ready}
 
