@@ -1,7 +1,7 @@
 ---
-title: 7. Week 18 -- Developing the linear model
+title: 8. Week 19 -- Linear models: critical perspectives
 subtitle: Written by Rob Davies
-order: 7
+order: 8
 ---
 
 ::: callout-warning
@@ -22,9 +22,9 @@ study.one.gen <- read_csv("study-one-general-participants.csv")
 study.two.gen <- read_csv("study-two-general-participants.csv")
 ```
 
-## Week 18: Introduction {#sec-wk18-introduction}
+## Week 19: Introduction {#sec-wk19-introduction}
 
-Welcome to your overview of our work together in **PSYC122 Week 18**.
+Welcome to your overview of our work together in **PSYC122 Week 19**.
 
 ::: callout-tip
 *Putting it all together*
@@ -36,11 +36,11 @@ Welcome to your overview of our work together in **PSYC122 Week 18**.
 
 ### Our learning goals
 
-In Week 18, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
+In Week 19, we aim to further develop skills in *analyzing* and in *visualizing* psychological data.
 
 We will do this in the context of the **Clearly Understood** project: our focus will be on what makes it easy or difficult for people to understand written health information.
 
-In the Week 18 class, we will aim to answer two research questions:
+In the Week 19 class, we will aim to answer two research questions:
 
 1. What person attributes predict success in understanding?
 2. Can people accurately evaluate whether they correctly understand written health information?
@@ -76,10 +76,10 @@ We will aim to build skills in producing professional-looking plots for our audi
 - As predictions of change in outcome, given different values of the predictor variables.
 :::
 
-## Lectures {#sec-wk18-lectures}
+## Lectures {#sec-wk19-lectures}
 
 ::: callout-tip
-Before you go on to the activities in @sec-wk18-lab-activities, **watch** the lectures:
+Before you go on to the activities in @sec-wk19-lab-activities, **watch** the lectures:
 :::
 
 The lecture for this week is presented in four short parts.
@@ -87,43 +87,43 @@ You can view video recordings of the lectures using Panopto, by clicking on the 
 
 - Anybody who has the link should be able to view the video.
 
-1. **Overview** (19 minutes): What we are doing in Week 18 -- Exploring the power of linear models, extending their application to use multiple variables to predict people.
+1. **Overview** (19 minutes): What we are doing in Week 19 -- Exploring the power of linear models, extending their application to use multiple variables to predict people.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7ae0e020-8dcc-436e-9d69-afb700ca1a52&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+Embed.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 2. **Using linear models to predict people** (13 minutes): Coding, thinking about, and reporting linear models with multiple predictors.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d2638334-4683-4543-8183-afb700cfbff0&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6d20197c-6559-463b-8672-afbe011e2371&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 3. **Critical evaluation** (15 minutes): Critically evaluating the results of analyses involving linear models.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=68e5cba9-ea96-4788-9c21-afb700d3ba29&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+Embed.aspx?id=30c2ff78-40b9-4cf8-8650-afbe012398fb&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 4. **Everything is some kind of linear model** (13 minutes): Understanding just how general and powerful this method for understanding people can be.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f6ba49d-f54d-41d0-ab30-afb700d84744&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a66baccd-f044-45f0-85af-afbe012bbc03&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 ::: callout-tip
 The slides presented in the videos can be downloaded either as a web page or as a Word document.
 :::
 
-- [The slides](data/week18/122-linear-model-develop.html) exactly as presented (6 MB). 
-- [The slides](data/week18/122-linear-model-develop-printable-edit.docx) converted to a Word .docx (1 MB). 
+- [The slides](data/week19/122-linear-model-perspectives.html) exactly as presented (6 MB).
+- [The slides](data/week19/122-linear-model-perspectives-printable-edit.docx) converted to a Word .docx (1 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 
 You can download the `.docx` file and click on it to open it as a Word document that you can then edit. 
 Converting the slides to a .docx distorts some images but the benefit of the conversion is that it makes it easier for you to add your notes.
 
-### The lectures have three main areas of focus {#sec-wk18-lectures-focus}
+### The lectures have three main areas of focus {#sec-wk19-lectures-focus}
 
 **1. Working with the linear model with multiple predictors**
 
@@ -162,7 +162,7 @@ To work with the recordings:
 
 - Watch the video parts right through.
 - Use the printable versions of the slides (provided on Moodle) to make notes.
-- Try out the coding exercises in the how-to guide and the acitivity tasks or questions (@sec-wk18-lab-activities) to learn how to construct visualizations and do analyses.
+- Try out the coding exercises in the how-to guide and the acitivity tasks or questions (@sec-wk19-lab-activities) to learn how to construct visualizations and do analyses.
 :::
 
 ## Reading: Links to other classes
@@ -172,9 +172,9 @@ We do not provide further reading for this class but you will find it helpful to
 - The lectures in *PSYC123* on: the scientific method; reliability and validity; experimental design, especially between-subjects studies; hypothesis testing; and precise hypotheses.
 - The lecture in *PSYC122* on linear models. 
 
-## Pre-lab activities {#sec-wk18-prelab-activities}
+## Pre-lab activities {#sec-wk19-prelab-activities}
 
-### Pre-lab activity 1 {#sec-wk18-prelab-activities-1}
+### Pre-lab activity 1 {#sec-wk19-prelab-activities-1}
 
 In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice.
 
@@ -196,15 +196,15 @@ If you do not want to do the survey, you can do an alternative activity (see bel
 
 All responses will be recorded completely anonymously.
 
-### Pre-lab activity alternative option {#sec-wk18-prelab-activities-2}
+### Pre-lab activity alternative option {#sec-wk19-prelab-activities-2}
 
 If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project.
 
 [Read the project pre-registration](https://osf.io/p6fsc/)
 
-## Lab activities {#sec-wk18-lab-activities}
+## Lab activities {#sec-wk19-lab-activities}
 
-### Introduction {#sec-wk18-lab-activities-1-introduction}
+### Introduction {#sec-wk19-lab-activities-1-introduction}
 
 We will do our practical lab work to develop your skills in the context of the **Clearly Understood** project.
 
@@ -217,11 +217,11 @@ In these classes, we will complete a research project to answer the research que
 2. Can people accurately evaluate whether they correctly understand written health information?
 :::
 
-### Get ready {#sec-wk18-prelab-activities-ready}
+### Get ready {#sec-wk19-prelab-activities-ready}
 
 #### Download the data
 
-Click on the link: [122-week18_for_students.zip](data/week18/122-week18_for_students.zip) to download the data files folder. Then upload the contents to the new folder you created in RStudio Server.
+Click on the link: [122-week19_for_students.zip](data/week19/122-week19_for_students.zip) to download the data files folder. Then upload the contents to the new folder you created in RStudio Server.
 
 The downloadable .zip folder includes the data files:
 
@@ -230,7 +230,7 @@ The downloadable .zip folder includes the data files:
 
 and the R Markdown `.Rmd`:
 
-- `2023-24-PSYC122-w18-how-to.Rmd`
+- `2023-24-PSYC122-w19-how-to.Rmd`
 
 If you can't upload these files to the server -- this affects some students -- you can use some code to get R to do it for you: uncover the code box below to reveal the code to do this.
 
@@ -242,23 +242,23 @@ If you can't upload these files to the server -- this affects some students -- y
 1. Get the `study-one-general-participants.csv` data
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/study-one-general-participants.csv?raw=true", destfile = "study-one-general-participants.csv")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/study-one-general-participants.csv?raw=true", destfile = "study-one-general-participants.csv")
 ```
 
 2. Get the `study-two-general-participants.csv` data
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/study-two-general-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/study-two-general-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
 ```
 
-3. Get the `2023-24-PSYC122-w18-how-to.Rmd` how-to guide
+3. Get the `2023-24-PSYC122-w19-how-to.Rmd` how-to guide
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week18/2023-24-PSYC122-w18-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w18-how-to.Rmd")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/2023-24-PSYC122-w19-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w19-how-to.Rmd")
 ```
 :::
 
-#### Check: What is in the data files? {#sec-wk18-data-summary}
+#### Check: What is in the data files? {#sec-wk19-data-summary}
 
 Each of the data files we will work with has a similar structure, as you can see in this extract.
 
@@ -293,11 +293,11 @@ You can see the columns:
 It is always a good idea to view the dataset -- click on the name of the dataset in the R-Studio `Environment` window, and check out the columns, scroll through the rows -- to get a sense of what you are working with.
 :::
 
-### Lab activity 1: Work with the `How-to` guide {#sec-wk18-lab-activities-1}
+### Lab activity 1: Work with the `How-to` guide {#sec-wk19-lab-activities-1}
 
 The `how-to` guide comprises an .Rmd file:
 
-- `2023-24-PSYC122-w18-how-to.Rmd`
+- `2023-24-PSYC122-w19-how-to.Rmd`
 
 It is full of advice and example code.
 
@@ -306,7 +306,7 @@ The code in the `how-to` guide was written to work with the data file:
 - `study-one-general-participants.csv`.
 
 ::: callout-tip
-We show you how to do everything you need to do in the lab activity (@sec-wk18-lab-activities-2, next) in the `how-to` guide.
+We show you how to do everything you need to do in the lab activity (@sec-wk19-lab-activities-2, next) in the `how-to` guide.
 
 - Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
 :::
@@ -324,9 +324,9 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-In the activity @sec-wk18-lab-activities-2, we are going to work through a sequence of steps and tasks that mirrors the sequence you find in the `how-to` guide.
+In the activity @sec-wk19-lab-activities-2, we are going to work through a sequence of steps and tasks that mirrors the sequence you find in the `how-to` guide.
 
-- There is a little bit of variation, comparing the later steps in the `how-to` guide and the steps in @sec-wk18-lab-activities-2, but that is designed to help you with your learning, in different places, when we think you will most need the support.
+- There is a little bit of variation, comparing the later steps in the `how-to` guide and the steps in @sec-wk19-lab-activities-2, but that is designed to help you with your learning, in different places, when we think you will most need the support.
 
 ::: callout-tip
 - Notice that we are gradually building up our skills: consolidating what we know; revising important learning; and extending ourselves to acquire new skills.
@@ -356,12 +356,12 @@ In the activity @sec-wk18-lab-activities-2, we are going to work through a seque
 7. Use `ggpredict()` to plot linear model predictions for one of the predictors
 8. Produce plots that show the predictions for all the predictor variables in a model
 
-In @sec-wk18-lab-activities-2, you will see that we show you how you can understand what linear model estimates show by examining the predictions from one outcome-predictor relation.
+In @sec-wk19-lab-activities-2, you will see that we show you how you can understand what linear model estimates show by examining the predictions from one outcome-predictor relation.
 
 **Step 6: Draw boxplots to examine associations between variables**
 
 The `how-to` guide shows you how to produce boxplots. 
-We do not include the task in the @sec-wk18-lab-activities-2 tasks sequence but you *will* find it useful to produce boxplots when you are examining the impact of categorical variables (next).
+We do not include the task in the @sec-wk19-lab-activities-2 tasks sequence but you *will* find it useful to produce boxplots when you are examining the impact of categorical variables (next).
 
 9. Create boxplots to examine the association between a continuous numeric outcome variable like `mean.acc` and a categorical variable like `ETHNICITY`
 
@@ -373,19 +373,19 @@ We refer to categorical or nominal variables like `ETHNICITY` as *factors* in da
 11. Fit a linear model including both numeric variables and categorical variables as predictors, and then plot the predicted effect of the factor (the categorical variable)
 
 ::: callout-tip
-If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w18-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
+If you are unsure about what you need to do, look at the advice in `2023-24-PSYC122-w19-how-to.Rmd` on how to do the tasks, with examples on how to write the code.
 :::
 
-You will see that you can match a task in the activity @sec-wk18-lab-activities-2 to the same task in the `how-to` guide.
+You will see that you can match a task in the activity @sec-wk19-lab-activities-2 to the same task in the `how-to` guide.
 The `how-to` shows you what function you need and how you should write the function code.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in modern psychological science.
 
 ::: callout-warning
-Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in @sec-wk18-lab-activities-2.
+Don't forget: You will need to change the names of the dataset or the variables to complete the tasks in @sec-wk19-lab-activities-2.
 :::
 
-### Lab activity 2 {#sec-wk18-lab-activities-2}
+### Lab activity 2 {#sec-wk19-lab-activities-2}
 
 ### OK: now let's do it!
 
@@ -394,13 +394,13 @@ In the following, we will guide you through the tasks and questions step by step
 
 ::: callout-tip
 1. We will not *at first* give you the answers to questions about the data or about the results of analyses.
-2. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk18-lab-activities-answers) so that you can check whether your independent work has been correct.
+2. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk19-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
-#### Questions {#sec-wk18-lab-activities-1-questions}
+#### Questions {#sec-wk19-lab-activities-1-questions}
 
 ::: callout-warning
-**Students have told us** that it would be helpful to your learning if we reduce the information in the hints we provide you. **We have done this** in Week 18.
+**Students have told us** that it would be helpful to your learning if we reduce the information in the hints we provide you. **We have done this** in Week 19.
 
 The motivation for doing this is:
 
@@ -426,7 +426,7 @@ To begin, we set up our environment in R.
 
 ##### Task 2 -- Run code to load relevant libraries
 
-Notice that in Week 18, we need to work with the libraries `ggeffects` and `tidyverse`.
+Notice that in Week 19, we need to work with the libraries `ggeffects` and `tidyverse`.
 Use the `library()` function to make these libraries available to you.
 
 <!-- ```{r} -->
@@ -620,7 +620,7 @@ We use `lm()`, as before, but now when we specify the model we write the code to
 Can you write the code you need to do the linear model analysis?
 
 You can click on the button to see the hint.
-You can see example code, for a different model, for Step 4 in the `2023-24-PSYC122-w18-how-to.Rmd`.
+You can see example code, for a different model, for Step 4 in the `2023-24-PSYC122-w19-how-to.Rmd`.
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -793,7 +793,7 @@ We can visualize the predictions from each model to *visualize* the comparison. 
 Can you work out how to write the model prediction plotting code without looking at the code example?
 
 Click on the Hint button to see advice on what you need to do. 
-You can see example code, for a different model, for Step 5 in the `2023-24-PSYC122-w18-how-to.Rmd`.
+You can see example code, for a different model, for Step 5 in the `2023-24-PSYC122-w19-how-to.Rmd`.
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -1038,7 +1038,7 @@ confidence intervals contain the true mean.
 Hoekstra, R., Morey, R. D., Rouder, J. N., & Wagenmakers, E. J. (2014). Robust misinterpretation of confidence intervals. *Psychonomic Bulletin & Review*, 21, 1157-1164.
 :::
 
-#### You have now completed the Week 18 questions.
+#### You have now completed the Week 19 questions.
 
 You have now extended the power of the linear models that you can deploy to predict people and their behaviour.
 
@@ -1049,30 +1049,30 @@ Models like the models you have been working with are used by:
 - businesses using *Artificial Intelligence* to predict client or customer outcomes.
 :::
 
-## Answers {#sec-wk18-lab-activities-answers}
+## Answers {#sec-wk19-lab-activities-answers}
 
 When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week.
 
 ::: callout-tip
 The `.Rmd` script containing all code and all answers for each task and each question will be made available after the final lab session has taken place.
 
-<!-- - You can download the script [2023-24-PSYC122-w18-workbook-answers](data/week18/2023-24-PSYC122-w18-workbook-answers) when it is available. -->
+<!-- - You can download the script [2023-24-PSYC122-w19-workbook-answers](data/week19/2023-24-PSYC122-w19-workbook-answers) when it is available. -->
 :::
 
-We set out answers information the Week 18 **Developing the linear model** questions, below.
+We set out answers information the Week 19 **Developing the linear model** questions, below.
 
 - We focus on the **Lab activity 2** questions where we ask you to interpret something or say something.
-- We do not show questions where we have given example or target code in the foregoing lab activity @sec-wk18-lab-activities-2.
+- We do not show questions where we have given example or target code in the foregoing lab activity @sec-wk19-lab-activities-2.
 
-<!-- You can see all the code and all the answers in `2023-24-PSYC122-w18-workbook-answers.Rmd`. -->
+<!-- You can see all the code and all the answers in `2023-24-PSYC122-w19-workbook-answers.Rmd`. -->
 
-<!-- ### Answers {#sec-wk18-lab-activities-answers-information} -->
+<!-- ### Answers {#sec-wk19-lab-activities-answers-information} -->
 
 <!-- ::: callout-tip -->
 <!-- Click on a box to reveal the answer. -->
 <!-- ::: -->
 
-<!-- #### Questions {#sec-wk18-lab-activities-2-questions-answers} -->
+<!-- #### Questions {#sec-wk19-lab-activities-2-questions-answers} -->
 
 <!-- >**Q.1.** What is the estimate for the coefficient of the effect of the predictor  -->
 <!-- `mean.acc` on the outcome `mean.self` in this model? -->
@@ -1338,9 +1338,9 @@ We set out answers information the Week 18 **Developing the linear model** quest
 <!-- `mean.self` for people with `Further` education. -->
 <!-- ::: -->
 
-## Online Q&A {#sec-wk18-lab-Q-and-A}
+## Online Q&A {#sec-wk19-lab-Q-and-A}
 
-You will find, below, a link to the video recording of the Week 18 online Q&A after it has been completed.
+You will find, below, a link to the video recording of the Week 19 online Q&A after it has been completed.
 
 ```{=html}
 ```
