@@ -681,30 +681,32 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 #### Revise: practice to strengthen skills
 
+##### Task 8 -- Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both `study.two.gen` and `study.122` datasets
 
-### Task 8 -- Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both `study.two.gen` and `study.122` datasets
+##### hint: Task 8 -- The plotting steps are explained in some detail in `2023-24-PSYC122-w17-how-to.Rmd` and you can see example code in `2023-24-PSYC122-w19-how-to.Rmd`
 
-### hint: Task 8 -- The plotting steps are explained in some detail in `2023-24-PSYC122-w17-how-to.Rmd` and you can see example code in `2023-24-PSYC122-w19-how-to.Rmd`
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r}   -->
+<!-- ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) + -->
+<!--   geom_point(alpha = 0.75, size = 3, colour = "darkgrey") + -->
+<!--   geom_smooth(method = "lm", size = 1.5, colour = "green") + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "mean self-rated accuracy", y = "mean accuracy") + -->
+<!--   xlim(0, 10) + ylim(0, 1) -->
 
-```{r}  
-ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) +
-  geom_point(alpha = 0.75, size = 3, colour = "darkgrey") +
-  geom_smooth(method = "lm", size = 1.5, colour = "green") +
-  theme_bw() +
-  labs(x = "mean self-rated accuracy", y = "mean accuracy") +
-  xlim(0, 10) + ylim(0, 1)
+<!-- ggplot(data = study.122, aes(x = mean.self, y = mean.acc)) + -->
+<!--   geom_point(alpha = 0.75, size = 3, colour = "darkgrey") + -->
+<!--   geom_smooth(method = "lm", size = 1.5, colour = "green") + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "mean self-rated accuracy", y = "mean accuracy") + -->
+<!--   xlim(0, 10) + ylim(0, 1) -->
+<!-- ``` -->
+<!-- ::: -->
 
-ggplot(data = study.122, aes(x = mean.self, y = mean.acc)) +
-  geom_point(alpha = 0.75, size = 3, colour = "darkgrey") +
-  geom_smooth(method = "lm", size = 1.5, colour = "green") +
-  theme_bw() +
-  labs(x = "mean self-rated accuracy", y = "mean accuracy") +
-  xlim(0, 10) + ylim(0, 1)
-```
+##### Task 9 --  Create a grid of plots to make the comparison easier to do
 
-### Task 9 --  Create a grid of plots to make the comparison easier to do
-
-### hint: Task 9 -- We follow the same steps as we used in tasks 6 and 7 to create the plots
+##### hint: Task 9 -- We follow the same steps as we used in tasks 6 and 7 to create the plots
 
 We again:
 
@@ -713,41 +715,48 @@ We again:
 
 Though this time we are producing a grid of **scatterplots**.
 
-First, create plot objects, give them names, but do not show them:
+First, create plot objects, give them names, but do not show them.
 
-```{r}
-plot.two <- ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) +
-  geom_point(alpha = 0.75, size = 3, colour = "darkgrey") +
-  geom_smooth(method = "lm", size = 1.5, colour = "green") +
-  theme_bw() +
-  labs(x = "mean self-rated accuracy", y = "mean accuracy") +
-  xlim(0, 10) + ylim(0, 1)
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- plot.two <- ggplot(data = study.two.gen, aes(x = mean.self, y = mean.acc)) + -->
+<!--   geom_point(alpha = 0.75, size = 3, colour = "darkgrey") + -->
+<!--   geom_smooth(method = "lm", size = 1.5, colour = "green") + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "mean self-rated accuracy", y = "mean accuracy") + -->
+<!--   xlim(0, 10) + ylim(0, 1) -->
 
-plot.122 <- ggplot(data = study.122, aes(x = mean.self, y = mean.acc)) +
-  geom_point(alpha = 0.75, size = 3, colour = "darkgrey") +
-  geom_smooth(method = "lm", size = 1.5, colour = "green") +
-  theme_bw() +
-  labs(x = "mean self-rated accuracy", y = "mean accuracy") +
-  xlim(0, 10) + ylim(0, 1)
-```
+<!-- plot.122 <- ggplot(data = study.122, aes(x = mean.self, y = mean.acc)) + -->
+<!--   geom_point(alpha = 0.75, size = 3, colour = "darkgrey") + -->
+<!--   geom_smooth(method = "lm", size = 1.5, colour = "green") + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "mean self-rated accuracy", y = "mean accuracy") + -->
+<!--   xlim(0, 10) + ylim(0, 1) -->
+<!-- ``` -->
+<!-- ::: -->
 
-Second name the plots, to show them side-by-side in the plot window:
+Second name the plots to show them side-by-side in the plot window.
 
-```{r}
-plot.two + plot.122
-```
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- plot.two + plot.122 -->
+<!-- ``` -->
+<!-- ::: -->
 
 Now use the plots to make comparison judgments.
 
->**Q.5. How does the association, shown in the plots, between `mean.self` and `mean.acc` compare when you look at the `study.two.gen` versus the `study.122` plot?
+>**Q.5.** How does the association, shown in the plots, between `mean.self` and `mean.acc` compare when you look at the `study.two.gen` versus the `study.122` plot?
 - hint: Q.5. When comparing evidence about associations in different studies, we are mostly going to focus on the slope -- the angle -- of the prediction lines, and the ways in which points do or do not cluster about the prediction lines.
-- A.5. If you examine the `study.two.gen` versus the `study.122` plots then you can see that in both plots higher `mean.self` scores appear to be associated with higher `mean.acc` scores. But the trend maybe is a bit stronger -- the line is steeper -- in `study.two`.
+
+<!-- - A.5. If you examine the `study.two.gen` versus the `study.122` plots then you can see that in both plots higher `mean.self` scores appear to be associated with higher `mean.acc` scores. But the trend maybe is a bit stronger -- the line is steeper -- in `study.two`. -->
 
 We are now in a position to answer one of our research questions:
 
 2. Can people accurately evaluate whether they correctly understand written health information?
 
-If people *can* accurately evaluate whether they correctly understand written health information then `mean.self` (a score representing their evaluation) should be associated with `mean.acc` (a score representing their accuracy of understanding) for each person.
+<!-- If people *can* accurately evaluate whether they correctly understand written health information then `mean.self` (a score representing their evaluation) should be associated with `mean.acc` (a score representing their accuracy of understanding) for each person. -->
 
 
 ### Revise: practice to strengthen skills
