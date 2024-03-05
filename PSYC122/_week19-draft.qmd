@@ -677,11 +677,9 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 <!-- - A.4. Yes: If you go back to the summary of `SHIPLEY`, comparing the two studies datasets, then you can see that the median and mean are lower in `study.122`. -->
 
+#### Step 4: Now use scatterplots and correlation to examine associations between variables
 
-## Step 4: Now use scatterplots and correlation to examine associations between variables
-
-
-### Revise: practice to strengthen skills
+#### Revise: practice to strengthen skills
 
 
 ### Task 8 -- Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both `study.two.gen` and `study.122` datasets
