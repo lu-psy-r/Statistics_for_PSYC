@@ -20,7 +20,7 @@ library(tidyverse)
 #| echo: false
 study.one.gen <- read_csv("study-one-general-participants.csv")  
 study.two.gen <- read_csv("study-two-general-participants.csv")
-study.122 <- read_csv("2022-23_PSYC122-subjects.csv")  
+study.122 <- read_csv("2023-24_PSYC122-participants.csv")  
 ```
 
 ## Week 19: Introduction {#sec-wk19-introduction}
@@ -265,6 +265,7 @@ The downloadable .zip folder includes the data files:
 
 - `study-one-general-participants.csv`
 - `study-two-general-participants.csv`
+- `2023-24_PSYC122-participants.csv`
 
 and the R Markdown `.Rmd`:
 
@@ -289,7 +290,13 @@ download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/mai
 download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/study-two-general-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
 ```
 
-3. Get the `2023-24-PSYC122-w19-how-to.Rmd` how-to guide
+3. Get the 2023-24 PSYC122 `2023-24_PSYC122-participants.csv` data
+
+```{r eval=FALSE}
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/2023-24_PSYC122-participants.csv?raw=true", destfile = "study-two-general-participants.csv")
+```
+
+4. Get the `2023-24-PSYC122-w19-how-to.Rmd` how-to guide
 
 ```{r eval=FALSE}
 download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week19/2023-24-PSYC122-w19-how-to.Rmd?raw=true", destfile = "2023-24-PSYC122-w19-how-to.Rmd")
@@ -344,8 +351,10 @@ The code in the `how-to` guide was written to work with **two data files**:
 - `study-one-general-participants.csv`
 - `study-two-general-participants.csv`
 
+We will be working with *your* (PSYC122) response data in @sec-wk19-lab-activities-2.
+
 ::: callout-tip
-We show you how to do everything you need to do in the lab activity (@sec-wk19-lab-activities-2, next) in the `how-to` guide.
+We show you how to do everything you need to do in the lab activity (@sec-wk19-lab-activities-2, shown following) in the `how-to` guide.
 
 - Start by looking at the `how-to` guide to understand what steps you need to follow in the lab activity.
 :::
@@ -469,13 +478,13 @@ Use the `library()` function to make these libraries available to you.
 The data files are called:
 
 - `study-two-general-participants.csv`
-- `2022-23_PSYC122-subjects.csv`
+- `2023-24_PSYC122-participants.csv`
 
 Use the `read_csv()` function to read the data files into R:
 
 ```{r}
 study.two.gen <- read_csv("study-two-general-participants.csv")  
-study.122 <- read_csv("2022-23_PSYC122-subjects.csv")  
+study.122 <- read_csv("2023-24_PSYC122-participants.csv")  
 ```
 
 When you read the data files in, give the data objects you create distinct name 
