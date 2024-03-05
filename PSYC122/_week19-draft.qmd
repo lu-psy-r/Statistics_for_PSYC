@@ -758,67 +758,81 @@ We are now in a position to answer one of our research questions:
 
 <!-- If people *can* accurately evaluate whether they correctly understand written health information then `mean.self` (a score representing their evaluation) should be associated with `mean.acc` (a score representing their accuracy of understanding) for each person. -->
 
+#### Revise: practice to strengthen skills
 
-### Revise: practice to strengthen skills
+##### Task 10 --  Can you estimate the association between `mean.acc` and `mean.self` in both datasets?
 
-
-### Task 10 --  Can you estimate the association between `mean.acc` and `mean.self` in both datasets?
-
-### hint: Task 10 -- We use `cor.test()` as you have been shown how to do e.g. in `2023-24-PSYC122-w16-how-to.Rmd`
+##### hint: Task 10 -- We use `cor.test()` as you have been shown how to do e.g. in `2023-24-PSYC122-w16-how-to.Rmd`
 
 Do the correlation for both datasets.
 
-First, look at the correlation between `mean.acc` and `mean.self` in `study.two`:
+First calculate the correlation between `mean.acc` and `mean.self` in `study.two`.
 
-```{r}
-cor.test(study.two.gen$mean.acc, study.two.gen$mean.self, method = "pearson",  alternative = "two.sided")
-```
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- cor.test(study.two.gen$mean.acc, study.two.gen$mean.self, method = "pearson",  alternative = "two.sided") -->
+<!-- ``` -->
+<!-- ::: -->
 
->**Q.6. What is r, the correlation coefficient?
-- A.6. r = 0.5460792
+Then answer the following questions.
 
->**Q.7. Is the correlation significant?
-- A.7. r is significant
+>**Q.6.** What is r, the correlation coefficient?
 
->**Q.8. What are the values for t and p for the significance test for the correlation?
-- A.8. t = 8.4991, p = 9.356e-15
+<!-- - A.6. r = 0.5460792 -->
 
-Second, look at the correlation between `mean.acc` and `mean.self` in `study.122`:
+>**Q.7.** Is the correlation significant?
 
-```{r}
-cor.test(study.122$mean.acc, study.122$mean.self, method = "pearson",  alternative = "two.sided")
-```
+<!-- - A.7. r is significant -->
 
->**Q.9. What is r, the correlation coefficient?
-- A.9. r = 0.3232728
+>**Q.8.** What are the values for t and p for the significance test for the correlation?
 
->**Q.10. Is the correlation significant?
-- A.10. r is significant
+<!-- - A.8. t = 8.4991, p = 9.356e-15 -->
 
->**Q.11. What are the values for t and p for the significance test for the correlation?
-- A.11. t = 3.2046, p = 0.001884
+Second, look at the correlation between `mean.acc` and `mean.self` in `study.122`.
 
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- cor.test(study.122$mean.acc, study.122$mean.self, method = "pearson",  alternative = "two.sided") -->
+<!-- ``` -->
+<!-- ::: -->
+
+Then answer the following questions.
+
+>**Q.9.** What is r, the correlation coefficient?
+
+<!-- - A.9. r = 0.3232728 -->
+
+>**Q.10.** Is the correlation significant?
+
+<!-- - A.10. r is significant -->
+
+>**Q.11.** What are the values for t and p for the significance test for the correlation?
+
+<!-- - A.11. t = 3.2046, p = 0.001884 -->
 
 Now we can answer the research question:
 
 2. Can people accurately evaluate whether they correctly understand written health information?
 
+>**Q.12.** What do the correlation estimates tell you is the answer to the research question?
 
->**Q.12. What do the correlation estimates tell you is the answer to the research question?
-- A.12. 
+<!-- - A.12.  -->
 
-> The correlations are positive and significant, indicating that higher `mean.self` (evaluations) are associated with higher `mean.acc` (understanding), suggesting that people *can* judge their accuracy of understanding.
+<!-- > The correlations are positive and significant, indicating that higher `mean.self` (evaluations) are associated with higher `mean.acc` (understanding), suggesting that people *can* judge their accuracy of understanding. -->
 
->**Q.13.  Can you compare the estimates, given the two datasets, to evaluate if the result in `study.two.gen` is *replicated* in `study.122`?
-- hint: Q.13. We can judge if the result in a study is replicated in another study by examining if -- here -- the correlation coefficient is significant in both studies *and* if the coefficient has the same size and sign in both studies.
-- A.13. If you compare the correlation estimates from both `study.two.gen` and `study.122` you can see:
+>**Q.13.**  Can you compare the estimates, given the two datasets, to evaluate if the result in `study.two.gen` is *replicated* in `study.122`?
+>**hint: Q.13.** We can judge if the result in a study is replicated in another study by examining if -- here -- the correlation coefficient is significant in both studies *and* if the coefficient has the same size and sign in both studies.
 
-- first, the correlation is significant in both `study.two.gen` and `study.122`;
-- second, the correlation is positive in both studies.
+<!-- - A.13. If you compare the correlation estimates from both `study.two.gen` and `study.122` you can see: -->
 
-But, if you compare the correlation estimates, you can see that the coefficient estimate is quite a bit smaller in `study.122` (where r = .32) than in `study.two.gen` (where r = .55).
+<!-- - first, the correlation is significant in both `study.two.gen` and `study.122`; -->
+<!-- - second, the correlation is positive in both studies. -->
 
-This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason.
+<!-- But, if you compare the correlation estimates, you can see that the coefficient estimate is quite a bit smaller in `study.122` (where r = .32) than in `study.two.gen` (where r = .55). -->
+
+<!-- This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason. -->
 
 
 ### Task 11 -- In working with R to do data analysis, we often work with libraries of function like `{tidyverse}` that enable us to do things (see the week 19 lecture for discussion).
