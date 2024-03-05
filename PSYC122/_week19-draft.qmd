@@ -452,28 +452,31 @@ To begin, we set up our environment in R.
 
 ##### Task 1 -- Run code to empty the R environment
 
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
 <!-- ```{r} -->
 <!-- #| eval: false -->
 <!-- rm(list=ls()) -->
 <!-- ``` -->
+<!-- ::: -->
 
 ##### Task 2 -- Run code to load relevant libraries
 
-Notice that in Week 19, we need to work with the libraries `ggeffects` and `tidyverse`.
+Notice that in Week 19, we need to work with the libraries `ggeffects`, `patchwork` and `tidyverse`.
 Use the `library()` function to make these libraries available to you.
 
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
 <!-- ```{r} -->
-<!-- #| eval: false -->
 <!-- library("ggeffects") -->
+<!-- library("patchwork") -->
 <!-- library("tidyverse") -->
 <!-- ``` -->
+<!-- ::: -->
 
 #### Step 2: Load the data
 
-
-
-
-### Task 3 -- Read in the data files we will be using
+##### Task 3 -- Read in the data files we will be using
 
 The data files are called:
 
@@ -482,26 +485,30 @@ The data files are called:
 
 Use the `read_csv()` function to read the data files into R:
 
-```{r}
-study.two.gen <- read_csv("study-two-general-participants.csv")  
-study.122 <- read_csv("2023-24_PSYC122-participants.csv")  
-```
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- study.two.gen <- read_csv("study-two-general-participants.csv")   -->
+<!-- study.122 <- read_csv("2023-24_PSYC122-participants.csv")   -->
+<!-- ``` -->
+<!-- ::: -->
 
 When you read the data files in, give the data objects you create distinct name 
 e.g. `study.two.gen` versus `study.122`.
 
-
-### Task 4 -- Inspect the data file
+##### Task 4 -- Inspect the data file
 
 Use the `summary()` or `head()` functions to take a look at both datasets.
 
-```{r}
-summary(study.two.gen)
-summary(study.122)
-```
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- summary(study.two.gen) -->
+<!-- summary(study.122) -->
+<!-- ``` -->
+<!-- ::: -->
 
-
-## Step 3: Compare the data from the different studies
+#### Step 3: Compare the data from the different studies
 
 
 ### Revise: practice to strengthen skills
