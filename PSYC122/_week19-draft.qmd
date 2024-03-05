@@ -1056,6 +1056,13 @@ Then show the plots in a grid, to allow comparison of the effect of `HLVA` betwe
 <!-- ``` -->
 <!-- ::: -->
 
+::: calloutbox-tip
+It is often useful to compare model estimates -- here, the slopes -- with the raw data observations.
+
+- No model will be perfect.
+- Visualizing the difference between what we observe and what we predict helps to make sense of how our prediction model could be improved.
+:::
+
 >**Q.28.** Given the information in the adjusted plots, can you explain why we appear to be more uncertain about the `HLVA` effect given the `study.122` data?
 
 <!-- - A.28. Adding points allow us to see: -->
@@ -1065,13 +1072,11 @@ Then show the plots in a grid, to allow comparison of the effect of `HLVA` betwe
 
 #### You have now completed the Week 19 questions.
 
-You have now extended the power of the linear models that you can deploy to predict people and their behaviour.
+You have now extended your capacity to *think critically* about our data and our capacity to predict people and their behaviour.
 
 ::: callout-tip
-Models like the models you have been working with are used by:
-
-- scientists to predict outcomes relevant to important research questions;
-- businesses using *Artificial Intelligence* to predict client or customer outcomes.
+- We have used PSYC122 students' responses to examine the robustness of evidence for potential answers to our research questions.
+- Examining evidence across multiple different studies is a key element part of the process of *building* insights in psychological science.
 :::
 
 ## Answers {#sec-wk19-lab-activities-answers}
