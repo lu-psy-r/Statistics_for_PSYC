@@ -834,18 +834,17 @@ Now we can answer the research question:
 
 <!-- This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason. -->
 
-
-### Task 11 -- In working with R to do data analysis, we often work with libraries of function like `{tidyverse}` that enable us to do things (see the week 19 lecture for discussion).
+##### Task 11 -- In working with R to do data analysis, we often work with libraries of function like `{tidyverse}` that enable us to do things (see the week 19 lecture for discussion).
 
 In this way, we are using the `{patchwork}` library so that we can create plots and then present them in a grid.
 
 Can you find the online information about `{patchwork}` and use it to adjust the layout of the grids of plots you are using?
 
-### hint: Task 11 -- To find out more information about a function or a library in R, do a search for the keywords
+##### hint: Task 11 -- To find out more information about a function or a library in R, do a search for the keywords
 
 You can do a search, using any search engine (e.g., Bing, Chrome, Google), by entering: 
 
-> in r ...
+> `in r ...`
 
 And pasting the words you want to know about to replace the `...` e.g. "in r patchwork".
 
@@ -853,14 +852,11 @@ You will then see a list of results including the link to the `{patchwork}` info
 
 <https://patchwork.data-imaginist.com>
 
+#### Step 5: Use a linear model to to answer the research questions -- multiple predictors
 
-## Step 5: Use a linear model to to answer the research questions -- multiple predictors
+#### Revise: practice to strengthen skills
 
-
-### Revise: practice to strengthen skills
-
-
-### Task 12 -- Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors 
+##### Task 12 -- Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors 
 
 We specify linear models including as predictiors the variables:
 
@@ -868,40 +864,45 @@ We specify linear models including as predictiors the variables:
 - vocabulary (`SHIPLEY`); 
 - reading strategy (`FACTOR3`).
 
-### hint: Task 12 -- We use `lm()`, as we have been doing before, see e.g. `2023-24-PSYC122-w18-how-to.R`
+##### hint: Task 12 -- We use `lm()`, as we have been doing before, see e.g. `2023-24-PSYC122-w18-how-to.R`
 
+##### Task 12 -- Examine the predictors of mean accuracy (`mean.acc`), first, for the `study.two.gen` data
 
-### Task 12 -- Examine the predictors of mean accuracy (`mean.acc`), first, for the `study.two.gen` data
-
-```{r}
-model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3, data = study.two.gen)
-summary(model)
-```
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3, data = study.two.gen) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- ::: -->
 
 Using the model estimates, we can answer the research question:
 
 1. What person attributes predict success in understanding?
 
-Inspect the model summary, then answer the following questions:  
+Inspect the model summary to then answer the following questions:  
 
->**Q.18. What is the estimate for the coefficient of the effect of the predictor `SHIPLEY` in *this* model?
-- A.18. 0.008397 
+>**Q.18.** What is the estimate for the coefficient of the effect of the predictor `SHIPLEY` in *this* model?
 
->**Q.19. Is the effect significant?
-- A.19. It is significant, p < .05
+<!-- - A.18. 0.008397  -->
 
->**Q.20. What are the values for t and p for the significance test for the coefficient?
-- A.20. t = 4.533, p = 1.1e-05
+>**Q.19.** Is the effect significant?
 
->**Q.21. Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.two.gen` data:
+<!-- - A.19. It is significant, p < .05 -->
+
+>**Q.20.** What are the values for t and p for the significance test for the coefficient?
+
+<!-- - A.20. t = 4.533, p = 1.1e-05 -->
+
+>**Q.21.** Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.two.gen` data:
 
 1. What person attributes predict success in understanding?
 
-- hint: Q.21. Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
+>**hint: Q.21.** Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
 
-- A.21. 
+<!-- - A.21.  -->
 
-> We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY`) as predictors. The model is significant overall, with F(3, 168) = 31.99, p< .001, and explains 35% of variance (adjusted R2 = 0.35). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .018, t = 4.90, p < .001), vocabulary knowledge (`SHIPLEY` estimate = .008, t = 4.53, p < .001), and reading strategy (`FACTOR3` estimate = .003, t = 2.68, p = .008).
+<!-- > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY`) as predictors. The model is significant overall, with F(3, 168) = 31.99, p< .001, and explains 35% of variance (adjusted R2 = 0.35). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .018, t = 4.90, p < .001), vocabulary knowledge (`SHIPLEY` estimate = .008, t = 4.53, p < .001), and reading strategy (`FACTOR3` estimate = .003, t = 2.68, p = .008). -->
 
 
 ### Task 13 -- Examine the predictors of mean accuracy (`mean.acc`), now, for the `study.122` data
