@@ -20,6 +20,7 @@ library(tidyverse)
 #| echo: false
 study.one.gen <- read_csv("study-one-general-participants.csv")  
 study.two.gen <- read_csv("study-two-general-participants.csv")
+study.122 <- read_csv("2022-23_PSYC122-subjects.csv")  
 ```
 
 ## Week 19: Introduction {#sec-wk19-introduction}
