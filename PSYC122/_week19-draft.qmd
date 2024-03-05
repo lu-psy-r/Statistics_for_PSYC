@@ -430,7 +430,7 @@ In the following, we will guide you through the tasks and questions step by step
 2. An answers version of the workbook will be provided after the last lab session (check the answers then in @sec-wk19-lab-activities-answers) so that you can check whether your independent work has been correct.
 :::
 
-#### Questions {#sec-wk19-lab-activities-1-questions}
+#### Questions {#sec-wk19-lab-activities-2-questions}
 
 ::: callout-warning
 **Students have told us** that it would be helpful to your learning if we reduce the information in the hints we provide you. **We have done this** in Week 19.
