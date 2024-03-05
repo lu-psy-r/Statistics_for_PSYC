@@ -1022,42 +1022,46 @@ Then use your *visualization* of the model results to describe the outstanding d
 
 <!-- This suggests that the effect of health literacy is stronger in Study Two: why is that? -->
 
+##### Task 14 -- In producing prediction plots, we are using functions from the `{ggefects}` library. Can you locate online information about working with the library functions?
 
-### Task 14 -- In producing prediction plots, we are using functions from the `{ggefects}` library. Can you locate online information about working with the library functions?
-
+:::{.callout-tip collapse="true"}
+## Hint
 Try doing a search with the key words: `in r ggeffects`.
 
 If you do that, you will see links to the website:
 
 <https://strengejacke.github.io/ggeffects/>
+:::
 
+#### Task 15 -- In the `{ggeffects}` online information, you can see links to practical examples. Can you use the information under `Practical examples` to adjust the appearance of the prediction plots: to make them black and white; to add points?
 
-### Task 15 -- In the `{ggeffects}` online information, you can see links to practical examples. Can you use the information under "Practical examples" to adjust the appearance of the prediction plots: to make them black and white; to add points?
+First create the plots.
 
-First create the plots:
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- dat.two <- ggpredict(model.two, "HLVA") -->
+<!-- plot.two <- plot(dat.two, colors = "bw", add.data = TRUE) + labs(title = "Study Two") -->
+<!-- dat.122 <- ggpredict(model.122, "HLVA") -->
+<!-- plot.122 <- plot(dat.122, colors = "bw", add.data = TRUE) + labs(title = "Study PSYC122") -->
+<!-- ``` -->
+<!-- ::: -->
 
-```{r}
-dat.two <- ggpredict(model.two, "HLVA")
-plot.two <- plot(dat.two, colors = "bw", add.data = TRUE) + labs(title = "Study Two")
-dat.122 <- ggpredict(model.122, "HLVA")
-plot.122 <- plot(dat.122, colors = "bw", add.data = TRUE) + labs(title = "Study PSYC122")
-```
+Then show the plots in a grid, to allow comparison of the effect of `HLVA` between studies in a *professional* presentation.
 
-Then show the plots:
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- plot.two + plot.122 -->
+<!-- ``` -->
+<!-- ::: -->
 
-```{r}
-plot.two + plot.122
-```
+>**Q.28.** Given the information in the adjusted plots, can you explain why we appear to be more uncertain about the `HLVA` effect given the `study.122` data?
 
->**Q.28. Given the information in the adjusted plots, can you explain why we appear to be more uncertain about the `HLVA` effect given the `study.122` data?
-- A.28. Adding points allow us to see:
+<!-- - A.28. Adding points allow us to see: -->
 
-1. There are far fewer observations in the study.122 dataset;
-2. The range of `HLVA` scores is limited in study.122 data -- mostly high scores -- and range limits have an impact on estimates of association: see Margriet's lecture on correlation and linear model assumptions and issues.
-
-
-
-
+<!-- 1. There are far fewer observations in the study.122 dataset; -->
+<!-- 2. The range of `HLVA` scores is limited in study.122 data -- mostly high scores -- and range limits have an impact on estimates of association: see Margriet's lecture on correlation and linear model assumptions and issues. -->
 
 #### You have now completed the Week 19 questions.
 
