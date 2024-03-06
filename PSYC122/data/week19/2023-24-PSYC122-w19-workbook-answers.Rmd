@@ -431,7 +431,7 @@ You will then see a list of results including the link to the `{patchwork}` info
 
 ### Task 12 -- Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors 
 
-We specify linear models including as predictiors the variables:
+We specify linear models including as predictors the variables:
 
 - health literacy (`HLVA`); 
 - vocabulary (`SHIPLEY`); 
