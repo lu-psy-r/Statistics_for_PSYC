@@ -936,15 +936,15 @@ Inspect the model summary, then answer the following questions:
 
 >**Q.18.** What is the estimate for the coefficient of the effect of the predictor, `HLVA`, in *this* model?
 
-<!-- - A.18. 0.003300  -->
+<!-- - A.18. 0.0335342  -->
 
 >**Q.19.** Is the effect significant?
 
-<!-- - A.19. It is *not* significant, p > .05 because p = 0.57050 -->
+<!-- - A.19. It is significant, p > .05 because p = 1.52e-05 -->
 
 >**Q.20.** What are the values for t and p for the significance test for the coefficient?
 
-<!-- - A.20. t = 0.570, p = 0.57050 -->
+<!-- - A.20. t = 4.701, p < .001 -->
 
 >**Q.21.** Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.122` data:
 
@@ -954,20 +954,20 @@ Inspect the model summary, then answer the following questions:
 
 <!-- - A.21.  -->
 
-<!-- > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 86) = 11.29, p < .001, and explains 26% of variance (adjusted R2 = 0.258). Mean accuracy was predicted to be higher given higher scores in vocabulary knowledge (`SHIPLEY` estimate = .011, t = 3.32, p = .001), and reading strategy (`FACTOR3` estimate = .007, t = 3.26, p = .002). However, the effect of health literacy was not significant (`HLVA` estimate = .003, t = .57, p = .571).  -->
+<!-- > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 61) = 14.47, p < .001, and explains 39% of variance (adjusted R2 = .387). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .034, t = 4.70, p < .001). There were non-significant effects of individual differences in vocabulary knowledge (`SHIPLEY` estimate = .006, t = 1.80, p = .077) and reading strategy (`FACTOR3` estimate = .001, t = .25, p = .800).  -->
 
 At this point, we can evaluate the evidence from the PSYC122 sample -- based on your responses -- to assess if the patterns, the estimates, we saw previously are repeated in analyses of PSYC122 responses.
 
 >**Q.22.** Are the findings from `study.two.gen` replicated in `study.122`?
 - hint: Q.22. We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
 
-<!-- - A.22. If you compare the linear model coefficient estimates from both the `study.two.ge`n and `study.122` models, you can see: -->
+<!-- - A.22. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see: -->
 
-<!-- -- first, that the `SHIPLEY` and `FACTOR3` estimates are significant in both `study.two.gen` and `study.122`; -->
-<!-- - second, that the estimates have the same sign -- positive -- in both studies; -->
-<!-- - but, third, that the `HLVA` effect is significant in `study.two.gen` but not in `study.122`.   -->
+<!-- - first, that the `HLVA` effect estimate is significant in both `study.two.gen` and `study.122`; -->
+<!-- - second, that the estimates of the `HLVA` effect have the same sign -- positive -- in both studies while the estimated coefficient is a bit bigger in the `study.122` data (implying a stronger effect); -->
+<!-- - but, third that the estimates of the effects of variation in vocabulary knowledge (`SHIPLEY`) and reading strategy (`FACTOR3`) are significant in `study.two.gen` but not in `study.122`.   -->
 
-<!-- This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the participants tested for `study.two.gen` compared to `study.122` participants. -->
+<!-- This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the `study.two.gen` participants compared to `study.122` participants. -->
 
 >**Q.23.** How would you describe the outstanding difference between the results of the two studies?
 >**hint: Q.23.** We can look at the estimates but we can also use model prediction plotting code to *visualize* the results. You can build on the code you used before, see:
@@ -1014,13 +1014,20 @@ Then use your *visualization* of the model results to describe the outstanding d
 
 <!-- - A.23. If we compare the estimates for the coefficient of the `HLVA` effect in the `study.two.gen` and `study.122` models we can see that: -->
 
-<!-- 1. The health literacy `HLVA` effect is significant in `study.two.gen` but not `study.122`. -->
+<!-- 1. The health literacy `HLVA` effect is significant in both `study.two.gen` and `study.122`. -->
 <!-- 2. The effect trends positive in both studies. -->
-<!-- 3. The coefficient estimate is much bigger in study.two.gen than in `study.122`. -->
-<!-- 4. The prediction plots suggest the prediction line slope is steeper in `study.two`. -->
-<!-- 5. The grey shaded area around the trend line (indicating our uncertainty about the estimated trend) is much wider for `study.two.gen` than for `study.122`, suggesting we are much more uncertain about the association for the `study.122` data. -->
+<!-- 3. The coefficient estimate is bigger in `study.122` than in `study.two.gen`. -->
+<!-- 4. The prediction plots suggest the prediction line slope is steeper in `study.122`. -->
+<!-- 5. The grey shaded area around the trend line (indicating our uncertainty about the estimated trend) is wider for `study.two.gen` than for `study.122`, suggesting we are more uncertain about the association for the `study.two.gen` data.  -->
 
-<!-- This suggests that the effect of health literacy is stronger in Study Two: why is that? -->
+<!-- - The breadth of the grey shaded area around the trend line is hard to compare between the two plots. You have to look carefully at the y-axis scale information to make a judgment about the relative width of these uncertainty ellipses. -->
+
+<!-- The visualizations plus the model summaries suggests that the estimates of the effect of health literacy are different in the `study.122` compared to the `study.two.gen` data. Why is that? -->
+
+::: callout-tip
+- We can redraw the prediction plots -- next -- to add in more information about our samples. This change, see following, will help us to interpret the results of the analyses we have done.
+- And *that* will help you to see why data visualization and data analysis work well together.
+:::
 
 ##### Task 14 -- In producing prediction plots, we are using functions from the `{ggefects}` library. Can you locate online information about working with the library functions?
 
@@ -1067,8 +1074,8 @@ It is often useful to compare model estimates -- here, the slopes -- with the ra
 
 <!-- - A.24. Adding points allow us to see: -->
 
-<!-- 1. There are far fewer observations in the study.122 dataset; -->
-<!-- 2. The range of `HLVA` scores is limited in study.122 data -- mostly high scores -- and range limits have an impact on estimates of association: see Margriet's lecture on correlation and linear model assumptions and issues. -->
+<!-- 1. There are far fewer observations in the `study.122` dataset than in the `study.two.gen` data: this means that our estimate of the effect will be *more uncertain* because we have *less information* when we look at the `study.122` data. -->
+<!-- 2. But it is also clear that the effect of `HLVA` appears to be stronger in the  `study.122` data because observed scores are *closer* to model predictions: the `HLVA` effect *explains more variation* in the `study.122` data than in the `study.two.gen` data. -->
 
 #### You have now completed the Week 19 questions.
 
@@ -1355,19 +1362,19 @@ Inspect the model summary, then answer the following questions:
 >**Q.18.** What is the estimate for the coefficient of the effect of the predictor, `HLVA`, in *this* model?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.18. 0.003300
+- A.18. 0.0335342
 :::
 
 >**Q.19.** Is the effect significant?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.19. It is *not* significant, p > .05 because p = 0.57050
+- A.19. It is significant, p > .05 because p = 1.52e-05
 :::
 
 >**Q.20.** What are the values for t and p for the significance test for the coefficient?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.20. t = 0.570, p = 0.57050
+- A.20. t = 4.701, p < .001
 :::
 
 >**Q.21.** Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.122` data:
@@ -1379,7 +1386,7 @@ Inspect the model summary, then answer the following questions:
 ::: {.callout-note icon=false collapse="true"}
 - A.21.
 
-> We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 86) = 11.29, p < .001, and explains 26% of variance (adjusted R2 = 0.258). Mean accuracy was predicted to be higher given higher scores in vocabulary knowledge (`SHIPLEY` estimate = .011, t = 3.32, p = .001), and reading strategy (`FACTOR3` estimate = .007, t = 3.26, p = .002). However, the effect of health literacy was not significant (`HLVA` estimate = .003, t = .57, p = .571).
+> We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 61) = 14.47, p < .001, and explains 39% of variance (adjusted R2 = .387). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .034, t = 4.70, p < .001). There were non-significant effects of individual differences in vocabulary knowledge (`SHIPLEY` estimate = .006, t = 1.80, p = .077) and reading strategy (`FACTOR3` estimate = .001, t = .25, p = .800). 
 :::
 
 At this point, we can evaluate the evidence from the PSYC122 sample -- based on your responses -- to assess if the patterns, the estimates, we saw previously are repeated in analyses of PSYC122 responses.
@@ -1388,13 +1395,13 @@ At this point, we can evaluate the evidence from the PSYC122 sample -- based on 
 - hint: Q.22. We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
 
 ::: {.callout-note icon=false collapse="true"}
-- A.22. If you compare the linear model coefficient estimates from both the `study.two.ge`n and `study.122` models, you can see:
+- A.22. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see:
 
--- first, that the `SHIPLEY` and `FACTOR3` estimates are significant in both `study.two.gen` and `study.122`;
-- second, that the estimates have the same sign -- positive -- in both studies;
-- but, third, that the `HLVA` effect is significant in `study.two.gen` but not in `study.122`.
-
-This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the participants tested for `study.two.gen` compared to `study.122` participants.
+- first, that the `HLVA` effect estimate is significant in both `study.two.gen` and `study.122`;
+- second, that the estimates of the `HLVA` effect have the same sign -- positive -- in both studies while the estimated coefficient is a bit bigger in the `study.122` data (implying a stronger effect);
+- but, third that the estimates of the effects of variation in vocabulary knowledge (`SHIPLEY`) and reading strategy (`FACTOR3`) are significant in `study.two.gen` but not in `study.122`.  
+  
+This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the `study.two.gen` participants compared to `study.122` participants.
 :::
 
 >**Q.23.** How would you describe the outstanding difference between the results of the two studies?
@@ -1443,14 +1450,19 @@ Then use your *visualization* of the model results to describe the outstanding d
 ::: {.callout-note icon=false collapse="true"}
 - A.23. If we compare the estimates for the coefficient of the `HLVA` effect in the `study.two.gen` and `study.122` models we can see that:
 
-1. The health literacy `HLVA` effect is significant in `study.two.gen` but not `study.122`.
+1. The health literacy `HLVA` effect is significant in both `study.two.gen` and `study.122`.
 2. The effect trends positive in both studies.
-3. The coefficient estimate is much bigger in study.two.gen than in `study.122`.
-4. The prediction plots suggest the prediction line slope is steeper in `study.two`.
-5. The grey shaded area around the trend line (indicating our uncertainty about the estimated trend) is much wider for `study.two.gen` than for `study.122`, suggesting we are much more uncertain about the association for the `study.122` data.
+3. The coefficient estimate is bigger in `study.122` than in `study.two.gen`.
+4. The prediction plots suggest the prediction line slope is steeper in `study.122`.
+5. The grey shaded area around the trend line (indicating our uncertainty about the estimated trend) is wider for `study.two.gen` than for `study.122`, suggesting we are more uncertain about the association for the `study.two.gen` data. 
 
-This suggests that the effect of health literacy is stronger in Study Two: why is that?
+- The breadth of the grey shaded area around the trend line is hard to compare between the two plots. You have to look carefully at the y-axis scale information to make a judgment about the relative width of these uncertainty ellipses.
+
+The visualizations plus the model summaries suggests that the estimates of the effect of health literacy are different in the `study.122` compared to the `study.two.gen` data. Why is that?
 :::
+
+We can redraw the prediction plots to add in more information about our samples. This change, see following, will help us to interpret the results of the analyses we have done.
+And *that* will help you to see why data visualization and data analysis work well together.
 
 In the `{ggeffects}` online information, you can see links to practical examples. Can you use the information under `Practical examples` to adjust the appearance of the prediction plots: to make them black and white; to add points?
 
@@ -1487,8 +1499,8 @@ It is often useful to compare model estimates -- here, the slopes -- with the ra
 ::: {.callout-note icon=false collapse="true"}
 - A.24. Adding points allow us to see:
 
-1. There are far fewer observations in the study.122 dataset;
-2. The range of `HLVA` scores is limited in study.122 data -- mostly high scores -- and range limits have an impact on estimates of association: see Margriet's lecture on correlation and linear model assumptions and issues.
+1. There are far fewer observations in the `study.122` dataset than in the `study.two.gen` data: this means that our estimate of the effect will be *more uncertain* because we have *less information* when we look at the `study.122` data.
+2. But it is also clear that the effect of `HLVA` appears to be stronger in the  `study.122` data because observed scores are *closer* to model predictions: the `HLVA` effect *explains more variation* in the `study.122` data than in the `study.two.gen` data.
 :::
 
 ## Online Q&A {#sec-wk19-lab-Q-and-A}
