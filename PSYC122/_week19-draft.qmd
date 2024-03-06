@@ -802,7 +802,7 @@ Then answer the following questions.
 
 >**Q.9.** What is r, the correlation coefficient?
 
-<!-- - A.9. r = 0.3232728 -->
+<!-- - A.9. r = 0.4027438 -->
 
 >**Q.10.** Is the correlation significant?
 
@@ -810,7 +810,7 @@ Then answer the following questions.
 
 >**Q.11.** What are the values for t and p for the significance test for the correlation?
 
-<!-- - A.11. t = 3.2046, p = 0.001884 -->
+<!-- - A.11. t = 3.4924, p = 0.0008808 -->
 
 Now we can answer the research question:
 
@@ -1225,7 +1225,7 @@ Then answer the following questions.
 >**Q.9.** What is r, the correlation coefficient?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.9. r = 0.3232728
+- A.9. r = 0.4027438
 :::
 
 >**Q.10.** Is the correlation significant?
@@ -1237,7 +1237,7 @@ Then answer the following questions.
 >**Q.11.** What are the values for t and p for the significance test for the correlation?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.11. t = 3.2046, p = 0.001884
+- A.11. t = 3.4924, p = 0.0008808
 :::
 
 Now we can answer the research question:
