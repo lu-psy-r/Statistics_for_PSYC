@@ -399,7 +399,7 @@ Now we can answer the research question:
 - first, the correlation is significant in both `study.two.gen` and `study.122`;
 - second, the correlation is positive in both studies.
 
-But, if you compare the correlation estimates, you can see that the coefficient estimate is smaller in `study.122` (where r = .32) than in `study.two.gen` (where r = .40).
+But, if you compare the correlation estimates, you can see that the coefficient estimate is smaller in `study.122` (where r = .40) than in `study.two.gen` (where r = .55).
 
 This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason.
 
@@ -453,22 +453,22 @@ Using the model estimates, we can answer the research question:
 
 Inspect the model summary, then answer the following questions:  
 
-- Q.18. What is the estimate for the coefficient of the effect of the predictor `SHIPLEY` in *this* model?
-- A.18. 0.008397 
+- Q.14. What is the estimate for the coefficient of the effect of the predictor `SHIPLEY` in *this* model?
+- A.14. 0.008397 
 
-- Q.19. Is the effect significant?
-- A.19. It is significant, p < .05
+- Q.15. Is the effect significant?
+- A.15. It is significant, p < .05
 
-- Q.20. What are the values for t and p for the significance test for the coefficient?
-- A.20. t = 4.533, p = 1.1e-05
+- Q.16. What are the values for t and p for the significance test for the coefficient?
+- A.16. t = 4.533, p = 1.1e-05
 
-- Q.21. Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.two.gen` data:
+- Q.17. Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.two.gen` data:
 
 1. What person attributes predict success in understanding?
 
-- hint: Q.21. Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
+- hint: Q.17. Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
 
-- A.21. 
+- A.17. 
 
 > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY`) as predictors. The model is significant overall, with F(3, 168) = 31.99, p< .001, and explains 35% of variance (adjusted R2 = 0.35). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .018, t = 4.90, p < .001), vocabulary knowledge (`SHIPLEY` estimate = .008, t = 4.53, p < .001), and reading strategy (`FACTOR3` estimate = .003, t = 2.68, p = .008).
 
@@ -486,30 +486,30 @@ Using the model estimates, we can answer the research question:
 
 Inspect the model summary, then answer the following questions:  
 
-- Q.22. What is the estimate for the coefficient of the effect of the predictor, `HLVA`, in *this* model?
-- A.22. 0.0335342 
+- Q.18. What is the estimate for the coefficient of the effect of the predictor, `HLVA`, in *this* model?
+- A.18. 0.0335342 
 
-- Q.23. Is the effect significant?
-- A.23. It is significant, p > .05 because p = 1.52e-05
+- Q.19. Is the effect significant?
+- A.19. It is significant, p > .05 because p = 1.52e-05
 
-- Q.24. What are the values for t and p for the significance test for the coefficient?
-- A.24. t = 4.701, p < .001
+- Q.20. What are the values for t and p for the significance test for the coefficient?
+- A.20. t = 4.701, p < .001
 
-- Q.25. Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.122` data:
+- Q.21. Now consider the estimates for all the variables, what do you conclude is the answer to the research question -- given the `study.122` data:
 
 1. What person attributes predict success in understanding?
 
-- hint: Q.25. Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
+- hint: Q.21. Can you report the model and the model fit statistics using the language you have been shown in the week 18 lecture?
 
-- A.25. 
+- A.21. 
 
 > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 61) = 14.47, p < .001, and explains 39% of variance (adjusted R2 = .387). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .034, t = 4.70, p < .001). There were non-significant effects of individual differences in vocabulary knowledge (`SHIPLEY` estimate = .006, t = 1.80, p = .077) and reading strategy (`FACTOR3` estimate = .001, t = .25, p = .800). 
 
 - At this point, we can evaluate the evidence from the PSYC122 sample -- based on your responses -- to assess if the patterns, the estimates, we saw previously are repeated in analyses of PSYC122 responses.
 
-- Q.26. Are the findings from `study.two.gen` replicated in `study.122`?
-- hint: Q.26. We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
-- A.26. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see:
+- Q.22. Are the findings from `study.two.gen` replicated in `study.122`?
+- hint: Q.22. We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
+- A.22. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see:
 
 - first, that the `HLVA` effect estimate is significant in both `study.two.gen` and `study.122`;
 - second, that the estimates of the `HLVA` effect have the same sign -- positive -- in both studies while the estimated coefficient is a bit bigger in the `study.122` data (implying a stronger effect);
@@ -517,13 +517,13 @@ Inspect the model summary, then answer the following questions:
   
 This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the `study.two.gen` participants compared to `study.122` participants.
 
-- Q.27. How would you describe the outstanding difference between the results of the two studies?
-- hint: Q.27. We can look at the estimates but we can also use the model prediction plotting code you used before, see:
+- Q.23. How would you describe the outstanding difference between the results of the two studies?
+- hint: Q.23. We can look at the estimates but we can also use the model prediction plotting code you used before, see:
 
 - `2022-23-PSYC122-w18-how-to.R`
 - `2022-23-PSYC122-w19-how-to.R`
 
-- hint: Q.27. Let's focus on comparing the `study.two.gen` and `study.122` estimates for the effect of `HLVA` in both models: we can plot model predictions, for comparison:
+- hint: Q.23. Let's focus on comparing the `study.two.gen` and `study.122` estimates for the effect of `HLVA` in both models: we can plot model predictions, for comparison:
 
 First: fit the models -- using different names for the different models:
 
@@ -549,7 +549,7 @@ Third, show the plots side-by-side:
 plot.two + plot.122
 ```
 
-- A.27. If we compare the estimates for the coefficient of the `HLVA` effect in the `study.two.gen` and `study.122` models we can see that:
+- A.23. If we compare the estimates for the coefficient of the `HLVA` effect in the `study.two.gen` and `study.122` models we can see that:
 
 1. The health literacy `HLVA` effect is significant in both `study.two.gen` and `study.122`.
 2. The effect trends positive in both studies.
@@ -591,8 +591,8 @@ Then show the plots:
 plot.two + plot.122
 ```
 
-- Q.28. Given the information in the adjusted plots, can you explain what is different about the `HLVA` effect estimate in the `study.122` data compared to the ?
-- A.28. Adding points allow us to see:
+- Q.24. Given the information in the adjusted plots, can you explain what is different about the `HLVA` effect estimate in the `study.122` data compared to the ?
+- A.24. Adding points allow us to see:
 
 1. There are far fewer observations in the `study.122` dataset than in the `study.two.gen` data: this means that our estimate of the effect will be *more uncertain* because we have *less information* when we look at the `study.122` data.
 2. But it is also clear that the effect of `HLVA` appears to be stronger in the  `study.122` data because observed scores are *closer* to model predictions: the `HLVA` effect *explains more variation* in the `study.122` data than in the `study.two.gen` data.
