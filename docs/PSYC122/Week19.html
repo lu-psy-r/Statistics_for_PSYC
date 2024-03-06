@@ -1333,10 +1333,20 @@ Hint
 <li>Can people accurately evaluate whether they correctly understand written health information?</li>
 </ol>
 <!-- If people *can* accurately evaluate whether they correctly understand written health information then `mean.self` (a score representing their evaluation) should be associated with `mean.acc` (a score representing their accuracy of understanding) for each person. -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Revise: practice to strengthen skills
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
-</section>
-<section id="revise-practice-to-strengthen-skills-2" class="level4">
-<h4 class="anchored" data-anchor-id="revise-practice-to-strengthen-skills-2">Revise: practice to strengthen skills</h4>
 <section id="task-10-can-you-estimate-the-association-between-mean.acc-and-mean.self-in-both-datasets" class="level5">
 <h5 class="anchored" data-anchor-id="task-10-can-you-estimate-the-association-between-mean.acc-and-mean.self-in-both-datasets">Task 10 – Can you estimate the association between <code>mean.acc</code> and <code>mean.self</code> in both datasets?</h5>
 <blockquote class="blockquote">
@@ -1530,7 +1540,10 @@ Hint
 <!-- > We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), and vocabulary (`SHIPLEY)` as predictors. The model is significant overall, with F(3, 61) = 14.47, p < .001, and explains 39% of variance (adjusted R2 = .387). Mean accuracy was predicted to be higher given higher scores in health literacy (`HLVA` estimate = .034, t = 4.70, p < .001). There were non-significant effects of individual differences in vocabulary knowledge (`SHIPLEY` estimate = .006, t = 1.80, p = .077) and reading strategy (`FACTOR3` estimate = .001, t = .25, p = .800).  -->
 <p>At this point, we can evaluate the evidence from the PSYC122 sample – based on your responses – to assess if the patterns, the estimates, we saw previously are repeated in analyses of PSYC122 responses.</p>
 <blockquote class="blockquote">
-<p><strong>Q.22.</strong> Are the findings from <code>study.two.gen</code> replicated in <code>study.122</code>? - hint: Q.22. We can judge if the results in an earlier study are replicated in another study by examining if – here – the linear model estimates are significant in both studies <em>and</em> if the coefficient estimates have the same size and sign in both studies.</p>
+<p><strong>Q.22.</strong> Are the findings from <code>study.two.gen</code> replicated in <code>study.122</code>?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>hint: Q.22.</strong> We can judge if the results in an earlier study are replicated in another study by examining if – here – the linear model estimates are significant in both studies <em>and</em> if the coefficient estimates have the same size and sign in both studies.</p>
 </blockquote>
 <!-- - A.22. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see: -->
 <!-- - first, that the `HLVA` effect estimate is significant in both `study.two.gen` and `study.122`; -->
@@ -1538,7 +1551,10 @@ Hint
 <!-- - but, third that the estimates of the effects of variation in vocabulary knowledge (`SHIPLEY`) and reading strategy (`FACTOR3`) are significant in `study.two.gen` but not in `study.122`.   -->
 <!-- This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the `study.two.gen` participants compared to `study.122` participants. -->
 <blockquote class="blockquote">
-<p><strong>Q.23.</strong> How would you describe the outstanding difference between the results of the two studies? <strong>hint: Q.23.</strong> We can look at the estimates but we can also use model prediction plotting code to <em>visualize</em> the results. You can build on the code you used before, see:</p>
+<p><strong>Q.23.</strong> How would you describe the outstanding difference between the results of the two studies?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>hint: Q.23.</strong> We can look at the estimates but we can also use model prediction plotting code to <em>visualize</em> the results. You can build on the code you used before, see:</p>
 </blockquote>
 <ul>
 <li><code>2022-23-PSYC122-w18-how-to.R</code></li>
@@ -1602,7 +1618,7 @@ Tip
 <section id="task-14-in-producing-prediction-plots-we-are-using-functions-from-the-ggefects-library.-can-you-locate-online-information-about-working-with-the-library-functions" class="level5">
 <h5 class="anchored" data-anchor-id="task-14-in-producing-prediction-plots-we-are-using-functions-from-the-ggefects-library.-can-you-locate-online-information-about-working-with-the-library-functions">Task 14 – In producing prediction plots, we are using functions from the <code>{ggefects}</code> library. Can you locate online information about working with the library functions?</h5>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1611,7 +1627,7 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Try doing a search with the key words: <code>in r ggeffects</code>.</p>
 <p>If you do that, you will see links to the website:</p>
