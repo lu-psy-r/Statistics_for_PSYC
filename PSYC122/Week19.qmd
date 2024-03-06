@@ -561,7 +561,7 @@ Use the `summary()` or `head()` functions to take a look at both datasets.
 
 ##### Task 6 --  Create grids of plots to make the comparison easier to do
 
-##### hint: Task 6 -- What we are going to do is to create two histograms of `mean.acc` (one plot for each study dataset) and then present the plots side by side to allow easy comparison of variable distributions
+> Hint: Task 6 -- What we are going to do is to create two histograms of `mean.acc` (one plot for each study dataset) and then present the plots side by side to allow easy comparison of variable distributions
 
 We need to make two changes to the coding approach you have been using until now.
 
@@ -597,8 +597,9 @@ Second, name the plots to show them side-by-side.
 
 :::{.callout-tip collapse="true"}
 ## Hint
-This is what you are doing: check out the process, step-by-step.
-(And notice that you repeat the process for each of two (or more) plots.)
+This is what you need to: check out the process, step-by-step.
+
+- Notice that you repeat the process for each of two (or more) plots.
 
 1. `ggplot(...)` tell R you want to make a plot using the `ggplot()` function;
 2. `plot.one <-` tell R you want to give the plot a name; the name appears in the environment;
@@ -685,7 +686,7 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 ##### Task 8 -- Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both `study.two.gen` and `study.122` datasets
 
-##### hint: Task 8 -- The plotting steps are explained in some detail in `2023-24-PSYC122-w17-how-to.Rmd` and you can see example code in `2023-24-PSYC122-w19-how-to.Rmd`
+> Hint: Task 8 -- The plotting steps are explained in some detail in `2023-24-PSYC122-w17-how-to.Rmd` and you can see example code in `2023-24-PSYC122-w19-how-to.Rmd`
 
 <!-- :::{.callout-tip collapse="true"} -->
 <!-- ## Code -->
@@ -708,7 +709,7 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 ##### Task 9 --  Create a grid of plots to make the comparison easier to do
 
-##### hint: Task 9 -- We follow the same steps as we used in tasks 6 and 7 to create the plots
+> Hint: Task 9 -- We follow the same steps as we used in tasks 6 and 7 to create the plots
 
 We again:
 
@@ -764,7 +765,7 @@ We are now in a position to answer one of our research questions:
 
 ##### Task 10 --  Can you estimate the association between `mean.acc` and `mean.self` in both datasets?
 
-##### hint: Task 10 -- We use `cor.test()` as you have been shown how to do e.g. in `2023-24-PSYC122-w16-how-to.Rmd`
+> Hint: Task 10 -- We use `cor.test()` as you have been shown how to do e.g. in `2023-24-PSYC122-w16-how-to.Rmd`
 
 Do the correlation for both datasets.
 
@@ -842,7 +843,7 @@ In this way, we are using the `{patchwork}` library so that we can create plots 
 
 Can you find the online information about `{patchwork}` and use it to adjust the layout of the grids of plots you are using?
 
-##### hint: Task 11 -- To find out more information about a function or a library in R, do a search for the keywords
+> Hint: Task 11 -- To find out more information about a function or a library in R, do a search for the keywords
 
 You can do a search, using any search engine (e.g., Bing, Chrome, Google), by entering: 
 
@@ -860,9 +861,9 @@ You will then see a list of results including the link to the `{patchwork}` info
 
 ##### Task 12 -- Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors 
 
-##### hint: Task 12 -- We use `lm()`, as we have been doing before, see e.g. `2023-24-PSYC122-w18-how-to.R`
+> Hint: Task 12 -- We use `lm()`, as we have been doing before, see e.g. `2023-24-PSYC122-w18-how-to.R`
 
-##### Task 12 -- Examine the predictors of mean accuracy (`mean.acc`), first, for the `study.two.gen` data
+> Examine the predictors of mean accuracy (`mean.acc`), first, for the `study.two.gen` data.
 
 We specify a linear model of the `study.two.gen` data, including as the outcome:
 
@@ -912,7 +913,9 @@ Inspect the model summary to then answer the following questions:
 
 ### Task 13 -- Examine the predictors of mean accuracy (`mean.acc`), now, for the `study.122` data
 
-We specify a linear model *now* of the `study.122` data, including as the outcome:
+> Examine the predictors of mean accuracy (`mean.acc`), second, for the `study.122` data.
+
+We specify a linear model of the `study.122` data, including as the outcome:
 
 - mean accuracy (`mean.acc`) 
 
