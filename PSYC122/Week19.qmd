@@ -512,7 +512,9 @@ Use the `summary()` or `head()` functions to take a look at both datasets.
 
 #### Step 3: Compare the data from the different studies
 
-#### Revise: practice to strengthen skills
+::: callout-tip
+## Revise: practice to strengthen skills
+:::
 
 ##### Task 5 --  Compare the data distributions from the two studies
 
@@ -557,7 +559,9 @@ Use the `summary()` or `head()` functions to take a look at both datasets.
 <!--   xlim(0, 40) -->
 <!-- ``` -->
 
-#### Introduce: make some new moves
+::: callout-tip
+## Introduce: make some new moves
+:::
 
 ##### Task 6 --  Create grids of plots to make the comparison easier to do
 
@@ -682,7 +686,9 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 #### Step 4: Now use scatterplots and correlation to examine associations between variables
 
-#### Revise: practice to strengthen skills
+::: callout-tip
+## Revise: practice to strengthen skills
+:::
 
 ##### Task 8 -- Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both `study.two.gen` and `study.122` datasets
 
@@ -859,7 +865,9 @@ You will then see a list of results including the link to the `{patchwork}` info
 
 #### Step 5: Use a linear model to to answer the research questions -- multiple predictors
 
-#### Revise: practice to strengthen skills
+::: callout-tip
+## Revise: practice to strengthen skills
+:::
 
 ##### Task 12 -- Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors 
 
