@@ -100,7 +100,7 @@ You can view video recordings of the lectures using Panopto, by clicking on the 
 1. **Overview** (17 minutes): Critical perspectives -- The real challenge in psychological science (people vary, results vary) -- variation, replication and evaluating evidence across multiple studies.
 
 ```{=html}
-Embed.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 2. **The Clearly Understood project -- questions and analyses** (13 minutes): Critical thinking -- candidate answers, our assumptions, the sources of uncertainty, and working with samples.
@@ -109,16 +109,16 @@ Embed.aspx?id=0e35b8e9-dd4f-4fb7-a88e-afbe010b250a&autoplay=false&offerviewer=tr
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6d20197c-6559-463b-8672-afbe011e2371&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-3. **Evaluating evidence across studies** (15 minutes): People vary, results vary -- evaluating, thinking about, critically reflecting on analysis results
+3. **Evaluating evidence across studies** (18 minutes): People vary, results vary -- evaluating, thinking about, critically reflecting on analysis results
 
 ```{=html}
-Embed.aspx?id=30c2ff78-40b9-4cf8-8650-afbe012398fb&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=22d3bf7c-1710-4a75-9a73-b12b00b502b1&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
-4. **Becoming a power learner** (13 minutes): Learning to exploit the R knowledge ecosystem -- every question you ever have has an answer somewhere online; find out how to locate and use this knowledge for yourself.
+4. **Becoming a power learner** (24 minutes): Reproducibility, sharing, and learning to exploit the R knowledge ecosystem -- every question you ever have has an answer somewhere online; find out how to locate and use this knowledge for yourself.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a66baccd-f044-45f0-85af-afbe012bbc03&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3633c4c0-e364-4d8f-beba-b12b00bb18f7&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 ```
 
 ::: callout-tip
