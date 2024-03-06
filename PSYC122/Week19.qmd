@@ -761,7 +761,9 @@ We are now in a position to answer one of our research questions:
 
 <!-- If people *can* accurately evaluate whether they correctly understand written health information then `mean.self` (a score representing their evaluation) should be associated with `mean.acc` (a score representing their accuracy of understanding) for each person. -->
 
-#### Revise: practice to strengthen skills
+::: callout-tip
+## Revise: practice to strengthen skills
+:::
 
 ##### Task 10 --  Can you estimate the association between `mean.acc` and `mean.self` in both datasets?
 
@@ -964,7 +966,8 @@ Inspect the model summary, then answer the following questions:
 At this point, we can evaluate the evidence from the PSYC122 sample -- based on your responses -- to assess if the patterns, the estimates, we saw previously are repeated in analyses of PSYC122 responses.
 
 >**Q.22.** Are the findings from `study.two.gen` replicated in `study.122`?
-- hint: Q.22. We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
+
+>**hint: Q.22.** We can judge if the results in an earlier study are replicated in another study by examining if -- here -- the linear model estimates are significant in both studies *and* if the coefficient estimates have the same size and sign in both studies.
 
 <!-- - A.22. If you compare the linear model coefficient estimates from both the `study.two.gen` and `study.122` models, you can see: -->
 
@@ -975,6 +978,7 @@ At this point, we can evaluate the evidence from the PSYC122 sample -- based on 
 <!-- This suggests that the attributes -- the set of abilities -- that predict comprehension accuracy are similar but not the same in the `study.two.gen` participants compared to `study.122` participants. -->
 
 >**Q.23.** How would you describe the outstanding difference between the results of the two studies?
+
 >**hint: Q.23.** We can look at the estimates but we can also use model prediction plotting code to *visualize* the results. You can build on the code you used before, see:
 
 - `2022-23-PSYC122-w18-how-to.R`
