@@ -830,7 +830,7 @@ Now we can answer the research question:
 <!-- - first, the correlation is significant in both `study.two.gen` and `study.122`; -->
 <!-- - second, the correlation is positive in both studies. -->
 
-<!-- But, if you compare the correlation estimates, you can see that the coefficient estimate is quite a bit smaller in `study.122` (where r = .32) than in `study.two.gen` (where r = .55). -->
+<!-- But, if you compare the correlation estimates, you can see that the coefficient estimate is smaller in `study.122` (where r = .40) than in `study.two.gen` (where r = .55). -->
 
 <!-- This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason. -->
 
@@ -1261,7 +1261,7 @@ Now we can answer the research question:
 - first, the correlation is significant in both `study.two.gen` and `study.122`;
 - second, the correlation is positive in both studies.
 
-But, if you compare the correlation estimates, you can see that the coefficient estimate is quite a bit smaller in `study.122` (where r = .32) than in `study.two.gen` (where r = .55).
+But, if you compare the correlation estimates, you can see that the coefficient estimate is smaller in `study.122` (where r = .40) than in `study.two.gen` (where r = .55).
 
 This may suggest that the association observed in `study.two.gen` is different from the association in `study.122`, for some reason.
 :::
