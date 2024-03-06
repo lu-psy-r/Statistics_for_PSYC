@@ -522,8 +522,8 @@ Use the `summary()` or `head()` functions to take a look at both datasets.
 
 <!-- - study two -- `mean.acc`: mean = 0.7596 -->
 <!-- - study two -- `SHIPLEY`: mean = 35.13 -->
-<!-- - study PSYC122 -- `mean.acc`: mean = 0.7356 -->
-<!-- - study PSYC122 -- `SHIPLEY`: mean = 32.71 -->
+<!-- - study PSYC122 -- `mean.acc`: mean = 0.8231 -->
+<!-- - study PSYC122 -- `SHIPLEY`: mean = 32.31 -->
 
 >**Q.2.** Draw histograms of both mean.acc and mean.self for both studies.
 
@@ -666,16 +666,16 @@ Second produce the plots for viewing, side-by-side, by *naming* them: `plot.1.na
 
 >**Q.3.** Now use the plots to do some data analysis work: how do the `SHIPLEY` distributions compare, when you compare the `SHIPLEY` of `study.two.gen` versus `SHIPLEY` of `study.122`?
 
-<!-- - A.3. When you compare the plots side-by-side you can see that the `SHIPLEY` distributions are mostly similar: most people have high `SHIPLEY` scores. -->
+<!-- - A.3. When you compare the plots side-by-side you can see that the `SHIPLEY` distributions are *mostly* similar: most people have high `SHIPLEY` scores. -->
 
 <!-- But you can also see striking differences:  -->
 
 <!-- - The peak of the distribution -- where the tallest bar is -- is at a higher `SHIPLEY` score in `study.two.gen` (around `SHIPLEY` = 37-38) than in `study.122` (where is it around `SHIPLEY` = 30). -->
-<!-- - There appear to be more participants with lower `SHIPLEY` scores in `study.122` than in `study.two`. -->
+<!-- - There appear to be *fewer* participants with lower `SHIPLEY` scores in `study.122` than in `study.two`. -->
 
 >**Q.4.** Is the visual impression you get from comparing the distributions consistent with the statistics you see in the summary?
 
-<!-- - A.4. Yes: If you go back to the summary of `SHIPLEY`, comparing the two studies datasets, then you can see that the median and mean are lower in `study.122`. -->
+<!-- - A.4. Yes: If you go back to the summary of `SHIPLEY`, comparing the two studies datasets, then you can see that the median and mean are higher in `study.122` than in `study.two.gen`. -->
 
 #### Step 4: Now use scatterplots and correlation to examine associations between variables
 
@@ -1111,8 +1111,8 @@ We set out answers information the Week 19 **Critical perspectives** questions, 
 
 - study two -- `mean.acc`: mean = 0.7596
 - study two -- `SHIPLEY`: mean = 35.13
-- study PSYC122 -- `mean.acc`: mean = 0.7356
-- study PSYC122 -- `SHIPLEY`: mean = 32.71
+- study PSYC122 -- `mean.acc`: mean = 0.8231
+- study PSYC122 -- `SHIPLEY`: mean = 32.31
 :::
 
 >**Q.2.** Draw histograms of both mean.acc and mean.self for both studies.
@@ -1155,18 +1155,18 @@ Create histograms to enable you to compare the distribution of `SHIPLEY` scores 
 >**Q.3.** Now use the plots to do some data analysis work: how do the `SHIPLEY` distributions compare, when you compare the `SHIPLEY` of `study.two.gen` versus `SHIPLEY` of `study.122`?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.3. When you compare the plots side-by-side you can see that the `SHIPLEY` distributions are mostly similar: most people have high `SHIPLEY` scores.
+- A.3. When you compare the plots side-by-side you can see that the `SHIPLEY` distributions are *mostly* similar: most people have high `SHIPLEY` scores.
 
-But you can also see striking differences:
+But you can also see striking differences: 
 
 - The peak of the distribution -- where the tallest bar is -- is at a higher `SHIPLEY` score in `study.two.gen` (around `SHIPLEY` = 37-38) than in `study.122` (where is it around `SHIPLEY` = 30).
-- There appear to be more participants with lower `SHIPLEY` scores in `study.122` than in `study.two`.
+- There appear to be *fewer* participants with lower `SHIPLEY` scores in `study.122` than in `study.two`.
 :::
 
 >**Q.4.** Is the visual impression you get from comparing the distributions consistent with the statistics you see in the summary?
 
 ::: {.callout-note icon=false collapse="true"}
-- A.4. Yes: If you go back to the summary of `SHIPLEY`, comparing the two studies datasets, then you can see that the median and mean are lower in `study.122`.
+- A.4. Yes: If you go back to the summary of `SHIPLEY`, comparing the two studies datasets, then you can see that the median and mean are higher in `study.122` than in `study.two.gen`.
 :::
 
 Draw scatterplots to compare the potential association between `mean.acc` and `mean.self` in both the `study.two.gen` and the `study.122` datasets.
