@@ -13,6 +13,7 @@ This page is under construction: come back soon!
 #| echo: false
 library(ggeffects)
 library(kableExtra)
+library(patchwork)
 library(tidyverse)
 ```
 
