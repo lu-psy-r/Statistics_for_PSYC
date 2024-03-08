@@ -1042,12 +1042,10 @@ The `.Rmd` script containing all code and all answers for each task and each que
 
 - You can download the script by clicking on the link: [2023-24-PSYC122-w17-workbook-answers.Rmd](data/week17/2023-24-PSYC122-w17-workbook-answers.Rmd) when it is available.
 
-- Or by using the code:
-
-Get the `2023-24-PSYC122-w17-how-to.Rmd` how-to guide
+- Or by copying the code into the R `Console` window and running it to get the `2023-24-PSYC122-w17-workbook-answers.Rmd` loaded directly into R:
 
 ```{r eval=FALSE}
-download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/week17/2023-24-PSYC122-w17-workbook-answers.Rmd?raw=true", destfile = "2023-24-PSYC122-w17-workbook-answers.Rmd")
+download.file("https://github.com/lu-psy-r/statistics_for_psychologists/blob/main/PSYC122/data/2023-24-PSYC122-w17-workbook-answers.Rmd?raw=true", destfile = "2023-24-PSYC122-w17-workbook-answers.Rmd")
 ```
 :::
 
