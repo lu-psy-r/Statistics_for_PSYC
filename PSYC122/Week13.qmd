@@ -5,7 +5,7 @@ order: 4
 ---
 
 
-This week we will focus on the linear model and simple linear regression.
+This week we will focus on the linear model and simple linear regression. **test**
 
 ## Lectures {#sec-wk13-lectures}
 
